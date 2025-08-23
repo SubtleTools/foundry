@@ -1,0 +1,81 @@
+---
+force: true
+---
+---
+title: Installation
+description: How to install {{ projectName }}
+---
+
+# Installation
+
+Get {{ projectName }} up and running in your project.
+
+## Prerequisites
+
+Before installing {{ projectName }}, ensure you have:
+
+- Node.js 18 or later
+- A package manager (bun, npm, yarn, or pnpm)
+
+## Install {{ projectName }}
+
+Choose your preferred package manager:
+
+```bash title="Using bun (recommended)"
+bun add {{ projectName }}
+```
+
+```bash title="Using npm"
+npm install {{ projectName }}
+```
+
+```bash title="Using yarn"
+yarn add {{ projectName }}
+```
+
+```bash title="Using pnpm"
+pnpm add {{ projectName }}
+```
+
+## Verify Installation
+
+You can verify the installation by importing {{ projectName }} in your project:
+
+```typescript
+import {{ "{" }} main {{ "}" }} from '{{ projectName }}';
+
+console.log('{{ projectName }} is installed!');
+```
+
+## Development Installation
+
+If you want to contribute to {{ projectName }} or run it locally:
+
+```bash
+# Clone the repository
+git clone {% if githubRepo %}{{ githubRepo }}{% else %}https://github.com/your-org/{{ projectName }}{% endif %}
+cd {{ projectName }}
+
+# Install dependencies
+bun install
+
+# Run tests
+bun test
+
+# Build the project
+bun run build
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Installation fails with permission errors**
+Try using a different package manager or check your Node.js installation.
+
+**Module not found errors**
+Ensure you're using the correct import path and that the package is properly installed.
+
+## Next Steps
+
+Now that you have {{ projectName }} installed, check out the [Quick Start guide](/quick-start/) to begin using it.

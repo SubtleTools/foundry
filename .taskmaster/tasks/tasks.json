@@ -1,0 +1,149 @@
+{
+  "master": {
+    "tasks": [],
+    "metadata": {
+      "version": "1.0.0",
+      "created": "2025-08-17T17:25:37.288Z",
+      "lastModified": "2025-08-17T17:25:37.288Z",
+      "description": "Tasks for master context"
+    }
+  },
+  "lipgloss-port": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup TypeScript Project Structure",
+        "description": "Initialize the TypeScript project in lovely/lipgloss with proper build tooling, package.json, and development configuration",
+        "details": "Create project structure under lovely/lipgloss/ following established patterns. Setup package.json with subtletools/lipgloss name, TypeScript configuration with strict mode, ESLint/Prettier configs, and bun-based build system using rollup/esbuild. Configure Jest/Vitest testing framework. Create src/, dist/, and test/ directories. Setup tsconfig.json with proper module resolution and declaration file generation.",
+        "testStrategy": "Verify TypeScript compilation succeeds with strict mode, build system produces correct output files, and testing framework can run basic tests",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Install Core Dependencies",
+        "description": "Add essential npm packages for ANSI handling, text measurement, and terminal capabilities",
+        "details": "Install chalk for ANSI color support and terminal capability detection, string-width for Unicode-aware text width calculation, supports-color for terminal color profile detection, and strip-ansi for ANSI sequence removal. Add TypeScript type definitions where needed. Configure these as production dependencies in package.json.",
+        "testStrategy": "Verify all dependencies install correctly with bun, TypeScript can import and use each package, and no version conflicts exist",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Define Core TypeScript Interfaces",
+        "description": "Create comprehensive type definitions for Style properties, colors, alignment options, and rendering configuration",
+        "details": "Define StyleProperties interface with all CSS-like properties (color, backgroundColor, bold, italic, underline, strikethrough, padding, width, height, alignment). Create ColorValue union type supporting hex strings, RGB objects, and named colors. Define HorizontalAlignment and VerticalAlignment enums. Create PaddingConfig interface supporting CSS-style shorthand. Add comprehensive TSDoc comments for all types.",
+        "testStrategy": "Verify TypeScript compilation with strict mode, ensure all type definitions provide proper intellisense, and validate type safety with test cases",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implement Core Style Class Foundation",
+        "description": "Create the immutable Style class with fluent API pattern and basic property management",
+        "details": "Implement Style class with immutable properties pattern. Each method returns new Style instance without mutating original. Implement constructor accepting StyleProperties, private clone() method for immutability, and basic property getters. Follow builder pattern with method chaining support. Ensure memory efficiency and prevent accidental mutations.",
+        "testStrategy": "Unit tests verifying immutability (original style unchanged after method calls), method chaining works correctly, and memory usage is reasonable for typical operations",
+        "priority": "high",
+        "dependencies": [
+          3
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Implement Color Management System",
+        "description": "Add color methods to Style class with support for multiple color formats and terminal capability detection",
+        "details": "Implement color() and backgroundColor() methods accepting ColorValue types. Add color conversion utilities for hex to RGB, named colors to ANSI codes. Integrate with chalk for terminal capability detection and automatic color degradation. Support adaptive colors based on terminal background detection. Handle edge cases like invalid color values gracefully.",
+        "testStrategy": "Test color format conversion accuracy, verify chalk integration works correctly, test color degradation in different terminal profiles, and validate error handling for invalid colors",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Implement Text Styling Methods",
+        "description": "Add bold, italic, underline, and strikethrough text styling methods with proper ANSI generation",
+        "details": "Implement bold(), italic(), underline(), and strikethrough() methods with optional boolean parameters (defaults to true). Generate appropriate ANSI escape sequences using chalk. Ensure proper handling of text style combinations and conflicts. Support unsetting styles with false parameter or dedicated unset methods.",
+        "testStrategy": "Verify correct ANSI sequences generated for each style, test style combinations work properly, and validate unsetting functionality removes styles correctly",
+        "priority": "medium",
+        "dependencies": [
+          4
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Implement Layout and Padding System",
+        "description": "Add padding methods with CSS-style shorthand support and width/height constraints",
+        "details": "Implement padding(), paddingTop(), paddingRight(), paddingBottom(), paddingLeft() methods supporting CSS shorthand syntax (1-4 values). Add width() and height() methods for dimension constraints. Use string-width for accurate text measurement accounting for Unicode characters. Handle overflow scenarios with truncation or wrapping options.",
+        "testStrategy": "Test CSS-style padding shorthand parsing, verify Unicode text width calculation accuracy, test dimension constraints with various content lengths, and validate overflow handling",
+        "priority": "medium",
+        "dependencies": [
+          5,
+          6
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Implement Text Alignment System",
+        "description": "Add horizontal and vertical text alignment functionality with proper spacing calculation",
+        "details": "Implement alignHorizontal() and alignVertical() methods supporting left/center/right and top/middle/bottom alignment. Calculate proper spacing for centering and right alignment using string-width measurements. Handle multi-line text alignment correctly. Integrate with padding and dimension systems for accurate positioning.",
+        "testStrategy": "Test alignment accuracy with various text lengths, verify multi-line text alignment, test interaction with padding and width constraints, and validate edge cases like empty strings",
+        "priority": "medium",
+        "dependencies": [
+          7
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Implement Rendering Engine",
+        "description": "Create the core render() method that applies all styles and produces final ANSI-styled output",
+        "details": "Implement render(content: string): string method that applies all accumulated styles. Process text styling (bold, italic, etc.) using chalk, apply colors with proper terminal capability detection, handle padding and spacing calculations, apply alignment transformations, and manage width/height constraints. Ensure proper ANSI sequence ordering and optimization.",
+        "testStrategy": "Comprehensive visual regression tests comparing output to Go Lipgloss equivalents, performance benchmarks against chalk, test edge cases like empty content and extreme dimensions",
+        "priority": "high",
+        "dependencies": [
+          8
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Add Testing Suite and Documentation",
+        "description": "Create comprehensive test coverage, performance benchmarks, and usage documentation with examples",
+        "details": "Implement unit tests for all Style methods and edge cases, visual regression tests using golden files comparing to Go Lipgloss output, performance benchmarks against chalk and similar libraries, integration tests with popular CLI frameworks. Create API documentation with TSDoc, usage examples matching Go version patterns, and migration guide from other styling libraries.",
+        "testStrategy": "Achieve 95%+ code coverage, visual output matches Go Lipgloss for equivalent operations, performance within 2x of chalk, and documentation examples compile and run correctly",
+        "priority": "medium",
+        "dependencies": [
+          9
+        ],
+        "status": "done",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-08-17T17:26:26.522Z",
+      "updated": "2025-08-17T19:13:41.555Z",
+      "description": "Tasks for lipgloss-port context"
+    }
+  }
+}

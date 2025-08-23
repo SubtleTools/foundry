@@ -1,0 +1,12 @@
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
+
+tasks:
+  # TypeScript compilation for node libraries
+  build:
+    command: 'tsc'
+    inputs:
+      - '@globs(sources)'
+      - 'package.json'
+      - 'tsconfig.*.json'
+    outputs:
+      - 'dist'

@@ -1,0 +1,9 @@
+[submodule "templates/tsport-package"]
+	path = templates/tsport-package
+	url = git@github.com:SubtleTools/tsport-template.git
+[submodule "test/automation/reference"]
+	path = test/automation/reference
+	url = https://github.com/rivo/uniseg.git
+[submodule "templates/docs-site"]
+	path = templates/docs-site
+	url = https://github.com/SubtleTools/docs-site-template.git

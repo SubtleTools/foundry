@@ -1,0 +1,101 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+implicitDeps:
+  - "^:build"
+
+implicitInputs:
+  - "package.json"
+
+fileGroups:
+  # Application specific files
+  app: []
+  configs:
+    - "*.{js,json,yml,yaml}"
+  sources:
+    - "public/**/*"
+    - "src/**/*"
+    - "types/**/*"
+  tests:
+    - "tests/**/*.test.*"
+    - "tests/**/*.stories.*"
+    - "**/__tests__/**/*"
+  assets:
+    - "assets/**/*"
+    - "images/**/*"
+    - "static/**/*"
+    - "**/*.{scss,css}"
+    - "**/*.{md,mdx}"
+
+tasks:
+  # https://moonrepo.dev/docs/guides/examples/prettier
+  format:
+    command:
+      - "prettier"
+      - "--ignore-path"
+      - "@in(0)"
+      - "--check"
+      - "."
+    inputs:
+      - "/.prettierignore"
+      - "/prettier.config.js"
+      - "@group(app)"
+      - "@globs(sources)"
+      - "@globs(tests)"
+      - "@globs(configs)"
+      - "**/*.{md,mdx}"
+
+  format-write:
+    command:
+      - "prettier"
+      - "--ignore-path"
+      - "@in(0)"
+      - "--write"
+      - "."
+    inputs:
+      - "/.prettierignore"
+      - "/prettier.config.js"
+      - "@group(app)"
+      - "@globs(sources)"
+      - "@globs(tests)"
+      - "@globs(configs)"
+      - "**/*.{md,mdx}"
+    local: true
+
+  # Using Biome for linting
+  lint:
+    command:
+      - "biome"
+      - "check"
+      - "--write"
+      - "--no-errors-on-unmatched"
+    options:
+      mergeArgs: "append"
+    inputs:
+      - "biome.json"
+      - "/biome.json"
+      - "@group(app)"
+      - "@globs(sources)"
+      - "@globs(tests)"
+
+  # Use bun test instead of jest for all projects
+  test:
+    command:
+      - "bun"
+      - "test"
+    inputs:
+      - "@globs(sources)"
+      - "@globs(tests)"
+      - "package.json"
+
+  # https://moonrepo.dev/docs/guides/examples/typescript
+  typecheck:
+    command:
+      - "tsc"
+      - "--build"
+    inputs:
+      - "@group(app)"
+      - "@globs(sources)"
+      - "@globs(tests)"
+      - "tsconfig.json"
+      - "tsconfig.*.json"
+      - "/tsconfig.options.json"

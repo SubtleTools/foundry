@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "@subtletools/foundry",
+  "infra": "monorepo",
+  "version": "0.0.0",
+  "author": "Saulo Vallory",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "libs/*",
+    "packages/*/*",
+    "packages/*"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@moonrepo/cli": "^1.39.4",
+    "@types/bun": "^1.2.20",
+    "dprint": "^0.50.1",
+    "tsconfig-moon": "^1.4.1",
+    "typedoc": "^0.28.10",
+    "typedoc-plugin-markdown": "^4.8.1",
+    "typedoc-theme-hierarchy": "^6.0.0",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "bun": ">=1.2",
+    "node": "22.17.1"
+  }
+}

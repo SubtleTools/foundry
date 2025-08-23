@@ -1,0 +1,68 @@
+---
+force: true
+---
+---
+title: Core Features
+description: Explore the core features of {{ projectName }}
+---
+
+# Core Features
+
+{{ projectName }} provides a comprehensive set of features designed to...
+
+## Feature Overview
+
+### Feature 1
+
+Description of the first major feature.
+
+```typescript title="Feature 1 Example"
+// Code example for feature 1
+```
+
+### Feature 2
+
+Description of the second major feature.
+
+```typescript title="Feature 2 Example"
+// Code example for feature 2
+```
+
+### Feature 3
+
+Description of the third major feature.
+
+```typescript title="Feature 3 Example"
+// Code example for feature 3
+```
+
+## Configuration Options
+
+{{ projectName }} can be configured using various options:
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `option1` | `string` | `"default"` | Description of option 1 |
+| `option2` | `boolean` | `false` | Description of option 2 |
+| `option3` | `number` | `10` | Description of option 3 |
+
+## Advanced Usage
+
+For advanced use cases, you can:
+
+1. Customize the configuration
+2. Extend functionality
+3. Integrate with other tools
+
+## Best Practices
+
+- Always validate your configuration
+- Use TypeScript for better type safety
+- Follow the recommended patterns
+- Test your implementation thoroughly
+
+## Performance Considerations
+
+- Optimization tips
+- Memory usage guidelines
+- Scaling recommendations

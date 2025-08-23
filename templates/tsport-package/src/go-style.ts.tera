@@ -1,0 +1,65 @@
+/**
+ * {{ packageName }} - Go-compatible API
+ * 
+ * This file provides the Go-compatible API with PascalCase naming conventions.
+ * Maintains 100% API compatibility with the original {{ goPackageName }} Go package.
+ * 
+ * @packageDocumentation
+ * @version 1.0.0
+ * @author TSports Team
+ * @since 1.0.0
+ * 
+ * @example
+ * ```typescript
+ * import { NewFunction } from '{{ packageName }}/go-style';
+ * 
+ * // Use Go-style PascalCase naming
+ * const result = NewFunction({ Param: 'value' });
+ * console.log(result);
+ * ```
+ * 
+ * @remarks
+ * This module provides a Go-compatible interface for developers familiar with the original
+ * {{ goPackageName }} package. All function names, parameter names, and behavior match
+ * the Go implementation exactly.
+ */
+
+// TODO: Export Go-compatible API functions here
+// Example:
+// export { MainFunction as MainFunction } from './core.js';
+
+// Re-export types with Go-style naming where applicable
+export type { 
+  LibraryOptions, 
+  LibraryResult, 
+  OperationMode 
+} from './types.js';
+
+// Re-export error class
+export { LibraryError } from './types.js';
+
+/**
+ * Initialize the Go-compatible API - replace with your actual implementation
+ * 
+ * Follows Go naming conventions with PascalCase function names and parameters.
+ * This function should behave identically to the Go version.
+ * 
+ * @param Message - The message to display (Go-style PascalCase parameter)
+ * @returns void - matching Go function signature
+ * 
+ * @example
+ * ```typescript
+ * // Go-style usage
+ * InitializeLibrary('Hello from Go-style API');
+ * ```
+ * 
+ * @public
+ * @since 1.0.0
+ */
+export function InitializeLibrary(Message: string = 'Go-style API initialized'): void {
+  console.log('Go-style API for {{ packageName }} not yet implemented.');
+  console.log('Run `bun run setup` to set up the Go reference repository.');
+  console.log(Message);
+}
+
+// This file should maintain 100% API compatibility with the original Go package

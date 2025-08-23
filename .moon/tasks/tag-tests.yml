@@ -1,0 +1,17 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+tasks:
+  test:
+    command: "bun"
+    args: ["test", "--reporter=junit", "--reporter-outfile=junit.xml"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "tsconfig.json"
+    outputs:
+      - "junit.xml"
+
+  test-failed:
+    command: "bun"
+    args: ["run", "$workspaceRoot/scripts/run-failed-tests.ts"]
+    local: true

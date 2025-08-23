@@ -1,0 +1,45 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+tasks:
+  clean-build:
+    script: moon run clean && moon run build
+    options:
+      cache: false
+
+  build:
+    script: tsc --build
+    inputs:
+      - src/**/*
+      - package.json
+      - tsconfig.json
+    outputs:
+      - dist
+      
+  clean:
+    script: |
+      tsc --build --clean
+      moon clean --lifetime 0ms
+      rm -rf dist coverage
+    options:
+      cache: false
+  
+  dev:
+    command: tsc --watch
+  
+
+  typecheck:
+    command: tsc --noEmit
+    inputs:
+      - src/**/*
+      - tsconfig.json
+      - package.json
+    options:
+      cache: false
+
+  test:
+    command: bun test
+    inputs:
+      - src/**/*
+      - test/**/*
+      - package.json
+      - tsconfig.json

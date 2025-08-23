@@ -1,0 +1,79 @@
+---
+force: true
+---
+---
+title: Quick Start
+description: Get started with {{ projectName }} in minutes
+---
+
+# Quick Start
+
+This guide will help you get up and running with {{ projectName }} quickly.
+
+## Basic Usage
+
+Here's a simple example to get you started:
+
+```typescript title="example.ts"
+import {{ "{" }} main {{ "}" }} from '{{ projectName }}';
+
+// Basic usage example
+const result = main({
+  // Configuration options
+});
+
+console.log(result);
+```
+
+## Step-by-Step Tutorial
+
+### Step 1: Import the Library
+
+First, import the main functions you'll need:
+
+```typescript
+import {{ "{" }} main, {{ "}" }} from '{{ projectName }}';
+```
+
+### Step 2: Configure Your Setup
+
+Set up the basic configuration:
+
+```typescript
+const config = {
+  // Add your configuration here
+};
+```
+
+### Step 3: Use the Library
+
+Now you can start using {{ projectName }}:
+
+```typescript
+const result = main(config);
+```
+
+## Common Use Cases
+
+### Use Case 1: Basic Example
+
+```typescript
+// Example implementation
+```
+
+### Use Case 2: Advanced Configuration
+
+```typescript
+// Advanced example with custom configuration
+```
+
+## What's Next?
+
+- Explore the [core features](/features/core/)
+- Check out the [API documentation](/api/readme/)
+- Browse [examples and patterns](/examples/)
+
+## Need Help?
+
+- {%- if githubRepo %} [Open an issue]({{ githubRepo }}/issues) on GitHub{%- endif %}
+- Check the [troubleshooting guide](/troubleshooting/)

@@ -1,0 +1,197 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (test without publishing)"
+        required: false
+        default: "false"
+        type: boolean
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  release:
+    name: Release & Publish
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      go_version: ${{ steps.version.outputs.go_version }}
+      is_prerelease: ${{ steps.version.outputs.is_prerelease }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Extract version information
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # For manual dispatch, use package.json version
+            TAG=$(node -p "require('./package.json').version")
+          else
+            # For tag push, extract from tag
+            TAG=${GITHUB_REF#refs/tags/v}
+          fi
+
+          echo "version=$TAG" >> $GITHUB_OUTPUT
+
+          # Get Go source version
+          GO_VERSION=$(node -p "require('./package.json').goSourceVersion || 'unknown'")
+          echo "go_version=$GO_VERSION" >> $GITHUB_OUTPUT
+
+          # Check if it's a prerelease (contains -alpha, -beta, -rc, -tsport, etc.)
+          if [[ "$TAG" == *"-"* ]]; then
+            echo "is_prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_prerelease=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Verify package version matches tag
+        if: github.event_name == 'push'
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAG_VERSION="${{ steps.version.outputs.version }}"
+          if [ "$PACKAGE_VERSION" != "$TAG_VERSION" ]; then
+            echo "❌ Package version ($PACKAGE_VERSION) does not match tag ($TAG_VERSION)"
+            exit 1
+          fi
+          echo "✅ Version validation passed"
+
+      - name: Run validation tests
+        run: |
+          bun run lint
+          bun run build
+          bun run test
+
+      - name: Dry run check
+        if: github.event.inputs.dry_run == 'true'
+        run: |
+          echo "🏃 DRY RUN MODE - Not publishing to NPM or creating release"
+          npm pack --dry-run
+          echo "✅ Package would be published successfully"
+          echo "✅ Would create GitHub release v${{ steps.version.outputs.version }}"
+
+      - name: Publish to NPM
+        if: github.event.inputs.dry_run != 'true'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "📦 Publishing {{ packageName }}@${{ steps.version.outputs.version }}"
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm publish --access public --tag latest
+
+      - name: Create release tarball
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          tar -czf {{ projectName }}-${{ steps.version.outputs.version }}.tar.gz \
+            dist/ package.json README.md LICENSE CHANGELOG.md
+
+      - name: Generate release notes
+        if: github.event.inputs.dry_run != 'true'
+        id: release-notes
+        run: |
+          cat > release_notes.md << EOF
+          ## {{ packageName }} v${{ steps.version.outputs.version }}
+
+          A TypeScript port of the {{ goPackageName }} library with 100% API compatibility.
+
+          ### 📦 Installation
+          \`\`\`bash
+          npm install {{ packageName }}@${{ steps.version.outputs.version }}
+          # or
+          bun add {{ packageName }}@${{ steps.version.outputs.version }}
+          \`\`\`
+
+          ### 📋 Version Information
+          - **TSPort Version**: ${{ steps.version.outputs.version }}
+          - **Go Source Version**: ${{ steps.version.outputs.go_version }}
+          - **Package**: [{{ packageName }}](https://www.npmjs.com/package/{{ packageName | replace(from="@", to="") }})
+
+          ### ✨ Features
+{% if packageName contains "go-colorful" %}
+          - 🎨 Complete color space conversions (RGB, HSV, HSL, Lab, Luv, HCL, OkLab, OkLch, HSLuv, HPLuv)
+          - 📏 Color distance calculations (CIE76, CIE94, CIEDE2000)
+          - 🎭 Color blending operations
+          - 🌈 Color palette generation (warm, happy, soft palettes)
+{% elif packageName contains "go-osc52" %}
+          - 📋 OSC 52 escape sequence generation and parsing
+          - 🔄 Cross-platform clipboard operations
+          - 📝 Support for primary, secondary, and system clipboards
+          - 🎯 Terminal detection and capability querying
+{% elif packageName contains "lipgloss" %}
+          - 🎨 Terminal styling with colors, borders, padding, and alignment
+          - 📱 Responsive layout system with automatic sizing
+          - 🔲 Advanced border styles and decorative elements
+          - 📏 Text alignment, positioning, and transformation
+{% elif packageName contains "termenv" %}
+          - 🗺 Terminal environment detection and capability querying
+          - 🎨 Color profile detection (truecolor, 256-color, 16-color)
+          - 📺 Terminal feature detection (hyperlinks, bracketed paste)
+          - 📦 Cross-platform terminal environment handling
+{% elif packageName contains "uniseg" %}
+          - 🔢 Unicode grapheme cluster segmentation and width calculation
+          - 📏 Text boundary detection (word, sentence, line breaking)
+          - 🌍 Comprehensive Unicode support with latest standards
+          - 📊 East Asian width property handling for proper terminal display
+{% else %}
+          - 🔧 Complete {{ goPackageName }} API compatibility
+          - 📘 Full TypeScript type definitions
+          - 🎯 Cross-platform support
+          - 🚀 High-performance implementation
+{% endif %}
+          - 🔧 Both TypeScript and Go-style APIs
+          - 📘 Full TypeScript type definitions
+          - ✅ Comprehensive test coverage with Go compatibility verification
+
+          ### 🔗 Compatibility
+          - ✅ 100% API compatibility with Go source version
+          - ✅ All tests passing across platforms
+          - ✅ TypeScript strict mode compliant
+          - ✅ Node.js 18+ support
+          - ✅ ESM module format with tree-shaking
+
+          ### 📚 Documentation
+          - [API Documentation]({{ docsUrl | default(value="https://subtletools.github.io/" + projectName + "-tsport/") }})
+          - [GitHub Repository]({{ repositoryUrl }})
+          - [NPM Package](https://www.npmjs.com/package/{{ packageName | replace(from="@", to="") }})
+
+          ---
+
+          Published successfully to NPM! 🎉
+
+          See the [commit history]({{ repositoryUrl }}/commits/v${{ steps.version.outputs.version }}) for detailed changes.
+          EOF
+
+      - name: Create GitHub Release
+        if: github.event.inputs.dry_run != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Release v${{ steps.version.outputs.version }}"
+          body_path: release_notes.md
+          files: {{ projectName }}-${{ steps.version.outputs.version }}.tar.gz
+          prerelease: ${{ steps.version.outputs.is_prerelease }}
+          generate_release_notes: true
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && format('v{0}', steps.version.outputs.version) || github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

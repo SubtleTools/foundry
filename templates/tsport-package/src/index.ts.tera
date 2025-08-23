@@ -1,0 +1,55 @@
+/**
+ * {{ packageName }} - TypeScript port of {{ goPackageName }}
+ * 
+ * This is the main export file for the TypeScript-native API.
+ * Provides modern TypeScript patterns with camelCase naming and Promise-based async operations.
+ * 
+ * @packageDocumentation
+ * @version 1.0.0
+ * @author TSports Team
+ * @since 1.0.0
+ * 
+ * @example
+ * ```typescript
+ * import { mainFunction, MainType } from '{{ packageName }}';
+ * 
+ * const result = await mainFunction({ param: 'value' });
+ * console.log(result);
+ * ```
+ */
+
+// Export your main functions here
+// Example:
+// export { mainFunction, helperFunction } from './core.js';
+
+// Export all types for external consumption
+export type { 
+  LibraryOptions, 
+  LibraryResult, 
+  OperationMode 
+} from './types.js';
+
+// Export the error class
+export { LibraryError } from './types.js';
+
+/**
+ * Main library function - replace with your actual implementation
+ * 
+ * @param message - The message to display
+ * @returns A promise that resolves when setup is complete
+ * 
+ * @example
+ * ```typescript
+ * await initializeLibrary('Hello World');
+ * ```
+ * 
+ * @beta
+ * @since 1.0.0
+ */
+export async function initializeLibrary(message: string = 'Library initialized'): Promise<void> {
+  console.log(`Welcome to {{ packageName }} - TypeScript port of {{ goPackageName }}!`);
+  console.log('Run `bun run setup` to set up the Go reference repository.');
+  console.log(message);
+}
+
+// TODO: Replace this placeholder with your actual TypeScript port of {{ goPackageName }}

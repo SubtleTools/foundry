@@ -1,0 +1,104 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+implicitDeps:
+  - "^:build"
+
+implicitInputs:
+  - "package.json"
+  - "angular.json"
+
+fileGroups:
+  # Angular specific files
+  app:
+    - "src/main.ts"
+    - "src/index.html"
+    - "src/polyfills.ts"
+  configs:
+    - "*.{js,json,yml,yaml}"
+    - "angular.json"
+    - "tsconfig.*.json"
+    - "ng-package.json"
+  sources:
+    - "src/**/*"
+    - "public/**/*"
+  tests:
+    - "src/**/*.spec.ts"
+    - "src/**/*.test.ts"
+    - "src/test.ts"
+  styles:
+    - "src/**/*.{scss,css,sass,less}"
+    - "src/styles.scss"
+
+tasks:
+  # Angular build task (placeholder for now)
+  build:
+    command: 'echo "Angular build not yet configured for $project"'
+    inputs:
+      - "@group(app)"
+      - "@globs(sources)"
+      - "@globs(styles)"
+      - "@globs(configs)"
+
+  # Angular development server (placeholder for now)
+  dev:
+    command: 'echo "Angular dev server not yet configured for $project"'
+    local: true
+    options:
+      runInCI: false
+      persistent: true
+
+  # Angular production serve (placeholder for now)
+  start:
+    command: 'echo "Angular start not yet configured for $project"'
+    deps:
+      - "build"
+    local: true
+    options:
+      runInCI: false
+      persistent: true
+
+  # Angular testing (placeholder for now)
+  test:
+    command: 'echo "Angular tests not yet configured for $project"'
+    inputs:
+      - "@globs(sources)"
+      - "@globs(tests)"
+
+  # Angular linting (placeholder for now)
+  lint:
+    command: 'echo "Angular linting not yet configured for $project"'
+    inputs:
+      - "@globs(sources)"
+      - "@globs(configs)"
+
+  # TypeScript type checking
+  typecheck:
+    command: "tsc --noEmit -p tsconfig.app.json"
+    inputs:
+      - "@globs(sources)"
+      - "tsconfig.app.json"
+      - "tsconfig.lib.json"
+      - "/tsconfig.options.json"
+
+  # Angular library specific build (placeholder for now)
+  build-lib:
+    command: 'echo "Angular library build not yet configured for $project"'
+    inputs:
+      - "@globs(sources)"
+      - "@globs(configs)"
+
+  # Angular library watch mode (placeholder for now)
+  dev-lib:
+    command: 'echo "Angular library dev not yet configured for $project"'
+    local: true
+    options:
+      runInCI: false
+      persistent: true
+
+  # Library type checking
+  typecheck-lib:
+    command: "tsc --noEmit -p tsconfig.lib.json"
+    inputs:
+      - "@globs(sources)"
+      - "tsconfig.lib.json"
+      - "/tsconfig.options.json"

@@ -1,0 +1,33 @@
+$schema: 'https://moonrepo.dev/schemas/template.json'
+
+id: "tsport"
+title: "TSports Package"
+description: "Template for creating new TypeScript ports of Go packages in the TSports ecosystem"
+destination: "packages"
+
+variables:
+  goRepo:
+    type: "string"
+    required: true
+    prompt: "Go repository URL to port (e.g., https://github.com/charmbracelet/lipgloss)"
+    order: 1
+
+  packageName:
+    type: "string"
+    required: true
+    prompt: "TypeScript package name (e.g., @tsports/lipgloss)"
+    order: 2
+
+  goPackageName:
+    type: "string"
+    required: true
+    prompt: "Go package name (e.g., lipgloss)"
+    order: 3
+
+  # Computed variables
+  repositoryUrl:
+    type: "string"
+    required: false
+    internal: true
+    default: "https://github.com/TSports/termenv"
+

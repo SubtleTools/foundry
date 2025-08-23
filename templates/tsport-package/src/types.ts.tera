@@ -1,0 +1,85 @@
+/**
+ * {{ packageName }} - TypeScript type definitions
+ * 
+ * Core types and interfaces for the TypeScript port of {{ goPackageName }}.
+ * These types provide full type safety while maintaining compatibility with the Go API.
+ * 
+ * @packageDocumentation
+ * @version 1.0.0
+ * @author TSports Team
+ * @since 1.0.0
+ */
+
+/**
+ * Configuration options for the library
+ * 
+ * @example
+ * ```typescript
+ * const config: LibraryOptions = {
+ *   enableLogging: true,
+ *   timeout: 5000
+ * };
+ * ```
+ * 
+ * @public
+ * @since 1.0.0
+ */
+export interface LibraryOptions {
+  /** Enable debug logging */
+  enableLogging?: boolean;
+  /** Timeout in milliseconds */
+  timeout?: number;
+  /** Custom configuration object */
+  config?: Record<string, unknown>;
+}
+
+/**
+ * Result type for library operations
+ * 
+ * @example
+ * ```typescript
+ * const result: LibraryResult = {
+ *   success: true,
+ *   data: 'operation completed',
+ *   timestamp: Date.now()
+ * };
+ * ```
+ * 
+ * @public
+ * @since 1.0.0
+ */
+export interface LibraryResult {
+  /** Whether the operation was successful */
+  success: boolean;
+  /** Result data or error message */
+  data: string;
+  /** Operation timestamp */
+  timestamp: number;
+}
+
+/**
+ * Union type for different operation modes
+ * 
+ * @public
+ * @since 1.0.0
+ */
+export type OperationMode = 'sync' | 'async' | 'streaming';
+
+/**
+ * Error types that can be thrown by the library
+ * 
+ * @public
+ * @since 1.0.0
+ */
+export class LibraryError extends Error {
+  constructor(
+    message: string,
+    public readonly code: string,
+    public readonly details?: unknown
+  ) {
+    super(message);
+    this.name = 'LibraryError';
+  }
+}
+
+// TODO: Replace these example types with your actual TypeScript port types for {{ goPackageName }}
