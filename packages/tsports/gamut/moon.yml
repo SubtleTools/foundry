@@ -1,44 +1,47 @@
-language: 'typescript'
-type: 'library'
+language: "typescript"
+type: "library"
 
 tasks:
   build:
-    command: 'bun'
-    args: ['tsc', '--project', 'tsconfig.build.json']
-    deps: ['clean']
+    command: "bun"
+    args: ["tsc", "--project", "tsconfig.build.json"]
+    deps: ["clean"]
     inputs:
-      - 'src/**/*'
-      - 'tsconfig.json'
-      - 'tsconfig.build.json'
+      - "src/**/*"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
     outputs:
-      - 'dist/**/*'
+      - "dist/**/*"
 
   clean:
-    command: 'bun'
-    args: ['-e', 'const fs = require("fs"); if (fs.existsSync("dist")) fs.rmSync("dist", {recursive: true, force: true})']
+    command: "bun"
+    args: [
+      "-e",
+      'const fs = require("fs"); if (fs.existsSync("dist")) fs.rmSync("dist", {recursive: true, force: true})',
+    ]
 
   dev:
-    command: 'bun'
-    args: ['run', '--watch', 'src/index.ts']
+    command: "bun"
+    args: ["run", "--watch", "src/index.ts"]
     local: true
 
   format:
-    command: 'dprint'
-    args: ['fmt']
+    command: "dprint"
+    args: ["fmt"]
     inputs:
-      - 'src/**/*'
-      - 'test/**/*'
-      - '*.{json,md,yml,yaml}'
-      - 'biome.json'
-      - 'dprint.json'
+      - "src/**/*"
+      - "test/**/*"
+      - "*.{json,md,yml,yaml}"
+      - "biome.json"
+      - "dprint.json"
 
   lint:
-    command: 'biome'
-    args: ['check', 'src', 'test', '--no-errors-on-unmatched', '--write']
+    command: "biome"
+    args: ["check", "src", "test", "--no-errors-on-unmatched", "--write"]
     inputs:
-      - 'src/**/*'
-      - 'test/**/*'
-      - 'biome.json'
+      - "src/**/*"
+      - "test/**/*"
+      - "biome.json"
 
   prepack:
     deps:
@@ -49,25 +52,25 @@ tasks:
       - test
 
   setup:
-    command: 'bun'
-    args: ['run', 'scripts/setup-reference.ts']
+    command: "bun"
+    args: ["run", "scripts/setup-reference.ts"]
     local: true
     env:
-      GO_REPO: 'https://github.com/muesli/gamut'
+      GO_REPO: "https://github.com/muesli/gamut"
 
   test:
-    command: 'bun'
-    args: ['test']
+    command: "bun"
+    args: ["test"]
     inputs:
-      - 'src/**/*'
-      - 'test/**/*'
+      - "src/**/*"
+      - "test/**/*"
 
   version-bump-go:
-    command: 'bun'
-    args: ['run', 'scripts/bump-go-version.ts']
+    command: "bun"
+    args: ["run", "scripts/bump-go-version.ts"]
     local: true
 
   version-bump-tsport:
-    command: 'bun'
-    args: ['run', 'scripts/bump-tsport-version.ts']
+    command: "bun"
+    args: ["run", "scripts/bump-tsport-version.ts"]
     local: true

@@ -72,7 +72,9 @@ Patches are necessary to make the Go reference implementation suitable for autom
 ### Common Patch Types
 
 #### FORCE_OUTPUT.patch
+
 Forces consistent output formatting:
+
 ```diff
 -if isatty.IsTerminal(os.Stdout.Fd()) {
 +if true {  // Always force output for testing
@@ -81,7 +83,9 @@ Forces consistent output formatting:
 ```
 
 #### DISABLE_TTY.patch
+
 Disables TTY detection for consistent testing:
+
 ```diff
 -func detectTerminal() bool {
 -    return isatty.IsTerminal(os.Stdout.Fd())
@@ -91,7 +95,9 @@ Disables TTY detection for consistent testing:
 ```
 
 #### DEBUG_MODE.patch
+
 Enables debug output for detailed analysis:
+
 ```diff
 +func enableDebugMode() {
 +    debugMode = true
@@ -194,6 +200,7 @@ Different Go packages may require additional categories:
 Each TSPort project should include these standard automation scripts:
 
 #### update-snapshots.ts
+
 ```typescript
 // Regenerate all reference outputs from Go implementations
 // Runs Go test cases and captures their outputs
@@ -201,6 +208,7 @@ Each TSPort project should include these standard automation scripts:
 ```
 
 #### apply-patches.ts
+
 ```typescript
 // Apply all patches from patches/applied-patches.json
 // Validates patch application success
@@ -208,6 +216,7 @@ Each TSPort project should include these standard automation scripts:
 ```
 
 #### validate-structure.ts
+
 ```typescript
 // Validates test directory structure matches expected layout
 // Checks for required files in test cases
@@ -264,6 +273,7 @@ strategy:
 ### Automated Monitoring
 
 Set up automated monitoring for:
+
 - Go package release notifications
 - Test failure alerts
 - Performance regression detection
@@ -274,6 +284,7 @@ Set up automated monitoring for:
 While the overall structure is standardized, each TSPort project may need specific customizations:
 
 ### Environment Variables
+
 ```bash
 # Package-specific environment settings
 export PKG_SPECIFIC_VAR=value
@@ -281,12 +292,14 @@ export TEST_MODE=compatibility
 ```
 
 ### Custom Test Categories
+
 ```typescript
 // Add package-specific test categories
 const customCategories = ['parsing', 'rendering', 'networking'];
 ```
 
 ### Specialized Utilities
+
 ```typescript
 // Package-specific test utilities
 export function validatePackageOutput(output: string): boolean {

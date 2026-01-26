@@ -15,6 +15,11 @@
     "noEmit": false,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "baseUrl": ".",
+    "paths": {
+      "@dev/test-utils": ["./libs/dev/test-utils/index.ts"],
+      "@dev/test-utils/*": ["./libs/dev/test-utils/*"]
+    }
   }
 }

@@ -483,7 +483,7 @@ The automation system supports monkey-patching the reference implementation:
 
 1. **Create Patches Directory**: `mkdir -p test/automation/patches`
 2. **Track Applied Patches**: Use `applied-patches.json` to track what's been applied
-3. **Common Patches**: 
+3. **Common Patches**:
    - **FORCE_COLOR.patch** - Force color output in non-TTY environments
    - **TTY_DETECTION.patch** - Disable TTY detection for consistent testing
    - **TEST_MODE.patch** - Enable test-specific behaviors

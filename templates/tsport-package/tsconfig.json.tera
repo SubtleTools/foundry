@@ -13,7 +13,9 @@
       "#src/*": ["./src/*"],
       "#test/*": ["./test/*"],
       "@/*": ["./src/*"],
-      "~/test/*": ["./test/*"]
+      "~/test/*": ["./test/*"],
+      "@dev/test-utils": ["../../../libs/dev/test-utils/index.ts"],
+      "@dev/test-utils/*": ["../../../libs/dev/test-utils/*"]
     },
     
     // Import/Export behavior

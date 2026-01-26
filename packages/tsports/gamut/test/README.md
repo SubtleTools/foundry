@@ -44,14 +44,16 @@ The `test/corpus/` directory contains all test case definitions, organized by pa
 - **edge-case**: Error conditions, boundary values, and unusual inputs
 
 **Note**: The specific categories depend on the Go package being ported. For example:
+
 - **Color libraries**: May have `color/`, `palette/`, `conversion/` categories
-- **CLI libraries**: May have `command/`, `flag/`, `parsing/` categories  
+- **CLI libraries**: May have `command/`, `flag/`, `parsing/` categories
 - **UI libraries**: May have `layout/`, `styling/`, `interaction/` categories
 - **Parser libraries**: May have `syntax/`, `semantic/`, `lexer/` categories
 
 Each test case directory contains:
+
 - `case.go` - Go reference implementation
-- `case.ts` - TypeScript implementation  
+- `case.ts` - TypeScript implementation
 - `metadata.json` - Test case metadata
 
 The entire corpus uses a single Go module located at `test/corpus/go.mod` for simplified dependency management.
@@ -79,6 +81,7 @@ Snapshot files are named `{case-name}.go.out` and contain the expected output th
 ### 3. Test Suites
 
 #### Automated Cases (`automated-cases.test.ts`)
+
 - Discovers all test cases in the corpus
 - Runs both Go and TypeScript versions
 - Compares outputs for exact matches
@@ -86,12 +89,14 @@ Snapshot files are named `{case-name}.go.out` and contain the expected output th
 - Includes performance and consistency testing
 
 #### Examples Comparison (`examples-comparison.test.ts`)
+
 - Tests real-world examples from the Go package documentation
 - Validates output structure and content
 - Ensures examples work consistently across runs
 - Provides detailed diff analysis for failures
 
 #### Basic Unit Tests (`basic.test.ts`)
+
 - Manual unit tests for edge cases that can't be easily automated
 - TypeScript-specific functionality testing
 - Error handling and boundary condition testing
@@ -101,6 +106,7 @@ Snapshot files are named `{case-name}.go.out` and contain the expected output th
 ### Git Submodule Integration
 
 The `test/automation/reference/` directory contains a Git submodule pointing to the official Go package repository:
+
 - Automatically tracks the source Go package releases
 - Uses `patches/` directory for test-specific modifications
 - Common patches include: force output modes, disable TTY detection, test-specific configurations
@@ -130,6 +136,7 @@ bun test --filter {tag}
 ```
 
 Filter matching works on:
+
 - Test case names
 - Categories
 - Tags
@@ -138,11 +145,13 @@ Filter matching works on:
 ## Running Tests
 
 ### All Tests
+
 ```bash
 bun test
 ```
 
 ### Specific Test Suite
+
 ```bash
 bun test automated-cases.test.ts
 bun test examples-comparison.test.ts
@@ -150,12 +159,14 @@ bun test basic.test.ts
 ```
 
 ### With Filtering
+
 ```bash
 bun test --filter basic
 bun test automated-cases.test.ts --filter component
 ```
 
 ### Environment-Specific Testing
+
 ```bash
 # Test with different output modes
 FORCE_COLOR=3 bun test
@@ -213,17 +224,20 @@ done
 ## Test Utilities
 
 ### Comparison Functions (`utils/comparison.ts`)
+
 - `compareOutputs()` - Detailed output comparison with diff analysis
 - `runExample()` - Execute example programs in both Go and TypeScript
 - `formatComparisonResult()` - Format comparison results for display
 - `detectDifferences()` - Character-level difference detection
 
 ### Test Filtering (`utils/test-filter.ts`)
+
 - `getTestFilter()` - Extract filter from CLI arguments or environment
 - `applyFilter()` - Filter test arrays by name/category/tags
 - `logFilterInfo()` - Display filtering information
 
 ### Setup Utilities (`utils/setup.ts`)
+
 - `setupTestEnvironment()` - Configure test environment variables
 - `cleanupTestArtifacts()` - Clean up temporary test files
 - `validateTestStructure()` - Validate test directory structure
@@ -266,6 +280,7 @@ Add these scripts to your `package.json`:
 ### Debug Mode
 
 Enable detailed logging:
+
 ```bash
 DEBUG=1 bun test
 VERBOSE=1 bun test

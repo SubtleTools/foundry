@@ -11,7 +11,7 @@ Add this template repository to your `.moon/workspace.yml`:
 ```yaml
 generator:
   templates:
-    - 'git://github.com/tsports/tsports#main'
+    - "git://github.com/tsports/tsports#main"
 ```
 
 ### 2. Generate a new package
@@ -67,24 +67,28 @@ packages/your-package/
 ## 🎯 Features
 
 ### 🚀 **Moon Integration**
+
 - **Template variables** with interactive prompts
-- **Monorepo support** with packages/ directory structure  
+- **Monorepo support** with packages/ directory structure
 - **Moon task system** for build, test, and documentation
 - **Path aliases** with `#src/*` and `#test/*` imports
 
 ### 📚 **Automatic Documentation**
+
 - **TypeDoc integration** with TSports custom theme
 - **GitHub Pages deployment** on every push to main
 - **TSDoc comments** with examples and API references
-- **Multiple export formats** (HTML, Markdown) 
+- **Multiple export formats** (HTML, Markdown)
 
 ### 📦 **Modern Package Setup**
+
 - **Dual API support** (TypeScript-native + Go-compatible)
 - **Clean imports** with package.json imports/exports
 - **Type-safe** with comprehensive TypeScript configuration
 - **Bun-powered** build system and package management
 
 ### 🧪 **Testing & Quality**
+
 - **Compatibility testing** against Go reference implementation
 - **Cross-platform CI/CD** (Ubuntu, macOS, Windows)
 - **Import pattern testing** for all module resolution styles
@@ -121,38 +125,43 @@ import { helper } from '#test/utils.js';   # Clean test imports
 
 The template supports these variables:
 
-| Variable | Required | Description | Example |
-|----------|----------|-------------|---------|
-| `goRepo` | ✅ | Go repository URL to port | `https://github.com/rivo/uniseg` |
-| `packageName` | ✅ | TypeScript package name | `@tsports/uniseg` |
-| `description` | ❌ | Package description | `Unicode text segmentation` |
-| `keywords` | ❌ | Additional keywords | `unicode,text,grapheme` |
+| Variable      | Required | Description               | Example                          |
+| ------------- | -------- | ------------------------- | -------------------------------- |
+| `goRepo`      | ✅       | Go repository URL to port | `https://github.com/rivo/uniseg` |
+| `packageName` | ✅       | TypeScript package name   | `@tsports/uniseg`                |
+| `description` | ❌       | Package description       | `Unicode text segmentation`      |
+| `keywords`    | ❌       | Additional keywords       | `unicode,text,grapheme`          |
 
 **Auto-generated variables:**
+
 - `goPackageName` - Extracted from repository URL
-- `repositoryUrl` - Generated from package name  
+- `repositoryUrl` - Generated from package name
 - `generatedKeywords` - Smart keywords based on Go package name
 
 ## 📋 Generated Package Workflow
 
 ### Phase 1: Generation
+
 - [ ] Configure template repository in `.moon/workspace.yml`
 - [ ] Generate package with `moon generate tsport`
 - [ ] Run `bun run setup` to clone Go reference
 
-### Phase 2: Implementation  
+### Phase 2: Implementation
+
 - [ ] Analyze Go codebase in `test/reference/`
 - [ ] Implement TypeScript port in `src/index.ts`
 - [ ] Create Go-compatible API in `src/go-style.ts`
 - [ ] Add proper types in `src/types.ts` with TSDoc
 
 ### Phase 3: Documentation & Testing
+
 - [ ] Add TSDoc comments with examples
 - [ ] Generate docs with `bun run docs:build`
 - [ ] Create compatibility tests in `test/`
 - [ ] Verify all import patterns work
 
 ### Phase 4: Publishing
+
 - [ ] Enable GitHub Pages in repository settings
 - [ ] Push to main to trigger docs deployment
 - [ ] Verify automated documentation builds
@@ -163,6 +172,7 @@ The template supports these variables:
 The generated package supports multiple import styles:
 
 ### External Usage (for package consumers)
+
 ```typescript
 // Main TypeScript-native API
 import { initializeLibrary, type LibraryOptions } from '@tsports/your-package';
@@ -178,6 +188,7 @@ const { initializeLibrary } = await import('@tsports/your-package');
 ```
 
 ### Internal Development (within the package)
+
 ```typescript
 // Clean internal imports (no relative paths!)
 import { helper } from '#src/utils.js';
@@ -209,6 +220,7 @@ test('import patterns work', () => {
 ## 🎨 Generated Package Features
 
 ### 🔄 Dual API Pattern
+
 ```typescript
 // TypeScript-native (camelCase, async/await)
 import { graphemeCount } from '@tsports/uniseg';
@@ -220,7 +232,8 @@ const count = GraphemeCount(text);
 ```
 
 ### 📝 Documentation Integration
-```typescript
+
+````typescript
 /**
  * Count grapheme clusters in text
  * 
@@ -236,9 +249,10 @@ const count = GraphemeCount(text);
  * @since 1.0.0
  */
 export async function graphemeCount(text: string): Promise<number>;
-```
+````
 
 ### 🏗️ Clean Architecture
+
 - **Source organization** with logical module separation
 - **Type definitions** with comprehensive TSDoc
 - **Test structure** with compatibility verification
@@ -249,12 +263,13 @@ export async function graphemeCount(text: string): Promise<number>;
 To extend or modify this template:
 
 1. **Fork the repository** with the template
-2. **Modify template files** in the `tsport/` directory  
+2. **Modify template files** in the `tsport/` directory
 3. **Update template.yml** with new variables if needed
 4. **Test with Moon generate** to verify changes work
 5. **Update this README** with your modifications
 
 ### Adding New Variables
+
 ```yaml
 # In template.yml
 variables:
@@ -289,9 +304,9 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🏆 Packages Using This Template
 
-- [`@tsports/uniseg`](https://github.com/tsports/uniseg) - Unicode text segmentation  
+- [`@tsports/uniseg`](https://github.com/tsports/uniseg) - Unicode text segmentation
 - [`@tsports/lipgloss`](https://github.com/tsports/lipgloss) - Terminal styling
-- *Add your package here via PR!*
+- _Add your package here via PR!_
 
 ---
 
