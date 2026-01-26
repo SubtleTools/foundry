@@ -4,7 +4,7 @@
  * Core types and interfaces for the TypeScript port of gamut.
  */
 
-import { Color as ColorfulColor } from '@tsports/go-colorful';
+import type { Color as ColorfulColor } from '@tsports/go-colorful';
 
 /**
  * Color represents a color with a name and a reference URL.

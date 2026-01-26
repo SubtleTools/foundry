@@ -60,4 +60,4 @@ export { Role } from './theme/roles.js';
 
 // Re-export Theme and Role
 export { MonokaiTheme, Theme } from './theme/themes.js';
-export type { Color, Colors, ColorfulColor } from './types.js';
+export type { Color, ColorfulColor, Colors } from './types.js';

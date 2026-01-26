@@ -6,7 +6,7 @@
 
 import { MakeColor } from '@tsports/go-colorful';
 import { Monokai } from '../palette/index.js';
-import type { Colors, Color } from '../types.js';
+import type { Color, Colors } from '../types.js';
 import { Role } from './roles.js';
 
 /**
