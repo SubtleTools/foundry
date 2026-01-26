@@ -22,9 +22,9 @@ jobs:
     permissions:
       contents: write
     outputs:
-      version: ${{ steps.version.outputs.version }}
-      go_version: ${{ steps.version.outputs.go_version }}
-      is_prerelease: ${{ steps.version.outputs.is_prerelease }}
+      version: {% raw %}${{ steps.version.outputs.version }}{% endraw %}
+      go_version: {% raw %}${{ steps.version.outputs.go_version }}{% endraw %}
+      is_prerelease: {% raw %}${{ steps.version.outputs.is_prerelease }}{% endraw %}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: {% raw %}${{ env.NODE_VERSION }}{% endraw %}
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
       - name: Extract version information
         id: version
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "{% raw %}${{ github.event_name }}{% endraw %}" = "workflow_dispatch" ]; then
             # For manual dispatch, use package.json version
             TAG=$(node -p "require('./package.json').version")
           else
@@ -71,7 +71,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          TAG_VERSION="${{ steps.version.outputs.version }}"
+          TAG_VERSION="{% raw %}${{ steps.version.outputs.version }}{% endraw %}"
           if [ "$PACKAGE_VERSION" != "$TAG_VERSION" ]; then
             echo "❌ Package version ($PACKAGE_VERSION) does not match tag ($TAG_VERSION)"
             exit 1
@@ -90,21 +90,21 @@ jobs:
           echo "🏃 DRY RUN MODE - Not publishing to NPM or creating release"
           npm pack --dry-run
           echo "✅ Package would be published successfully"
-          echo "✅ Would create GitHub release v${{ steps.version.outputs.version }}"
+          echo "✅ Would create GitHub release v{% raw %}${{ steps.version.outputs.version }}{% endraw %}"
 
       - name: Publish to NPM
         if: github.event.inputs.dry_run != 'true'
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: {% raw %}${{ secrets.NPM_TOKEN }}{% endraw %}
         run: |
-          echo "📦 Publishing {{ packageName }}@${{ steps.version.outputs.version }}"
+          echo "📦 Publishing {{ packageName }}@{% raw %}${{ steps.version.outputs.version }}{% endraw %}"
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           npm publish --access public --tag latest
 
       - name: Create release tarball
         if: github.event.inputs.dry_run != 'true'
         run: |
-          tar -czf {{ projectName }}-${{ steps.version.outputs.version }}.tar.gz \
+          tar -czf {{ goPackageName }}-{% raw %}${{ steps.version.outputs.version }}{% endraw %}.tar.gz \
             dist/ package.json README.md LICENSE CHANGELOG.md
 
       - name: Generate release notes
@@ -112,44 +112,44 @@ jobs:
         id: release-notes
         run: |
           cat > release_notes.md << EOF
-          ## {{ packageName }} v${{ steps.version.outputs.version }}
+          ## {{ packageName }} v{% raw %}${{ steps.version.outputs.version }}{% endraw %}
 
           A TypeScript port of the {{ goPackageName }} library with 100% API compatibility.
 
           ### 📦 Installation
           \`\`\`bash
-          npm install {{ packageName }}@${{ steps.version.outputs.version }}
+          npm install {{ packageName }}@{% raw %}${{ steps.version.outputs.version }}{% endraw %}
           # or
-          bun add {{ packageName }}@${{ steps.version.outputs.version }}
+          bun add {{ packageName }}@{% raw %}${{ steps.version.outputs.version }}{% endraw %}
           \`\`\`
 
           ### 📋 Version Information
-          - **TSPort Version**: ${{ steps.version.outputs.version }}
-          - **Go Source Version**: ${{ steps.version.outputs.go_version }}
+          - **TSPort Version**: {% raw %}${{ steps.version.outputs.version }}{% endraw %}
+          - **Go Source Version**: {% raw %}${{ steps.version.outputs.go_version }}{% endraw %}
           - **Package**: [{{ packageName }}](https://www.npmjs.com/package/{{ packageName | replace(from="@", to="") }})
 
           ### ✨ Features
-{% if packageName contains "go-colorful" %}
+{% if packageName is containing("go-colorful") %}
           - 🎨 Complete color space conversions (RGB, HSV, HSL, Lab, Luv, HCL, OkLab, OkLch, HSLuv, HPLuv)
           - 📏 Color distance calculations (CIE76, CIE94, CIEDE2000)
           - 🎭 Color blending operations
           - 🌈 Color palette generation (warm, happy, soft palettes)
-{% elif packageName contains "go-osc52" %}
+{% elif packageName is containing("go-osc52") %}
           - 📋 OSC 52 escape sequence generation and parsing
           - 🔄 Cross-platform clipboard operations
           - 📝 Support for primary, secondary, and system clipboards
           - 🎯 Terminal detection and capability querying
-{% elif packageName contains "lipgloss" %}
+{% elif packageName is containing("lipgloss") %}
           - 🎨 Terminal styling with colors, borders, padding, and alignment
           - 📱 Responsive layout system with automatic sizing
           - 🔲 Advanced border styles and decorative elements
           - 📏 Text alignment, positioning, and transformation
-{% elif packageName contains "termenv" %}
+{% elif packageName is containing("termenv") %}
           - 🗺 Terminal environment detection and capability querying
           - 🎨 Color profile detection (truecolor, 256-color, 16-color)
           - 📺 Terminal feature detection (hyperlinks, bracketed paste)
           - 📦 Cross-platform terminal environment handling
-{% elif packageName contains "uniseg" %}
+{% elif packageName is containing("uniseg") %}
           - 🔢 Unicode grapheme cluster segmentation and width calculation
           - 📏 Text boundary detection (word, sentence, line breaking)
           - 🌍 Comprehensive Unicode support with latest standards
@@ -172,7 +172,7 @@ jobs:
           - ✅ ESM module format with tree-shaking
 
           ### 📚 Documentation
-          - [API Documentation]({{ docsUrl | default(value="https://subtletools.github.io/" + projectName + "-tsport/") }})
+          - [API Documentation]({{ docsUrl | default(value="https://subtletools.github.io/" ~ goPackageName ~ "-tsport/") }})
           - [GitHub Repository]({{ repositoryUrl }})
           - [NPM Package](https://www.npmjs.com/package/{{ packageName | replace(from="@", to="") }})
 
@@ -180,18 +180,18 @@ jobs:
 
           Published successfully to NPM! 🎉
 
-          See the [commit history]({{ repositoryUrl }}/commits/v${{ steps.version.outputs.version }}) for detailed changes.
+          See the [commit history]({{ repositoryUrl }}/commits/v{% raw %}${{ steps.version.outputs.version }}{% endraw %}) for detailed changes.
           EOF
 
       - name: Create GitHub Release
         if: github.event.inputs.dry_run != 'true'
         uses: softprops/action-gh-release@v2
         with:
-          name: "Release v${{ steps.version.outputs.version }}"
+          name: "Release v{% raw %}${{ steps.version.outputs.version }}{% endraw %}"
           body_path: release_notes.md
-          files: {{ projectName }}-${{ steps.version.outputs.version }}.tar.gz
-          prerelease: ${{ steps.version.outputs.is_prerelease }}
+          files: {{ goPackageName }}-{% raw %}${{ steps.version.outputs.version }}{% endraw %}.tar.gz
+          prerelease: {% raw %}${{ steps.version.outputs.is_prerelease }}{% endraw %}
           generate_release_notes: true
-          tag_name: ${{ github.event_name == 'workflow_dispatch' && format('v{0}', steps.version.outputs.version) || github.ref_name }}
+          tag_name: {% raw %}${{ github.event_name == 'workflow_dispatch' && format('v{0}', steps.version.outputs.version) || github.ref_name }}{% endraw %}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}

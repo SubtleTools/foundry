@@ -1,0 +1,5 @@
+{
+  "skip": true,
+  "reason": "Uses unseeded RNG - output is non-deterministic",
+  "notes": "K-means clustering initializes centroids randomly. Would need seeded RNG in both Go and TS for deterministic comparison."
+}

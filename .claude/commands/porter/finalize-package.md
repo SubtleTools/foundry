@@ -1,40 +1,142 @@
 # Finalize TSPort Package
 
-Use the porter agent to complete and finalize a TSPort package for publication.
+Complete and finalize a TSPort package for publication, ensuring all quality gates are met.
 
-**Arguments:**
-- $PACKAGE_PATH - Path to the TSPort package to finalize
+**Arguments:** `$ARGUMENTS`
+- `PACKAGE_PATH` - Path to the TSPort package to finalize (e.g., `packages/tsports/go-colorful`)
 
-**Steps:**
+## Pre-Finalization Checklist
 
-1. Use the porter agent to complete the package finalization process  
-2. The agent will:
-   - Verify all core functionality is implemented and tested
-   - Update documentation with TypeScript-specific examples
-   - Ensure README.md has proper usage examples and API documentation
-   - Verify TSPort versioning strategy is properly configured
-   - Run full test suite and compatibility checks
-   - Validate CI/CD workflows and publishing configuration
-   - Create final commit with package completion
-   - Provide publishing instructions and next steps
+Before proceeding, verify these requirements are met:
 
-**Usage Examples:**
+| Requirement | Command to Verify |
+|-------------|------------------|
+| Core functionality implemented | Review `port_status.md` - all files should be "Complete" |
+| TypeScript compiles | `moon run build` - zero errors |
+| Tests pass | `moon run test` - all green |
+| Go compatibility verified | `/porter:check-compatibility $PACKAGE_PATH` |
+
+## Workflow
+
+### Step 1: Final Build Verification
 ```bash
-/porter finalize-package packages/tsports/go-colorful
-/porter finalize-package packages/tsports/bubbletea
+cd $PACKAGE_PATH
+moon run build   # MUST pass with zero errors
+moon run test    # All tests MUST pass
 ```
 
-**Finalization Checklist:**
-- ✅ Core functionality fully implemented
-- ✅ Comprehensive test suite with 100% compatibility
-- ✅ Documentation updated with TypeScript examples  
-- ✅ TSPort versioning configured correctly
-- ✅ CI/CD workflows configured and tested
-- ✅ Publishing workflows ready for NPM
-- ✅ Migration guide from Go to TypeScript provided
-- ✅ All TypeScript compilation errors resolved
+### Step 2: Documentation Review
 
-**Output:**
-- Package ready for publishing to NPM
-- Complete documentation and examples
-- Publishing instructions and version management guide
+**Required Documentation Files:**
+- `README.md` - Package overview, installation, usage examples
+- `CHANGELOG.md` - Version history and changes
+- `port_status.md` - Complete port tracking (all files "Complete")
+- `compatibility_report.md` - Verification results
+
+**README.md Must Include:**
+1. Package description and purpose
+2. Installation instructions (using Bun)
+3. Quick start / basic usage examples
+4. API overview with code examples
+5. TypeScript-specific notes (vs Go original)
+6. Migration guide for Go users
+7. Link to Go original repository
+
+### Step 3: Update Dual API Exports
+
+Verify both API styles are properly exported:
+
+**`src/index.ts`** - TypeScript-native API:
+```typescript
+// Idiomatic TypeScript API
+export { Color } from './color';
+export { hex, rgb } from './functions';
+```
+
+**`src/go-style.ts`** - Go-compatible API:
+```typescript
+// Go-style API for easier migration
+export { Hex, RGB, NewColor } from './go-compat';
+```
+
+### Step 4: Package.json Verification
+
+Ensure `package.json` includes:
+```json
+{
+  "name": "@tsports/<package-name>",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./src/index.ts",
+    "./go-style": "./src/go-style.ts"
+  },
+  "types": "./src/index.ts",
+  "files": ["src", "README.md", "LICENSE"],
+  "keywords": ["tsports", "go-port", "<relevant-keywords>"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/tsports",
+    "directory": "packages/tsports/<package-name>"
+  }
+}
+```
+
+### Step 5: Final Port Status Update
+
+Update `port_status.md` to final state:
+
+```markdown
+# Port Status: <package-name>
+
+## Status: ✅ COMPLETE
+
+| Go File | TS File | Status | Notes |
+|---------|---------|--------|-------|
+| `color.go` | `src/color.ts` | ✅ Complete | Fully ported |
+| `utils.go` | `src/utils.ts` | ✅ Complete | Fully ported |
+
+## Compatibility
+- All tests passing
+- 100% API coverage
+- See `compatibility_report.md` for details
+```
+
+### Step 6: CI/CD Verification
+
+Verify GitHub workflows are configured:
+- `.github/workflows/ci.yml` - Build and test on PR
+- `.github/workflows/release.yml` - NPM publishing on release
+
+### Step 7: Final Commit
+```bash
+moon run build  # Final verification
+moon run test   # Final test run
+git add .
+git commit -m "feat(<package>): finalize package for release"
+```
+
+### Step 8: Provide Publishing Instructions
+
+Output next steps for the user:
+1. Create a Git tag: `git tag @tsports/<package>@0.1.0`
+2. Push tag to trigger release: `git push origin @tsports/<package>@0.1.0`
+3. Verify NPM publish via GitHub Actions
+
+## Finalization Checklist Summary
+
+- [ ] All Go files ported (check `port_status.md`)
+- [ ] `moon run build` passes with zero errors
+- [ ] `moon run test` passes all tests
+- [ ] Compatibility report shows 100% API coverage
+- [ ] README.md has complete documentation
+- [ ] CHANGELOG.md has initial version entry
+- [ ] Dual API exports configured (index.ts, go-style.ts)
+- [ ] package.json properly configured
+- [ ] CI/CD workflows verified
+- [ ] Final commit created
+
+## Usage Examples
+```bash
+/porter:finalize-package packages/tsports/go-colorful
+/porter:finalize-package packages/tsports/bubbletea
+```

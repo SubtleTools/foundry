@@ -15,7 +15,7 @@ jobs:
     name: Quick Check
     runs-on: ubuntu-latest
     outputs:
-      should-skip: {% raw %}${{ steps.skip-check.outputs.should_skip }}{% endraw %}
+      should-skip: ${{ steps.skip-check.outputs.should_skip }}
     steps:
       - name: Check for duplicate runs
         id: skip-check
@@ -56,8 +56,8 @@ jobs:
 
   # Comprehensive test matrix - runs after quick check passes
   test-matrix:
-    name: Test ({% raw %}${{ matrix.os }}{% endraw %}, Node {% raw %}${{ matrix.node-version }}{% endraw %})
-    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    name: Test (${{ matrix.os }}, Node ${{ matrix.node-version }})
+    runs-on: ${{ matrix.os }}
     needs: quick-check
     if: needs.quick-check.outputs.should-skip != 'true'
     strategy:
@@ -79,10 +79,10 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Setup Node.js {% raw %}${{ matrix.node-version }}{% endraw %}
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: {% raw %}${{ matrix.node-version }}{% endraw %}
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: bun install
@@ -97,7 +97,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-{% raw %}${{ matrix.os }}{% endraw %}-node{% raw %}${{ matrix.node-version }}{% endraw %}
+          name: test-results-${{ matrix.os }}-node${{ matrix.node-version }}
           path: |
             test-results.xml
             coverage/
@@ -121,7 +121,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: {% raw %}${{ env.NODE_VERSION_PRIMARY }}{% endraw %}
+          node-version: ${{ env.NODE_VERSION_PRIMARY }}
 
       - name: Install dependencies
         run: bun install
@@ -135,7 +135,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
-          token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
+          token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
 
       - name: Upload build artifacts
@@ -182,10 +182,10 @@ jobs:
     steps:
       - name: Check all jobs status
         run: |
-          if [ "{% raw %}${{ needs.quick-check.result }}{% endraw %}" = "success" ] && \
-             [ "{% raw %}${{ needs.test-matrix.result }}{% endraw %}" = "success" ] && \
-             [ "{% raw %}${{ needs.build-and-coverage.result }}{% endraw %}" = "success" ] && \
-             [ "{% raw %}${{ needs.docs.result }}{% endraw %}" = "success" ]; then
+          if [ "${{ needs.quick-check.result }}" = "success" ] && \
+             [ "${{ needs.test-matrix.result }}" = "success" ] && \
+             [ "${{ needs.build-and-coverage.result }}" = "success" ] && \
+             [ "${{ needs.docs.result }}" = "success" ]; then
             echo "✅ All CI jobs passed!"
           else
             echo "❌ Some CI jobs failed"

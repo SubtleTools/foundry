@@ -2,26 +2,70 @@
 
 Create a new TypeScript port from a Go package using the Moon template system.
 
-**Arguments:**
-- $GO_REPO_URL - The Go repository URL to port
-- $PACKAGE_NAME - The TypeScript package name (e.g., @tsports/package-name) 
-- $DESCRIPTION - Package description
+**Arguments:** `$ARGUMENTS`
+Parse from arguments or prompt for:
+- `GO_REPO_URL` - The Go repository URL to port
+- `PACKAGE_NAME` - The TypeScript package name (e.g., @tsports/package-name)
+- `DESCRIPTION` - Package description
 
-**Steps:**
+## Workflow
 
-1. Use the porter agent to create a new TSPort package following the established methodology
-2. The agent will:
-   - Collect all required arguments (Go repo URL, package name, description)
-   - Generate the package using Moon template system
-   - Set up the proper package structure under packages/tsports/
-   - Configure all template variables and files
-   - Clone the Go reference repository for testing
-   - Provide guidance for next implementation steps
+### Step 1: Collect Arguments
+If any arguments are missing, ask the user for them before proceeding. Suggest `@tsports/[package-name]` format for package names.
 
-**Usage Examples:**
+### Step 2: Generate Package via Moon Template
 ```bash
-/porter new-tsport https://github.com/charmbracelet/bubbletea @tsports/bubbletea "TUI framework based on Elm Architecture"
-/porter new-tsport https://github.com/muesli/termenv @tsports/termenv "Terminal environment detection"
+moon generate tsport-package -- --goRepo="$GO_REPO_URL" --packageName="$PACKAGE_NAME" --description="$DESCRIPTION"
 ```
 
-**Note:** If arguments are not provided, the porter agent will interactively collect them before proceeding.
+**CRITICAL: NEVER manually create package files - the Moon template is MANDATORY.**
+
+### Step 3: Set Up Go Reference
+```bash
+cd packages/tsports/<package-name>  # Use package name without @tsports/ prefix
+bun run setup
+```
+
+### Step 4: Create Port Status Tracker
+Immediately create `port_status.md` in the package root with this structure:
+
+```markdown
+# Port Status: <package-name>
+
+| Go File | TS File | Status | Notes |
+|---------|---------|--------|-------|
+| `main.go` | `src/index.ts` | Pending | Not started |
+```
+
+Update this tracker after EVERY implementation step.
+
+### Step 5: Initial Commit
+```bash
+moon run build  # MUST pass with zero errors
+git add .
+git commit -m "feat(<package-name>): initialize tsport package structure"
+```
+
+## Generated Structure
+```
+packages/tsports/<package-name>/
+├── src/
+│   ├── index.ts              # TypeScript-native API
+│   ├── go-style.ts           # Go-compatible API
+│   └── types.ts              # Core types and interfaces
+├── test/
+│   ├── reference/            # Go reference (created by setup)
+│   ├── basic.test.ts         # Basic test template
+│   └── automated-cases.test.ts # Compatibility testing
+├── scripts/
+│   └── setup-reference.ts    # Go reference setup script
+├── moon.yml                  # Moon task configuration
+├── package.json              # Package configuration
+└── tsconfig.json             # TypeScript configuration
+```
+
+## Usage Examples
+```bash
+/porter:new-tsport https://github.com/charmbracelet/bubbletea @tsports/bubbletea "TUI framework based on Elm Architecture"
+/porter:new-tsport https://github.com/muesli/termenv @tsports/termenv "Terminal environment detection"
+```
