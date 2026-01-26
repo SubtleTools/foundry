@@ -46,17 +46,25 @@ moon run test    # All tests MUST pass
 
 Verify both API styles are properly exported:
 
-**`src/index.ts`** - TypeScript-native API:
+**`src/index.ts`** - TypeScript-native API (camelCase):
 ```typescript
-// Idiomatic TypeScript API
+// Idiomatic TypeScript API - ALL camelCase
 export { Color } from './color';
-export { hex, rgb } from './functions';
+export { hex, rgb, lighter, darker } from './functions';
+export { Palette } from './palette';
 ```
 
-**`src/go-style.ts`** - Go-compatible API:
+**`src/go-style.ts`** - Go-compatible API (PascalCase):
 ```typescript
-// Go-style API for easier migration
-export { Hex, RGB, NewColor } from './go-compat';
+// Go-style API for easier migration - ALL PascalCase
+// Thin wrapper over TypeScript-native implementation
+import { hex, rgb, lighter, darker } from './functions';
+
+export const Hex = hex;
+export const RGB = rgb;
+export const Lighter = lighter;
+export const Darker = darker;
+export { Color, Palette } from './index';
 ```
 
 ### Step 4: Package.json Verification

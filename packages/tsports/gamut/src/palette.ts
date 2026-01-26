@@ -12,7 +12,7 @@ import { wagnerFischer } from './utils.js';
  * Palette is a collection of colors.
  */
 export class Palette {
-  // Map of color hex string to list of NamedColors with that color value
+  // Map of color hex string to list of Colors with that color value
   // Corresponds to Go's map[color.Color]Colors
   private _colors: Map<string, Colors>;
 
@@ -114,7 +114,10 @@ export class Palette {
     for (const v of this._colors.values()) {
       if (v.length === 0) continue;
 
-      const [col] = MakeColor(v[0]?.color);
+      const firstColor = v[0];
+      if (!firstColor) continue;
+
+      const [col] = MakeColor(firstColor.color);
 
       const nd = col.distanceLab(c);
       if (nd < d || d === -1) {

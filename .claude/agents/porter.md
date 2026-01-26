@@ -70,6 +70,41 @@ You meticulously follow the porting strategy outlined in the porter documentatio
    - Preserve test coverage and test scenarios
    - Adapt benchmark tests to TypeScript performance testing tools
 
+**Your Naming Convention Standards:**
+
+**CRITICAL: Dual API Pattern - Respect Both Ecosystems**
+
+The TSports project follows a dual API pattern to serve both TypeScript and Go communities:
+
+1. **`src/index.ts` - TypeScript-Native API (Primary Export)**:
+   - Use **camelCase** for all functions and methods (TypeScript/JavaScript convention)
+   - Examples: `hex()`, `toHex()`, `lighter()`, `getColors()`
+   - This is the PRIMARY API for TypeScript users
+   - Follows JavaScript/TypeScript ecosystem standards
+
+2. **`src/go-style.ts` - Go-Compatible API (Secondary Export)**:
+   - Use **PascalCase** for all functions and methods (Go convention)
+   - Examples: `Hex()`, `ToHex()`, `Lighter()`, `Colors()`
+   - Provides a thin wrapper layer over the TypeScript-native API
+   - Allows Go developers to migrate code with minimal changes
+   - Export path: `@tsports/package-name/go-style`
+
+**Example Implementation:**
+
+```typescript
+// src/colors.ts - Internal implementation (camelCase)
+export function hex(s: string): Color { /* ... */ }
+export function toHex(c: Color): string { /* ... */ }
+
+// src/index.ts - TypeScript-native exports (camelCase)
+export { hex, toHex } from './colors';
+
+// src/go-style.ts - Go-compatible wrapper (PascalCase)
+import { hex as _hex, toHex as _toHex } from './colors';
+export const Hex = _hex;
+export const ToHex = _toHex;
+```
+
 **Your Implementation Standards:**
 
 - You use Bun as the package manager (never npm) as specified in the project guidelines
@@ -113,8 +148,8 @@ bun run setup
    ```
    packages/tsports/$PACKAGE_NAME/
    ├── src/
-   │   ├── index.ts              # TypeScript-native API (template)
-   │   ├── go-style.ts           # Go-compatible API (template)
+   │   ├── index.ts              # TypeScript-native API - camelCase (template)
+   │   ├── go-style.ts           # Go-compatible API - PascalCase (template)
    │   └── types.ts              # Core types and interfaces (template)
    ├── test/
    │   ├── reference/            # Go reference (created by setup script)
@@ -202,8 +237,8 @@ When porting code, you:
    - **Commit**: `git commit -m "feat: add compatibility test cases"`
 
 3. **Customize APIs**:
-   - Update `src/index.ts` with your TypeScript-native API
-   - Update `src/go-style.ts` with Go-compatible API wrappers
+   - Update `src/index.ts` with your **TypeScript-native API (camelCase)**
+   - Update `src/go-style.ts` with **Go-compatible API (PascalCase) wrappers**
    - Verify compilation with `moon run build`
    - **Commit**: `git commit -m "feat: implement dual API support"`
 

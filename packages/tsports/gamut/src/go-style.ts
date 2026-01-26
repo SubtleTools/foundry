@@ -45,7 +45,6 @@ export const Darker = wrapFn(colors.darker);
 
 // Re-export Generator functions and types
 export const Generate = wrapFn(generator.generate);
-export { Color } from '@tsports/go-colorful/go-style';
 export type { ColorGenerator } from './generator.js';
 export {
   BroadGranularity,
@@ -61,4 +60,4 @@ export { Role } from './theme/roles.js';
 
 // Re-export Theme and Role
 export { MonokaiTheme, Theme } from './theme/themes.js';
-export type { Colors, NamedColor } from './types.js';
+export type { Color, Colors, ColorfulColor } from './types.js';

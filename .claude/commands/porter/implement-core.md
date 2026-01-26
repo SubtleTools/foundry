@@ -367,7 +367,77 @@ setTimeout(() => controller.abort(), 5000);
 await fetch(url, { signal });
 ```
 
-### Step 5: Implementation Loop
+### Step 5: Naming Convention Strategy
+
+**CRITICAL: Dual API Pattern**
+
+Implement using TypeScript conventions, then provide Go-compatible wrappers:
+
+**Internal Implementation (camelCase):**
+```typescript
+// src/colors.ts - All internal code uses camelCase
+export function hex(s: string): Color { /* ... */ }
+export function toHex(c: Color): string { /* ... */ }
+export function lighter(c: Color, amount: number): Color { /* ... */ }
+
+export class Palette {
+  getColors(): Colors { /* ... */ }
+  addColors(colors: Colors): Palette { /* ... */ }
+  clamped(): Palette { /* ... */ }
+}
+```
+
+**TypeScript-Native API (src/index.ts):**
+```typescript
+// Export camelCase API as primary
+export { hex, toHex, lighter } from './colors';
+export { Palette } from './palette';
+```
+
+**Go-Compatible API (src/go-style.ts):**
+```typescript
+// Thin wrapper providing PascalCase aliases
+import { hex, toHex, lighter } from './colors';
+import { Palette as TSPalette } from './palette';
+
+// Re-export with Go naming
+export const Hex = hex;
+export const ToHex = toHex;
+export const Lighter = lighter;
+
+// For classes, you can either:
+// Option 1: Re-export and document that methods are camelCase
+export { Palette } from './palette';
+
+// Option 2: Create a wrapper class with PascalCase methods
+export class Palette {
+  private _palette: TSPalette;
+
+  constructor() { this._palette = new TSPalette(); }
+
+  Colors(): Colors { return this._palette.getColors(); }
+  AddColors(colors: Colors): Palette {
+    this._palette.addColors(colors);
+    return this;
+  }
+  Clamped(): Palette {
+    this._palette.clamped();
+    return this;
+  }
+}
+```
+
+**Package.json exports:**
+```json
+{
+  "exports": {
+    ".": "./src/index.ts",           // TypeScript-native (camelCase)
+    "./go-style": "./src/go-style.ts" // Go-compatible (PascalCase)
+  }
+}
+```
+
+### Step 6: Implementation Loop
 
 For each Go file, repeat this cycle:
 
@@ -390,7 +460,7 @@ If `moon run build` fails:
 - Re-run `moon run build` until it passes
 - Only then proceed with git commit
 
-### Step 6: Error Handling Conversion
+### Step 7: Error Handling Conversion
 - Go multiple return values with errors → Result types or exceptions
 - Implement proper error types matching Go's error patterns
 - Maintain error context and wrapping strategies (like `fmt.Errorf` with `%w`)

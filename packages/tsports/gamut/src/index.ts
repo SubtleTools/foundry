@@ -17,4 +17,4 @@ export { Palette } from './palette.js';
 // Re-export themes
 export * as theme from './theme/index.js';
 // Re-export types
-export type { Colors, NamedColor } from './types.js';
+export type { Color, Colors, ColorfulColor } from './types.js';

@@ -6,7 +6,7 @@
 
 import { MakeColor } from '@tsports/go-colorful';
 import { Monokai } from '../palette/index.js';
-import type { Colors, NamedColor } from '../types.js';
+import type { Colors, Color } from '../types.js';
 import { Role } from './roles.js';
 
 /**
@@ -14,7 +14,7 @@ import { Role } from './roles.js';
  */
 export class Theme {
   public name: string;
-  private colorsMap: Map<Role, NamedColor>;
+  private colorsMap: Map<Role, Color>;
 
   constructor(name: string) {
     this.name = name;
@@ -24,14 +24,14 @@ export class Theme {
   /**
    * SetRole sets the theme's color for a specific role
    */
-  setRole(r: Role, c: NamedColor): void {
+  setRole(r: Role, c: Color): void {
     this.colorsMap.set(r, c);
   }
 
   /**
    * Role returns the theme's color for a specific role
    */
-  role(r: Role): NamedColor | undefined {
+  role(r: Role): Color | undefined {
     return this.colorsMap.get(r);
   }
 
@@ -39,7 +39,7 @@ export class Theme {
    * Colors returns all (unique) colors used in this theme
    */
   colors(): Colors {
-    const cm = new Map<string, NamedColor>();
+    const cm = new Map<string, Color>();
     for (const c of this.colorsMap.values()) {
       const [cc] = MakeColor(c.color);
       const hex = cc.hex();

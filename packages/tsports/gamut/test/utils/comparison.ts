@@ -3,18 +3,18 @@
  */
 
 export {
+  compareAnsiRgb,
+  compareHexColors,
   compareOutputs,
   formatDifferences,
-  compareHexColors,
-  normalizeHexColorsInJson,
-  compareAnsiRgb,
   normalizeAnsiRgbSequences,
+  normalizeHexColorsInJson,
 } from '@dev/test-utils/comparison';
 
-export { runTestCase, runBothTestCases } from '@dev/test-utils/execution';
+export { runBothTestCases, runTestCase } from '@dev/test-utils/execution';
 
 export type {
-  ComparisonResult,
   ComparisonDifference,
   ComparisonOptions,
+  ComparisonResult,
 } from '@dev/test-utils/types';
