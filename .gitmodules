@@ -1,9 +1,21 @@
 [submodule "templates/tsport-package"]
 	path = templates/tsport-package
 	url = git@github.com:SubtleTools/tsport-template.git
-[submodule "test/automation/reference"]
-	path = test/automation/reference
+[submodule "upstream/go-colorful"]
+	path = upstream/go-colorful
+	url = https://github.com/lucasb-eyer/go-colorful.git
+[submodule "upstream/gamut"]
+	path = upstream/gamut
+	url = https://github.com/muesli/gamut.git
+[submodule "upstream/go-osc52"]
+	path = upstream/go-osc52
+	url = https://github.com/aymanbagabas/go-osc52.git
+[submodule "upstream/lipgloss"]
+	path = upstream/lipgloss
+	url = https://github.com/charmbracelet/lipgloss.git
+[submodule "upstream/termenv"]
+	path = upstream/termenv
+	url = https://github.com/muesli/termenv.git
+[submodule "upstream/uniseg"]
+	path = upstream/uniseg
 	url = https://github.com/rivo/uniseg.git
-[submodule "templates/docs-site"]
-	path = templates/docs-site
-	url = https://github.com/SubtleTools/docs-site-template.git

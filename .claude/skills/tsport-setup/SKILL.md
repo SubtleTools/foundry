@@ -46,14 +46,14 @@ moon generate tsport-package -- \
   --description="Color manipulation library"
 ```
 
-### Step 3: Set Up Go Reference
+### Step 3: Set Up Go Upstream Source
 
 ```bash
 # Navigate to package (use name WITHOUT @tsports/ prefix)
 cd packages/tsports/<PACKAGE_NAME>
 
-# Run setup script (clones Go source to test/reference/)
-bun run setup
+# Initialize the upstream submodule (Go source at upstream/<pkg>)
+git submodule update --init upstream/<PACKAGE_NAME>
 ```
 
 ### Step 4: Create Port Status Tracker
@@ -99,12 +99,10 @@ packages/tsports/<package-name>/
 │   ├── index.ts              # TypeScript-native API (camelCase)
 │   ├── go-style.ts           # Go-compatible API (PascalCase)
 │   └── types.ts              # Core types and interfaces
+├── upstream/<pkg>/           # Go upstream source (git submodule)
 ├── test/
-│   ├── reference/            # Go reference (created by setup script)
 │   ├── basic.test.ts         # Basic test template
 │   └── automated-cases.test.ts # Compatibility test framework
-├── scripts/
-│   └── setup-reference.ts    # Go reference setup script
 ├── moon.yml                  # Moon task configuration
 ├── template.yml              # Template metadata
 ├── package.json              # Auto-configured with package details
@@ -125,10 +123,10 @@ packages/tsports/<package-name>/
 - Documentation templates (README, CHANGELOG)
 - CI/CD workflows in `.github/workflows/`
 
-✅ **Setup Script Handles:**
-- Cloning Go reference repository
-- Placing reference in `test/reference/` (ALWAYS this location)
-- Initial dependency installation
+✅ **Upstream Submodule:**
+- Go upstream source is stored in `upstream/<pkg>` as a git submodule
+- Initialize with `git submodule update --init upstream/<pkg>`
+- Version porting managed by `scripts/port-version.ts`
 
 ## Using Moon Tasks
 
@@ -193,12 +191,10 @@ npm install -g @moonrepo/cli
 curl -fsSL https://bun.sh/install | bash
 ```
 
-### Issue: Setup script fails to clone Go repo
+### Issue: Upstream submodule not initialized
 ```bash
-# Manually clone if needed
-cd test
-git clone <GO_REPO_URL> reference
-cd ..
+# Initialize the upstream submodule
+git submodule update --init upstream/<pkg>
 ```
 
 ### Issue: Template variables not replaced
@@ -217,7 +213,7 @@ moon generate tsport-package -- --goRepo="..." --packageName="..." --description
   - Package name: `@tsports/go-colorful`
   - Directory: `packages/tsports/go-colorful`
 
-- Go reference ALWAYS at: `test/reference/`
+- Go upstream source ALWAYS at: `upstream/<pkg>/`
 
 ## Initial File Contents
 
@@ -249,8 +245,8 @@ import * as core from './index';
 
 After running template generation:
 - [ ] Package directory created in `packages/tsports/<name>/`
-- [ ] `bun run setup` executed successfully
-- [ ] Go reference cloned to `test/reference/`
+- [ ] `git submodule update --init upstream/<name>` executed successfully
+- [ ] Go upstream source available in `upstream/<name>/`
 - [ ] `moon run build` passes (even with empty implementation)
 - [ ] `port_status.md` created with file inventory
 - [ ] Initial commit made
@@ -258,7 +254,7 @@ After running template generation:
 
 ## Next Steps After Setup
 
-1. **Analyze Go source** in `test/reference/`
+1. **Analyze Go source** in `upstream/<pkg>/`
 2. **Identify types and functions** to port
 3. **Update port_status.md** with complete file list
 4. **Begin implementation** following porter methodology

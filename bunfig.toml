@@ -1,0 +1,33 @@
+# Bun configuration for TSPorts monorepo
+# https://bun.sh/docs/runtime/bunfig
+
+[test]
+
+# Coverage configuration
+coverage = false  # Enable with --coverage flag
+coverageDir = "coverage"
+coverageReporter = ["text", "lcov"]
+coverageSkipTestFiles = true
+
+# Exclude from coverage
+coveragePathIgnorePatterns = [
+  # Build artifacts and generated files
+  "**/dist/**",
+  "**/build/**",
+  "**/.vitepress/**",
+
+  # Test utilities and fixtures
+  "**/test/corpus/**",
+  "**/testdata/**",
+  "**/fixtures/**",
+
+  # Documentation
+  "**/docs/**",
+
+  # Configuration files
+  "**/*.config.ts",
+  "**/*.config.js",
+]
+
+# Test file patterns - search all workspace packages
+root = "."

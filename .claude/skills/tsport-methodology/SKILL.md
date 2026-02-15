@@ -51,9 +51,9 @@ const bad = 1 << 31;  // -2147483648 (not 2147483648)
 const good = 1n << 31n;  // 2147483648n
 ```
 
-## Go Reference Location
+## Go Upstream Source Location
 
-The Go source reference is ALWAYS located at `test/reference/` after running `bun run setup`. This is where you compare implementations.
+The Go upstream source is ALWAYS located at `upstream/<pkg>/` as a git submodule. Initialize with `git submodule update --init upstream/<pkg>`. This is where you compare implementations.
 
 ## Quality Workflow
 
@@ -75,7 +75,7 @@ git commit -m "feat(<package>): <description>"
 ## Testing Strategy
 
 When fixing test issues:
-1. **Check Go Reference First**: Always look at `test/reference/` to see what the Go code does
+1. **Check Go Upstream First**: Always look at `upstream/<pkg>/` to see what the Go code does
 2. **Verify Test Equivalence**: Ensure TS test matches Go test logic
 3. **Compare Outputs**: Use JSON comparison for deterministic verification
 4. **Document Deviations**: If behavior differs, document why in compatibility report
@@ -138,6 +138,13 @@ void doWork();
 // Complex: async/await or Web Workers
 ```
 
+## Large File Organization
+
+When porting large Go files (>400 lines) that mix multiple concerns (types, functions, constants):
+1. Create a folder in the port with the same name (minus extension).
+2. Split concerns into separate files within that folder (e.g. `types.ts`, `functions.ts`, `constants.ts`).
+3. Add an `index.ts` file to that folder that exports everything.
+
 ## File Organization
 
 ```
@@ -146,8 +153,8 @@ packages/tsports/<package-name>/
 │   ├── index.ts              # TypeScript-native API (camelCase)
 │   ├── go-style.ts           # Go-compatible API (PascalCase)
 │   └── types.ts              # Core types
+├── upstream/<pkg>/           # Go upstream source (git submodule)
 ├── test/
-│   ├── reference/            # Go source (ALWAYS here)
 │   ├── basic.test.ts
 │   └── automated-cases.test.ts
 ├── port_status.md            # Track porting progress

@@ -9,7 +9,7 @@ Create comprehensive compatibility tests that verify the TypeScript port produce
 
 ### Step 1: Analyze Go Test Patterns
 
-Review Go tests in `test/reference/` to identify:
+Review Go tests in `upstream/<pkg>/` to identify:
 
 **Go Testing Conventions:**
 | Go Pattern | Description | TypeScript Equivalent |
@@ -75,7 +75,7 @@ describe('parse', () => {
 The Moon template provides:
 - `test/basic.test.ts` - Basic test template
 - `test/automated-cases.test.ts` - Full compatibility testing framework
-- `test/reference/` - Cloned Go source for reference
+- `upstream/<pkg>/` - Cloned Go source for reference
 
 ### Step 3: Create Test Cases
 
@@ -248,7 +248,7 @@ describe('unicode handling', () => {
 moon run test
 
 # Run Go reference tests for comparison
-cd test/reference && go test ./...
+cd upstream/<pkg> && go test ./...
 
 # Run specific Go test case
 cd test/cases/001-basic && go run case.go

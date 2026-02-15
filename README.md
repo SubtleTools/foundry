@@ -18,11 +18,22 @@ This monorepo follows the `packages/org/package-name` convention:
 
 ## TSPort Versioning Strategy
 
-TSPort packages use a special versioning strategy that tracks both the original Go version and TypeScript-specific patches:
+TSPort packages use standard semver versions that encode both the Go upstream version and a TypeScript-specific patch number:
 
-- **Format**: `{go-version}-tsport[.{patch}]`
-- **Examples**: `1.2.3-tsport`, `1.2.3-tsport.1`
-- **Purpose**: Maintains compatibility tracking while allowing TypeScript-specific updates
+**Format:** `{GoMajor}.{GoMinor}.{(GoPatch × 100) + tsPatch}`
+
+This is fully reversible: `npmPatch / 100` = Go patch, `npmPatch % 100` = TS patch.
+
+| Go version | TS patch | npm version |
+|------------|----------|-------------|
+| 1.2.0      | 0        | 1.2.0       |
+| 1.2.0      | 3        | 1.2.3       |
+| 1.2.3      | 0        | 1.2.300     |
+| 1.2.3      | 5        | 1.2.305     |
+| 0.4.7      | 1        | 0.4.701     |
+| 2.0.14     | 0        | 2.0.1400    |
+
+Standard semver ranges (`^`, `~`) work correctly with this scheme — no dist-tag tricks needed. Each package's `portInfo` in `package.json` still records the original Go source version for human reference.
 
 ## Development
 

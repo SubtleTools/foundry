@@ -449,5 +449,5 @@ Provide:
 ## Usage Examples
 ```bash
 /porter:port-struct "type Color struct { R, G, B float64 }"
-/porter:port-struct packages/tsports/go-colorful/test/reference/color.go
+/porter:port-struct packages/tsports/go-colorful/upstream/<pkg>/color.go
 ```

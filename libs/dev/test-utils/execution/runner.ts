@@ -6,6 +6,9 @@ import { execSync } from 'node:child_process';
 
 /**
  * Run a test case (Go or TypeScript) and return its output
+ * NOTE: We do NOT trim the output to preserve exact formatting including
+ * leading/trailing whitespace which is significant for styled output
+ * (e.g., margins in lipgloss)
  */
 export function runTestCase(
   testPath: string,

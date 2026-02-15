@@ -130,9 +130,9 @@ moon generate tsport-package -- --goRepo="$GO_REPO_URL" --packageName="$TYPESCRI
 # Example (with all arguments provided to avoid interactive prompts):
 moon generate tsport-package -- --goRepo="https://github.com/rivo/uniseg" --packageName="@tsports/uniseg" --description="Unicode text segmentation"
 
-# After generation, run the setup script to clone Go reference
+# After generation, initialize the upstream submodule
 cd packages/tsports/uniseg  # Use the package name without @tsports/ prefix
-bun run setup
+git submodule update --init upstream/uniseg
 ```
 
 **NEVER proceed with manual file creation - the template system is MANDATORY for proper package structure and tooling integration.**
@@ -155,9 +155,7 @@ bun run setup
    │   ├── reference/            # Go reference (created by setup script)
    │   ├── basic.test.ts         # Basic test template
    │   └── automated-cases.test.ts # Compatibility test framework
-   ├── scripts/
-   │   ├── init.ts               # Legacy template script
-   │   └── setup-reference.ts    # Go reference setup script
+   ├── upstream/<pkg>/           # Go upstream source (git submodule)
    ├── moon.yml                  # Moon task configuration
    ├── template.yml              # Template metadata
    ├── package.json              # Auto-updated with your package details
@@ -167,7 +165,7 @@ bun run setup
 4. **Moon Template Auto-Handles Setup:**
    - ✅ **Package Creation**: Moon generates package in packages/ directory
    - ✅ **Package Configuration**: Auto-updates all template variables
-   - ✅ **Go Reference**: Setup script clones Go repository to test/automation/reference/ (ALWAYS located here)
+   - ✅ **Go Upstream**: Source available at `upstream/<pkg>/` as a git submodule
    - ✅ **Template Files**: Updates all placeholders with your package info
    - ✅ **Moon Integration**: Pre-configured moon.yml with build/test tasks
    - ✅ **Monorepo Structure**: Integrates properly with TSports monorepo

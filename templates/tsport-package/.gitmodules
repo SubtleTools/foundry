@@ -1,3 +1,0 @@
-[submodule "test/reference"]
-	path = test/reference
-	url = https://github.com/rivo/uniseg.git

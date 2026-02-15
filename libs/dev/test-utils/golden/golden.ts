@@ -27,6 +27,23 @@ export interface GoldenOptions {
   goldenDir?: string;
 }
 
+export interface GoldenGeneratorConfig {
+  /**
+   * Path to the Go reference module (for go.mod replace directive)
+   */
+  goModulePath?: string;
+
+  /**
+   * Go module name to use in replace directive
+   */
+  goModuleName?: string;
+
+  /**
+   * Base directory for temporary Go files
+   */
+  tempBaseDir?: string;
+}
+
 /**
  * Minimal diff implementation for unified diff patches
  */
@@ -145,7 +162,7 @@ function getTestName(): string {
 /**
  * Escape control sequences for comparison
  */
-function escapeSeqs(s: string): string {
+export function escapeSeqs(s: string): string {
   return (
     s
       .replace(/\x1b/g, '\\x1b')
@@ -155,9 +172,20 @@ function escapeSeqs(s: string): string {
 }
 
 /**
+ * Unescape control sequences from golden file
+ */
+export function unescapeSeqs(s: string): string {
+  return s
+    .replace(/\\x1b/g, '\x1b')
+    .replace(/\\r/g, '\r')
+    .replace(/\\n/g, '\n')
+    .replace(/\\t/g, '\t');
+}
+
+/**
  * Normalize line breaks to Unix format
  */
-function normalizeLineBreaks(s: string): string {
+export function normalizeLineBreaks(s: string): string {
   return s.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 }
 
@@ -182,6 +210,48 @@ function ensureDir(dirPath: string): void {
   if (!existsSync(dirPath)) {
     mkdirSync(dirPath, { recursive: true });
   }
+}
+
+/**
+ * Get color profile suffix from environment variables
+ * Maps environment variables to semantic profile names for golden files
+ */
+export function getColorProfileSuffix(env: Record<string, string> = {}): string {
+  // Check for NO_COLOR (Ascii profile)
+  if (env.NO_COLOR === '1' || env.FORCE_COLOR === '0') {
+    return 'ascii';
+  }
+
+  // Check for FORCE_COLOR levels
+  const forceColor = env.FORCE_COLOR;
+  if (forceColor === '3') {
+    return 'truecolor'; // 24-bit RGB
+  }
+  if (forceColor === '2') {
+    return 'ansi256'; // 256 colors
+  }
+  if (forceColor === '1') {
+    return 'ansi'; // 16 colors
+  }
+
+  // Default to TrueColor for testing consistency
+  return 'truecolor';
+}
+
+/**
+ * Get the golden file path with color profile suffix
+ */
+function getGoldenFilePathWithProfile(
+  testFilePath: string,
+  testName: string,
+  env: Record<string, string> = {},
+  options: GoldenOptions = {}
+): string {
+  const { extension = '.golden', goldenDir = 'testdata' } = options;
+  const profileSuffix = getColorProfileSuffix(env);
+  const testDir = dirname(testFilePath);
+  const goldenDirPath = join(testDir, goldenDir);
+  return join(goldenDirPath, `${testName}_${profileSuffix}${extension}`);
 }
 
 /**
@@ -220,11 +290,7 @@ export function requireEqual(
   const pathRead = useFixed ? fixedGoldenPath : goldenPath;
 
   const expectedEscaped = readFileSync(pathRead, 'utf8');
-  const expected = expectedEscaped
-    .replace(/\\x1b/g, '\x1b')
-    .replace(/\\r/g, '\r')
-    .replace(/\\n/g, '\n')
-    .replace(/\\t/g, '\t');
+  const expected = unescapeSeqs(expectedEscaped);
 
   const normalizedExpected = normalizeLineBreaks(expected);
 
@@ -244,6 +310,66 @@ export function requireEqual(
   );
 
   throw new Error(`Golden file test failed for ${finalTestName}:\n\n${diff}`);
+}
+
+/**
+ * Compare actual output against golden file with semantic color profile naming
+ * This uses the environment variables to determine the appropriate golden file.
+ */
+export function requireEqualWithProfile(
+  testFilePath: string,
+  actual: string | Uint8Array,
+  testName: string,
+  env: Record<string, string> = {},
+  options: GoldenOptions = {}
+): void {
+  const actualStr =
+    typeof actual === 'string' ? actual : Buffer.from(actual).toString('utf8');
+  const normalizedActual = normalizeLineBreaks(actualStr);
+
+  const goldenPath = getGoldenFilePathWithProfile(testFilePath, testName, env, options);
+  const goldenDir = dirname(goldenPath);
+
+  ensureDir(goldenDir);
+
+  if (!existsSync(goldenPath) || options.update) {
+    const escapedOutput = escapeSeqs(normalizedActual);
+    writeFileSync(goldenPath, escapedOutput, 'utf8');
+
+    if (!existsSync(goldenPath)) {
+      console.log(`Created golden file: ${goldenPath}`);
+    } else {
+      console.log(`Updated golden file: ${goldenPath}`);
+    }
+    return;
+  }
+
+  const fixedGoldenPath = `${goldenPath}.fixed`;
+  const useFixed = existsSync(fixedGoldenPath);
+  const pathRead = useFixed ? fixedGoldenPath : goldenPath;
+
+  const expectedEscaped = readFileSync(pathRead, 'utf8');
+  const expected = unescapeSeqs(expectedEscaped);
+
+  const normalizedExpected = normalizeLineBreaks(expected);
+
+  if (normalizedActual === normalizedExpected) {
+    return;
+  }
+
+  const { createTwoFilesPatch } = getDiffModule();
+  const profileSuffix = getColorProfileSuffix(env);
+  const diff = createTwoFilesPatch(
+    `${testName}_${profileSuffix}.golden`,
+    `${testName}_${profileSuffix}.actual`,
+    normalizedExpected,
+    normalizedActual,
+    undefined,
+    undefined,
+    { context: 3 }
+  );
+
+  throw new Error(`Golden file test failed for ${testName} (${profileSuffix}):\n\n${diff}`);
 }
 
 /**
@@ -289,12 +415,18 @@ export function generateGoldenFromGoCode(
   testFilePath: string,
   goCode: string,
   testName?: string,
-  options: GoldenOptions = {}
+  options: GoldenOptions = {},
+  config: GoldenGeneratorConfig = {}
 ): void {
   const finalTestName = testName || getTestName();
-  const referenceDir = './test/automation/reference';
+  const {
+    goModulePath = '../',
+    goModuleName = 'github.com/example/module',
+    tempBaseDir = './.tmp',
+  } = config;
+
   const tempDirName = `temp_golden_${Date.now()}`;
-  const tempDir = join(referenceDir, tempDirName);
+  const tempDir = join(tempBaseDir, tempDirName);
   const tempFileName = 'main.go';
   const tempFilePath = join(tempDir, tempFileName);
 
@@ -306,9 +438,9 @@ export function generateGoldenFromGoCode(
 
 go 1.21
 
-replace github.com/charmbracelet/lipgloss => ../
+replace ${goModuleName} => ${goModulePath}
 
-require github.com/charmbracelet/lipgloss v0.0.0-00010101000000-000000000000
+require ${goModuleName} v0.0.0-00010101000000-000000000000
 `;
     writeFileSync(join(tempDir, 'go.mod'), goModContent);
 
@@ -358,11 +490,130 @@ export function requireEqualToGo(
   requireEqual(testFilePath, tsOutput, testName, options);
 }
 
+/**
+ * Generate golden file from Go reference implementation with color profile
+ */
+export function generateGoldenFromGoWithProfile(
+  testFilePath: string,
+  goTestCasePath: string,
+  testName: string,
+  env: Record<string, string> = {},
+  options: GoldenOptions = {}
+): void {
+  try {
+    const goOutput = execSync('go run case.go', {
+      cwd: goTestCasePath,
+      encoding: 'utf8',
+      env: { ...process.env, ...env },
+    }).trim();
+
+    const goldenPath = getGoldenFilePathWithProfile(testFilePath, testName, env, options);
+    const goldenDir = dirname(goldenPath);
+
+    ensureDir(goldenDir);
+
+    const normalizedOutput = normalizeLineBreaks(goOutput);
+    const escapedOutput = escapeSeqs(normalizedOutput);
+
+    writeFileSync(goldenPath, escapedOutput, 'utf8');
+    const profileSuffix = getColorProfileSuffix(env);
+    console.log(`Generated golden file from Go reference (${profileSuffix}): ${goldenPath}`);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    throw new Error(
+      `Failed to generate golden file from Go reference: ${errorMessage}`
+    );
+  }
+}
+
+/**
+ * Generate golden file from Go code snippet with color profile
+ */
+export function generateGoldenFromGoReferenceWithProfile(
+  testFilePath: string,
+  goCode: string,
+  testName: string,
+  env: Record<string, string> = {},
+  options: GoldenOptions = {},
+  config: GoldenGeneratorConfig = {}
+): void {
+  const {
+    goModulePath = '../',
+    goModuleName = 'github.com/example/module',
+    tempBaseDir = './.tmp',
+  } = config;
+
+  const tempDirName = `temp_golden_${Date.now()}`;
+  const tempDir = join(tempBaseDir, tempDirName);
+  const tempFileName = 'main.go';
+  const tempFilePath = join(tempDir, tempFileName);
+
+  try {
+    mkdirSync(tempDir, { recursive: true });
+    writeFileSync(tempFilePath, goCode);
+
+    const goModContent = `module temptest
+
+go 1.21
+
+replace ${goModuleName} => ${goModulePath}
+
+require ${goModuleName} v0.0.0-00010101000000-000000000000
+`;
+    writeFileSync(join(tempDir, 'go.mod'), goModContent);
+
+    execSync('go mod tidy', {
+      cwd: tempDir,
+      env: { ...process.env },
+    });
+
+    const goOutput = execSync(`go run ${tempFileName}`, {
+      cwd: tempDir,
+      encoding: 'utf8',
+      env: { ...process.env, ...env },
+    }).trim();
+
+    const goldenPath = getGoldenFilePathWithProfile(testFilePath, testName, env, options);
+    const goldenDir = dirname(goldenPath);
+
+    ensureDir(goldenDir);
+
+    const normalizedOutput = normalizeLineBreaks(goOutput);
+    const escapedOutput = escapeSeqs(normalizedOutput);
+
+    writeFileSync(goldenPath, escapedOutput, 'utf8');
+    const profileSuffix = getColorProfileSuffix(env);
+    console.log(`Generated golden file from Go reference (${profileSuffix}): ${goldenPath}`);
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    throw new Error(
+      `Failed to generate golden file from Go reference: ${errorMessage}`
+    );
+  } finally {
+    if (existsSync(tempDir)) {
+      const { rmSync } = require('fs');
+      rmSync(tempDir, { recursive: true, force: true });
+    }
+  }
+}
+
+/**
+ * Alias for generateGoldenFromGoCode for backward compatibility
+ * @deprecated Use generateGoldenFromGoCode instead
+ */
+export const generateGoldenFromGoReference = generateGoldenFromGoCode;
+
 export default {
   requireEqual,
   requireEqualToGo,
+  requireEqualWithProfile,
   generateGoldenFromGo,
+  generateGoldenFromGoWithProfile,
   generateGoldenFromGoCode,
+  generateGoldenFromGoReference,
+  generateGoldenFromGoReferenceWithProfile,
+  getColorProfileSuffix,
   escapeSeqs,
+  unescapeSeqs,
   normalizeLineBreaks,
 };

@@ -16,7 +16,7 @@ When fixing issues in a TSPort package, follow this systematic approach.
 
 ## The Golden Rule
 
-**ALWAYS check what the Go reference does first.** The Go implementation in `test/reference/` is the source of truth.
+**ALWAYS check what the Go reference does first.** The Go implementation in `upstream/<pkg>/` is the source of truth.
 
 ## Common Issue Categories
 
@@ -24,7 +24,7 @@ When fixing issues in a TSPort package, follow this systematic approach.
 
 **Workflow:**
 1. **Read the failing test** - Understand what it's testing
-2. **Check Go reference** - Look at `test/reference/` for the equivalent Go test
+2. **Check Go reference** - Look at `upstream/<pkg>/` for the equivalent Go test
 3. **Compare test logic** - Ensure TS test matches Go test structure
 4. **Compare outputs** - Run both and diff JSON outputs
 5. **Fix discrepancy** - Update TS to match Go behavior
@@ -43,7 +43,7 @@ When fixing issues in a TSPort package, follow this systematic approach.
 moon run test
 
 # Run Go reference test
-cd test/reference
+cd upstream/<pkg>
 go test -v ./...
 
 # For specific test case comparison
@@ -92,13 +92,13 @@ function process(data: Data | null) { }
 
 **When asked to "add examples and golden file tests":**
 
-1. **Find Go examples** in `test/reference/`:
+1. **Find Go examples** in `upstream/<pkg>/`:
    ```bash
    # Look for example functions
-   grep -r "func Example" test/reference/
+   grep -r "func Example" upstream/<pkg>/
 
    # Look for test data
-   find test/reference/ -name "testdata" -o -name "golden"
+   find upstream/<pkg>/ -name "testdata" -o -name "golden"
    ```
 
 2. **Create TS examples** in `examples/` directory:
@@ -125,7 +125,7 @@ function process(data: Data | null) { }
 4. **Verify golden files match Go**:
    ```bash
    # Generate Go golden output
-   cd test/reference && go test -update
+   cd upstream/<pkg> && go test -update
 
    # Compare with TS output
    diff test/golden/go-output.json test/golden/ts-output.json
@@ -135,9 +135,9 @@ function process(data: Data | null) { }
 
 **When asked to "adopt package X in port Y":**
 
-1. **Find Go import usage** in `test/reference/`:
+1. **Find Go import usage** in `upstream/<pkg>/`:
    ```bash
-   cd packages/tsports/Y/test/reference
+   cd packages/tsports/Y/upstream/<pkg>
    grep -r "github.com/.*/X" .
    ```
 
@@ -189,7 +189,7 @@ expect(floatEquals(result, expected)).toBe(true);
 
 **Check if Go uses similar tolerance**:
 ```bash
-cd test/reference
+cd upstream/<pkg>
 grep -r "epsilon\|tolerance\|AlmostEqual" .
 ```
 
@@ -234,7 +234,7 @@ When fixing any issue:
 
 ```bash
 # See what Go reference does
-cd packages/tsports/<package>/test/reference
+cd packages/tsports/<package>/upstream/<pkg>
 go doc -all ./...
 
 # Run specific Go test
@@ -244,10 +244,10 @@ go test -run TestSpecificCase -v
 bun test -t "specific case"
 
 # Compare outputs
-diff <(cd test/reference && go run case.go) <(bun run test/case.ts)
+diff <(cd upstream/<pkg> && go run case.go) <(bun run test/case.ts)
 
 # Check for algorithm details
-grep -r "algorithm\|implementation\|formula" test/reference/
+grep -r "algorithm\|implementation\|formula" upstream/<pkg>/
 ```
 
 ## When to Document Deviations

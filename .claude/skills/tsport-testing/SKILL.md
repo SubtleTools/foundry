@@ -16,8 +16,8 @@ Testing is critical for TSPorts to ensure Go-TypeScript compatibility.
 ## Test Structure
 
 ```
+../upstream/<pkg>/         # Go upstream source (git submodule, one level up)
 test/
-├── reference/              # Go source (cloned from upstream)
 ├── basic.test.ts          # Basic functionality tests
 ├── automated-cases.test.ts # Compatibility test framework
 ├── cases/                 # Test case pairs
@@ -78,9 +78,9 @@ test('matches golden output', () => {
 
 ### Step 1: Identify Go Test
 
-Look in `test/reference/` for Go tests:
+Look in `upstream/<pkg>/` for Go tests:
 ```bash
-cd test/reference
+cd upstream/<pkg>
 find . -name "*_test.go" | head -5
 ```
 
@@ -290,8 +290,8 @@ bun test basic.test.ts
 # Run with filter
 bun test -t "color conversion"
 
-# Run Go reference tests
-cd test/reference
+# Run Go upstream tests
+cd upstream/<pkg>
 go test ./...
 
 # Run specific Go test
@@ -323,7 +323,7 @@ diff <(go run case.go) <(bun run case.ts)
 
 2. **Check what Go does**:
    ```bash
-   cd test/reference
+   cd upstream/<pkg>
    go test -run FailingTest -v
    ```
 
@@ -359,7 +359,7 @@ bench('color conversion', () => {
 
 Compare with Go benchmarks:
 ```bash
-cd test/reference
+cd upstream/<pkg>
 go test -bench . -benchmem
 ```
 
@@ -368,5 +368,5 @@ go test -bench . -benchmem
 Ensure `.github/workflows/ci.yml` runs:
 - TypeScript build (`moon run build`)
 - TypeScript tests (`moon run test`)
-- Go reference tests (`cd test/reference && go test ./...`)
+- Go upstream tests (`cd upstream/<pkg> && go test ./...`)
 - Compatibility verification

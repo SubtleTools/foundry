@@ -56,8 +56,7 @@ packages/your-package/
 │   └── utils/            # Test utilities
 ├── docs-theme/           # Custom TypeDoc theme
 ├── examples/             # Usage examples  
-├── scripts/
-│   └── setup-reference.ts # Go reference setup script
+├── upstream/<pkg>/       # Go upstream source (git submodule)
 ├── .github/workflows/    # CI/CD and docs deployment
 ├── moon.yml              # Moon task configuration
 ├── typedoc.json          # Documentation generation config
@@ -141,7 +140,7 @@ The template supports these variables:
 - [ ] Run `bun run setup` to clone Go reference
 
 ### Phase 2: Implementation  
-- [ ] Analyze Go codebase in `test/reference/`
+- [ ] Analyze Go codebase in `upstream/<pkg>/`
 - [ ] Implement TypeScript port in `src/index.ts`
 - [ ] Create Go-compatible API in `src/go-style.ts`
 - [ ] Add proper types in `src/types.ts` with TSDoc

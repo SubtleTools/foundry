@@ -16,7 +16,7 @@ moon run test    # Run all TypeScript tests
 
 ### Step 2: Run Go Reference Tests
 ```bash
-cd $PACKAGE_PATH/test/reference
+cd $PACKAGE_PATH/upstream/<pkg>
 go test ./...
 go test -v ./...  # Verbose for detailed output
 go test -race ./...  # Race detector (if applicable)

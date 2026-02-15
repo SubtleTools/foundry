@@ -46,7 +46,7 @@ Execute the following steps:
 1. Run: moon generate tsport-package -- --goRepo="${GO_REPO_URL}" --packageName="${FULL_PACKAGE_NAME}" --description="${DESCRIPTION}"
 2. Change to package directory: cd ${PACKAGE_PATH}
 3. Run setup: bun run setup
-4. Create port_status.md with initial file inventory from test/reference/
+4. Create port_status.md with initial file inventory from upstream/<pkg>/
 5. Verify build passes: moon run build
 6. Commit: git add . && git commit -m "feat(${PACKAGE_NAME}): initialize tsport package structure"
 
@@ -63,7 +63,7 @@ Report back:
 **Launch porter subagent for analysis:**
 
 ```
-Task: Analyze Go source code in ${PACKAGE_PATH}/test/reference/
+Task: Analyze Go source code in ${PACKAGE_PATH}/upstream/<pkg>/
 
 Perform comprehensive analysis:
 1. Identify all Go files and their purposes
@@ -132,7 +132,7 @@ Report back:
 ```
 Task: Create compatibility tests for ${PACKAGE_PATH}
 
-1. Review Go tests in test/reference/
+1. Review Go tests in upstream/<pkg>/
 2. Port test cases to TypeScript:
    - Table-driven tests → test.each()
    - Benchmarks → bench()
@@ -167,7 +167,7 @@ Task: Verify Go-TypeScript compatibility for ${PACKAGE_PATH}
 1. Run full test suites:
    - moon run build
    - moon run test
-   - cd test/reference && go test ./...
+   - cd upstream/<pkg> && go test ./...
 
 2. API surface comparison:
    - Extract Go public API

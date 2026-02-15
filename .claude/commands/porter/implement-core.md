@@ -8,7 +8,7 @@ Implement the core TypeScript functionality for an existing TSPort package by an
 ## Workflow
 
 ### Step 1: Analysis Phase
-1. Read the Go source code in `test/reference/`
+1. Read the Go source code in `upstream/<pkg>/`
 2. Identify all packages, types, interfaces, and their relationships
 3. Map out dependencies and determine TypeScript module structure
 4. Update `port_status.md` with all Go files to be ported

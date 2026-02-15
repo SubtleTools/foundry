@@ -3,7 +3,7 @@
  */
 
 import type { ComparisonResult, ComparisonOptions } from '../types';
-import { compareHexColors, normalizeHexColorsInJson } from './colors';
+import { normalizeHexColorsInJson } from './colors';
 import { compareAnsiRgb } from './ansi';
 
 /**
@@ -26,7 +26,6 @@ export function compareOutputs(
   }
 
   let normalizedTs = tsOutput;
-  let normalizedGo = goOutput;
 
   // Try normalizing hex colors for JSON outputs
   if (tolerateHexColors) {

@@ -100,7 +100,7 @@ Snapshot files are named `{case-name}.go.out` and contain the expected output th
 
 ### Git Submodule Integration
 
-The `test/automation/reference/` directory contains a Git submodule pointing to the official Go package repository:
+The `upstream/<pkg>/` directory contains a Git submodule pointing to the official Go package repository:
 - Automatically tracks the source Go package releases
 - Uses `patches/` directory for test-specific modifications
 - Common patches include: force output modes, disable TTY detection, test-specific configurations
@@ -184,7 +184,7 @@ Reference outputs in `test/snapshots/` are generated from the Go implementations
 
 ```bash
 # Update reference repository
-cd test/automation/reference
+cd upstream/<pkg>
 git pull origin main
 
 # Regenerate snapshots
@@ -197,7 +197,7 @@ When updating the reference submodule:
 
 ```bash
 # Update submodule to new version
-cd test/automation/reference/
+cd upstream/<pkg>/
 git fetch origin
 git checkout v1.x.x  # New version
 
@@ -276,7 +276,7 @@ VERBOSE=1 bun test
 When setting up testing for a new TSPort project:
 
 - [ ] Create `test/corpus/` directory structure
-- [ ] Set up Go submodule in `test/automation/reference/`
+- [ ] Set up Go submodule in `upstream/<pkg>/`
 - [ ] Configure single `go.mod` for all test cases
 - [ ] Implement `automated-cases.test.ts`
 - [ ] Implement `examples-comparison.test.ts`

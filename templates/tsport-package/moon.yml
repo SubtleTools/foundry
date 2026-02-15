@@ -48,26 +48,9 @@ tasks:
       - build
       - test
 
-  setup:
-    command: 'bun'
-    args: ['run', 'scripts/setup-reference.ts']
-    local: true
-    env:
-      GO_REPO: 'https://github.com/rivo/uniseg'
-
   test:
     command: 'bun'
     args: ['test']
     inputs:
       - 'src/**/*'
       - 'test/**/*'
-
-  version-bump-go:
-    command: 'bun'
-    args: ['run', 'scripts/bump-go-version.ts']
-    local: true
-
-  version-bump-tsport:
-    command: 'bun'
-    args: ['run', 'scripts/bump-tsport-version.ts']
-    local: true

@@ -43,28 +43,26 @@ packages/tsports/<name>/
 │   ├── index.ts        # TypeScript API (camelCase)
 │   ├── go-style.ts     # Go-compatible API (PascalCase)
 │   └── types.ts        # Type definitions
+├── upstream/<pkg>/     # Go upstream source (git submodule)
 ├── test/
 │   ├── basic.test.ts   # Starter test file
-│   ├── reference/      # Go reference (populated by setup)
 │   └── utils/          # Test utilities
-├── scripts/
-│   └── setup-reference.ts
 ├── moon.yml            # Moon task definitions
 ├── package.json        # With portInfo pre-filled
 ├── tsconfig.json
 └── README.md
 ```
 
-## Step 2: Set Up Go Reference
+## Step 2: Set Up Go Upstream Source
 
-Run the setup script to clone the Go source as a reference:
+Initialize the upstream git submodule to get the Go source:
 
 ```bash
 cd packages/tsports/<name>
-moon run setup
+git submodule update --init upstream/<name>
 ```
 
-This clones the Go repository into `test/reference/` as a plain git clone (the `.git/` directory is gitignored so only source files are tracked). The reference code is used to:
+This checks out the Go repository into `upstream/<name>/` as a git submodule. The upstream code is used to:
 - Generate golden test files (expected output from Go)
 - Verify the TS port produces identical results
 - Serve as a living spec when the Go API is unclear

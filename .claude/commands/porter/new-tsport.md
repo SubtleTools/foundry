@@ -20,10 +20,10 @@ moon generate tsport-package -- --goRepo="$GO_REPO_URL" --packageName="$PACKAGE_
 
 **CRITICAL: NEVER manually create package files - the Moon template is MANDATORY.**
 
-### Step 3: Set Up Go Reference
+### Step 3: Set Up Go Upstream Source
 ```bash
 cd packages/tsports/<package-name>  # Use package name without @tsports/ prefix
-bun run setup
+git submodule update --init upstream/<package-name>
 ```
 
 ### Step 4: Create Port Status Tracker
@@ -54,11 +54,9 @@ packages/tsports/<package-name>/
 │   ├── go-style.ts           # Go-compatible API
 │   └── types.ts              # Core types and interfaces
 ├── test/
-│   ├── reference/            # Go reference (created by setup)
 │   ├── basic.test.ts         # Basic test template
 │   └── automated-cases.test.ts # Compatibility testing
-├── scripts/
-│   └── setup-reference.ts    # Go reference setup script
+├── upstream/<pkg>/           # Go upstream source (git submodule)
 ├── moon.yml                  # Moon task configuration
 ├── package.json              # Package configuration
 └── tsconfig.json             # TypeScript configuration

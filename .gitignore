@@ -26,3 +26,4 @@ node_modules/
 .moon/cache
 templates/__sandbox__
 agent
+coverage

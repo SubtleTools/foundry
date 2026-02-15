@@ -16,7 +16,7 @@
  */
 
 import { $ } from "bun";
-import { existsSync, readFileSync, statSync, writeFileSync, rmSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { bumpGoVersion } from "../libs/dev/versioning/bump-go";
 import { parseNpmVersion } from "../libs/dev/versioning/parse";
@@ -98,74 +98,19 @@ try {
 
 // ─── Update Go reference ─────────────────────────────────────────────────────
 
-// Detect reference location (new pattern vs legacy)
-const refNew = join(pkgDir, "test/reference");
-const refLegacy = join(pkgDir, "test/automation/reference");
-let refDir: string;
-
-if (existsSync(refNew)) {
-  refDir = refNew;
-} else if (existsSync(refLegacy)) {
-  refDir = refLegacy;
-} else {
-  // Neither exists — clone fresh into new-pattern location
-  refDir = refNew;
+const refDir = join(ROOT, "upstream", packageName);
+if (!existsSync(refDir)) {
+  console.error(`Upstream submodule not found: ${refDir}`);
+  console.error(`Run: git submodule update --init upstream/${packageName}`);
+  process.exit(1);
 }
 
-const sourceRepo = portInfo.sourceRepo;
-console.log(`\n📂 Updating Go reference in ${refDir.replace(ROOT + "/", "")}`);
+console.log(`\n📂 Updating Go reference in upstream/${packageName}`);
 
-const gitDir = join(refDir, ".git");
-
-if (existsSync(refDir) && existsSync(gitDir)) {
-  // Check if .git is a file (broken submodule pointer) or directory
-  const gitStat = statSync(gitDir);
-
-  if (gitStat.isFile()) {
-    // Broken submodule — nuke and re-clone
-    console.log("   Removing broken submodule reference...");
-    rmSync(refDir, { recursive: true, force: true });
-    await cloneReference(sourceRepo, refDir, targetVersion);
-  } else {
-    // Normal .git directory — fetch and checkout
-    try {
-      await $`git -C ${refDir} fetch --tags`.quiet();
-      await $`git -C ${refDir} checkout v${targetVersion}`.quiet();
-      console.log(`   ✓ Checked out v${targetVersion}`);
-    } catch {
-      console.log("   Fetch/checkout failed, re-cloning...");
-      rmSync(refDir, { recursive: true, force: true });
-      await cloneReference(sourceRepo, refDir, targetVersion);
-    }
-  }
-} else if (existsSync(refDir) && !existsSync(gitDir)) {
-  // Directory exists but no .git — remove and re-clone
-  rmSync(refDir, { recursive: true, force: true });
-  await cloneReference(sourceRepo, refDir, targetVersion);
-} else {
-  await cloneReference(sourceRepo, refDir, targetVersion);
-}
-
-async function cloneReference(repo: string, dir: string, version: string) {
-  const parent = join(dir, "..");
-  const dirName = dir.split("/").pop()!;
-  await $`mkdir -p ${parent}`;
-  await $`git clone ${repo} ${dir}`.quiet();
-  await $`git -C ${dir} checkout v${version}`.quiet();
-  console.log(`   ✓ Cloned and checked out v${version}`);
-}
-
-// Ensure .git/ is in .gitignore
-const gitignorePath = join(pkgDir, ".gitignore");
-if (existsSync(gitignorePath)) {
-  const gitignoreContent = readFileSync(gitignorePath, "utf8");
-  const refRelative = refDir.replace(pkgDir + "/", "");
-  const ignoreEntry = `${refRelative}/.git/`;
-  if (!gitignoreContent.includes(ignoreEntry)) {
-    writeFileSync(gitignorePath, gitignoreContent.trimEnd() + `\n\n# Go reference git metadata\n${ignoreEntry}\n`);
-    console.log(`   ✓ Added ${ignoreEntry} to .gitignore`);
-  }
-}
+// Update submodule to target version
+await $`git -C ${refDir} fetch --tags`.quiet();
+await $`git -C ${refDir} checkout v${targetVersion}`.quiet();
+console.log(`   ✓ Checked out v${targetVersion}`);
 
 // ─── Bump version ────────────────────────────────────────────────────────────
 
@@ -286,10 +231,7 @@ console.log(`   ✓ Written to ${reportPath.replace(ROOT + "/", "")}`);
 
 console.log(`\n💾 Committing scaffolding...`);
 try {
-  await $`git -C ${ROOT} add ${pkgJsonPath} ${reportPath} ${refDir}`.quiet();
-  if (existsSync(gitignorePath)) {
-    await $`git -C ${ROOT} add ${gitignorePath}`.quiet();
-  }
+  await $`git -C ${ROOT} add ${pkgJsonPath} ${reportPath}`.quiet();
   await $`git -C ${ROOT} commit -m ${"chore(" + packageName + "): scaffold port of upstream v" + targetVersion + "\n\n" + "- Update Go reference to v" + targetVersion + "\n" + "- Bump version " + pkg.version + " → " + (await readNewVersion()) + "\n" + "- Generate PORT_REPORT.md with diff analysis"}`.quiet();
   console.log(`   ✓ Committed scaffolding`);
 } catch (e) {

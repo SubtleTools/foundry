@@ -79,7 +79,7 @@ cat > tsconfig.json << EOF
   "exclude": [
     "node_modules", 
     "dist", 
-    "test/automation/reference",
+    "upstream/<pkg>",
     "test/corpus/**/*.go"
   ]
 }
@@ -140,16 +140,16 @@ mkdir -p test/automation/patches
 
 ```bash
 # Add the original Go library as a git submodule
-git submodule add https://github.com/original/go-library.git test/automation/reference
+git submodule add https://github.com/original/go-library.git upstream/<pkg>
 
 # Initialize and update the submodule
 git submodule update --init --recursive
 
 # Pin to a specific version (recommended)
-cd test/automation/reference
+cd upstream/<pkg>
 git checkout v1.0.0  # Replace with desired version
 cd ../../..
-git add test/automation/reference
+git add upstream/<pkg>
 git commit -m "pin reference implementation to v1.0.0"
 ```
 
@@ -492,7 +492,7 @@ The automation system supports monkey-patching the reference implementation:
 
 ```bash
 # Make changes to reference implementation  
-cd test/automation/reference/
+cd upstream/<pkg>/
 # Edit files as needed...
 
 # Create patch
@@ -518,7 +518,7 @@ echo '"my-fix.patch"' >> patches/applied-patches.json
 
 ```bash
 # Update reference implementation
-cd test/automation/reference
+cd upstream/<pkg>
 git fetch origin
 git checkout v1.1.0  # New version
 cd ..
@@ -533,7 +533,7 @@ if [ -f patches/applied-patches.json ]; then
 fi
 
 cd ../../..
-git add test/automation/reference
+git add upstream/<pkg>
 git commit -m "update reference implementation to v1.1.0"
 
 # Update all submodules

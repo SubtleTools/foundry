@@ -32,6 +32,9 @@ export {
   normalizeAnsiRgbSequences,
 } from './comparison';
 
+// Path utilities
+export { repoRoot, upstreamDir } from './paths';
+
 // Filtering utilities
 export { getTestFilter, applyFilter, logFilterInfo } from './filtering';
 
@@ -40,9 +43,36 @@ export { runTestCase, runBothTestCases } from './execution';
 
 // Golden file utilities
 export {
+  // Core testing
   requireEqual,
   requireEqualToGo,
+  requireEqualWithProfile,
+  // Generation
   generateGoldenFromGo,
+  generateGoldenFromGoWithProfile,
   generateGoldenFromGoCode,
+  generateGoldenFromGoReference,
+  generateGoldenFromGoReferenceWithProfile,
+  // Utility functions
+  getColorProfileSuffix,
+  escapeSeqs,
+  unescapeSeqs,
+  normalizeLineBreaks,
+  // Setup utilities
+  setupGoldenFiles,
+  findTestCases,
+  defaultShouldSkip,
+  DEFAULT_COLOR_PROFILES,
+  // Update utilities
+  updateGoldenFiles,
+  updateSpecificGoldenFiles,
+  cleanGoldenFiles,
 } from './golden';
-export type { GoldenOptions } from './golden';
+
+export type {
+  GoldenOptions,
+  GoldenGeneratorConfig,
+  SetupConfig,
+  TestCase,
+  UpdateConfig,
+} from './golden';

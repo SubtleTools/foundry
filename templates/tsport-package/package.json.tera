@@ -1,6 +1,6 @@
 {
   "name": "{{ packageName }}",
-  "version": "1.0.0-tsport",
+  "version": "1.0.0",
   "goSourceVersion": "{% if goSourceVersion %}{{ goSourceVersion }}{% else %}v1.0.0{% endif %}",
   "portInfo": {
     "sourceRepo": "{{ goRepo }}",
@@ -23,6 +23,8 @@
     "format:check": "dprint check",
     "prepack": "moon run prepack",
     "setup": "moon run setup",
+    "golden:setup": "bun run scripts/golden-setup.ts",
+    "golden:update": "bun run scripts/golden-update.ts",
     "version:bump-go": "moon run version-bump-go",
     "version:bump-tsport": "moon run version-bump-tsport"
   },
