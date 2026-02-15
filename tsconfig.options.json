@@ -19,7 +19,9 @@
     "baseUrl": ".",
     "paths": {
       "@dev/test-utils": ["./libs/dev/test-utils/index.ts"],
-      "@dev/test-utils/*": ["./libs/dev/test-utils/*"]
+      "@dev/test-utils/*": ["./libs/dev/test-utils/*"],
+      "@dev/versioning": ["./libs/dev/versioning/index.ts"],
+      "@dev/versioning/*": ["./libs/dev/versioning/*"]
     }
   }
 }
