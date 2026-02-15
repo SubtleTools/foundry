@@ -64,7 +64,7 @@ cd packages/tsports/<name>
 moon run setup
 ```
 
-This clones the Go repository into `test/reference/` as a git submodule. The reference code is used to:
+This clones the Go repository into `test/reference/` as a plain git clone (the `.git/` directory is gitignored so only source files are tracked). The reference code is used to:
 - Generate golden test files (expected output from Go)
 - Verify the TS port produces identical results
 - Serve as a living spec when the Go API is unclear
@@ -206,6 +206,38 @@ moon run version-bump-tsport
 ```
 
 See [Versioning](./versioning.md) for full details on how the encoding scheme works.
+
+## Porting a New Upstream Version
+
+When the Go upstream releases a new version, use the `port-version` script to set up the porting work:
+
+```bash
+bun run scripts/port-version.ts <package-name> <go-version>
+# Example:
+bun run scripts/port-version.ts go-colorful 1.3.0
+```
+
+**What the script does:**
+
+1. Creates a feature branch (`<package>/v<version>`, e.g., `go-colorful/v1.3.0`)
+2. Updates the Go reference checkout to the target version tag
+3. Bumps `package.json` version and `portInfo` via `@dev/versioning`
+4. Generates a `PORT_REPORT.md` with:
+   - Files changed between the old and new Go version
+   - New/modified functions extracted from the diff
+   - Suggested porting order (smallest changes first)
+   - A checklist of what to do
+
+**After running the script:**
+
+1. Read `PORT_REPORT.md` to understand what changed
+2. Port the Go changes to TypeScript, following the dual API pattern
+3. Update `src/go-style.ts` with any new exports
+4. Run tests: `bun test`
+5. Commit your work
+6. Merge the feature branch to main
+
+See [Versioning](./versioning.md) for details on the branch and tag strategy.
 
 ## Checklist
 

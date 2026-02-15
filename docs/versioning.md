@@ -118,4 +118,13 @@ The versioning library lives at `libs/dev/versioning/` and exports:
 | `bumpGoVersion(path, goVersion)` | Update package.json for a new Go release |
 | `bumpTsportVersion(path)` | Increment TS patch in package.json |
 
+## Branch and Tag Strategy
+
+When porting a new upstream Go version:
+
+- **Feature branch**: `<package>/v<version>` (e.g., `go-colorful/v1.3.0`). Work on this branch, merge to main when the port is complete.
+- **Release tag**: `@tsports/<package>@<npm-version>` (e.g., `@tsports/go-colorful@1.3.0`). Tag on main after merging.
+
+This keeps main stable while upstream version ports are in progress. Use `bun run scripts/port-version.ts` to automate branch creation and scaffolding — see [Creating a New Port](./creating-a-new-port.md#porting-a-new-upstream-version).
+
 See also: [Shared Libraries](./shared-libraries.md) for how `@dev/versioning` is consumed.
