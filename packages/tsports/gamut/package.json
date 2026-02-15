@@ -1,10 +1,10 @@
 {
   "name": "@tsports/gamut",
-  "version": "1.0.0-tsport",
-  "goSourceVersion": "v1.0.0",
+  "version": "0.3.100",
+  "goSourceVersion": "v0.3.1",
   "portInfo": {
     "sourceRepo": "https://github.com/muesli/gamut",
-    "sourceVersion": "v1.0.0",
+    "sourceVersion": "v0.3.1",
     "tsportVersion": 0,
     "lastUpdated": "2024-08-24T12:00:00Z"
   },
@@ -14,17 +14,15 @@
   "module": "./dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "moon run build",
-    "clean": "moon run clean",
-    "dev": "moon run dev",
-    "test": "moon run test",
-    "lint": "moon run lint",
-    "format": "moon run format",
-    "format:check": "dprint check",
-    "prepack": "moon run prepack",
-    "setup": "moon run setup",
-    "version:bump-go": "moon run version-bump-go",
-    "version:bump-tsport": "moon run version-bump-tsport"
+    "build": "moon run :build",
+    "clean": "moon run :clean",
+    "dev": "moon run :dev",
+    "test": "moon run :test",
+    "lint": "moon run :lint",
+    "format": "moon run :format",
+    "typecheck": "moon run :typecheck",
+    "prepack": "moon run :prepack",
+    "setup": "git submodule update --init upstream/gamut"
   },
   "keywords": [
     "gamut",
@@ -77,7 +75,7 @@
     "./README.md": "./README.md"
   },
   "dependencies": {
-    "@tsports/go-colorful": "^1.2.0-tsport"
+    "@tsports/go-colorful": "^1.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",

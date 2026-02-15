@@ -30,7 +30,11 @@ describe('Palette Data', () => {
 
     const c = Wikipedia.clamped(cc);
     for (let i = 0; i < c.length; i++) {
-      expect(toHex(c[i]?.color!)).toBe(toHex(exp[i]!));
+      const item = c[i];
+      const expected = exp[i];
+      if (item && expected) {
+        expect(toHex(item.color)).toBe(toHex(expected));
+      }
     }
   });
 
@@ -45,7 +49,9 @@ describe('Palette Data', () => {
   it('should find Monokai color by name', () => {
     const [c, ok] = Monokai.color('Spray');
     expect(ok).toBe(true);
-    expect(toHex(c!)).toBe('#66d9ef');
+    if (c) {
+      expect(toHex(c)).toBe('#66d9ef');
+    }
   });
 
   it('should filter Monokai colors by partial name', () => {

@@ -27,7 +27,18 @@
       "style": {
         "useConst": "error",
         "useShorthandFunctionType": "error",
-        "useTemplate": "error"
+        "useTemplate": "error",
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "patterns": [
+              {
+                "group": ["**/go-style", "**/go-style.ts"],
+                "message": "The go-style API is for external use only. Inside the project ALWAYS use the original, JS-cased API."
+              }
+            ]
+          }
+        }
       },
       "suspicious": {
         "noDebugger": "error",

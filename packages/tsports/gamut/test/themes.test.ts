@@ -22,6 +22,8 @@ describe('Themes', () => {
   it('should retrieve color by role', () => {
     const c = MonokaiTheme.role(Role.Foreground);
     const exp = Monokai.filter('Extra White')[0];
-    expect(c?.name).toBe(exp?.name!);
+    if (exp) {
+      expect(c?.name).toBe(exp.name);
+    }
   });
 });

@@ -38,7 +38,7 @@ function discoverTestCases(): TestCase[] {
         statSync(goFile);
         statSync(tsFile);
 
-        let metadata: any = {};
+        let metadata: Record<string, unknown> = {};
         try {
           const metadataFile = join(testPath, 'metadata.json');
           metadata = JSON.parse(readFileSync(metadataFile, 'utf8'));

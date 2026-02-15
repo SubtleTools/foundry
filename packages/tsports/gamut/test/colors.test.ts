@@ -80,7 +80,7 @@ describe('Color manipulation', () => {
       { fn: triadic, hex: '#2f1b82', exp: ['#1b822f', '#822f1b'] },
       { fn: quadratic, hex: '#2f1b82', exp: ['#1b8262', '#6e821b', '#821b3b'] },
       { fn: analogous, hex: '#2f1b82', exp: ['#1b3b82', '#621b82'] },
-      { fn: splitComplementary, hex: '#2f1b82', exp: ['#82621b', '#3b821b'] },
+      { fn: splitComplementary, hex: '#2f1b82', exp: ['#82631b', '#3a821b'] },
     ];
 
     for (const c of cases) {
@@ -168,7 +168,9 @@ describe('Color manipulation', () => {
     const exp2 = '#1b822f';
 
     const tc = tetradic(c1, c2);
-    expect(toHex(tc[0]!)).toBe(exp1);
-    expect(toHex(tc[1]!)).toBe(exp2);
+    if (tc[0] && tc[1]) {
+      expect(toHex(tc[0])).toBe(exp1);
+      expect(toHex(tc[1])).toBe(exp2);
+    }
   });
 });

@@ -1,11 +1,13 @@
-import { Color as AugmentedColor } from '@tsports/go-colorful/go-style';
+import { Color as AugmentedColor } from '@tsports/go-colorful';
 import * as colors from './colors.js';
 import * as generator from './generator.js';
+
+type ColorLike = unknown;
 
 /**
  * Helper to convert simple colors to augmented colors
  */
-function wrap(c: any): any {
+function wrap(c: ColorLike): ColorLike {
   if (Array.isArray(c)) {
     return c.map(wrap);
   }
@@ -18,8 +20,8 @@ function wrap(c: any): any {
 /**
  * Helper to wrap a function to return augmented colors
  */
-function wrapFn(fn: (...args: any[]) => any): (...args: any[]) => any {
-  return (...args: any[]) => wrap(fn(...args));
+function wrapFn(fn: (...args: unknown[]) => unknown): (...args: unknown[]) => unknown {
+  return (...args: unknown[]) => wrap(fn(...args));
 }
 
 // Re-export colors functions in PascalCase

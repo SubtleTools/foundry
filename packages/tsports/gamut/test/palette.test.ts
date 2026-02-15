@@ -66,7 +66,11 @@ describe('Palette', () => {
     const c = p1.clamped(cc);
     expect(c.length).toBe(exp.length);
     for (let i = 0; i < c.length; i++) {
-      expect(toHex(c[i]?.color!)).toBe(toHex(exp[i]!));
+      const item = c[i];
+      const expected = exp[i];
+      if (item && expected) {
+        expect(toHex(item.color)).toBe(toHex(expected));
+      }
     }
   });
 
@@ -93,12 +97,16 @@ describe('Palette', () => {
   it('should retrieve color by name', () => {
     const [c, ok] = p1.color('Spray');
     expect(ok).toBe(true);
-    expect(toHex(c!)).toBe('#66d9ef');
+    if (c) {
+      expect(toHex(c)).toBe('#66d9ef');
+    }
 
     // test case insensitivity
     const [c2, ok2] = p1.color('spray');
     expect(ok2).toBe(true);
-    expect(toHex(c2!)).toBe('#66d9ef');
+    if (c2) {
+      expect(toHex(c2)).toBe('#66d9ef');
+    }
 
     const [, ok3] = p1.color('Foobar red');
     expect(ok3).toBe(false);

@@ -25,7 +25,9 @@ export class KMeans {
     while (indices.size < this.k) {
       indices.add(Math.floor(Math.random() * this.points.length));
     }
-    this.centroids = Array.from(indices).map((i) => this.points[i]!);
+    this.centroids = Array.from(indices)
+      .map((i) => this.points[i])
+      .filter((point) => point !== undefined) as Point[];
 
     for (let i = 0; i < iterations; i++) {
       const assignments = this.assignPoints();
@@ -88,7 +90,14 @@ export class KMeans {
 
     return sums.map((sum, i) => {
       const count = counts[i];
-      if (count === undefined || count === 0) return this.centroids[i]!; // Keep old centroid if empty
+      const oldCentroid = this.centroids[i];
+      if (count === undefined || count === 0) {
+        // Keep old centroid if empty
+        if (oldCentroid) {
+          return oldCentroid;
+        }
+        return [0, 0, 0] as Point; // Fallback if old centroid doesn't exist
+      }
 
       return [sum[0] / count, sum[1] / count, sum[2] / count] as Point;
     });

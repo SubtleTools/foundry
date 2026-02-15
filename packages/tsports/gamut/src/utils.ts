@@ -14,18 +14,23 @@ export function wagnerFischer(
   const m = s1.length;
   const n = s2.length;
 
-  const d: number[][] = [];
+  const d: number[][] = Array.from({ length: m + 1 }, () => []);
 
   for (let i = 0; i <= m; i++) {
-    d[i] = [];
-    d[i]![0] = i * dcost; // deletion cost
+    const row = d[i];
+    if (row) {
+      row[0] = i * dcost; // deletion cost
+    }
   }
 
-  for (let j = 0; j <= n; j++) {
-    d[0]![j] = j * icost; // insertion cost (if we consider s1 -> s2 translation)
-    // actually standard WF:
-    // d[i][0] = i deletions (from s1 to empty)
-    // d[0][j] = j insertions (from empty to s2)
+  const firstRow = d[0];
+  if (firstRow) {
+    for (let j = 0; j <= n; j++) {
+      firstRow[j] = j * icost; // insertion cost (if we consider s1 -> s2 translation)
+      // actually standard WF:
+      // d[i][0] = i deletions (from s1 to empty)
+      // d[0][j] = j insertions (from empty to s2)
+    }
   }
 
   for (let i = 1; i <= m; i++) {
@@ -35,13 +40,19 @@ export function wagnerFischer(
         cost = scost;
       }
 
-      d[i]![j] = Math.min(
-        d[i - 1]?.[j]! + dcost, // deletion
-        d[i]?.[j - 1]! + icost, // insertion
-        d[i - 1]?.[j - 1]! + cost // substitution
-      );
+      const currentRow = d[i];
+      const prevRow = d[i - 1];
+
+      if (currentRow && prevRow) {
+        const deletion = (prevRow[j] ?? 0) + dcost;
+        const insertion = (currentRow[j - 1] ?? 0) + icost;
+        const substitution = (prevRow[j - 1] ?? 0) + cost;
+
+        currentRow[j] = Math.min(deletion, insertion, substitution);
+      }
     }
   }
 
-  return d[m]?.[n]!;
+  const lastRow = d[m];
+  return lastRow?.[n] ?? 0;
 }
