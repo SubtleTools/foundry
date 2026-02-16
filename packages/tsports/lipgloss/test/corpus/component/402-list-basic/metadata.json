@@ -1,0 +1,17 @@
+{
+  "id": "402",
+  "name": "list-basic",
+  "category": "component",
+  "description": "Basic list creation",
+  "complexity": 4,
+  "dependencies": [
+    "101"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewList",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:16.127Z",
+  "version": "1.0.0"
+}

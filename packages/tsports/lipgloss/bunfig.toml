@@ -1,0 +1,20 @@
+[test]
+# Test configuration for Bun
+preload = ["./test/utils/setup.ts"]
+
+# Enable coverage
+coverage = false
+
+# Set default timeout (5 minutes for complex comparative tests)
+timeout = 300000
+
+# Test environment variables
+env = [
+  "FORCE_COLOR=1",
+  "NODE_ENV=test",
+  "CI=false",
+  "TERM=xterm-256color"
+]
+
+# Performance settings
+concurrent = false  # Disabled by default due to Go comparison tests requiring sequential execution

@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+
 /**
  * Golden file update script
  *
@@ -7,9 +8,9 @@
  * refresh all golden files.
  */
 
-import { setupGoldenFiles, findTestCases, type SetupConfig, type TestCase } from './setup';
-import { existsSync, unlinkSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, statSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
+import { findTestCases, type SetupConfig, setupGoldenFiles, type TestCase } from './setup';
 
 export interface UpdateConfig extends SetupConfig {
   /**
@@ -96,7 +97,7 @@ export async function updateSpecificGoldenFiles(
   console.log(`Updating golden files for: ${testNames.join(', ')}`);
 
   const allCases = findTestCases(corpusDir);
-  const targetCases = allCases.filter(c => testNames.includes(c.name));
+  const targetCases = allCases.filter((c) => testNames.includes(c.name));
 
   if (targetCases.length === 0) {
     console.log('No matching test cases found');
@@ -121,25 +122,25 @@ export async function updateSpecificGoldenFiles(
 if (import.meta.main) {
   const args = process.argv.slice(2);
   const noClean = args.includes('--no-clean');
-  const specificTests = args.filter(a => !a.startsWith('--'));
+  const specificTests = args.filter((a) => !a.startsWith('--'));
 
   if (specificTests.length > 0) {
-    updateSpecificGoldenFiles(specificTests, { clean: !noClean }).then(
-      ({ failed }) => {
-        if (failed > 0) {
-          process.exit(1);
-        }
-      }
-    );
-  } else {
-    updateGoldenFiles({ clean: !noClean }).then(({ failed }) => {
+    updateSpecificGoldenFiles(specificTests, { clean: !noClean }).then(({ failed }) => {
       if (failed > 0) {
         process.exit(1);
       }
-    }).catch(error => {
-      console.error('Update failed:', error);
-      process.exit(1);
     });
+  } else {
+    updateGoldenFiles({ clean: !noClean })
+      .then(({ failed }) => {
+        if (failed > 0) {
+          process.exit(1);
+        }
+      })
+      .catch((error) => {
+        console.error('Update failed:', error);
+        process.exit(1);
+      });
   }
 }
 

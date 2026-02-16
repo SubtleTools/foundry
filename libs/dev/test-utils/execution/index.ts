@@ -2,4 +2,4 @@
  * Execution utilities re-exports
  */
 
-export { runTestCase, runBothTestCases } from './runner';
+export { runBothTestCases, runTestCase } from './runner';

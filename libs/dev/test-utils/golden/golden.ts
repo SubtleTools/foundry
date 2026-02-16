@@ -6,9 +6,9 @@
  * when the Go reference version changes.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
 import { execSync } from 'node:child_process';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 
 export interface GoldenOptions {
   /**
@@ -44,16 +44,22 @@ export interface GoldenGeneratorConfig {
   tempBaseDir?: string;
 }
 
+interface DiffLine {
+  added: boolean;
+  removed: boolean;
+  value: string;
+}
+
 /**
  * Minimal diff implementation for unified diff patches
  */
 function getDiffModule() {
   return {
-    diffLines: (oldStr: string, newStr: string) => {
+    diffLines: (oldStr: string, newStr: string): DiffLine[] => {
       if (oldStr === newStr) return [];
       const oldLines = oldStr.split('\n');
       const newLines = newStr.split('\n');
-      const result: any[] = [];
+      const result: DiffLine[] = [];
 
       const maxLines = Math.max(oldLines.length, newLines.length);
       for (let i = 0; i < maxLines; i++) {
@@ -61,14 +67,14 @@ function getDiffModule() {
         const newLine = newLines[i];
 
         if (oldLine === undefined) {
-          result.push({ added: true, removed: false, value: newLine + '\n' });
+          result.push({ added: true, removed: false, value: `${newLine}\n` });
         } else if (newLine === undefined) {
-          result.push({ added: false, removed: true, value: oldLine + '\n' });
+          result.push({ added: false, removed: true, value: `${oldLine}\n` });
         } else if (oldLine !== newLine) {
-          result.push({ added: false, removed: true, value: oldLine + '\n' });
-          result.push({ added: true, removed: false, value: newLine + '\n' });
+          result.push({ added: false, removed: true, value: `${oldLine}\n` });
+          result.push({ added: true, removed: false, value: `${newLine}\n` });
         } else {
-          result.push({ added: false, removed: false, value: oldLine + '\n' });
+          result.push({ added: false, removed: false, value: `${oldLine}\n` });
         }
       }
 
@@ -95,9 +101,9 @@ function getDiffModule() {
 
       const maxLines = Math.max(oldLines.length, newLines.length);
       let oldLineNum = 1;
-      let newLineNum = 1;
+      let _newLineNum = 1;
       let hunkStart = -1;
-      let hunkLines: string[] = [];
+      const hunkLines: string[] = [];
 
       for (let i = 0; i < maxLines; i++) {
         const oldLine = oldLines[i];
@@ -106,7 +112,7 @@ function getDiffModule() {
         if (oldLine === undefined) {
           if (hunkStart === -1) hunkStart = Math.max(1, oldLineNum - context);
           hunkLines.push(`+${newLine || ''}`);
-          newLineNum++;
+          _newLineNum++;
         } else if (newLine === undefined) {
           if (hunkStart === -1) hunkStart = Math.max(1, oldLineNum - context);
           hunkLines.push(`-${oldLine || ''}`);
@@ -116,13 +122,13 @@ function getDiffModule() {
           hunkLines.push(`-${oldLine || ''}`);
           hunkLines.push(`+${newLine || ''}`);
           oldLineNum++;
-          newLineNum++;
+          _newLineNum++;
         } else {
           if (hunkStart !== -1) {
             hunkLines.push(` ${oldLine || ''}`);
           }
           oldLineNum++;
-          newLineNum++;
+          _newLineNum++;
         }
       }
 
@@ -130,7 +136,7 @@ function getDiffModule() {
         const hunkOldCount = oldLines.length;
         const hunkNewCount = newLines.length;
         diff += `@@ -${hunkStart},${hunkOldCount} +${hunkStart},${hunkNewCount} @@\n`;
-        diff += hunkLines.join('\n') + '\n';
+        diff += `${hunkLines.join('\n')}\n`;
       }
 
       return diff;
@@ -138,11 +144,19 @@ function getDiffModule() {
   };
 }
 
+interface TestState {
+  currentTestName?: string;
+}
+
+interface GlobalExpect {
+  getState?: () => TestState;
+}
+
 /**
  * Get the test name from the current test context
  */
 function getTestName(): string {
-  const globalExpect = (globalThis as any).expect;
+  const globalExpect = (globalThis as { expect?: GlobalExpect }).expect;
   if (typeof globalExpect !== 'undefined' && globalExpect.getState) {
     const state = globalExpect.getState();
     return (state.currentTestName as string) || 'UnknownTest';
@@ -151,7 +165,7 @@ function getTestName(): string {
   const stack = new Error().stack;
   if (stack) {
     const match = stack.match(/at (?:Object\.)?(\w+)/);
-    if (match && match[1]) {
+    if (match?.[1]) {
       return match[1];
     }
   }
@@ -163,12 +177,8 @@ function getTestName(): string {
  * Escape control sequences for comparison
  */
 export function escapeSeqs(s: string): string {
-  return (
-    s
-      .replace(/\x1b/g, '\\x1b')
-      .replace(/\r/g, '\\r')
-      .replace(/\t/g, '\\t')
-  );
+  // biome-ignore lint/suspicious/noControlCharactersInRegex: ESC character needed for ANSI sequences
+  return s.replace(/\x1b/g, '\\x1b').replace(/\r/g, '\\r').replace(/\t/g, '\\t');
 }
 
 /**
@@ -263,8 +273,7 @@ export function requireEqual(
   testName?: string,
   options: GoldenOptions = {}
 ): void {
-  const actualStr =
-    typeof actual === 'string' ? actual : Buffer.from(actual).toString('utf8');
+  const actualStr = typeof actual === 'string' ? actual : Buffer.from(actual).toString('utf8');
   const normalizedActual = normalizeLineBreaks(actualStr);
   const finalTestName = testName || getTestName();
 
@@ -323,8 +332,7 @@ export function requireEqualWithProfile(
   env: Record<string, string> = {},
   options: GoldenOptions = {}
 ): void {
-  const actualStr =
-    typeof actual === 'string' ? actual : Buffer.from(actual).toString('utf8');
+  const actualStr = typeof actual === 'string' ? actual : Buffer.from(actual).toString('utf8');
   const normalizedActual = normalizeLineBreaks(actualStr);
 
   const goldenPath = getGoldenFilePathWithProfile(testFilePath, testName, env, options);
@@ -402,9 +410,7 @@ export function generateGoldenFromGo(
     console.log(`Generated golden file from Go reference: ${goldenPath}`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Failed to generate golden file from Go reference: ${errorMessage}`
-    );
+    throw new Error(`Failed to generate golden file from Go reference: ${errorMessage}`);
   }
 }
 
@@ -467,12 +473,10 @@ require ${goModuleName} v0.0.0-00010101000000-000000000000
     console.log(`Generated golden file from Go reference: ${goldenPath}`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Failed to generate golden file from Go reference: ${errorMessage}`
-    );
+    throw new Error(`Failed to generate golden file from Go reference: ${errorMessage}`);
   } finally {
     if (existsSync(tempDir)) {
-      const { rmSync } = require('fs');
+      const { rmSync } = require('node:fs');
       rmSync(tempDir, { recursive: true, force: true });
     }
   }
@@ -520,9 +524,7 @@ export function generateGoldenFromGoWithProfile(
     console.log(`Generated golden file from Go reference (${profileSuffix}): ${goldenPath}`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Failed to generate golden file from Go reference: ${errorMessage}`
-    );
+    throw new Error(`Failed to generate golden file from Go reference: ${errorMessage}`);
   }
 }
 
@@ -586,12 +588,10 @@ require ${goModuleName} v0.0.0-00010101000000-000000000000
     console.log(`Generated golden file from Go reference (${profileSuffix}): ${goldenPath}`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    throw new Error(
-      `Failed to generate golden file from Go reference: ${errorMessage}`
-    );
+    throw new Error(`Failed to generate golden file from Go reference: ${errorMessage}`);
   } finally {
     if (existsSync(tempDir)) {
-      const { rmSync } = require('fs');
+      const { rmSync } = require('node:fs');
       rmSync(tempDir, { recursive: true, force: true });
     }
   }

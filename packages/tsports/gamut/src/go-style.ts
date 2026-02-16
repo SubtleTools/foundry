@@ -1,24 +1,23 @@
-import { Color as AugmentedColor } from '@tsports/go-colorful';
+import { Color as TSColor } from '@tsports/go-colorful';
+import { Color as GoStyleColor } from '@tsports/go-colorful/go-style';
 import * as colors from './colors.js';
 import * as generator from './generator.js';
 
-type ColorLike = unknown;
-
 /**
- * Helper to convert simple colors to augmented colors
+ * Helper to convert TS-style colors to Go-style colors
  */
-function wrap(c: ColorLike): ColorLike {
+function wrap(c: unknown): unknown {
   if (Array.isArray(c)) {
     return c.map(wrap);
   }
-  if (c && (typeof c.RGBA === 'function' || typeof c.rgba === 'function')) {
-    return AugmentedColor.fromTSColor(c.toTSColor ? c.toTSColor() : c);
+  if (c instanceof TSColor) {
+    return GoStyleColor.fromTSColor(c);
   }
   return c;
 }
 
 /**
- * Helper to wrap a function to return augmented colors
+ * Helper to wrap a function to return Go-style colors
  */
 function wrapFn(fn: (...args: unknown[]) => unknown): (...args: unknown[]) => unknown {
   return (...args: unknown[]) => wrap(fn(...args));

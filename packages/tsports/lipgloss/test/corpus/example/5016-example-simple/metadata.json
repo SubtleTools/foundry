@@ -1,0 +1,15 @@
+{
+  "id": "5016",
+  "name": "example-simple",
+  "category": "example",
+  "description": "Example: simple",
+  "complexity": 7,
+  "dependencies": [],
+  "apiMethods": [
+    "New",
+    "Enumerator",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:25.523Z",
+  "version": "1.0.0"
+}

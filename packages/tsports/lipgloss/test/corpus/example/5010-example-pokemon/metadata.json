@@ -1,0 +1,30 @@
+{
+  "id": "5010",
+  "name": "example-pokemon",
+  "category": "example",
+  "description": "Example: pokemon",
+  "complexity": 7,
+  "dependencies": [
+    "101",
+    "002",
+    "003",
+    "301"
+  ],
+  "apiMethods": [
+    "NewRenderer",
+    "Color",
+    "NormalBorder",
+    "Style",
+    "NewStyle",
+    "Padding",
+    "Foreground",
+    "Bold",
+    "Background",
+    "ToUpper",
+    "New",
+    "Sprint",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:23.233Z",
+  "version": "1.0.0"
+}

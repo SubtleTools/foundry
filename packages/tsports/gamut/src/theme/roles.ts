@@ -9,10 +9,10 @@
  */
 export enum Role {
   Foreground = 0,
-  Background,
-  Base,
-  AlternateBase,
-  Text,
-  Selection,
-  Highlight,
+  Background = 1,
+  Base = 2,
+  AlternateBase = 3,
+  Text = 4,
+  Selection = 5,
+  Highlight = 6,
 }

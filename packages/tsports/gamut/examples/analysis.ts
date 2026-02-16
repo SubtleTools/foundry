@@ -3,21 +3,21 @@
  * Port of examples/analysis/main.go
  */
 
+import { writeFileSync } from 'node:fs';
 import { Hex } from '@tsports/go-colorful';
 import {
+  analogous,
+  hueOffset,
   monochromatic,
+  quadratic,
   shades,
+  splitComplementary,
+  tetradic,
   tints,
   tones,
-  analogous,
-  splitComplementary,
   triadic,
-  quadratic,
-  tetradic,
-  hueOffset,
 } from '../src/index.js';
-import { header, footer, table } from './htmlgen.js';
-import { writeFileSync } from 'node:fs';
+import { footer, header, table } from './htmlgen.js';
 
 export function main(): void {
   const buffer: string[] = [];

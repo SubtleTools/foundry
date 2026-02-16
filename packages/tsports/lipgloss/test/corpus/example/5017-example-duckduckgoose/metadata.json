@@ -1,0 +1,22 @@
+{
+  "id": "5017",
+  "name": "example-duckduckgoose",
+  "category": "example",
+  "description": "Example: duckduckgoose",
+  "complexity": 7,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "At",
+    "Value",
+    "Foreground",
+    "MarginRight",
+    "New",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:25.779Z",
+  "version": "1.0.0"
+}

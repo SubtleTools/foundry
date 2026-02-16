@@ -1,0 +1,20 @@
+{
+  "id": "304",
+  "name": "border-thick",
+  "category": "border",
+  "description": "Thick border style",
+  "complexity": 3,
+  "dependencies": [
+    "101"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "ThickBorder",
+    "Border",
+    "Width",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:15.362Z",
+  "version": "1.0.0"
+}

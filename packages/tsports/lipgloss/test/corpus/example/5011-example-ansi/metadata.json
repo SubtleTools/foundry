@@ -1,0 +1,21 @@
+{
+  "id": "5011",
+  "name": "example-ansi",
+  "category": "example",
+  "description": "Example: ansi",
+  "complexity": 7,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "New",
+    "Row",
+    "Println",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:23.470Z",
+  "version": "1.0.0"
+}

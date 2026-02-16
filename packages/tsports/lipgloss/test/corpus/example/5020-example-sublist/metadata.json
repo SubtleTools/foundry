@@ -1,0 +1,41 @@
+{
+  "id": "5020",
+  "name": "example-sublist",
+  "category": "example",
+  "description": "Example: sublist",
+  "complexity": 7,
+  "dependencies": [
+    "101",
+    "002",
+    "003",
+    "301"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "AdaptiveColor",
+    "Style",
+    "Center",
+    "Right",
+    "Faint",
+    "PaddingRight",
+    "Length",
+    "Padding",
+    "Margin",
+    "MaxWidth",
+    "Background",
+    "New",
+    "Foreground",
+    "MarginRight",
+    "Render",
+    "Enumerator",
+    "String",
+    "Align",
+    "Bold",
+    "Println",
+    "Hex",
+    "BlendLuv"
+  ],
+  "generated": "2025-08-20T23:44:26.524Z",
+  "version": "1.0.0"
+}

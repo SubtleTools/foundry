@@ -1,0 +1,7 @@
+{
+  "name": "Simple Color Operations",
+  "description": "Tests basic color creation, conversion, distance, and blending operations",
+  "category": "basic",
+  "priority": "high",
+  "expectedOutput": "identical"
+}

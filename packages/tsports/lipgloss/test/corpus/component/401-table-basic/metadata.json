@@ -1,0 +1,19 @@
+{
+  "id": "401",
+  "name": "table-basic",
+  "category": "component",
+  "description": "Basic table creation",
+  "complexity": 5,
+  "dependencies": [
+    "101",
+    "201"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewTable",
+    "NormalBorder",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:15.884Z",
+  "version": "1.0.0"
+}

@@ -27,7 +27,7 @@ function findRepoRoot(startDir: string): string {
   }
   throw new Error(
     'Could not find monorepo root (looked for upstream/ directory). ' +
-    'Are you running from inside the tsports repo?'
+      'Are you running from inside the tsports repo?'
   );
 }
 
@@ -56,7 +56,7 @@ export function upstreamDir(packageName: string, startDir?: string): string {
   if (!existsSync(dir)) {
     throw new Error(
       `Upstream submodule not found: ${dir}\n` +
-      `Run: git submodule update --init upstream/${packageName}`
+        `Run: git submodule update --init upstream/${packageName}`
     );
   }
   return dir;

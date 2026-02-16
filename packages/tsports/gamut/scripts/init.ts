@@ -8,9 +8,9 @@
  * then sets up the project structure and configuration.
  */
 
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { $ } from 'bun';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { join } from 'path';
 
 interface InitOptions {
   goRepo: string;
@@ -41,7 +41,8 @@ Arguments:
 
   const goRepo = args[0];
   const packageName = args[1];
-  const description = args[2] || `TypeScript port of ${getGoPackageName(goRepo)} with 100% API compatibility`;
+  const description =
+    args[2] || `TypeScript port of ${getGoPackageName(goRepo)} with 100% API compatibility`;
 
   // Extract information from Go repository
   const goPackageName = getGoPackageName(goRepo);
@@ -53,7 +54,7 @@ Arguments:
     packageName,
     description,
     keywords,
-    repositoryUrl
+    repositoryUrl,
   };
 
   console.log('🚀 Initializing Go-to-TypeScript template...');
@@ -81,7 +82,7 @@ Arguments:
 
 function getGoPackageName(repoUrl: string): string {
   // Extract package name from GitHub URL
-  const match = repoUrl.match(/github\.com\/[^\/]+\/([^\/]+)/);
+  const match = repoUrl.match(/github\.com\/[^/]+\/([^/]+)/);
   return match ? match[1] : 'go-package';
 }
 
@@ -115,11 +116,12 @@ async function initializeTemplate(options: InitOptions) {
   // Template replacements
   const replacements: Record<string, string> = {
     '@tsports/gamut': packageName,
-    'TypeScript port of gamut with 100% API compatibility': description!,
-    'gamut': goPackageName,
+    'TypeScript port of gamut with 100% API compatibility':
+      description ?? 'TypeScript port of gamut with 100% API compatibility',
+    gamut: goPackageName,
     'https://github.com/muesli/gamut': goRepo,
-    'https://github.com/TSports/termenv': repositoryUrl!,
-    '"gamut", "go-port", "typescript"': keywords!.map(k => `"${k}"`).join(',\\n    ')
+    'https://github.com/TSports/termenv': repositoryUrl ?? 'https://github.com/TSports/termenv',
+    '"gamut", "go-port", "typescript"': keywords?.map((k) => `"${k}"`).join(',\\n    '),
   };
 
   console.log('📝 Updating template files...');
@@ -130,7 +132,7 @@ async function initializeTemplate(options: InitOptions) {
     'src/index.ts',
     'src/go-style.ts',
     'src/types.ts',
-    'test/basic.test.ts'
+    'test/basic.test.ts',
   ];
 
   for (const file of filesToUpdate) {
@@ -147,7 +149,7 @@ async function initializeTemplate(options: InitOptions) {
   }
 }
 
-async function cloneGoReference(options: InitOptions) {
+async function cloneGoReference(_options: InitOptions) {
   console.log('📦 Initializing Go reference implementation...');
 
   const repoRoot = join(__dirname, '../../../..');
@@ -201,7 +203,7 @@ yarn-error.log*
 }
 
 // Run the script
-main().catch(error => {
+main().catch((error) => {
   console.error('❌ Initialization failed:', error);
   process.exit(1);
 });

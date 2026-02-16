@@ -1,0 +1,70 @@
+{
+  "compilerOptions": {
+    // Target and Module - Modern ES for Bun compatibility
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@tsports/go-colorful": ["./src/index.ts"],
+      "@tsports/go-colorful/go-style": ["./src/go-style.ts"],
+      "@tsports/go-colorful/types": ["./src/types.ts"],
+      "#src/*": ["./src/*"],
+      "#test/*": ["./test/*"],
+      "@/*": ["./src/*"],
+      "~/test/*": ["./test/*"],
+      "@dev/test-utils": ["../../../libs/dev/test-utils/index.ts"],
+      "@dev/test-utils/*": ["../../../libs/dev/test-utils/*"],
+      "@dev/versioning": ["../../../libs/dev/versioning/index.ts"],
+      "@dev/versioning/*": ["../../../libs/dev/versioning/*"]
+    },
+
+    // Import/Export behavior
+    // "allowImportingTsExtensions": true, // Disabled for emit
+    "moduleDetection": "force",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+
+    // Declaration generation for library distribution
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+
+    // Bun-specific optimizations
+    "verbatimModuleSyntax": false, // Allow flexibility for Bun's handling
+    "isolatedModules": true, // Required for fast builds
+
+    // Type checking strictness
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": false,
+
+    // Additional code quality checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": false,
+
+    // Performance and compatibility
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test/reference",
+    "test/corpus/**/*.go"
+  ]
+}

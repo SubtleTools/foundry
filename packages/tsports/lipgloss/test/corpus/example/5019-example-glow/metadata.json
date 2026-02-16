@@ -1,0 +1,24 @@
+{
+  "id": "5019",
+  "name": "example-glow",
+  "category": "example",
+  "description": "Example: glow",
+  "complexity": 7,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "Style",
+    "Faint",
+    "Render",
+    "New",
+    "Foreground",
+    "Item",
+    "String",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:26.257Z",
+  "version": "1.0.0"
+}

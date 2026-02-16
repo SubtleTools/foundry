@@ -2,4 +2,4 @@
  * Filtering utilities re-exports
  */
 
-export { getTestFilter, applyFilter, logFilterInfo } from './test-filter';
+export { applyFilter, getTestFilter, logFilterInfo } from './test-filter';

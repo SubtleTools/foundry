@@ -1,0 +1,10 @@
+  preserveWhitespace?: boolean;
+  /** Maximum height of the styled element */
+  maxHeight?: number;
+  /** Whether to color whitespace characters */
+  colorWhitespace?: boolean;
+  /** Whether to render inline (no line breaks) */
+  inline?: boolean;
+  /** Custom tab width in spaces */
+  tabWidth?: number;
+}

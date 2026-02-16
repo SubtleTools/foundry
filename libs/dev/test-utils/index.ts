@@ -5,74 +5,67 @@
  * Import using the @dev/test-utils path mapping configured in tsconfig.json.
  */
 
-// Configuration
-export {
-  setToleranceConfig,
-  getToleranceConfig,
-  resetToleranceConfig,
-  defaultTolerance,
-  DEFAULT_TOLERANCE,
-} from './config';
-
-// Types
-export type {
-  ComparisonResult,
-  ComparisonDifference,
-  ComparisonOptions,
-  ToleranceConfig,
-} from './types';
-
 // Comparison utilities
 export {
+  compareAnsiRgb,
+  compareHexColors,
   compareOutputs,
   formatDifferences,
-  compareHexColors,
-  normalizeHexColorsInJson,
-  compareAnsiRgb,
   normalizeAnsiRgbSequences,
+  normalizeHexColorsInJson,
 } from './comparison';
-
-// Path utilities
-export { repoRoot, upstreamDir } from './paths';
-
-// Filtering utilities
-export { getTestFilter, applyFilter, logFilterInfo } from './filtering';
-
-// Execution utilities
-export { runTestCase, runBothTestCases } from './execution';
-
-// Golden file utilities
+// Configuration
 export {
-  // Core testing
-  requireEqual,
-  requireEqualToGo,
-  requireEqualWithProfile,
-  // Generation
-  generateGoldenFromGo,
-  generateGoldenFromGoWithProfile,
-  generateGoldenFromGoCode,
-  generateGoldenFromGoReference,
-  generateGoldenFromGoReferenceWithProfile,
-  // Utility functions
-  getColorProfileSuffix,
-  escapeSeqs,
-  unescapeSeqs,
-  normalizeLineBreaks,
-  // Setup utilities
-  setupGoldenFiles,
-  findTestCases,
-  defaultShouldSkip,
-  DEFAULT_COLOR_PROFILES,
-  // Update utilities
-  updateGoldenFiles,
-  updateSpecificGoldenFiles,
-  cleanGoldenFiles,
-} from './golden';
-
+  DEFAULT_TOLERANCE,
+  defaultTolerance,
+  getToleranceConfig,
+  resetToleranceConfig,
+  setToleranceConfig,
+} from './config';
+// Execution utilities
+export { runBothTestCases, runTestCase } from './execution';
+// Filtering utilities
+export { applyFilter, getTestFilter, logFilterInfo } from './filtering';
 export type {
-  GoldenOptions,
   GoldenGeneratorConfig,
+  GoldenOptions,
   SetupConfig,
   TestCase,
   UpdateConfig,
 } from './golden';
+// Golden file utilities
+export {
+  cleanGoldenFiles,
+  DEFAULT_COLOR_PROFILES,
+  defaultShouldSkip,
+  escapeSeqs,
+  findTestCases,
+  // Generation
+  generateGoldenFromGo,
+  generateGoldenFromGoCode,
+  generateGoldenFromGoReference,
+  generateGoldenFromGoReferenceWithProfile,
+  generateGoldenFromGoWithProfile,
+  // Utility functions
+  getColorProfileSuffix,
+  normalizeLineBreaks,
+  // Core testing
+  requireEqual,
+  requireEqualToGo,
+  requireEqualWithProfile,
+  // Setup utilities
+  setupGoldenFiles,
+  unescapeSeqs,
+  // Update utilities
+  updateGoldenFiles,
+  updateSpecificGoldenFiles,
+} from './golden';
+// Path utilities
+export { repoRoot, upstreamDir } from './paths';
+// Types
+export type {
+  ComparisonDifference,
+  ComparisonOptions,
+  ComparisonResult,
+  ToleranceConfig,
+} from './types';

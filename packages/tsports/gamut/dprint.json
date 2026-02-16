@@ -1,7 +1,5 @@
 {
-  "includes": [
-    "**/*.{json,md,yml,yaml}"
-  ],
+  "includes": ["**/*.{json,md,yml,yaml}"],
   "excludes": [
     "dist/**",
     "node_modules/**",

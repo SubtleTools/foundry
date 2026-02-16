@@ -2,9 +2,9 @@
  * Core comparison utilities for test outputs
  */
 
-import type { ComparisonResult, ComparisonOptions } from '../types';
-import { normalizeHexColorsInJson } from './colors';
+import type { ComparisonOptions, ComparisonResult } from '../types';
 import { compareAnsiRgb } from './ansi';
+import { normalizeHexColorsInJson } from './colors';
 
 /**
  * Compare two outputs with optional tolerance for colors and ANSI codes
@@ -14,11 +14,7 @@ export function compareOutputs(
   goOutput: string,
   options: ComparisonOptions = {}
 ): ComparisonResult {
-  const {
-    tolerateHexColors = true,
-    tolerateAnsiRgb = true,
-    maxDifferences = 5,
-  } = options;
+  const { tolerateHexColors = true, tolerateAnsiRgb = true, maxDifferences = 5 } = options;
 
   // Fast path: exact match
   if (tsOutput === goOutput) {

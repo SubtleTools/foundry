@@ -4,7 +4,7 @@ import { splitComplementary } from './src/index.js';
 const c = Hex('#2F1B82');
 const colors = splitComplementary(c);
 
-console.log("Split Complementary colors:");
+console.log('Split Complementary colors:');
 for (const color of colors) {
   const [col] = MakeColor(color);
   const [h, s, v] = col.hsv();

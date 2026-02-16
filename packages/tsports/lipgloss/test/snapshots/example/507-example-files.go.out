@@ -1,0 +1,9 @@
+/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/507-example-files
+├── case.go
+├── case.ts
+├── expected.out
+├── go.mod
+├── go.out
+├── go.sum
+├── metadata.json
+└── ts.out

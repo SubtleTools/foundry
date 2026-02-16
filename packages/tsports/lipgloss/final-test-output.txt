@@ -1,0 +1,2517 @@
+bun test v1.2.18 (0d4089ea)
+
+test/all-suites.test.ts:
+(pass) Lipgloss TypeScript Port - Complete Test Suite > 🧪 Basic Functionality Tests > should load basic tests [22.78ms]
+(pass) Lipgloss TypeScript Port - Complete Test Suite > 📐 Layout & Spacing Tests > should load layout tests [11.03ms]
+(pass) Lipgloss TypeScript Port - Complete Test Suite > 🔲 Border System Tests > should load border tests [4.26ms]
+(pass) Lipgloss TypeScript Port - Complete Test Suite > 🧩 Component Tests > should load component tests [9.55ms]
+Loaded 308 test cases
+(pass) Lipgloss TypeScript Port - Complete Test Suite > ⚖️ Comparative Tests (Go vs TypeScript) > should load comparative tests [27.65ms]
+(pass) Lipgloss TypeScript Port - Complete Test Suite > 🎨 Visual Regression Tests > should load visual regression tests [1.95ms]
+(pass) Basic Project Setup > should export VERSION constant [0.02ms]
+(pass) Basic Project Setup > should create Style instance [0.01ms]
+(pass) Basic Project Setup > should render basic text unchanged (placeholder) [0.13ms]
+(pass) Basic Project Setup > should export color constants [0.02ms]
+(pass) Basic Project Setup > should export border constants [0.01ms]
+(pass) Basic Project Setup > should export alignment constants [0.01ms]
+(pass) Basic Project Setup > should create Renderer instance [0.01ms]
+(pass) Basic Project Setup > should copy Style instance [0.01ms]
+(pass) ColorUtils > hexToRGB > should convert 6-digit hex to RGB [0.05ms]
+(pass) ColorUtils > hexToRGB > should convert 3-digit hex to RGB [0.02ms]
+(pass) ColorUtils > hexToRGB > should handle hex without # prefix [0.01ms]
+(pass) ColorUtils > hexToRGB > should handle invalid hex colors [0.01ms]
+(pass) ColorUtils > rgbToHex > should convert RGB to hex [0.01ms]
+(pass) ColorUtils > rgbToHex > should clamp values to valid range [0.01ms]
+(pass) ColorUtils > hslToRGB > should convert HSL to RGB [0.01ms]
+(pass) ColorUtils > rgbToHSL > should convert RGB to HSL [0.01ms]
+(pass) ColorUtils > rgbToHSL > should handle grayscale colors
+(pass) ColorUtils > getLuminance > should calculate luminance correctly [0.05ms]
+(pass) ColorUtils > parseRGBString > should parse valid RGB strings [0.01ms]
+(pass) ColorUtils > parseRGBString > should parse RGB strings with spaces [0.01ms]
+(pass) ColorUtils > parseRGBString > should return null for invalid RGB strings [0.01ms]
+(pass) ColorUtils > getContrastRatio > should calculate contrast ratio [0.01ms]
+(pass) TerminalColorCapability > should detect color levels
+(pass) TerminalColorCapability > should provide color support checks
+(pass) TerminalColorCapability > should allow color level override [0.01ms]
+(pass) TerminalColorCapability > should clamp color level to valid range [0.01ms]
+(pass) ColorManager > toRGB > should handle null color
+(pass) ColorManager > toRGB > should handle RGB objects
+(pass) ColorManager > toRGB > should handle RGBA objects [0.01ms]
+(pass) ColorManager > toRGB > should handle HSL objects [0.01ms]
+(pass) ColorManager > toRGB > should handle ANSI colors [0.01ms]
+(pass) ColorManager > toRGB > should handle hex strings [0.01ms]
+(pass) ColorManager > toRGB > should handle RGB strings [0.01ms]
+(pass) ColorManager > toRGB > should handle RGB strings with spaces
+(pass) ColorManager > toRGB > should reject invalid RGB strings [0.01ms]
+(pass) ColorManager > toRGB > should handle named colors
+(pass) ColorManager > toRGB > should handle invalid colors
+(pass) ColorManager > rgbToANSI > should convert RGB to ANSI codes [0.03ms]
+(pass) ColorManager > color application > should apply foreground colors without throwing [0.02ms]
+(pass) ColorManager > color application > should apply background colors without throwing [0.02ms]
+(pass) ColorManager > color application > should handle null colors gracefully
+(pass) ColorManager > detectBackgroundType > should return a valid background type [0.01ms]
+(pass) ColorManager > getAdaptiveColors > should return adaptive color scheme
+(pass) ColorManager > normalizeColor > should normalize hex colors
+(pass) ColorManager > normalizeColor > should reject invalid ANSI colors [0.01ms]
+(pass) ColorManager > normalizeColor > should reject invalid RGB values and normalize valid ones [0.02ms]
+(pass) ColorManager > normalizeColor > should handle invalid colors
+(pass) Style Color Integration > should apply foreground colors [0.04ms]
+(pass) Style Color Integration > should apply background colors [0.04ms]
+(pass) Style Color Integration > should apply both colors at once
+(pass) Style Color Integration > should apply adaptive colors [0.03ms]
+(pass) Style Color Integration > should validate color values [0.06ms]
+(pass) Style Color Integration > should render colored text [0.33ms]
+(pass) Style Color Integration > should handle render errors gracefully [0.03ms]
+(pass) Color Constants > should export NoColor
+(pass) Color Constants > should export Colors object [0.01ms]
+(pass) Color Constants > should export HexColors object [0.01ms]
+(pass) Edge Cases and Error Handling > should handle color degradation gracefully [0.09ms]
+(pass) Edge Cases and Error Handling > should handle malformed color objects [0.01ms]
+(pass) Edge Cases and Error Handling > should handle extreme color values
+(pass) Edge Cases and Error Handling > should handle ANSI color edge cases
+(pass) Text Styling Methods > Bold styling > should enable bold by default
+(pass) Text Styling Methods > Bold styling > should enable bold when passed true
+(pass) Text Styling Methods > Bold styling > should disable bold when passed false
+(pass) Text Styling Methods > Bold styling > should maintain immutability
+(pass) Text Styling Methods > Italic styling > should enable italic by default [0.04ms]
+(pass) Text Styling Methods > Italic styling > should enable italic when passed true [0.02ms]
+(pass) Text Styling Methods > Italic styling > should disable italic when passed false [0.01ms]
+(pass) Text Styling Methods > Italic styling > should maintain immutability [0.02ms]
+(pass) Text Styling Methods > Underline styling > should enable underline by default
+(pass) Text Styling Methods > Underline styling > should enable underline when passed true
+(pass) Text Styling Methods > Underline styling > should disable underline when passed false [0.01ms]
+(pass) Text Styling Methods > Underline styling > should preserve other text decorations [0.03ms]
+(pass) Text Styling Methods > Underline styling > should maintain immutability [0.02ms]
+(pass) Text Styling Methods > Strikethrough styling > should enable strikethrough by default
+(pass) Text Styling Methods > Strikethrough styling > should enable strikethrough when passed true
+(pass) Text Styling Methods > Strikethrough styling > should disable strikethrough when passed false
+(pass) Text Styling Methods > Strikethrough styling > should preserve other text decorations
+(pass) Text Styling Methods > Strikethrough styling > should maintain immutability
+(pass) Text Styling Combinations > should support multiple text styles together
+(pass) Text Styling Combinations > should handle selective enabling and disabling [0.03ms]
+(pass) Text Styling Combinations > should handle style conflicts properly [0.02ms]
+(pass) Unset Methods > unsetBold > should remove bold styling [0.01ms]
+(pass) Unset Methods > unsetBold > should maintain immutability
+(pass) Unset Methods > unsetItalic > should remove italic styling
+(pass) Unset Methods > unsetItalic > should maintain immutability
+(pass) Unset Methods > unsetUnderline > should remove underline while preserving other decorations
+(pass) Unset Methods > unsetUnderline > should maintain immutability
+(pass) Unset Methods > unsetStrikethrough > should remove strikethrough while preserving other decorations [0.01ms]
+(pass) Unset Methods > unsetStrikethrough > should maintain immutability
+(pass) Unset Methods > unsetTextDecorations > should remove all text decorations
+(pass) Unset Methods > unsetTextDecorations > should maintain immutability
+(pass) Unset Methods > unsetTypography > should reset all typography styles [0.02ms]
+(pass) Unset Methods > unsetTypography > should preserve non-typography styles [0.08ms]
+(pass) Unset Methods > unsetTypography > should maintain immutability [0.01ms]
+(pass) Method Chaining with Text Styles > should support fluent chaining with boolean parameters
+(pass) Method Chaining with Text Styles > should support chaining with unset methods [0.03ms]
+(pass) Method Chaining with Text Styles > should handle complex chaining scenarios
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should align text left within target width [0.67ms]
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should align text center within target width [0.02ms]
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should align text right within target width
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should handle center alignment with odd padding
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should return original text when width is too small
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should handle empty text
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should handle zero width
+(pass) Text Alignment System > AlignUtils.alignHorizontal > should handle Unicode characters properly [0.21ms]
+(pass) Text Alignment System > AlignUtils.alignVertical > should align lines to top [0.03ms]
+(pass) Text Alignment System > AlignUtils.alignVertical > should align lines to bottom
+(pass) Text Alignment System > AlignUtils.alignVertical > should align lines to center
+(pass) Text Alignment System > AlignUtils.alignVertical > should align lines to center with odd padding
+(pass) Text Alignment System > AlignUtils.alignVertical > should handle consistent width for empty lines
+(pass) Text Alignment System > AlignUtils.alignVertical > should not truncate lines when height is smaller than content (Go compatibility)
+(pass) Text Alignment System > AlignUtils.alignVertical > should handle empty lines array
+(pass) Text Alignment System > AlignUtils.alignText > should align multi-line text horizontally [0.08ms]
+(pass) Text Alignment System > AlignUtils.alignText > should preserve line structure [0.03ms]
+(pass) Text Alignment System > AlignUtils.alignTextBox > should align text in both dimensions [0.05ms]
+(pass) Text Alignment System > AlignUtils.alignTextBox > should handle multi-line text in box [0.03ms]
+(pass) Text Alignment System > AlignUtils.center > should center text in both dimensions [0.04ms]
+(pass) Text Alignment System > AlignUtils.getOptimalWidth > should return width of widest line [0.03ms]
+(pass) Text Alignment System > AlignUtils.getOptimalWidth > should handle empty text
+(pass) Text Alignment System > AlignUtils.getOptimalWidth > should handle single line [0.06ms]
+(pass) Text Alignment System > Style class alignment integration > should apply horizontal alignment through Style [0.13ms]
+(pass) Text Alignment System > Style class alignment integration > should apply vertical alignment through Style [0.05ms]
+(pass) Text Alignment System > Style class alignment integration > should apply both alignments through Style [0.05ms]
+(pass) Text Alignment System > Style class alignment integration > should work with convenience alignment methods [0.10ms]
+(pass) Text Alignment System > Style class alignment integration > should work with vertical alignment methods [0.06ms]
+(pass) Text Alignment System > Style class alignment integration > should handle alignment with padding [0.02ms]
+(pass) Text Alignment System > Style class alignment integration > should handle alignment with multi-line text [0.02ms]
+(pass) Text Alignment System > Style class alignment integration > should handle Unicode text alignment [0.02ms]
+(pass) Text Alignment System > Style class alignment integration > should not apply alignment when no width/height is set
+(pass) Text Alignment System > Align constants > should provide convenient alignment constants [0.02ms]
+(pass) Text Alignment System > Edge cases and error handling > should handle negative dimensions gracefully
+(pass) Text Alignment System > Edge cases and error handling > should handle very long text with small width
+(pass) Text Alignment System > Edge cases and error handling > should handle empty strings in multi-line alignment
+(pass) TypeScript Interface Definitions > Color Types > should accept hex color strings
+(pass) TypeScript Interface Definitions > Color Types > should accept RGB color objects
+(pass) TypeScript Interface Definitions > Color Types > should accept HSL color objects
+(pass) TypeScript Interface Definitions > Color Types > should accept named colors
+(pass) TypeScript Interface Definitions > Color Types > should accept ANSI color codes
+(pass) TypeScript Interface Definitions > Color Types > should accept null for no color
+(pass) TypeScript Interface Definitions > Alignment Types > should provide horizontal alignment options
+(pass) TypeScript Interface Definitions > Alignment Types > should provide vertical alignment options
+(pass) TypeScript Interface Definitions > Alignment Types > should provide alignment constants
+(pass) TypeScript Interface Definitions > Border Types > should provide border type options
+(pass) TypeScript Interface Definitions > Border Types > should validate border styles [0.05ms]
+(pass) TypeScript Interface Definitions > Border Types > should provide predefined border styles
+(pass) TypeScript Interface Definitions > Font Types > should provide font weight options
+(pass) TypeScript Interface Definitions > Font Types > should provide font style options
+(pass) TypeScript Interface Definitions > Configuration Types > should accept padding configuration
+(pass) TypeScript Interface Definitions > Configuration Types > should accept margin configuration
+(pass) TypeScript Interface Definitions > Configuration Types > should accept border configuration
+(pass) TypeScript Interface Definitions > Style Properties > should accept comprehensive style properties
+(pass) TypeScript Interface Definitions > Style Properties > should work with partial style properties
+(pass) Utility Functions > ColorUtils > should convert hex to RGB
+(pass) Utility Functions > ColorUtils > should convert RGB to hex
+(pass) Utility Functions > ColorUtils > should convert HSL to RGB [0.01ms]
+(pass) Utility Functions > ColorUtils > should convert RGB to HSL
+(pass) Utility Functions > ColorUtils > should calculate luminance
+(pass) Utility Functions > ColorUtils > should calculate contrast ratio [0.01ms]
+(pass) Utility Functions > BorderUtils > should create border configurations
+(pass) Utility Functions > BorderUtils > should create partial borders [0.02ms]
+(pass) Utility Functions > BorderUtils > should validate borders [0.03ms]
+(pass) Utility Functions > BorderUtils > should merge borders [0.02ms]
+(pass) Utility Functions > AlignUtils > should align text horizontally
+(pass) Utility Functions > AlignUtils > should align text vertically
+(pass) Utility Functions > AlignUtils > should center text both ways
+(pass) Utility Functions > AlignUtils > should justify text
+(pass) Utility Functions > AlignUtils > should wrap text
+(pass) Constants and Predefined Values > should provide color constants
+(pass) Constants and Predefined Values > should provide hex color constants
+(pass) Constants and Predefined Values > should provide border constants
+(pass) Advanced Text Features > Text Decorations > should apply reverse video decoration
+(pass) Advanced Text Features > Text Decorations > should apply blink decoration [0.03ms]
+(pass) Advanced Text Features > Text Decorations > should apply faint styling [0.02ms]
+(pass) Advanced Text Features > Text Decorations > should disable faint styling
+(pass) Advanced Text Features > Text Decorations > should combine multiple decorations [0.02ms]
+(pass) Advanced Text Features > Space-specific Decorations > should apply underline to spaces [0.02ms]
+(pass) Advanced Text Features > Space-specific Decorations > should apply strikethrough to spaces [0.02ms]
+(pass) Advanced Text Features > Space-specific Decorations > should disable space decorations [0.02ms]
+(pass) Advanced Text Features > Color Whitespace > should set colorWhitespace property [0.02ms]
+(pass) Advanced Text Features > Color Whitespace > should disable colorWhitespace property
+(pass) Advanced Text Features > Color Whitespace > should handle colorWhitespace with foreground color [0.03ms]
+(pass) Advanced Text Features > Inline Rendering > should set inline property [0.02ms]
+(pass) Advanced Text Features > Inline Rendering > should convert newlines to spaces in inline mode [0.01ms]
+(pass) Advanced Text Features > Inline Rendering > should preserve newlines when inline is false
+(pass) Advanced Text Features > Inline Rendering > should disable inline rendering
+(pass) Advanced Text Features > Maximum Height > should set maxHeight property [0.02ms]
+(pass) Advanced Text Features > Maximum Height > should truncate content to maxHeight [0.01ms]
+(pass) Advanced Text Features > Maximum Height > should not truncate content shorter than maxHeight [0.01ms]
+(pass) Advanced Text Features > Maximum Height > should work with single line text [0.01ms]
+(pass) Advanced Text Features > Tab Width > should set tabWidth property [0.01ms]
+(pass) Advanced Text Features > Tab Width > should convert tabs to custom width spaces
+(pass) Advanced Text Features > Tab Width > should use default tab width when not specified
+(pass) Advanced Text Features > Tab Width > should handle multiple tabs
+(pass) Advanced Text Features > Tab Width > should work with different tab widths [0.02ms]
+(pass) Advanced Text Features > Combined Advanced Features > should combine inline with tab width [0.02ms]
+(pass) Advanced Text Features > Combined Advanced Features > should combine maxHeight with decorations [0.02ms]
+(pass) Advanced Text Features > Combined Advanced Features > should combine colorWhitespace with reverse [0.02ms]
+(pass) Advanced Text Features > Combined Advanced Features > should combine all advanced features [0.02ms]
+(pass) Advanced Text Features > Getter Methods > should return undefined for unset properties [0.01ms]
+(pass) Advanced Text Features > Getter Methods > should return correct values for set properties
+(pass) Advanced Text Features > Immutability > should maintain immutability with advanced features [0.03ms]
+(pass) Advanced Text Features > Error Handling > should handle invalid tab width gracefully [0.01ms]
+(pass) Advanced Text Features > Error Handling > should handle invalid maxHeight gracefully [0.01ms]
+(pass) Core Dependencies > chalk > should colorize text [0.03ms]
+(pass) Core Dependencies > chalk > should support chaining styles [0.01ms]
+(pass) Core Dependencies > chalk > should support hex colors [0.01ms]
+(pass) Core Dependencies > chalk > should support RGB colors [0.01ms]
+(pass) Core Dependencies > string-width > should measure ASCII text width correctly [0.01ms]
+(pass) Core Dependencies > string-width > should handle Unicode characters [0.01ms]
+(pass) Core Dependencies > string-width > should ignore ANSI escape sequences [0.01ms]
+(pass) Core Dependencies > string-width > should handle emoji correctly [0.01ms]
+(pass) Core Dependencies > strip-ansi > should remove ANSI escape sequences [0.01ms]
+(pass) Core Dependencies > strip-ansi > should handle complex ANSI sequences
+(pass) Core Dependencies > strip-ansi > should not affect plain text
+(pass) Core Dependencies > supports-color > should provide color support information
+(pass) Core Dependencies > supports-color > should indicate color capability levels [0.01ms]
+(pass) Core Dependencies > Integration Tests > should work together for styled text measurement [0.01ms]
+(pass) Core Dependencies > Integration Tests > should handle complex Unicode with styling [0.02ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginTop > should remove only top margin [0.20ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginTop > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginTop > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginTop > should handle style with no margins
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginTop > should be chainable
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginRight > should remove only right margin
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginRight > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginRight > should return new Style instance (immutability) [0.01ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginBottom > should remove only bottom margin [0.04ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginBottom > should preserve all other properties [0.07ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginBottom > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginLeft > should remove only left margin [0.03ms]
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginLeft > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > unsetMarginLeft > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > Combined margin unset operations > should handle multiple margin unsets
+(pass) Detailed Unset Methods Test Suite > 1. Margin Detail Unset Methods > Combined margin unset operations > should handle unsetting all margins individually
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderForeground > should remove border foreground color
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderForeground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderForeground > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderForeground > should handle style with no border
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderBackground > should remove all border background colors
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderBackground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 2. Border Unset Methods > unsetBorderBackground > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderTopForeground > should remove top border color
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderTopForeground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderTopForeground > should return new Style instance (immutability)
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderRightForeground > should remove right border color
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderRightForeground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderBottomForeground > should remove bottom border color [0.03ms]
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderBottomForeground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderLeftForeground > should remove left border color
+(pass) Detailed Unset Methods Test Suite > 3. Border Color Unset Methods > unsetBorderLeftForeground > should preserve all other properties
+(pass) Detailed Unset Methods Test Suite > 4. Border Background Unset Methods > unsetBorderTopBackground > should remove top border background [0.04ms]
+(pass) Detailed Unset Methods Test Suite > 4. Border Background Unset Methods > unsetBorderTopBackground > should preserve border foreground colors
+(pass) Detailed Unset Methods Test Suite > 4. Border Background Unset Methods > unsetBorderRightBackground > should remove right border background
+(pass) Detailed Unset Methods Test Suite > 4. Border Background Unset Methods > unsetBorderBottomBackground > should remove bottom border background [0.05ms]
+(pass) Detailed Unset Methods Test Suite > 4. Border Background Unset Methods > unsetBorderLeftBackground > should remove left border background
+(pass) Detailed Unset Methods Test Suite > 5. Complex Combination Tests > should handle combined margin and border unsets [0.02ms]
+(pass) Detailed Unset Methods Test Suite > 5. Complex Combination Tests > should handle all border color unsets [0.07ms]
+(pass) Detailed Unset Methods Test Suite > 5. Complex Combination Tests > should handle all border background unsets
+(pass) Detailed Unset Methods Test Suite > 6. Method Chaining and Fluent API > should support extensive method chaining
+(pass) Detailed Unset Methods Test Suite > 7. Edge Cases and Error Handling > should handle operations on empty styles [0.05ms]
+(pass) Detailed Unset Methods Test Suite > 7. Edge Cases and Error Handling > should handle partial margin configurations [0.04ms]
+(pass) Detailed Unset Methods Test Suite > 7. Edge Cases and Error Handling > should handle partial border configurations
+(pass) Detailed Unset Methods Test Suite > 8. Performance Tests > should handle many detailed unset operations efficiently [6.57ms]
+(pass) Detailed Unset Methods Test Suite > 9. API Completeness Check > should have all expected detailed unset methods [0.09ms]
+(pass) CLI Framework Integration > Chalk Compatibility > should produce similar output to chalk for basic styling [0.15ms]
+(pass) CLI Framework Integration > Chalk Compatibility > should handle nested styles similar to chalk [0.03ms]
+(pass) CLI Framework Integration > Chalk Compatibility > should work alongside chalk without conflicts [0.01ms]
+(pass) CLI Framework Integration > Terminal Output Simulation > should handle terminal width constraints [0.44ms]
+(pass) CLI Framework Integration > Terminal Output Simulation > should handle different color levels gracefully [0.03ms]
+(pass) CLI Framework Integration > Terminal Output Simulation > should handle TTY vs non-TTY environments [0.01ms]
+(pass) CLI Framework Integration > CLI Application Patterns > should support progress bar styling [0.13ms]
+(pass) CLI Framework Integration > CLI Application Patterns > should support table-like output formatting [0.03ms]
+(pass) CLI Framework Integration > CLI Application Patterns > should support error message formatting [0.05ms]
+(pass) CLI Framework Integration > CLI Application Patterns > should support success message formatting [0.04ms]
+(pass) CLI Framework Integration > Template and Layout Patterns > should support dashboard-like layouts [0.15ms]
+(pass) CLI Framework Integration > Template and Layout Patterns > should support card-like layouts with borders [0.54ms]
+(pass) CLI Framework Integration > Template and Layout Patterns > should support list formatting [0.09ms]
+(pass) CLI Framework Integration > Real-world Usage Patterns > should handle streaming output simulation [0.09ms]
+(pass) CLI Framework Integration > Real-world Usage Patterns > should handle interactive prompt styling [0.06ms]
+(pass) CLI Framework Integration > Real-world Usage Patterns > should handle help text formatting [0.17ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetTransform > should remove transform property [0.17ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetTransform > should return new Style instance (immutability)
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetTransform > should be chainable [0.04ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetString > should remove preset string [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetString > should return new Style instance (immutability)
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetString > should handle style with no preset string
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetUnderlineSpaces > should remove underline spaces setting [0.05ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetUnderlineSpaces > should return new Style instance (immutability) [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetStrikethroughSpaces > should remove strikethrough spaces setting
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetStrikethroughSpaces > should return new Style instance (immutability)
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetRenderer > should reset to default renderer
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetRenderer > should return new Style instance (immutability)
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetMargins (alias) > should remove all margins (alias for unsetMargin)
+(pass) New Implementations Comprehensive Test Suite > 1. Style Unset Methods - New Implementations > unsetMargins (alias) > should be identical to unsetMargin
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderHeader > should enable/disable header border
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderHeader > should affect rendered output [1.52ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderHeader > should be chainable [0.30ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderColumn > should enable/disable column borders
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderColumn > should affect rendered output [0.17ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderColumn > should work with selective column borders [0.28ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderRow > should enable/disable row borders
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > borderRow > should affect rendered output [0.41ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > offset > should set table scroll offset [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > offset > should affect rendered output for large tables [0.42ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > offset > should be chainable
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > wrap > should enable/disable text wrapping
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > wrap > should affect long content rendering [1.23ms]
+(pass) New Implementations Comprehensive Test Suite > 2. Table Methods - New Implementations > wrap > should be chainable with other table methods [0.36ms]
+(pass) New Implementations Comprehensive Test Suite > 3. Whitespace Functions - Already Tested but Integration Validation > WithWhitespaceForeground Integration > should work with Style rendering [0.01ms]
+(pass) New Implementations Comprehensive Test Suite > 3. Whitespace Functions - Already Tested but Integration Validation > WithWhitespaceBackground Integration > should work with Style rendering
+(pass) New Implementations Comprehensive Test Suite > 3. Whitespace Functions - Already Tested but Integration Validation > WithWhitespaceChars Integration > should work with Style rendering [0.01ms]
+(pass) New Implementations Comprehensive Test Suite > 4. NoTabConversion Constant > should have correct value [0.01ms]
+(pass) New Implementations Comprehensive Test Suite > 4. NoTabConversion Constant > should work with Style tabWidth [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 4. NoTabConversion Constant > should match Go Lipgloss behavior [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 5. Edge Cases and Error Handling > Unset methods with already unset properties > should handle unset on empty style gracefully [0.03ms]
+(pass) New Implementations Comprehensive Test Suite > 5. Edge Cases and Error Handling > Table methods with invalid parameters > should handle boolean parameters correctly [0.05ms]
+(pass) New Implementations Comprehensive Test Suite > 5. Edge Cases and Error Handling > Table methods with invalid parameters > should handle numeric offset parameters [0.03ms]
+(pass) New Implementations Comprehensive Test Suite > 6. Method Chaining Comprehensive Test > should chain all new methods together [0.05ms]
+(pass) New Implementations Comprehensive Test Suite > 6. Method Chaining Comprehensive Test > should chain all new table methods together [0.23ms]
+(pass) New Implementations Comprehensive Test Suite > 7. Go Compatibility Validation > should have all expected methods available
+(pass) New Implementations Comprehensive Test Suite > 7. Go Compatibility Validation > should maintain immutability for all new methods [0.02ms]
+(pass) New Implementations Comprehensive Test Suite > 8. Performance and Memory Tests > should handle repeated unset operations efficiently [3.52ms]
+(pass) New Implementations Comprehensive Test Suite > 8. Performance and Memory Tests > should handle repeated table operations efficiently [0.42ms]
+(pass) Basic New Methods Tests > Style Unset Methods > unsetTransform should exist and work
+(pass) Basic New Methods Tests > Style Unset Methods > unsetString should exist and work
+(pass) Basic New Methods Tests > Style Unset Methods > unsetRenderer should exist and work
+(pass) Basic New Methods Tests > Style Unset Methods > unsetMargins should exist and be alias for unsetMargin [0.02ms]
+(pass) Basic New Methods Tests > Style Unset Methods > margin detail unset methods should exist
+(pass) Basic New Methods Tests > Style Unset Methods > border unset methods should exist [0.03ms]
+(pass) Basic New Methods Tests > Table New Methods > table new methods should exist and return new instances [0.78ms]
+(pass) Basic New Methods Tests > Table New Methods > table methods should be chainable [0.16ms]
+(pass) Basic New Methods Tests > Whitespace Functions > WithWhitespaceForeground should work [0.02ms]
+(pass) Basic New Methods Tests > Whitespace Functions > WithWhitespaceBackground should work [0.01ms]
+(pass) Basic New Methods Tests > Whitespace Functions > WithWhitespaceChars should work
+(pass) Basic New Methods Tests > Whitespace Functions > whitespace functions should work together [0.10ms]
+(pass) Basic New Methods Tests > NoTabConversion Constant > should have correct value
+(pass) Basic New Methods Tests > NoTabConversion Constant > should work with tabWidth
+(pass) Basic New Methods Tests > Method Chaining and Immutability > should chain unset methods [0.06ms]
+(pass) Basic New Methods Tests > Method Chaining and Immutability > should chain table methods [0.19ms]
+(pass) Basic New Methods Tests > Edge Cases > should handle empty style unsets [0.01ms]
+(pass) Basic New Methods Tests > Edge Cases > should handle empty table modifications
+(pass) Basic New Methods Tests > Rendering Integration > should render correctly with new methods [0.08ms]
+(pass) Basic New Methods Tests > Rendering Integration > should render table with new methods correctly [0.01ms]
+(pass) Basic New Methods Tests > Rendering Integration > should render whitespace correctly
+(pass) Performance Benchmarks > Text Styling Performance > should render styled text efficiently [0.04ms]
+(pass) Performance Benchmarks > Text Styling Performance > should handle very large text efficiently [0.01ms]
+Chalk: 0.30ms, Lipgloss: 0.79ms (2.62x)
+(pass) Performance Benchmarks > Text Styling Performance > should be competitive with chalk for basic styling [1.17ms]
+(pass) Performance Benchmarks > Layout Performance > should apply padding efficiently [0.49ms]
+(pass) Performance Benchmarks > Layout Performance > should handle text alignment efficiently [0.33ms]
+(pass) Performance Benchmarks > Color Performance > should apply colors efficiently [0.49ms]
+(pass) Performance Benchmarks > Color Performance > should handle RGB color conversion efficiently [0.49ms]
+(pass) Performance Benchmarks > Memory Efficiency > should not leak memory with many style instances [3.82ms]
+(pass) Performance Benchmarks > Memory Efficiency > should efficiently reuse immutable style instances [1.36ms]
+(pass) Performance Benchmarks > Edge Case Performance > should handle empty strings efficiently [0.10ms]
+(pass) Performance Benchmarks > Edge Case Performance > should handle Unicode text efficiently [2.45ms]
+(pass) Performance Benchmarks > Edge Case Performance > should handle deeply nested styles efficiently [0.31ms]
+(pass) Style Ranges (Minimal) > NewRange function > should create a valid range [0.05ms]
+(pass) Style Ranges (Minimal) > NewRange function > should create range with different positions
+(pass) Style Ranges (Minimal) > StyleRanges function > should return original text when no ranges provided [0.04ms]
+64 |       const text = 'Hello, World!';
+65 |       const range = NewRange(0, 5, redStyle);
+66 |       const result = StyleRanges(text, range);
+67 | 
+68 |       // Should contain ANSI escape codes for red color
+69 |       expect(result).toContain('\x1b[31m'); // Red color code
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "Hello, World!"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:69:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should style a single range [0.39ms]
+77 |       const range2 = NewRange(7, 12, blueStyle); // "World"
+78 | 
+79 |       const result = StyleRanges(text, range1, range2);
+80 | 
+81 |       // Should contain both red and blue color codes
+82 |       expect(result).toContain('\x1b[31m'); // Red color code
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "Hello, World!"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:82:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should style multiple non-overlapping ranges [0.09ms]
+89 |     test('should handle ranges at text boundaries', () => {
+90 |       const text = 'Hello';
+91 |       const range = NewRange(0, 5, redStyle);
+92 |       const result = StyleRanges(text, range);
+93 | 
+94 |       expect(result).toContain('\x1b[31m'); // Red color code
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "Hello"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:94:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should handle ranges at text boundaries [0.04ms]
+(pass) Style Ranges (Minimal) > StyleRanges function > should handle empty range [0.02ms]
+110 |       const range = NewRange(7, 12, blueStyle); // "World"
+111 | 
+112 |       const result = StyleRanges(text, range);
+113 | 
+114 |       expect(result).toContain('Hello, ');
+115 |       expect(result).toContain('\x1b[34m'); // Blue color code
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[34m"
+Received: "Hello, World!"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:115:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should handle range in middle of text [0.01ms]
+122 |       const range = NewRange(6, 8, redStyle); // The emoji and space
+123 | 
+124 |       const result = StyleRanges(text, range);
+125 | 
+126 |       expect(result).toContain('Hello ');
+127 |       expect(result).toContain('\x1b[31m'); // Red color code
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "Hello 🌍 World!"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:127:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should handle unicode characters correctly [0.06ms]
+133 |       const text = 'café münü';
+134 |       const range = NewRange(0, 4, redStyle); // "café"
+135 | 
+136 |       const result = StyleRanges(text, range);
+137 | 
+138 |       expect(result).toContain('\x1b[31m'); // Red color code
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "café münü"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:138:22)
+(fail) Style Ranges (Minimal) > StyleRanges function > should handle multi-byte unicode sequences [0.05ms]
+(pass) Style Ranges (Minimal) > Range validation > should throw error for negative start position [0.09ms]
+(pass) Style Ranges (Minimal) > Range validation > should throw error for end before start [0.03ms]
+(pass) Style Ranges (Minimal) > Range validation > should throw error for start position beyond text length [0.02ms]
+(pass) Style Ranges (Minimal) > Range validation > should throw error for overlapping ranges [0.01ms]
+(pass) Style Ranges (Minimal) > Range validation > should allow adjacent ranges [0.06ms]
+(pass) Style Ranges (Minimal) > Range validation > should handle end position beyond text length gracefully [0.03ms]
+(pass) Style Ranges (Minimal) > CreateRanges utility > should create multiple ranges with same style [0.04ms]
+(pass) Style Ranges (Minimal) > CreateRanges utility > should create empty array for empty positions [0.02ms]
+(pass) Style Ranges (Minimal) > StyleWord utility > should find and style single word occurrence [0.04ms]
+(pass) Style Ranges (Minimal) > StyleWord utility > should find and style multiple word occurrences
+(pass) Style Ranges (Minimal) > StyleWord utility > should handle case sensitive search [0.01ms]
+(pass) Style Ranges (Minimal) > StyleWord utility > should return empty array for word not found
+(pass) Style Ranges (Minimal) > StyleWord utility > should return empty array for empty word
+(pass) Style Ranges (Minimal) > Edge cases > should handle empty text
+268 |     test('should handle single character text', () => {
+269 |       const text = 'A';
+270 |       const range = NewRange(0, 1, redStyle);
+271 |       const result = StyleRanges(text, range);
+272 | 
+273 |       expect(result).toContain('\x1b[31m');
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "A"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:273:22)
+(fail) Style Ranges (Minimal) > Edge cases > should handle single character text [0.08ms]
+278 |       const text = '   ';
+279 |       const range = NewRange(0, 3, redStyle);
+280 |       const result = StyleRanges(text, range);
+281 | 
+282 |       // With forced color support, whitespace should be colored
+283 |       expect(result).toContain('\x1b[31m'); // Red color code
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "   "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:283:22)
+(fail) Style Ranges (Minimal) > Edge cases > should handle text with only whitespace [0.05ms]
+288 |       const text = 'Hello\nWorld!';
+289 |       const range = NewRange(6, 11, redStyle); // "World"
+290 |       const result = StyleRanges(text, range);
+291 | 
+292 |       expect(result).toContain('Hello\n');
+293 |       expect(result).toContain('\x1b[31m');
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[31m"
+Received: "Hello\nWorld!"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/ranges-minimal.test.ts:293:22)
+(fail) Style Ranges (Minimal) > Edge cases > should handle newlines in text [0.03ms]
+(pass) Style Ranges > NewRange function > should create a valid range [0.01ms]
+(pass) Style Ranges > NewRange function > should create range with different positions [0.01ms]
+(pass) Style Ranges > StyleRanges function > should return original text when no ranges provided
+(pass) Style Ranges > StyleRanges function > should style a single range [0.01ms]
+(pass) Style Ranges > StyleRanges function > should style multiple non-overlapping ranges [0.03ms]
+(pass) Style Ranges > StyleRanges function > should handle ranges at text boundaries [0.02ms]
+(pass) Style Ranges > StyleRanges function > should handle empty range [0.02ms]
+(pass) Style Ranges > StyleRanges function > should handle range in middle of text [0.01ms]
+(pass) Style Ranges > StyleRanges function > should style with different text styles [0.02ms]
+(pass) Style Ranges > StyleRanges function > should handle unicode characters correctly [0.01ms]
+(pass) Style Ranges > StyleRanges function > should handle multi-byte unicode sequences
+(pass) Style Ranges > StyleRanges function > should handle text with existing ANSI codes
+(pass) Style Ranges > Range validation > should throw error for negative start position [0.03ms]
+(pass) Style Ranges > Range validation > should throw error for end before start [0.02ms]
+(pass) Style Ranges > Range validation > should throw error for start position beyond text length [0.02ms]
+(pass) Style Ranges > Range validation > should throw error for overlapping ranges
+(pass) Style Ranges > Range validation > should allow adjacent ranges [0.02ms]
+(pass) Style Ranges > Range validation > should handle end position beyond text length gracefully [0.01ms]
+(pass) Style Ranges > CreateRanges utility > should create multiple ranges with same style [0.01ms]
+(pass) Style Ranges > CreateRanges utility > should create empty array for empty positions
+(pass) Style Ranges > StyleWord utility > should find and style single word occurrence [0.01ms]
+(pass) Style Ranges > StyleWord utility > should find and style multiple word occurrences [0.01ms]
+(pass) Style Ranges > StyleWord utility > should handle case sensitive search [0.01ms]
+(pass) Style Ranges > StyleWord utility > should return empty array for word not found [0.02ms]
+(pass) Style Ranges > StyleWord utility > should return empty array for empty word
+(pass) Style Ranges > StyleWord utility > should handle text with ANSI codes when finding words [0.01ms]
+(pass) Style Ranges > Integration with real styling > should properly render styled ranges [0.01ms]
+(pass) Style Ranges > Integration with real styling > should handle complex styling combinations [0.02ms]
+(pass) Style Ranges > Edge cases > should handle empty text
+(pass) Style Ranges > Edge cases > should handle single character text [0.02ms]
+(pass) Style Ranges > Edge cases > should handle text with only whitespace [0.02ms]
+(pass) Style Ranges > Edge cases > should handle newlines in text [0.02ms]
+(pass) Style Ranges > Edge cases > should handle tabs in text [0.01ms]
+(pass) Renderer System > Color Profile Management > should detect color profile automatically
+(pass) Renderer System > Color Profile Management > should allow explicit color profile setting [0.01ms]
+(pass) Renderer System > Color Profile Management > should create renderer with specific color profile [0.01ms]
+(pass) Renderer System > Color Profile Management > should handle color conversion based on profile [0.01ms]
+(pass) Renderer System > Dark Background Detection > should detect dark background automatically [0.01ms]
+(pass) Renderer System > Dark Background Detection > should allow explicit dark background setting
+(pass) Renderer System > Dark Background Detection > should create renderer with specific background setting [0.01ms]
+(pass) Renderer System > Output Options > should handle force color option [0.01ms]
+(pass) Renderer System > Output Options > should handle terminal width option
+(pass) Renderer System > Output Options > should handle unicode option [0.01ms]
+(pass) Renderer System > Output Options > should handle line ending option [0.01ms]
+(pass) Renderer System > Output Options > should update options dynamically [0.01ms]
+(pass) Renderer System > Global Renderer Management > should get and set default renderer [0.02ms]
+(pass) Renderer System > Global Renderer Management > should manage global color profile [0.02ms]
+(pass) Renderer System > Global Renderer Management > should manage global dark background setting [0.04ms]
+(pass) Renderer System > Rendering Integration > should render basic text with different profiles [0.10ms]
+(pass) Renderer System > Rendering Integration > should render with different terminal widths [0.18ms]
+(pass) Renderer System > Rendering Integration > should handle unicode vs ascii border rendering [0.12ms]
+(pass) Renderer System > Style Integration > should create style with specific renderer [0.01ms]
+(pass) Renderer System > Style Integration > should use default renderer when none specified [0.01ms]
+(pass) Renderer System > Style Integration > should support withRenderer method [0.01ms]
+(pass) Renderer System > Style Integration > should support renderWith method [0.01ms]
+(pass) Renderer System > Error Handling > should handle rendering errors gracefully [0.01ms]
+(pass) Renderer System > Error Handling > should handle color conversion errors gracefully [0.01ms]
+(pass) Renderer System > Performance and Caching > should cache color profile detection [0.01ms]
+(pass) Renderer System > Performance and Caching > should cache background detection [0.01ms]
+(pass) Renderer System > Legacy Compatibility > should maintain backward compatibility with RendererOptions [0.01ms]
+54 |     test('should apply bold text styling', () => {
+55 |       const style = new Style().bold();
+56 |       const result = style.render('Hello World');
+57 | 
+58 |       // Should contain bold ANSI codes
+59 |       expect(result).toContain('\u001b[1m'); // Bold start
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "Hello World"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:59:22)
+(fail) Rendering Engine > Text Styling Application > should apply bold text styling [0.09ms]
+64 |     test('should apply italic text styling', () => {
+65 |       const style = new Style().italic();
+66 |       const result = style.render('Hello World');
+67 | 
+68 |       // Should contain italic ANSI codes
+69 |       expect(result).toContain('\u001b[3m'); // Italic start
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[3m"
+Received: "Hello World"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:69:22)
+(fail) Rendering Engine > Text Styling Application > should apply italic text styling [0.05ms]
+74 |     test('should apply underline text styling', () => {
+75 |       const style = new Style().underline();
+76 |       const result = style.render('Hello World');
+77 | 
+78 |       // Should contain underline ANSI codes
+79 |       expect(result).toContain('\u001b[4m'); // Underline start
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[4m"
+Received: "Hello World"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:79:22)
+(fail) Rendering Engine > Text Styling Application > should apply underline text styling [0.04ms]
+84 |     test('should apply strikethrough text styling', () => {
+85 |       const style = new Style().strikethrough();
+86 |       const result = style.render('Hello World');
+87 | 
+88 |       // Should contain strikethrough ANSI codes
+89 |       expect(result).toContain('\u001b[9m'); // Strikethrough start
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[9m"
+Received: "Hello World"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:89:22)
+(fail) Rendering Engine > Text Styling Application > should apply strikethrough text styling [0.02ms]
+94 |     test('should apply multiple text styles together', () => {
+95 |       const style = new Style().bold().italic().underline();
+96 |       const result = style.render('Hello World');
+97 | 
+98 |       // Should contain all styling codes
+99 |       expect(result).toContain('\u001b[1m'); // Bold
+                          ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "Hello World"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:99:22)
+(fail) Rendering Engine > Text Styling Application > should apply multiple text styles together [0.02ms]
+(pass) Rendering Engine > Text Styling Application > should not apply styling when not set [0.02ms]
+129 | 
+130 |       // Transform should be applied (uppercase)
+131 |       expect(stripAnsi(result)).toContain('HELLO');
+132 | 
+133 |       // Should contain bold styling
+134 |       expect(result).toContain('\u001b[1m');
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "                    \n       HELLO        \n                    "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:134:22)
+(fail) Rendering Engine > Complete Rendering Pipeline > should apply transform, styling, colors, and layout in correct order [0.09ms]
+157 |         .verticalAlignment(VerticalAlignment.Center);
+158 | 
+159 |       const result = style.render('Styled Text');
+160 | 
+161 |       // Should maintain styling through layout transformations
+162 |       expect(result).toContain('\u001b[1m'); // Bold
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "                              \n                              \n                              \n                              \n         Styled Text          \n                              \n                              \n                              \n                              \n                              "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:162:22)
+(fail) Rendering Engine > Complete Rendering Pipeline > should handle styling with layout correctly [0.14ms]
+180 |         .backgroundColor({ r: 0, g: 255, b: 0 });
+181 | 
+182 |       const result = style.render('Colorful Text');
+183 | 
+184 |       // Should contain styling codes first
+185 |       expect(result).toContain('\u001b[1m'); // Bold
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "Colorful Text"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:185:22)
+(fail) Rendering Engine > Complete Rendering Pipeline > should apply colors after styling [0.02ms]
+202 |         .padding(1);
+203 | 
+204 |       const result = style.render(multilineText);
+205 | 
+206 |       // Should maintain styling on all lines
+207 |       expect(result).toContain('\u001b[1m'); // Bold
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "                    \n       Line 1       \n       Line 2       \n       Line 3       \n                    "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:207:22)
+(fail) Rendering Engine > Complete Rendering Pipeline > should handle multi-line text with styling and alignment [0.01ms]
+(pass) Rendering Engine > Error Handling in Rendering > should handle empty text gracefully [0.02ms]
+(pass) Rendering Engine > Error Handling in Rendering > should handle rendering errors gracefully
+(pass) Rendering Engine > Error Handling in Rendering > should handle null and undefined properties
+(pass) Rendering Engine > Performance and Optimization > should handle large text efficiently
+(pass) Rendering Engine > Performance and Optimization > should handle complex styling combinations efficiently
+(pass) Rendering Engine > Visual Regression Prevention > should produce consistent output for identical styles
+311 |       const style = new Style().bold().italic().color('#00ff00');
+312 | 
+313 |       const result = style.render(unicodeText);
+314 | 
+315 |       // Should contain styling codes
+316 |       expect(result).toContain('\u001b[1m'); // Bold
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "\u001B[1m"
+Received: "你好世界 🌍 Test"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/basic/rendering-engine.test.ts:316:22)
+(fail) Rendering Engine > Visual Regression Prevention > should handle Unicode text correctly with styling
+(pass) Rendering Engine > Visual Regression Prevention > should handle edge case with zero dimensions [0.01ms]
+(pass) Style Class Immutability > should not mutate original style when setting color
+(pass) Style Class Immutability > should not mutate original style when setting background color
+(pass) Style Class Immutability > should not mutate original style when setting font weight
+(pass) Style Class Immutability > should not mutate original style when setting font style
+(pass) Style Class Immutability > should not mutate original style when setting dimensions
+(pass) Style Class Immutability > should not mutate original style when setting padding
+(pass) Style Class Immutability > should not mutate original style when setting margin
+(pass) Style Class Immutability > should not mutate original style when setting alignment
+(pass) Style Class Immutability > should not mutate original style when setting borders [0.03ms]
+(pass) Style Class Immutability > should not mutate original style when setting text decorations
+(pass) Style Method Chaining > should support fluent method chaining
+(pass) Style Method Chaining > should create new instances at each step of chaining
+(pass) Style Method Chaining > should support convenience methods (bold, italic, underline, strikethrough)
+(pass) Style Method Chaining > should properly merge text decorations [0.02ms]
+(pass) Style Copy and Merge Operations > should create independent copy [0.03ms]
+(pass) Style Copy and Merge Operations > should merge styles correctly [0.01ms]
+(pass) Style Copy and Merge Operations > should apply multiple updates efficiently
+(pass) Style Properties Immutability > should return frozen properties object
+(pass) Style Properties Immutability > should return copies of mutable property objects
+(pass) Style Properties Immutability > should handle advanced properties correctly
+(pass) Style Memory Efficiency > should not create unnecessary object copies for primitive values
+(pass) Style Memory Efficiency > should handle large chains efficiently [0.17ms]
+(pass) Unset Methods - Complete API Coverage > Color Unset Methods > unsetForeground should remove foreground color
+(pass) Unset Methods - Complete API Coverage > Color Unset Methods > unsetBackground should remove background color
+(pass) Unset Methods - Complete API Coverage > Text Decoration Unset Methods > unsetBlink should remove blink decoration
+(pass) Unset Methods - Complete API Coverage > Text Decoration Unset Methods > unsetFaint should remove faint styling
+(pass) Unset Methods - Complete API Coverage > Text Decoration Unset Methods > unsetReverse should remove reverse video decoration
+(pass) Unset Methods - Complete API Coverage > Alignment Unset Methods > unsetAlignHorizontal should remove horizontal alignment [0.06ms]
+(pass) Unset Methods - Complete API Coverage > Alignment Unset Methods > unsetAlignVertical should remove vertical alignment [0.02ms]
+(pass) Unset Methods - Complete API Coverage > Alignment Unset Methods > unsetAlign should remove both alignments
+(pass) Unset Methods - Complete API Coverage > Dimension Unset Methods > unsetWidth should remove width constraint
+(pass) Unset Methods - Complete API Coverage > Dimension Unset Methods > unsetHeight should remove height constraint
+(pass) Unset Methods - Complete API Coverage > Dimension Unset Methods > unsetMaxWidth should remove max width constraint [0.02ms]
+(pass) Unset Methods - Complete API Coverage > Dimension Unset Methods > unsetMaxHeight should remove max height constraint [0.04ms]
+(pass) Unset Methods - Complete API Coverage > Advanced Settings Unset Methods > unsetTabWidth should remove custom tab width [0.04ms]
+(pass) Unset Methods - Complete API Coverage > Advanced Settings Unset Methods > unsetInline should remove inline setting [0.04ms]
+(pass) Unset Methods - Complete API Coverage > Advanced Settings Unset Methods > unsetColorWhitespace should remove whitespace coloring [0.06ms]
+(pass) Unset Methods - Complete API Coverage > Advanced Settings Unset Methods > unsetWhitespaceChars should remove whitespace coloring (alias)
+(pass) Unset Methods - Complete API Coverage > Padding Unset Methods > unsetPadding should remove all padding
+(pass) Unset Methods - Complete API Coverage > Padding Unset Methods > unsetPaddingTop should remove only top padding [0.08ms]
+(pass) Unset Methods - Complete API Coverage > Padding Unset Methods > unsetPaddingRight should remove only right padding [0.03ms]
+(pass) Unset Methods - Complete API Coverage > Padding Unset Methods > unsetPaddingBottom should remove only bottom padding [0.03ms]
+(pass) Unset Methods - Complete API Coverage > Padding Unset Methods > unsetPaddingLeft should remove only left padding [0.03ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMargin should remove all margin [0.03ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMarginTop should remove only top margin [0.02ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMarginRight should remove only right margin [0.06ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMarginBottom should remove only bottom margin [0.01ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMarginLeft should remove only left margin [0.05ms]
+(pass) Unset Methods - Complete API Coverage > Margin Unset Methods > unsetMarginBackground should remove margin background color
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderStyle should remove border style
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderForeground should remove border foreground color
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderBackground should remove all border background colors
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderTop should disable top border
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderRight should disable right border
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderBottom should disable bottom border
+(pass) Unset Methods - Complete API Coverage > Border Unset Methods > unsetBorderLeft should disable left border [0.06ms]
+(pass) Unset Methods - Complete API Coverage > Border Color Unset Methods > unsetBorderTopColor should remove top border color
+(pass) Unset Methods - Complete API Coverage > Border Color Unset Methods > unsetBorderRightColor should remove right border color
+(pass) Unset Methods - Complete API Coverage > Border Color Unset Methods > unsetBorderBottomColor should remove bottom border color
+(pass) Unset Methods - Complete API Coverage > Border Color Unset Methods > unsetBorderLeftColor should remove left border color
+(pass) Unset Methods - Complete API Coverage > Border Background Unset Methods > unsetBorderTopBackground should remove top border background
+(pass) Unset Methods - Complete API Coverage > Border Background Unset Methods > unsetBorderRightBackground should remove right border background
+(pass) Unset Methods - Complete API Coverage > Border Background Unset Methods > unsetBorderBottomBackground should remove bottom border background
+(pass) Unset Methods - Complete API Coverage > Border Background Unset Methods > unsetBorderLeftBackground should remove left border background
+(pass) Unset Methods - Complete API Coverage > Method Chaining > all unset methods should return Style instances for chaining [0.08ms]
+(pass) Unset Methods - Complete API Coverage > Immutability > unset methods should not modify original style
+(pass) Unset Methods - Complete API Coverage > API Count Verification > all new unset methods should be available [0.06ms]
+(pass) Utility Functions - Core Functionality > Width() should return the maximum width of lines [0.08ms]
+(pass) Utility Functions - Core Functionality > Width() should handle Unicode characters correctly [0.03ms]
+(pass) Utility Functions - Core Functionality > Height() should count lines correctly
+(pass) Utility Functions - Core Functionality > Size() should return both width and height [0.03ms]
+(pass) Utility Functions - Core Functionality > getLines() should split text and return max width [0.02ms]
+(pass) Utility Functions - Core Functionality > StyleRunes() should apply styles to specific indices [0.08ms]
+(pass) Utility Functions - Core Functionality > renderWhitespace() should create spaces by default [0.02ms]
+(pass) Utility Functions - Core Functionality > renderWhitespace() should use custom characters [0.04ms]
+(pass) Utility Functions - Core Functionality > PlaceHorizontal() should align text within width [0.07ms]
+(pass) Utility Functions - Core Functionality > PlaceVertical() should align text within height [0.09ms]
+(pass) Utility Functions - Core Functionality > Place() should combine horizontal and vertical placement [0.01ms]
+(pass) Utility Functions - Core Functionality > String padding functions should work correctly [0.06ms]
+(pass) Utility Functions - Core Functionality > Unicode helper functions should work correctly [0.09ms]
+(pass) Utility Functions - Core Functionality > ANSI handling functions should work correctly [0.07ms]
+(pass) Utility Functions - Core Functionality > String manipulation utilities should work correctly [0.01ms]
+(pass) Utility Functions - Core Functionality > Position constants should have correct values [0.01ms]
+(pass) Utility Functions - Core Functionality > Integration test - should work together for complex text formatting
+(pass) Utility Functions - Core Functionality > Unicode handling in all operations should work correctly [0.05ms]
+(pass) Text Measurement Utilities > Width() should return the maximum width of lines
+(pass) Text Measurement Utilities > Width() should handle Unicode characters correctly [0.01ms]
+(pass) Text Measurement Utilities > Width() should ignore ANSI sequences [0.03ms]
+(pass) Text Measurement Utilities > Height() should count lines correctly [0.01ms]
+(pass) Text Measurement Utilities > Size() should return both width and height [0.03ms]
+(pass) Text Measurement Utilities > getLines() should split text and return max width [0.01ms]
+(pass) Rune and Character Manipulation > StyleRunes() should style specific character indices [0.03ms]
+(pass) Rune and Character Manipulation > StyleRunes() should handle empty strings and arrays
+(pass) Rune and Character Manipulation > StyleRunes() should handle Unicode characters
+(pass) Rune and Character Manipulation > maxRuneWidth() should return maximum character width
+(pass) Rune and Character Manipulation > getFirstRune() should return first Unicode character
+(pass) Rune and Character Manipulation > toRunes() should split string into Unicode characters
+(pass) Rune and Character Manipulation > runeCount() should count Unicode characters
+(pass) Whitespace Rendering > renderWhitespace() should create spaces by default [0.03ms]
+(pass) Whitespace Rendering > renderWhitespace() should use custom characters [0.04ms]
+(pass) Whitespace Rendering > renderWhitespace() should apply colors [0.04ms]
+(pass) Whitespace Rendering > renderWhitespace() should handle wide characters [0.01ms]
+(pass) Text Placement > PlaceHorizontal() should align text within width [0.05ms]
+(pass) Text Placement > PlaceHorizontal() should handle multiline text [0.01ms]
+(pass) Text Placement > PlaceHorizontal() should be noop if width is too small [0.01ms]
+(pass) Text Placement > PlaceVertical() should align text within height [0.01ms]
+(pass) Text Placement > PlaceVertical() should be noop if height is too small
+(pass) Text Placement > Place() should combine horizontal and vertical placement [0.03ms]
+(pass) String Padding > padRight() should pad with spaces on the right [0.01ms]
+(pass) String Padding > padLeft() should pad with spaces on the left [0.02ms]
+(pass) String Padding > padCenter() should pad with spaces on both sides [0.02ms]
+(pass) String Padding > padding functions should handle Unicode characters [0.01ms]
+(pass) ANSI Handling > stripANSI() should remove ANSI escape sequences [0.01ms]
+(pass) ANSI Handling > hasANSI() should detect ANSI sequences [0.01ms]
+(pass) String Manipulation > repeat() should repeat strings correctly [0.01ms]
+(pass) String Manipulation > spaces() should create space strings [0.02ms]
+(pass) String Manipulation > trim functions should remove whitespace [0.02ms]
+(pass) Position Constants > Position constants should have correct values [0.01ms]
+(pass) Integration Tests > Should work together for complex text formatting [0.14ms]
+(pass) Integration Tests > Should handle styled text with measurements [0.08ms]
+(pass) Integration Tests > Should handle Unicode in all operations [0.03ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-exact-match.test.ts:24:26)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-exact-match.test.ts:22:26)
+(fail) Layout Exact Match > Outputs must be 100% byte-for-byte identical [1.75ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-exact-match.test.ts:24:26)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-exact-match.test.ts:22:26)
+(fail) Layout Exact Match > All comparison metrics must match [0.42ms]
+🧪 Testing layout example compatibility...
+📁 Project paths:
+  Go example: /work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/tests/lipgloss/examples
+  TS example: /work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/examples/layout/main.ts
+🏃 Running Go example...
+❌ Go example failed: 32 |   command: string,
+33 |   args: string[],
+34 |   options: any = {}
+35 | ): Promise<string> {
+36 |   return new Promise((resolve, reject) => {
+37 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:37:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:36:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:32:3)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:185:24)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:159:70)
+
+32 |   command: string,
+33 |   args: string[],
+34 |   options: any = {}
+35 | ): Promise<string> {
+36 |   return new Promise((resolve, reject) => {
+37 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:37:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:36:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:32:3)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:185:24)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:159:70)
+(fail) Layout Example Compatibility > Go and TypeScript layout examples produce identical output [0.74ms]
+296 |     );
+297 | 
+298 |     // Test Go example doesn't crash
+299 |     await expect(
+300 |       execCommand('go', ['run', 'layout/main.go'], { cwd: goExamplePath })
+301 |     ).resolves.toBeDefined();
+                     ^
+error: 
+
+Expected promise that resolves
+Received promise that rejected: Promise { <rejected> }
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:301:16)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:283:43)
+(fail) Layout Example Compatibility > Both examples exit successfully [0.40ms]
+32 |   command: string,
+33 |   args: string[],
+34 |   options: any = {}
+35 | ): Promise<string> {
+36 |   return new Promise((resolve, reject) => {
+37 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:37:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:36:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:32:3)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:324:28)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-compatibility.test.ts:309:50)
+(fail) Layout Example Compatibility > Both examples produce non-empty output [0.37ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:154:26)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:152:44)
+(fail) Layout Unified Comparison > Layout example produces 100% identical output [0.31ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:154:26)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:152:44)
+(fail) Layout Unified Comparison > Layout example has identical character counts [0.25ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:154:26)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:152:44)
+(fail) Layout Unified Comparison > Layout example has identical line counts [0.24ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:154:26)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:152:44)
+(fail) Layout Unified Comparison > Layout example has identical ANSI code counts [0.24ms]
+80 |   command: string,
+81 |   args: string[],
+82 |   options: ExecOptions = {}
+83 | ): Promise<string> {
+84 |   return new Promise((resolve, reject) => {
+85 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:85:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:84:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:80:3)
+      at execGoCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:30:3)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:154:26)
+      at compareLayoutExamples (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/utils/test-helpers-unified.ts:152:44)
+(fail) Layout Unified Comparison > Layout example content without ANSI codes is identical [0.25ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:98:42)
+(fail) Layout Content Compatibility > Both examples contain tab navigation elements [0.43ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:119:42)
+(fail) Layout Content Compatibility > Both examples contain title and description [0.33ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:131:42)
+(fail) Layout Content Compatibility > Both examples contain dialog with marmalade question [0.30ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:148:42)
+(fail) Layout Content Compatibility > Both examples use custom whitespace characters (猫咪) [0.26ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:162:42)
+(fail) Layout Content Compatibility > Both examples contain fruit lists [0.33ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:199:42)
+(fail) Layout Content Compatibility > Both examples contain historical marmalade content [0.42ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:214:42)
+(fail) Layout Content Compatibility > Both examples contain status bar [0.34ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:227:42)
+(fail) Layout Content Compatibility > Both examples have color blocks/grid [0.43ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:236:42)
+(fail) Layout Content Compatibility > Both examples have multi-column layout structure [0.33ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:255:42)
+(fail) Layout Content Compatibility > Both examples have similar overall structure [0.34ms]
+27 |   command: string,
+28 |   args: string[],
+29 |   cwd?: string
+30 | ): Promise<string> {
+31 |   return new Promise((resolve, reject) => {
+32 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:32:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:31:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:27:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:87:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:69:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-content.test.ts:281:42)
+(fail) Layout Content Compatibility > Both examples produce substantial output [0.26ms]
+(pass) Layout Utilities > CSS-style shorthand parsing > should parse single value padding (all sides) [0.03ms]
+(pass) Layout Utilities > CSS-style shorthand parsing > should parse two value padding (vertical, horizontal) [0.04ms]
+(pass) Layout Utilities > CSS-style shorthand parsing > should parse three value padding (top, horizontal, bottom)
+(pass) Layout Utilities > CSS-style shorthand parsing > should parse four value padding (top, right, bottom, left)
+(pass) Layout Utilities > CSS-style shorthand parsing > should throw error for empty array
+(pass) Layout Utilities > CSS-style shorthand parsing > should throw error for too many values
+(pass) Layout Utilities > CSS-style shorthand parsing > should throw error for negative values
+(pass) Layout Utilities > CSS-style shorthand parsing > should throw error for non-numeric values
+(pass) Layout Utilities > CSS-style shorthand parsing > should handle zero values
+(pass) Layout Utilities > CSS-style shorthand parsing > margin shorthand should work identically
+(pass) Layout Utilities > Text width calculation > should calculate width of ASCII text
+(pass) Layout Utilities > Text width calculation > should handle empty string
+(pass) Layout Utilities > Text width calculation > should handle Unicode characters
+(pass) Layout Utilities > Text width calculation > should handle emoji characters
+(pass) Layout Utilities > Text width calculation > should handle ANSI escape sequences [0.29ms]
+(pass) Layout Utilities > Text width calculation > should calculate line widths [0.02ms]
+(pass) Layout Utilities > Text width calculation > should get max text width
+(pass) Layout Utilities > Text width calculation > should handle single line for max width
+(pass) Layout Utilities > Text truncation > should truncate text that exceeds max width
+(pass) Layout Utilities > Text truncation > should not truncate text within max width
+(pass) Layout Utilities > Text truncation > should handle custom ellipsis
+(pass) Layout Utilities > Text truncation > should handle ellipsis wider than max width
+(pass) Layout Utilities > Text truncation > should handle zero width
+(pass) Layout Utilities > Text truncation > should handle Unicode truncation correctly
+(pass) Layout Utilities > Text wrapping > should wrap text at word boundaries [0.31ms]
+(pass) Layout Utilities > Text wrapping > should preserve existing line breaks
+(pass) Layout Utilities > Text wrapping > should handle character-based wrapping when preserving whitespace
+(pass) Layout Utilities > Text wrapping > should handle very long words
+(pass) Layout Utilities > Text wrapping > should handle empty string
+(pass) Layout Utilities > Text wrapping > should handle zero width
+(pass) Layout Utilities > Dimension calculations > should calculate width for numeric values
+(pass) Layout Utilities > Dimension calculations > should calculate width for auto
+(pass) Layout Utilities > Dimension calculations > should calculate width for fit-content
+(pass) Layout Utilities > Dimension calculations > should calculate width for max-content
+(pass) Layout Utilities > Dimension calculations > should handle undefined width config
+(pass) Layout Utilities > Dimension calculations > height calculation should work similarly
+(pass) Layout Utilities > Padding application > should apply padding to single line text
+(pass) Layout Utilities > Padding application > should apply padding to multi-line text
+(pass) Layout Utilities > Padding application > should handle zero padding
+(pass) Layout Utilities > Padding application > should handle partial padding config
+(pass) Layout Utilities > Padding application > should handle specified width for padding
+(pass) Style Class Layout Methods > CSS-style padding shorthand > should apply padding with single value
+(pass) Style Class Layout Methods > CSS-style padding shorthand > should apply padding with two values
+(pass) Style Class Layout Methods > CSS-style padding shorthand > should apply padding with four values
+(pass) Style Class Layout Methods > CSS-style padding shorthand > should maintain immutability with padding
+(pass) Style Class Layout Methods > Individual padding methods > should set individual padding values [0.55ms]
+(pass) Style Class Layout Methods > Individual padding methods > should combine with existing padding
+(pass) Style Class Layout Methods > Individual padding methods > should set horizontal and vertical padding [0.07ms]
+(pass) Style Class Layout Methods > Margin methods > should apply margin with CSS shorthand
+(pass) Style Class Layout Methods > Margin methods > should set individual margin values
+(pass) Style Class Layout Methods > Width and height constraints > should set numeric width and height
+(pass) Style Class Layout Methods > Width and height constraints > should set string width and height values [0.11ms]
+(pass) Style Class Layout Methods > Layout rendering integration > should render simple padding correctly [0.02ms]
+(pass) Style Class Layout Methods > Layout rendering integration > should render with width constraints
+450 |       const result = style.render('Very long text that should be truncated');
+451 |       const lines = result.split('\n');
+452 | 
+453 |       // Should be truncated to fit width
+454 |       expect(getTextWidth(lines[0])).toBeLessThanOrEqual(6);
+455 |       expect(lines[0]).toContain('...');
+                             ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "..."
+Received: "Very  "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-padding.test.ts:455:24)
+(fail) Style Class Layout Methods > Layout rendering integration > should handle text truncation with width [0.28ms]
+(pass) Style Class Layout Methods > Layout rendering integration > should handle text wrapping with width [0.25ms]
+(pass) Style Class Layout Methods > Layout rendering integration > should combine padding with width constraints
+(pass) Style Class Layout Methods > Layout rendering integration > should handle Unicode text with padding
+(pass) Style Class Layout Methods > Layout rendering integration > should maintain immutability in rendering
+(pass) Style Class Layout Methods > Error handling > should handle invalid padding values gracefully
+(pass) Style Class Layout Methods > Error handling > should handle rendering errors gracefully
+(pass) Style Class Layout Methods > Error handling > should handle empty text with layout constraints
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:96:42)
+(fail) Layout Structure Compatibility > Line count should be exactly the same [0.78ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:106:42)
+(fail) Layout Structure Compatibility > Content length similarity should be at least 90% (strict) [0.38ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:123:42)
+(fail) Layout Structure Compatibility > Stripped content (no ANSI) should be nearly identical [0.39ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:144:42)
+(fail) Layout Structure Compatibility > Tab section width consistency [0.33ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:169:42)
+(fail) Layout Structure Compatibility > Dialog box proportions should be similar [0.33ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:196:42)
+(fail) Layout Structure Compatibility > List section alignment consistency [0.31ms]
+21 |   command: string,
+22 |   args: string[],
+23 |   cwd?: string
+24 | ): Promise<string> {
+25 |   return new Promise((resolve, reject) => {
+26 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'go'
+      path: "go",
+   syscall: "spawn go",
+     errno: -2,
+ spawnargs: [ "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:26:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:25:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:21:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:85:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-structure-compatibility.test.ts:225:42)
+(fail) Layout Structure Compatibility > Overall line structure analysis [0.38ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:97:42)
+(fail) Layout Visual Compatibility > Both examples contain ANSI color escape sequences [0.67ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:116:42)
+(fail) Layout Visual Compatibility > Both examples have colored tab backgrounds [0.40ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:132:42)
+(fail) Layout Visual Compatibility > Both examples have colored text (foreground colors) [0.27ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:148:42)
+(fail) Layout Visual Compatibility > Color grid section produces colored output [0.27ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:175:42)
+(fail) Layout Visual Compatibility > Tab section has proper visual styling [0.26ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:197:42)
+(fail) Layout Visual Compatibility > Historical content has background colors [0.32ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:233:42)
+(fail) Layout Visual Compatibility > Status bar has colored styling [0.38ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:258:42)
+(fail) Layout Visual Compatibility > Overall visual similarity [0.33ms]
+25 |   command: string,
+26 |   args: string[],
+27 |   cwd?: string
+28 | ): Promise<string> {
+29 |   return new Promise((resolve, reject) => {
+30 |     const proc = spawn(command, args, {
+                      ^
+ENOENT: no such file or directory, posix_spawn 'script'
+      path: "script",
+   syscall: "spawn script",
+     errno: -2,
+ spawnargs: [ "-q", "/dev/null", "go", "run", "layout/main.go" ],
+      code: "ENOENT"
+
+      at spawn (node:child_process:647:35)
+      at spawn (node:child_process:14:39)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:30:18)
+      at new Promise (1:11)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:29:10)
+      at execCommand (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:25:3)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:86:22)
+      at getOutputs (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:67:31)
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/layout-visual-compatibility.test.ts:277:42)
+(fail) Layout Visual Compatibility > Debug: Show first 10 lines of each output for visual comparison [0.24ms]
+17 |       const result = style.render('test');
+18 | 
+19 |       // Should have 2 empty lines above and below, and 2 spaces left and right
+20 |       const lines = result.split('\n');
+21 |       expect(lines).toHaveLength(5); // 2 top + 1 content + 2 bottom
+22 |       expect(lines[0]).toBe(''); // Currently empty - this is expected for vertical-only margins
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: ""
+Received: "        "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/margin.test.ts:22:24)
+(fail) Margin System > Basic Margin > should apply uniform margin with shorthand [0.05ms]
+(pass) Margin System > Basic Margin > should apply margin with 2-value shorthand (vertical, horizontal)
+(pass) Margin System > Basic Margin > should apply margin with 4-value shorthand (top, right, bottom, left)
+47 |     it('should apply top margin', () => {
+48 |       const style = new Style().marginTop(2);
+49 |       const result = style.render('test');
+50 | 
+51 |       const lines = result.split('\n');
+52 |       expect(lines[0]).toBe(''); // First line should be empty margin line
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: ""
+Received: "    "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/margin.test.ts:52:24)
+(fail) Margin System > Individual Margin Methods > should apply top margin
+59 |       const result = style.render('test');
+60 | 
+61 |       const lines = result.split('\n');
+62 |       expect(lines).toHaveLength(3); // 1 content + 2 bottom
+63 |       expect(lines[0]).toBe('test'); // Content should be first
+64 |       expect(lines[1]).toBe(''); // Bottom margin lines (currently empty)
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: ""
+Received: "    "
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/margin.test.ts:64:24)
+(fail) Margin System > Individual Margin Methods > should apply bottom margin
+(pass) Margin System > Individual Margin Methods > should apply left margin
+(pass) Margin System > Individual Margin Methods > should apply right margin
+(pass) Margin System > Individual Margin Methods > should apply horizontal margins
+(pass) Margin System > Individual Margin Methods > should apply vertical margins
+(pass) Margin System > Margin Configuration Object > should apply margin config object
+(pass) Margin System > Margin Background Color > should accept margin background color
+(pass) Margin System > Margin Background Color > should validate margin background color [0.58ms]
+(pass) Margin System > Margin Background Color > should accept various color formats for margin background [1.38ms]
+(pass) Margin System > Margin Getters > should get margin configuration [0.04ms]
+(pass) Margin System > Margin Getters > should get margin background color
+(pass) Margin System > Margin Getters > should return undefined for unset margins
+(pass) Margin System > Margin with Multi-line Content > should apply margins to multi-line content
+(pass) Margin System > Margin with Padding Interaction > should apply both padding and margin correctly
+196 |     it('should handle empty content with margins', () => {
+197 |       const style = new Style().margin(1);
+198 |       const result = style.render('');
+199 | 
+200 |       const lines = result.split('\n');
+201 |       expect(lines).toHaveLength(3); // 1 top + 1 content + 1 bottom
+                          ^
+error: expect(received).toHaveLength(expected)
+
+Expected length: 3
+Received length: 1
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/margin.test.ts:201:21)
+(fail) Margin System > Empty Content with Margins > should handle empty content with margins
+(pass) Margin System > Style Immutability > should not modify original style when adding margin
+(pass) Margin System > Style Immutability > should not modify original style when adding margin background
+(pass) Margin System > Margin Edge Cases > should handle zero margins
+(pass) Margin System > Margin Edge Cases > should handle mixed zero and non-zero margins
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Basic Margin Tests > should render uniform margins identically [11.54ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Basic Margin Tests > should render individual margin sides identically [7.39ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Basic Margin Tests > should render margin shorthand identically [6.96ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Margin Background Tests > should render margin backgrounds identically [6.53ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Margin Background Tests > should render hex margin backgrounds identically [6.54ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Margin Interaction Tests > should render margin with padding identically [6.08ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Margin Interaction Tests > should render margin with width constraints identically [7.27ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Margin Interaction Tests > should render margin with alignment identically [6.90ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Content Variation Tests > should render multiline content with margins identically [6.07ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Content Variation Tests > should render unicode content with margins identically [13.03ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Content Variation Tests > should render empty content with margins identically [7.40ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Edge Case Tests > should render zero margins identically [6.88ms]
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Edge Case Tests > should render asymmetric margins identically [6.17ms]
+
+Test case: margin_complex_style
+Args: [margin, 2,1,3,2, margin-background, #ff6b6b, padding, 1, width, 20, height, 5, align, center, valign, middle, foreground, white, background, blue, bold, true]
+Content: "Complex!"
+Go output (239 chars): "                       \n                       \n                       \n                       \n        Complex!       \n                       \n                       \n                       \n                       \n                       "
+TS output (268 chars): "                       \n                       \n                       \n                       \n        \u001b[44m\u001b[97m\u001b[1mComplex!\u001b[22m\u001b[39m\u001b[49m       \n                       \n                       \n                       \n                       \n                       "
+Go normalized (8 chars): "Complex!"
+TS normalized (27 chars): "\u001b[44m\u001b[97m\u001b[1mComplex!\u001b[22m"
+---
+956 |       };
+957 | 
+958 |       const goOutput = await testRunner.executeGoTest(testCase);
+959 |       const tsOutput = testRunner.executeTypeScriptTest(testCase);
+960 | 
+961 |       expect(testRunner.compareOutputs(goOutput, tsOutput, testCase)).toBe(
+                                                                            ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/margin-comparative.test.ts:961:71)
+(fail) Margin Comparative Tests: TypeScript vs Go Lipgloss > Edge Case Tests > should render complex margin combinations identically [7.10ms]
+Running 97 margin comparative tests...
+
+Test case: margin_with_content_colors
+Args: [margin, 2, margin-background, blue, foreground, white, background, red]
+Content: "Colorful"
+Go output (64 chars): "            \n            \n  Colorful  \n            \n            "
+TS output (84 chars): "            \n            \n  \u001b[41m\u001b[97mColorful\u001b[39m\u001b[49m  \n            \n            "
+Go normalized (8 chars): "Colorful"
+TS normalized (18 chars): "\u001b[41m\u001b[97mColorful"
+---
+
+Test case: margin_complex_style
+Args: [margin, 2,1,3,2, margin-background, #ff6b6b, padding, 1, width, 20, height, 5, align, center, valign, middle, foreground, white, background, blue, bold, true]
+Content: "Complex!"
+Go output (239 chars): "                       \n                       \n                       \n                       \n        Complex!       \n                       \n                       \n                       \n                       \n                       "
+TS output (268 chars): "                       \n                       \n                       \n                       \n        \u001b[44m\u001b[97m\u001b[1mComplex!\u001b[22m\u001b[39m\u001b[49m       \n                       \n                       \n                       \n                       \n                       "
+Go normalized (8 chars): "Complex!"
+TS normalized (27 chars): "\u001b[44m\u001b[97m\u001b[1mComplex!\u001b[22m"
+---
+
+Margin comparative tests: 95 passed, 2 failed
+
+Failed tests:
+  - margin_with_content_colors: Output mismatch
+  - margin_complex_style: Output mismatch
+
+Pass rate: 97.9% (95/97)
+(pass) Margin Comparative Tests: TypeScript vs Go Lipgloss > Comprehensive Test Suite > should execute all generated margin test cases with high pass rate [632.52ms]
+✅ padding_all_0: TS=4, Go=4
+(pass) Padding System Fixes Validation > should match Go output for padding_all_0 [7.09ms]
+❌ Error testing padding_all_2: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "          \n          \n  Padded  \n          \n          "
+Received: "\n\n  Padded  \n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "          \n          \n  Padded  \n          \n          "
+Received: "\n\n  Padded  \n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_all_2 [7.23ms]
+❌ Error testing padding_all_3: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "            \n            \n            \n   Padded   \n            \n            \n            "
+Received: "\n\n\n   Padded   \n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "            \n            \n            \n   Padded   \n            \n            \n            "
+Received: "\n\n\n   Padded   \n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_all_3 [55.79ms]
+❌ Error testing padding_all_5: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "                \n                \n                \n                \n                \n     Padded     \n                \n                \n                \n                \n                "
+Received: "\n\n\n\n\n     Padded     \n\n\n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "                \n                \n                \n                \n                \n     Padded     \n                \n                \n                \n                \n                "
+Received: "\n\n\n\n\n     Padded     \n\n\n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_all_5 [7.55ms]
+❌ Error testing padding_hv_1_2: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "           \n  H/V Pad  \n           "
+Received: "\n  H/V Pad  \n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "           \n  H/V Pad  \n           "
+Received: "\n  H/V Pad  \n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_hv_1_2 [6.74ms]
+❌ Error testing padding_hv_2_4: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "               \n               \n    H/V Pad    \n               \n               "
+Received: "\n\n    H/V Pad    \n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "               \n               \n    H/V Pad    \n               \n               "
+Received: "\n\n    H/V Pad    \n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_hv_2_4 [6.41ms]
+✅ padding_hv_0_3: TS=13, Go=13
+(pass) Padding System Fixes Validation > should match Go output for padding_hv_0_3 [6.29ms]
+❌ Error testing padding_trbl_1_2_3_4: 88 |         const goResult = JSON.parse(execSync(goCommand, { encoding: 'utf8' }));
+89 | 
+90 |         expect(goResult.success).toBe(true);
+91 | 
+92 |         // Check that output matches
+93 |         expect(tsOutput).toBe(goResult.output);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "               \n    All sides  \n               \n               \n               "
+Received: "\n    All sides  \n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:93:26)
+
+ 98 |         console.log(
+ 99 |           `✅ ${testCase.name}: TS=${tsOutput.length}, Go=${goResult.output.length}`
+100 |         );
+101 |       } catch (error) {
+102 |         console.error(`❌ Error testing ${testCase.name}:`, error);
+103 |         throw error;
+                    ^
+error: expect(received).toBe(expected)
+
+Expected: "               \n    All sides  \n               \n               \n               "
+Received: "\n    All sides  \n\n\n"
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/layout/padding-fix-validation.test.ts:103:15)
+(fail) Padding System Fixes Validation > should match Go output for padding_trbl_1_2_3_4 [6.15ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceForeground > should create a foreground color option function [0.09ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceForeground > should work with different ColorValue formats
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceForeground > should overwrite existing foreground color [0.02ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceBackground > should create a background color option function [0.01ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceBackground > should work with different ColorValue formats [0.02ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceBackground > should overwrite existing background color
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceChars > should create a chars option function [0.01ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceChars > should work with different character patterns [0.03ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > WithWhitespaceChars > should overwrite existing chars
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Function Composition and Integration > should allow combining multiple whitespace options
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Function Composition and Integration > should work with renderWhitespace function
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Function Composition and Integration > should be chainable with different option types
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Type Safety and API Compatibility > should have correct TypeScript types [0.01ms]
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Type Safety and API Compatibility > should match the expected API signature from TODO.md
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Go Lipgloss Compatibility > should follow the same pattern as Go implementation
+(pass) Whitespace Functions - MEDIUM PRIORITY Implementation > Go Lipgloss Compatibility > should work with all supported ColorValue types like Go TerminalColor
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render normal border identically to Go [6.83ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render rounded border identically to Go [7.12ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render thick border identically to Go [6.75ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render double border identically to Go [7.58ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render hidden border identically to Go [7.06ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render ascii border identically to Go [6.61ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render block border identically to Go [6.34ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render outerHalfBlock border identically to Go [5.90ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render innerHalfBlock border identically to Go [7.29ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > All border types rendering > should render markdown border identically to Go [6.23ms]
+Test case: border_partial_top_only
+Go output (10 chars): "Partial   "
+TS output (21 chars): "──────────\nPartial   "
+Go normalized (7 chars): "Partial"
+TS normalized (18 chars): "──────────\nPartial"
+675 |         };
+676 | 
+677 |         const goOutput = await testRunner.executeGoTest(testCase);
+678 |         const tsOutput = testRunner.executeTypeScriptTest(testCase);
+679 | 
+680 |         expect(testRunner.compareOutputs(goOutput, tsOutput, testCase)).toBe(
+                                                                              ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/borders/border-comparative.test.ts:680:73)
+(fail) Comparative Border Tests: TypeScript vs Go Lipgloss > Partial border combinations > should render top_only partial border identically to Go [6.70ms]
+Test case: border_partial_horizontal
+Go output (10 chars): "Partial   "
+TS output (32 chars): "──────────\nPartial   \n──────────"
+Go normalized (7 chars): "Partial"
+TS normalized (32 chars): "──────────\nPartial   \n──────────"
+675 |         };
+676 | 
+677 |         const goOutput = await testRunner.executeGoTest(testCase);
+678 |         const tsOutput = testRunner.executeTypeScriptTest(testCase);
+679 | 
+680 |         expect(testRunner.compareOutputs(goOutput, tsOutput, testCase)).toBe(
+                                                                              ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/borders/border-comparative.test.ts:680:73)
+(fail) Comparative Border Tests: TypeScript vs Go Lipgloss > Partial border combinations > should render horizontal partial border identically to Go [7.44ms]
+Test case: border_partial_vertical
+Go output (10 chars): "Partial   "
+TS output (14 chars): "│ Partial    │"
+Go normalized (7 chars): "Partial"
+TS normalized (14 chars): "│ Partial    │"
+675 |         };
+676 | 
+677 |         const goOutput = await testRunner.executeGoTest(testCase);
+678 |         const tsOutput = testRunner.executeTypeScriptTest(testCase);
+679 | 
+680 |         expect(testRunner.compareOutputs(goOutput, tsOutput, testCase)).toBe(
+                                                                              ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/borders/border-comparative.test.ts:680:73)
+(fail) Comparative Border Tests: TypeScript vs Go Lipgloss > Partial border combinations > should render vertical partial border identically to Go [6.93ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border colors and background colors > should render red_border identically to Go [6.57ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border colors and background colors > should render blue_top_border identically to Go [7.15ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border colors and background colors > should render green_bg_border identically to Go [6.41ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Borders with different content sizes > should render border with empty content identically to Go [6.70ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Borders with different content sizes > should render border with single_line content identically to Go [6.26ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Borders with different content sizes > should render border with multiline content identically to Go [6.74ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Borders with different content sizes > should render border with long_line content identically to Go [7.31ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Complex border scenarios > should render border with padding identically to Go [6.48ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Complex border scenarios > should render border with alignment identically to Go [6.88ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Complex border scenarios > should render border with height constraint identically to Go [6.64ms]
+Test case: border_partial_top_only
+Go output (12 chars): "Test        "
+TS output (25 chars): "────────────\nTest        "
+Go normalized (4 chars): "Test"
+TS normalized (17 chars): "────────────\nTest"
+Test case: border_partial_right_only
+Go output (12 chars): "Test        "
+TS output (14 chars): "Test         │"
+Go normalized (4 chars): "Test"
+TS normalized (14 chars): "Test         │"
+Test case: border_partial_bottom_only
+Go output (12 chars): "Test        "
+TS output (25 chars): "Test        \n────────────"
+Go normalized (4 chars): "Test"
+TS normalized (25 chars): "Test        \n────────────"
+Test case: border_partial_left_only
+Go output (12 chars): "Test        "
+TS output (14 chars): "│ Test        "
+Go normalized (4 chars): "Test"
+TS normalized (6 chars): "│ Test"
+Test case: border_partial_horizontal
+Go output (12 chars): "Test        "
+TS output (38 chars): "────────────\nTest        \n────────────"
+Go normalized (4 chars): "Test"
+TS normalized (38 chars): "────────────\nTest        \n────────────"
+Test case: border_partial_vertical
+Go output (12 chars): "Test        "
+TS output (16 chars): "│ Test         │"
+Go normalized (4 chars): "Test"
+TS normalized (16 chars): "│ Test         │"
+Test case: border_partial_three_sides
+Go output (12 chars): "Test        "
+TS output (44 chars): "─────────────┐\nTest         │\n─────────────┘"
+Go normalized (4 chars): "Test"
+TS normalized (44 chars): "─────────────┐\nTest         │\n─────────────┘"
+Test case: complex_thick_partial_aligned
+Go output (18 chars): "     Complex      "
+TS output (56 chars): "──────────────────\n     Complex      \n──────────────────"
+Go normalized (7 chars): "Complex"
+TS normalized (56 chars): "──────────────────\n     Complex      \n──────────────────"
+Test case: complex_double_with_styling
+Go output (50 chars): "                \n Complex        \n                "
+TS output (79 chars): "                \n \u001b[40m\u001b[35m\u001b[1mComplex\u001b[22m       \u001b[39m\u001b[49m \n                "
+Go normalized (7 chars): "Complex"
+TS normalized (26 chars): "\u001b[40m\u001b[35m\u001b[1mComplex\u001b[22m"
+Border comparative tests: 56 passed, 9 failed
+Failed border tests:
+  - border_partial_top_only: Output mismatch
+  - border_partial_right_only: Output mismatch
+  - border_partial_bottom_only: Output mismatch
+  - border_partial_left_only: Output mismatch
+  - border_partial_horizontal: Output mismatch
+  - border_partial_vertical: Output mismatch
+  - border_partial_three_sides: Output mismatch
+  - complex_thick_partial_aligned: Output mismatch
+  - complex_double_with_styling: Output mismatch
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Dynamic border test execution > should execute all generated border test cases [461.45ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border edge cases > should handle minimal width borders identically to Go [7.67ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border edge cases > should handle hidden borders identically to Go [6.53ms]
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > Border edge cases > should handle Unicode content with borders identically to Go [6.33ms]
+Generated 65 border test cases
+(pass) Comparative Border Tests: TypeScript vs Go Lipgloss > should generate comprehensive border test cases [0.06ms]
+(pass) Comprehensive Border System > All Border Types > should render Normal border [0.14ms]
+(pass) Comprehensive Border System > All Border Types > should render Rounded border [0.08ms]
+(pass) Comprehensive Border System > All Border Types > should render Thick border [0.03ms]
+(pass) Comprehensive Border System > All Border Types > should render Double border [0.03ms]
+(pass) Comprehensive Border System > All Border Types > should render Block border
+(pass) Comprehensive Border System > All Border Types > should render OuterHalfBlock border [0.04ms]
+(pass) Comprehensive Border System > All Border Types > should render InnerHalfBlock border
+(pass) Comprehensive Border System > All Border Types > should render Markdown border
+(pass) Comprehensive Border System > All Border Types > should render ASCII border
+(pass) Comprehensive Border System > All Border Types > should render Hidden border (spaces) [0.04ms]
+(pass) Comprehensive Border System > Partial Borders > should render top-only border [0.02ms]
+(pass) Comprehensive Border System > Partial Borders > should render left and right borders only [0.04ms]
+(pass) Comprehensive Border System > Border Colors > should set border colors [0.03ms]
+(pass) Comprehensive Border System > Border Colors > should set border background colors [0.02ms]
+(pass) Comprehensive Border System > Border Utility Methods > should unset borders
+(pass) Comprehensive Border System > Border Utility Methods > should unset specific border sides [0.04ms]
+(pass) Comprehensive Border System > Border Configuration Objects > should use predefined border configurations [0.01ms]
+(pass) Comprehensive Border System > Border Configuration Objects > should access border style definitions
+(pass) Comprehensive Border System > Complex Border Scenarios > should combine borders with padding [0.08ms]
+236 |         .width(6)
+237 |         .height(3);
+238 | 
+239 |       const result = style.render('');
+240 | 
+241 |       expect(result).toContain('+');
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "+"
+Received: ""
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/borders/border-comprehensive.test.ts:241:22)
+(fail) Comprehensive Border System > Complex Border Scenarios > should handle empty content with borders [0.13ms]
+(pass) Comprehensive Border System > Complex Border Scenarios > should handle multiline content with borders [0.02ms]
+(pass) Border System > Border Types > should have all border types defined
+(pass) Border System > Border Types > should have all border styles defined with middle characters [0.01ms]
+(pass) Border System > Border Types > should have block border style
+(pass) Border System > Border Types > should have outer half block border style [0.01ms]
+(pass) Border System > Border Types > should have markdown border style [0.01ms]
+(pass) Border System > Border Configuration > should create border configurations
+(pass) Border System > Style Border Methods > should set border style
+(pass) Border System > Style Border Methods > should set border color [0.01ms]
+(pass) Border System > Style Border Methods > should set individual border sides [0.01ms]
+(pass) Border System > Style Border Methods > should set individual border colors [0.01ms]
+(pass) Border System > Style Border Methods > should set individual border background colors [0.01ms]
+(pass) Border System > Style Border Methods > should unset borders
+(pass) Border System > Style Border Methods > should unset specific border sides
+(pass) Border System > Border Rendering > should render basic border [0.06ms]
+(pass) Border System > Border Rendering > should render partial borders
+(pass) Border System > Border Rendering > should render different border styles [0.10ms]
+237 |         .height(3);
+238 | 
+239 |       const result = style.render('');
+240 | 
+241 |       // Should still render border structure
+242 |       expect(result).toContain('┌');
+                           ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "┌"
+Received: ""
+
+      at <anonymous> (/work/rcs/charm-ts/subtletools/lipgloss-ts/test/suites/borders/border.test.ts:242:22)
+(fail) Border System > Border Rendering > should handle empty content with borders [0.08ms]
+(pass) Border System > Border Rendering > should combine borders with other styling [0.06ms]
+Border config: {
+  style: "normal",
+}
+Border with sides: {
+  style: "normal",
+  top: true,
+  right: true,
+  bottom: true,
+  left: true,
+}
+(pass) Border Debug > should set border properties correctly [0.06ms]
+Renderer: Renderer {
+  colorProfile: 1,
+  explicitColorProfile: true,
+  hasDarkBackground: null,
+  explicitBackgroundColor: false,
+  options: {
+    forceColor: true,
+    colorProfile: 1,
+    hasDarkBackground: undefined,
+    terminalWidth: 80,
+    unicode: true,
+    lineEnding: "\n",
+    cache: true,
+    assumeTTY: false,
+    unsafe: false,
+  },
+  backgroundDetector: DefaultBackgroundColorDetector {
+    hasColorSupport: [Function: hasColorSupport],
+    detectBackgroundColor: [Function: detectBackgroundColor],
+    isDarkBackground: [Function: isDarkBackground],
+  },
+  colorProfileDetected: true,
+  backgroundDetected: false,
+  getColorProfile: [Function: getColorProfile],
+  setColorProfile: [Function: setColorProfile],
+  getHasDarkBackground: [Function: getHasDarkBackground],
+  setHasDarkBackground: [Function: setHasDarkBackground],
+  supportsColor: [Function: supportsColor],
+  getTerminalWidth: [Function: getTerminalWidth],
+  getOptions: [Function: getOptions],
+  updateOptions: [Function: updateOptions],
+  convertColor: [Function: convertColor],
+  render: [Function: render],
+  isTTY: [Function: isTTY],
+  detectColorProfile: [Function: detectColorProfile],
+  detectDarkBackground: [Function: detectDarkBackground],
+  detectTerminalWidth: [Function: detectTerminalWidth],
+  detectUnicodeSupport: [Function: detectUnicodeSupport],
+  detectLineEnding: [Function: detectLineEnding],
+  rgbToANSI256: [Function: rgbToANSI256],
+  rgbToANSI: [Function: rgbToANSI],
+  normalizeWhitespace: [Function: normalizeWhitespace],
+  hasAnyStyles: [Function: hasAnyStyles],
+  hasVisualStyles: [Function: hasVisualStyles],
+  padMultilineContent: [Function: padMultilineContent],
+  applyWidthConstraints: [Function: applyWidthConstraints],
+  applyColors: [Function: applyColors],
+  applyHeightConstraints: [Function: applyHeightConstraints],
+  applyMaxWidthTruncation: [Function: applyMaxWidthTruncation],
+  applyMaxHeightTruncation: [Function: applyMaxHeightTruncation],
+  applyAlignment: [Function: applyAlignment],
+  calculateTargetWidth: [Function: calculateTargetWidth],
+  applyTextStyling: [Function: applyTextStyling],
+  applyForegroundColor: [Function: applyForegroundColor],
+  applyBackgroundColor: [Function: applyBackgroundColor],
+  applyMargin: [Function: applyMargin],
+  applyBorder: [Function: applyBorder],
+  measureText: [Function: measureText],
+  getBorderStyle: [Function: getBorderStyle],
+  getBorderStyleByType: [Function: getBorderStyleByType],
+  hasBorderStyle: [Function: hasBorderStyle],
+  implicitBorders: [Function: implicitBorders],
+  getAsBool: [Function: getAsBool],
+  maxRuneWidth: [Function: maxRuneWidth],
+  getFirstRuneAsString: [Function: getFirstRuneAsString],
+  renderHorizontalEdge: [Function: renderHorizontalEdge],
+  styleBorder: [Function: styleBorder],
+  getLines: [Function: getLines],
+  joinLines: [Function: joinLines],
+  calculateWidth: [Function: calculateWidth],
+  calculateHeight: [Function: calculateHeight],
+  wrapText: [Function: wrapText],
+  truncateText: [Function: truncateText],
+  alignTextHorizontal: [Function: alignTextHorizontal],
+  alignTextVertical: [Function: alignTextVertical],
+}
+Style properties: {
+  border: {
+    style: "normal",
+  },
+}
+(pass) Border Debug > should pass border to renderer [0.06ms]
+Style before render: {
+  border: {
+    style: "ascii",
+  },
+  width: 8,
+}
+Render result length: 38
+Render result lines: [ "+----------+", "| Test     |", "+----------+" ]
+(pass) Border Debug > should render with border (debug) [0.07ms]
+Explicit border properties: {
+  border: {
+    style: "ascii",
+    top: true,
+    right: true,
+    bottom: true,
+    left: true,
+  },
+  width: 8,
+}
+Explicit border result:
++----------+
+| Test     |
++----------+
+Lines: [ "+----------+", "| Test     |", "+----------+" ]
+(pass) Explicit Border Configuration > should render with explicit border sides [0.08ms]
+Implicit border properties: {
+  border: {
+    style: "ascii",
+  },
+  width: 8,
+}
+Border sides explicitly set? {
+  top: undefined,
+  right: undefined,
+  bottom: undefined,
+  left: undefined,
+}
+Implicit border result:
++----------+
+| Test     |
++----------+
+Lines: [ "+----------+", "| Test     |", "+----------+" ]
+(pass) Explicit Border Configuration > should render implicit borders (style only) [0.07ms]
+Border result:
+┌─────────────┐
+│ Hello      │
+└─────────────┘
+(pass) Border Rendering > should render basic border [0.05ms]
+ASCII Border result:
++----------+
+| Test     |
++----------+
+(pass) Border Rendering > should render ASCII border [0.04ms]
+Partial Border result:
+┌────────────
+│ Partial   
+(pass) Border Rendering > should render partial borders [0.05ms]
+(pass) Border System - Simple Tests > should import border types [0.01ms]
+(pass) Border System - Simple Tests > should import border styles [0.01ms]
+(pass) Border System - Simple Tests > should import border configurations
+(pass) Border System - Simple Tests > should create Style with border methods
+(pass) Border System - Simple Tests > should chain border methods
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render basic bullet list identically [0.90ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render alphabet enumeration identically [0.21ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render arabic enumeration identically [0.04ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render roman enumeration identically [0.15ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render asterisk enumeration identically [0.11ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Basic List Enumerator Tests > should render dash enumeration identically [0.03ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Extended Enumeration Tests > should handle extended alphabet enumeration (AA, AB, etc.) [0.89ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Extended Enumeration Tests > should handle complex roman numerals [1.66ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Nested Lists Tests > should render simple nested lists [0.39ms]
+(pass) List Comparative Tests: TypeScript vs Go Lipgloss > Nested Lists Tests > should render complex nested lists [0.18ms]

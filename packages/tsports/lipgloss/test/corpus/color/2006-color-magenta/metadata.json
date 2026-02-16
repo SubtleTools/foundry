@@ -1,0 +1,19 @@
+{
+  "id": "2006",
+  "name": "color-magenta",
+  "category": "color",
+  "description": "magenta foreground color",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:12.868Z",
+  "version": "1.0.0"
+}

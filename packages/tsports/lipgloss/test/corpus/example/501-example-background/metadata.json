@@ -1,0 +1,20 @@
+{
+  "id": "501",
+  "name": "example-background",
+  "category": "example",
+  "description": "Example: background",
+  "complexity": 7,
+  "dependencies": [
+    "002",
+    "003"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "Background",
+    "Root",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:17.211Z",
+  "version": "1.0.0"
+}

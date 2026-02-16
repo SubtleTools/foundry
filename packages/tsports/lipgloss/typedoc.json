@@ -1,0 +1,105 @@
+{
+  "entryPoints": [
+    "src/index.ts"
+  ],
+  "out": "docs/api",
+  "tsconfig": "tsconfig.docs.json",
+  "theme": "default",
+  "name": "Lipgloss TypeScript API",
+  "readme": "none",
+  "includeVersion": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "hideGenerator": false,
+  "gitRevision": "main",
+  "gitRemote": "origin",
+  "plugin": [
+    "typedoc-plugin-merge-modules"
+  ],
+  "mergeModulesMergeMode": "module",
+  "categorizeByGroup": true,
+  "sort": [
+    "source-order"
+  ],
+  "kindSortOrder": [
+    "Document",
+    "Project",
+    "Module",
+    "Namespace",
+    "Enum",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Constructor",
+    "Property",
+    "Variable",
+    "Function",
+    "Accessor",
+    "Method",
+    "Parameter",
+    "TypeParameter",
+    "TypeLiteral",
+    "CallSignature",
+    "ConstructorSignature",
+    "IndexSignature",
+    "GetSignature",
+    "SetSignature"
+  ],
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": true
+  },
+  "searchInComments": true,
+  "searchInDocuments": true,
+  "titleLink": "https://tsports.github.io/lipgloss",
+  "navigationLinks": {
+    "Home": "https://tsports.github.io/lipgloss",
+    "Guide": "https://tsports.github.io/lipgloss/guide/getting-started",
+    "Examples": "https://tsports.github.io/lipgloss/examples/",
+    "GitHub": "https://github.com/tsports/lipgloss"
+  },
+  "emit": "docs",
+  "treatWarningsAsErrors": false,
+  "validation": {
+    "notExported": true,
+    "invalidLink": true,
+    "notDocumented": false
+  },
+  "commentStyle": "jsdoc",
+  "blockTags": [
+    "@alpha",
+    "@beta",
+    "@defaultValue",
+    "@deprecated",
+    "@example",
+    "@experimental",
+    "@internal",
+    "@override",
+    "@packageDocumentation",
+    "@param",
+    "@privateRemarks",
+    "@public",
+    "@readonly",
+    "@remarks",
+    "@returns",
+    "@sealed",
+    "@see",
+    "@since",
+    "@throws",
+    "@typeParam",
+    "@virtual"
+  ],
+  "inlineTags": [
+    "@inheritDoc",
+    "@label",
+    "@link",
+    "@linkcode",
+    "@linkplain"
+  ],
+  "excludeTags": [
+    "@override",
+    "@virtual",
+    "@privateRemarks"
+  ]
+}

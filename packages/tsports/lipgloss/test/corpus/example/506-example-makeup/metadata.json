@@ -1,0 +1,21 @@
+{
+  "id": "506",
+  "name": "example-makeup",
+  "category": "example",
+  "description": "Example: makeup",
+  "complexity": 7,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "MarginRight",
+    "New",
+    "Child",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:18.449Z",
+  "version": "1.0.0"
+}

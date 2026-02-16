@@ -1,0 +1,15 @@
+{
+  "id": "001",
+  "name": "basic-render",
+  "category": "basic",
+  "description": "Basic style creation and rendering",
+  "complexity": 1,
+  "dependencies": [],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:09.393Z",
+  "version": "1.0.0"
+}

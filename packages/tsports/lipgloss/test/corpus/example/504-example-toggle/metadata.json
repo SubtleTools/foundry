@@ -1,0 +1,23 @@
+{
+  "id": "504",
+  "name": "example-toggle",
+  "category": "example",
+  "description": "Example: toggle",
+  "complexity": 7,
+  "dependencies": [
+    "101",
+    "002",
+    "003"
+  ],
+  "apiMethods": [
+    "Style",
+    "NewStyle",
+    "Color",
+    "Render",
+    "Root",
+    "Println",
+    "String"
+  ],
+  "generated": "2025-08-20T23:44:17.965Z",
+  "version": "1.0.0"
+}

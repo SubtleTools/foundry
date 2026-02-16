@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="bun test" tests="6" assertions="6" failures="0" skipped="0" time="2.991708">
+  <testsuite name="test/automated-cases.test.ts" file="test/automated-cases.test.ts" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="test/automated-cases.test.ts" line="69" tests="5" assertions="5" failures="0" skipped="0" time="2.962" hostname="mac.local">
+      <testcase name="advanced/001-complex-emoji should match Go output exactly" classname="Automated Compatibility Tests" time="0.553307" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/001-grapheme-count should match Go output exactly" classname="Automated Compatibility Tests" time="0.79028" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/002-string-width should match Go output exactly" classname="Automated Compatibility Tests" time="0.591036" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/003-word-boundaries should match Go output exactly" classname="Automated Compatibility Tests" time="0.519564" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/004-sentence-boundaries should match Go output exactly" classname="Automated Compatibility Tests" time="0.509617" file="test/automated-cases.test.ts" line="77" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="dist/test/automated-cases.test.js" file="dist/test/automated-cases.test.js" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="dist/test/automated-cases.test.js" line="50" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="No test cases found - run example test" classname="Automated Compatibility Tests" time="0.000012" file="dist/test/automated-cases.test.js" line="52" assertions="1" />
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,1987 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "generated": "2025-08-20T22:55:31.254Z",
+    "description": "Lipgloss API dependency tree for test execution ordering",
+    "source": "Automated analysis of Go reference implementation",
+    "totalMethods": 210
+  },
+  "categories": {
+    "basic": {
+      "description": "Core API methods - style creation and basic rendering",
+      "priority": 1,
+      "methods": [
+        "NewStyle",
+        "SetString",
+        "Value",
+        "Copy",
+        "Inherit",
+        "Render",
+        "UnsetBold",
+        "UnsetItalic",
+        "UnsetUnderline",
+        "UnsetStrikethrough",
+        "UnsetReverse",
+        "UnsetBlink",
+        "UnsetFaint",
+        "UnsetForeground",
+        "UnsetBackground",
+        "UnsetColorWhitespace",
+        "UnsetInline",
+        "UnsetUnderlineSpaces",
+        "UnsetStrikethroughSpaces",
+        "UnsetTransform",
+        "UnsetString",
+        "Size",
+        "DefaultRenderer",
+        "SetDefaultRenderer",
+        "NewRenderer",
+        "StyleRunes",
+        "StyleRanges",
+        "NewRange",
+        "WithWhitespaceForeground",
+        "WithWhitespaceBackground",
+        "WithWhitespaceChars",
+        "GetBold",
+        "GetItalic",
+        "GetUnderline",
+        "GetStrikethrough",
+        "GetReverse",
+        "GetBlink",
+        "GetFaint",
+        "GetForeground",
+        "GetBackground",
+        "GetColorWhitespace",
+        "GetInline",
+        "GetUnderlineSpaces",
+        "GetStrikethroughSpaces",
+        "GetHorizontalFrameSize",
+        "GetVerticalFrameSize",
+        "GetFrameSize",
+        "GetTransform",
+        "ColorWhitespace",
+        "UnderlineSpaces",
+        "StrikethroughSpaces",
+        "Renderer"
+      ]
+    },
+    "color": {
+      "description": "Color management and application",
+      "priority": 2,
+      "methods": [
+        "ColorProfile",
+        "SetColorProfile",
+        "HasDarkBackground",
+        "SetHasDarkBackground",
+        "Foreground",
+        "Background"
+      ]
+    },
+    "layout": {
+      "description": "Dimensions, padding, margins, and alignment",
+      "priority": 3,
+      "methods": [
+        "UnsetWidth",
+        "UnsetHeight",
+        "UnsetAlign",
+        "UnsetAlignHorizontal",
+        "UnsetAlignVertical",
+        "UnsetPadding",
+        "UnsetPaddingLeft",
+        "UnsetPaddingRight",
+        "UnsetPaddingTop",
+        "UnsetPaddingBottom",
+        "UnsetMargins",
+        "UnsetMarginLeft",
+        "UnsetMarginRight",
+        "UnsetMarginTop",
+        "UnsetMarginBottom",
+        "UnsetMarginBackground",
+        "UnsetMaxWidth",
+        "UnsetMaxHeight",
+        "UnsetTabWidth",
+        "Width",
+        "Height",
+        "GetWidth",
+        "GetHeight",
+        "GetAlign",
+        "GetAlignHorizontal",
+        "GetAlignVertical",
+        "GetPadding",
+        "GetPaddingTop",
+        "GetPaddingRight",
+        "GetPaddingBottom",
+        "GetPaddingLeft",
+        "GetHorizontalPadding",
+        "GetVerticalPadding",
+        "GetMargin",
+        "GetMarginTop",
+        "GetMarginRight",
+        "GetMarginBottom",
+        "GetMarginLeft",
+        "GetHorizontalMargins",
+        "GetVerticalMargins",
+        "GetBorderTopWidth",
+        "GetMaxWidth",
+        "GetMaxHeight",
+        "GetTabWidth",
+        "Align",
+        "AlignHorizontal",
+        "AlignVertical",
+        "Padding",
+        "PaddingLeft",
+        "PaddingRight",
+        "PaddingTop",
+        "PaddingBottom",
+        "Margin",
+        "MarginLeft",
+        "MarginRight",
+        "MarginTop",
+        "MarginBottom",
+        "MarginBackground",
+        "MaxWidth",
+        "MaxHeight",
+        "TabWidth"
+      ]
+    },
+    "border": {
+      "description": "Border styles and configurations",
+      "priority": 4,
+      "methods": [
+        "UnsetBorderStyle",
+        "UnsetBorderTop",
+        "UnsetBorderRight",
+        "UnsetBorderBottom",
+        "UnsetBorderLeft",
+        "UnsetBorderForeground",
+        "UnsetBorderTopForeground",
+        "UnsetBorderRightForeground",
+        "UnsetBorderBottomForeground",
+        "UnsetBorderLeftForeground",
+        "UnsetBorderBackground",
+        "UnsetBorderTopBackgroundColor",
+        "UnsetBorderTopBackground",
+        "UnsetBorderRightBackground",
+        "UnsetBorderBottomBackground",
+        "UnsetBorderLeftBackground",
+        "NormalBorder",
+        "RoundedBorder",
+        "BlockBorder",
+        "OuterHalfBlockBorder",
+        "InnerHalfBlockBorder",
+        "ThickBorder",
+        "DoubleBorder",
+        "HiddenBorder",
+        "MarkdownBorder",
+        "ASCIIBorder",
+        "GetBorder",
+        "GetBorderStyle",
+        "GetBorderTop",
+        "GetBorderRight",
+        "GetBorderBottom",
+        "GetBorderLeft",
+        "GetBorderTopForeground",
+        "GetBorderRightForeground",
+        "GetBorderBottomForeground",
+        "GetBorderLeftForeground",
+        "GetBorderTopBackground",
+        "GetBorderRightBackground",
+        "GetBorderBottomBackground",
+        "GetBorderLeftBackground",
+        "GetBorderTopSize",
+        "GetBorderLeftSize",
+        "GetBorderBottomSize",
+        "GetBorderRightSize",
+        "GetHorizontalBorderSize",
+        "GetVerticalBorderSize",
+        "Border",
+        "BorderStyle",
+        "BorderTop",
+        "BorderRight",
+        "BorderBottom",
+        "BorderLeft",
+        "BorderForeground",
+        "BorderTopForeground",
+        "BorderRightForeground",
+        "BorderBottomForeground",
+        "BorderLeftForeground",
+        "BorderBackground",
+        "BorderTopBackground",
+        "BorderRightBackground",
+        "BorderBottomBackground",
+        "BorderLeftBackground"
+      ]
+    },
+    "styling": {
+      "description": "Text styling and transformations",
+      "priority": 5,
+      "methods": [
+        "Bold",
+        "Italic",
+        "Underline",
+        "Strikethrough",
+        "Reverse",
+        "Blink",
+        "Faint",
+        "Inline",
+        "Transform"
+      ]
+    },
+    "component": {
+      "description": "Complex components - tables, lists, trees",
+      "priority": 6,
+      "methods": [
+        "NewStringData",
+        "NewFilter",
+        "NewLeaf",
+        "Root",
+        "New",
+        "DefaultEnumerator",
+        "RoundedEnumerator",
+        "DefaultIndenter",
+        "JoinHorizontal",
+        "JoinVertical",
+        "Place",
+        "PlaceHorizontal",
+        "PlaceVertical",
+        "DefaultStyles",
+        "Alphabet",
+        "Arabic",
+        "Roman",
+        "Bullet",
+        "Asterisk",
+        "Dash"
+      ]
+    }
+  },
+  "dependencies": {
+    "NewStringData": {
+      "category": "component",
+      "complexity": 4,
+      "dependencies": [],
+      "description": "NewStringData method"
+    },
+    "NewFilter": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "NewFilter method"
+    },
+    "NewLeaf": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "NewLeaf method"
+    },
+    "Root": {
+      "category": "component",
+      "complexity": 15,
+      "dependencies": [],
+      "description": "Root method"
+    },
+    "New": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "New method"
+    },
+    "DefaultEnumerator": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "DefaultEnumerator method"
+    },
+    "RoundedEnumerator": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "RoundedEnumerator method"
+    },
+    "DefaultIndenter": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "DefaultIndenter method"
+    },
+    "NewStyle": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Creates a new style instance"
+    },
+    "SetString": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "SetString method"
+    },
+    "Value": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Value method"
+    },
+    "Copy": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Creates a copy of the style"
+    },
+    "Inherit": {
+      "category": "basic",
+      "complexity": 9,
+      "dependencies": [
+        "NewStyle",
+        "Copy"
+      ],
+      "description": "Inherits properties from another style"
+    },
+    "Render": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Renders content with applied styles"
+    },
+    "UnsetBold": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBold method"
+    },
+    "UnsetItalic": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetItalic method"
+    },
+    "UnsetUnderline": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetUnderline method"
+    },
+    "UnsetStrikethrough": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetStrikethrough method"
+    },
+    "UnsetReverse": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetReverse method"
+    },
+    "UnsetBlink": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBlink method"
+    },
+    "UnsetFaint": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetFaint method"
+    },
+    "UnsetForeground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetForeground method"
+    },
+    "UnsetBackground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBackground method"
+    },
+    "UnsetWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetWidth method"
+    },
+    "UnsetHeight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetHeight method"
+    },
+    "UnsetAlign": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetAlign method"
+    },
+    "UnsetAlignHorizontal": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetAlignHorizontal method"
+    },
+    "UnsetAlignVertical": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetAlignVertical method"
+    },
+    "UnsetPadding": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetPadding method"
+    },
+    "UnsetPaddingLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetPaddingLeft method"
+    },
+    "UnsetPaddingRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetPaddingRight method"
+    },
+    "UnsetPaddingTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetPaddingTop method"
+    },
+    "UnsetPaddingBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetPaddingBottom method"
+    },
+    "UnsetColorWhitespace": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetColorWhitespace method"
+    },
+    "UnsetMargins": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMargins method"
+    },
+    "UnsetMarginLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMarginLeft method"
+    },
+    "UnsetMarginRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMarginRight method"
+    },
+    "UnsetMarginTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMarginTop method"
+    },
+    "UnsetMarginBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMarginBottom method"
+    },
+    "UnsetMarginBackground": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMarginBackground method"
+    },
+    "UnsetBorderStyle": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderStyle method"
+    },
+    "UnsetBorderTop": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderTop method"
+    },
+    "UnsetBorderRight": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderRight method"
+    },
+    "UnsetBorderBottom": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderBottom method"
+    },
+    "UnsetBorderLeft": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderLeft method"
+    },
+    "UnsetBorderForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderForeground method"
+    },
+    "UnsetBorderTopForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderTopForeground method"
+    },
+    "UnsetBorderRightForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderRightForeground method"
+    },
+    "UnsetBorderBottomForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderBottomForeground method"
+    },
+    "UnsetBorderLeftForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderLeftForeground method"
+    },
+    "UnsetBorderBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderBackground method"
+    },
+    "UnsetBorderTopBackgroundColor": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderTopBackgroundColor method"
+    },
+    "UnsetBorderTopBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderTopBackground method"
+    },
+    "UnsetBorderRightBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderRightBackground method"
+    },
+    "UnsetBorderBottomBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderBottomBackground method"
+    },
+    "UnsetBorderLeftBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetBorderLeftBackground method"
+    },
+    "UnsetInline": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetInline method"
+    },
+    "UnsetMaxWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMaxWidth method"
+    },
+    "UnsetMaxHeight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetMaxHeight method"
+    },
+    "UnsetTabWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetTabWidth method"
+    },
+    "UnsetUnderlineSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetUnderlineSpaces method"
+    },
+    "UnsetStrikethroughSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetStrikethroughSpaces method"
+    },
+    "UnsetTransform": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetTransform method"
+    },
+    "UnsetString": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnsetString method"
+    },
+    "JoinHorizontal": {
+      "category": "component",
+      "complexity": 24,
+      "dependencies": [
+        "Render",
+        "Width",
+        "Align"
+      ],
+      "description": "JoinHorizontal method"
+    },
+    "JoinVertical": {
+      "category": "component",
+      "complexity": 17,
+      "dependencies": [
+        "Render",
+        "Height",
+        "Align"
+      ],
+      "description": "JoinVertical method"
+    },
+    "Width": {
+      "category": "layout",
+      "complexity": 3,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets content width"
+    },
+    "Height": {
+      "category": "layout",
+      "complexity": 3,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets content height"
+    },
+    "Size": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Size method"
+    },
+    "NormalBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "NormalBorder method"
+    },
+    "RoundedBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "RoundedBorder method"
+    },
+    "BlockBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BlockBorder method"
+    },
+    "OuterHalfBlockBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "OuterHalfBlockBorder method"
+    },
+    "InnerHalfBlockBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "InnerHalfBlockBorder method"
+    },
+    "ThickBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "ThickBorder method"
+    },
+    "DoubleBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "DoubleBorder method"
+    },
+    "HiddenBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "HiddenBorder method"
+    },
+    "MarkdownBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "MarkdownBorder method"
+    },
+    "ASCIIBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "ASCIIBorder method"
+    },
+    "DefaultRenderer": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "DefaultRenderer method"
+    },
+    "SetDefaultRenderer": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "SetDefaultRenderer method"
+    },
+    "NewRenderer": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "NewRenderer method"
+    },
+    "ColorProfile": {
+      "category": "color",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "ColorProfile method"
+    },
+    "SetColorProfile": {
+      "category": "color",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "SetColorProfile method"
+    },
+    "HasDarkBackground": {
+      "category": "color",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "HasDarkBackground method"
+    },
+    "SetHasDarkBackground": {
+      "category": "color",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "SetHasDarkBackground method"
+    },
+    "Place": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [
+        "Width",
+        "Height",
+        "Align"
+      ],
+      "description": "Place method"
+    },
+    "PlaceHorizontal": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "PlaceHorizontal method"
+    },
+    "PlaceVertical": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "PlaceVertical method"
+    },
+    "StyleRunes": {
+      "category": "basic",
+      "complexity": 11,
+      "dependencies": [],
+      "description": "StyleRunes method"
+    },
+    "DefaultStyles": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "DefaultStyles method"
+    },
+    "Alphabet": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "Alphabet method"
+    },
+    "Arabic": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Arabic method"
+    },
+    "Roman": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "Roman method"
+    },
+    "Bullet": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "Bullet method"
+    },
+    "Asterisk": {
+      "category": "component",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Asterisk method"
+    },
+    "Dash": {
+      "category": "component",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "Dash method"
+    },
+    "StyleRanges": {
+      "category": "basic",
+      "complexity": 7,
+      "dependencies": [],
+      "description": "StyleRanges method"
+    },
+    "NewRange": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "NewRange method"
+    },
+    "WithWhitespaceForeground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "WithWhitespaceForeground method"
+    },
+    "WithWhitespaceBackground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "WithWhitespaceBackground method"
+    },
+    "WithWhitespaceChars": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "WithWhitespaceChars method"
+    },
+    "GetBold": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBold method"
+    },
+    "GetItalic": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetItalic method"
+    },
+    "GetUnderline": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetUnderline method"
+    },
+    "GetStrikethrough": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetStrikethrough method"
+    },
+    "GetReverse": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetReverse method"
+    },
+    "GetBlink": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBlink method"
+    },
+    "GetFaint": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetFaint method"
+    },
+    "GetForeground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetForeground method"
+    },
+    "GetBackground": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBackground method"
+    },
+    "GetWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetWidth method"
+    },
+    "GetHeight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetHeight method"
+    },
+    "GetAlign": {
+      "category": "layout",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetAlign method"
+    },
+    "GetAlignHorizontal": {
+      "category": "layout",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetAlignHorizontal method"
+    },
+    "GetAlignVertical": {
+      "category": "layout",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetAlignVertical method"
+    },
+    "GetPadding": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetPadding method"
+    },
+    "GetPaddingTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetPaddingTop method"
+    },
+    "GetPaddingRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetPaddingRight method"
+    },
+    "GetPaddingBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetPaddingBottom method"
+    },
+    "GetPaddingLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetPaddingLeft method"
+    },
+    "GetHorizontalPadding": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetHorizontalPadding method"
+    },
+    "GetVerticalPadding": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetVerticalPadding method"
+    },
+    "GetColorWhitespace": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetColorWhitespace method"
+    },
+    "GetMargin": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMargin method"
+    },
+    "GetMarginTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMarginTop method"
+    },
+    "GetMarginRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMarginRight method"
+    },
+    "GetMarginBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMarginBottom method"
+    },
+    "GetMarginLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMarginLeft method"
+    },
+    "GetHorizontalMargins": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetHorizontalMargins method"
+    },
+    "GetVerticalMargins": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetVerticalMargins method"
+    },
+    "GetBorder": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorder method"
+    },
+    "GetBorderStyle": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderStyle method"
+    },
+    "GetBorderTop": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderTop method"
+    },
+    "GetBorderRight": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderRight method"
+    },
+    "GetBorderBottom": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderBottom method"
+    },
+    "GetBorderLeft": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderLeft method"
+    },
+    "GetBorderTopForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderTopForeground method"
+    },
+    "GetBorderRightForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderRightForeground method"
+    },
+    "GetBorderBottomForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderBottomForeground method"
+    },
+    "GetBorderLeftForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderLeftForeground method"
+    },
+    "GetBorderTopBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderTopBackground method"
+    },
+    "GetBorderRightBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderRightBackground method"
+    },
+    "GetBorderBottomBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderBottomBackground method"
+    },
+    "GetBorderLeftBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderLeftBackground method"
+    },
+    "GetBorderTopWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderTopWidth method"
+    },
+    "GetBorderTopSize": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetBorderTopSize method"
+    },
+    "GetBorderLeftSize": {
+      "category": "border",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetBorderLeftSize method"
+    },
+    "GetBorderBottomSize": {
+      "category": "border",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetBorderBottomSize method"
+    },
+    "GetBorderRightSize": {
+      "category": "border",
+      "complexity": 2,
+      "dependencies": [],
+      "description": "GetBorderRightSize method"
+    },
+    "GetHorizontalBorderSize": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetHorizontalBorderSize method"
+    },
+    "GetVerticalBorderSize": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetVerticalBorderSize method"
+    },
+    "GetInline": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetInline method"
+    },
+    "GetMaxWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMaxWidth method"
+    },
+    "GetMaxHeight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetMaxHeight method"
+    },
+    "GetTabWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetTabWidth method"
+    },
+    "GetUnderlineSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetUnderlineSpaces method"
+    },
+    "GetStrikethroughSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetStrikethroughSpaces method"
+    },
+    "GetHorizontalFrameSize": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetHorizontalFrameSize method"
+    },
+    "GetVerticalFrameSize": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetVerticalFrameSize method"
+    },
+    "GetFrameSize": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetFrameSize method"
+    },
+    "GetTransform": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "GetTransform method"
+    },
+    "Bold": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets bold text style"
+    },
+    "Italic": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets italic text style"
+    },
+    "Underline": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets underline text style"
+    },
+    "Strikethrough": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Strikethrough method"
+    },
+    "Reverse": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "Foreground",
+        "Background"
+      ],
+      "description": "Reverse method"
+    },
+    "Blink": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Blink method"
+    },
+    "Faint": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Faint method"
+    },
+    "Foreground": {
+      "category": "color",
+      "complexity": 3,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets foreground color"
+    },
+    "Background": {
+      "category": "color",
+      "complexity": 3,
+      "dependencies": [
+        "NewStyle"
+      ],
+      "description": "Sets background color"
+    },
+    "Align": {
+      "category": "layout",
+      "complexity": 3,
+      "dependencies": [
+        "Width",
+        "Height"
+      ],
+      "description": "Sets content alignment"
+    },
+    "AlignHorizontal": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Width"
+      ],
+      "description": "AlignHorizontal method"
+    },
+    "AlignVertical": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Height"
+      ],
+      "description": "AlignVertical method"
+    },
+    "Padding": {
+      "category": "layout",
+      "complexity": 2,
+      "dependencies": [
+        "Width",
+        "Height"
+      ],
+      "description": "Sets padding on all sides"
+    },
+    "PaddingLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Padding"
+      ],
+      "description": "PaddingLeft method"
+    },
+    "PaddingRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Padding"
+      ],
+      "description": "PaddingRight method"
+    },
+    "PaddingTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Padding"
+      ],
+      "description": "PaddingTop method"
+    },
+    "PaddingBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Padding"
+      ],
+      "description": "PaddingBottom method"
+    },
+    "ColorWhitespace": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "ColorWhitespace method"
+    },
+    "Margin": {
+      "category": "layout",
+      "complexity": 2,
+      "dependencies": [
+        "Width",
+        "Height"
+      ],
+      "description": "Sets margin on all sides"
+    },
+    "MarginLeft": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Margin"
+      ],
+      "description": "MarginLeft method"
+    },
+    "MarginRight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Margin"
+      ],
+      "description": "MarginRight method"
+    },
+    "MarginTop": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Margin"
+      ],
+      "description": "MarginTop method"
+    },
+    "MarginBottom": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Margin"
+      ],
+      "description": "MarginBottom method"
+    },
+    "MarginBackground": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "MarginBackground method"
+    },
+    "Border": {
+      "category": "border",
+      "complexity": 3,
+      "dependencies": [
+        "Width",
+        "Height"
+      ],
+      "description": "Sets border style"
+    },
+    "BorderStyle": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderStyle method"
+    },
+    "BorderTop": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderTop method"
+    },
+    "BorderRight": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderRight method"
+    },
+    "BorderBottom": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderBottom method"
+    },
+    "BorderLeft": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderLeft method"
+    },
+    "BorderForeground": {
+      "category": "border",
+      "complexity": 3,
+      "dependencies": [
+        "Border",
+        "Foreground"
+      ],
+      "description": "BorderForeground method"
+    },
+    "BorderTopForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderTopForeground method"
+    },
+    "BorderRightForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderRightForeground method"
+    },
+    "BorderBottomForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderBottomForeground method"
+    },
+    "BorderLeftForeground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderLeftForeground method"
+    },
+    "BorderBackground": {
+      "category": "border",
+      "complexity": 3,
+      "dependencies": [
+        "Border",
+        "Background"
+      ],
+      "description": "BorderBackground method"
+    },
+    "BorderTopBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderTopBackground method"
+    },
+    "BorderRightBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderRightBackground method"
+    },
+    "BorderBottomBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderBottomBackground method"
+    },
+    "BorderLeftBackground": {
+      "category": "border",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "BorderLeftBackground method"
+    },
+    "Inline": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Inline method"
+    },
+    "MaxWidth": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Width"
+      ],
+      "description": "MaxWidth method"
+    },
+    "MaxHeight": {
+      "category": "layout",
+      "complexity": 1,
+      "dependencies": [
+        "Height"
+      ],
+      "description": "MaxHeight method"
+    },
+    "TabWidth": {
+      "category": "layout",
+      "complexity": 3,
+      "dependencies": [],
+      "description": "TabWidth method"
+    },
+    "UnderlineSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "UnderlineSpaces method"
+    },
+    "StrikethroughSpaces": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "StrikethroughSpaces method"
+    },
+    "Transform": {
+      "category": "styling",
+      "complexity": 1,
+      "dependencies": [
+        "NewStyle",
+        "Render"
+      ],
+      "description": "Transform method"
+    },
+    "Renderer": {
+      "category": "basic",
+      "complexity": 1,
+      "dependencies": [],
+      "description": "Renderer method"
+    }
+  },
+  "executionOrder": [
+    "NewStyle",
+    "SetString",
+    "Value",
+    "Copy",
+    "Render",
+    "UnsetBold",
+    "UnsetItalic",
+    "UnsetUnderline",
+    "UnsetStrikethrough",
+    "UnsetReverse",
+    "UnsetBlink",
+    "UnsetFaint",
+    "UnsetForeground",
+    "UnsetBackground",
+    "UnsetColorWhitespace",
+    "UnsetInline",
+    "UnsetUnderlineSpaces",
+    "UnsetStrikethroughSpaces",
+    "UnsetTransform",
+    "UnsetString",
+    "Size",
+    "DefaultRenderer",
+    "SetDefaultRenderer",
+    "NewRenderer",
+    "NewRange",
+    "WithWhitespaceForeground",
+    "WithWhitespaceBackground",
+    "WithWhitespaceChars",
+    "GetBold",
+    "GetItalic",
+    "GetUnderline",
+    "GetStrikethrough",
+    "GetReverse",
+    "GetBlink",
+    "GetFaint",
+    "GetForeground",
+    "GetBackground",
+    "GetColorWhitespace",
+    "GetInline",
+    "GetUnderlineSpaces",
+    "GetStrikethroughSpaces",
+    "GetHorizontalFrameSize",
+    "GetVerticalFrameSize",
+    "GetFrameSize",
+    "GetTransform",
+    "ColorWhitespace",
+    "UnderlineSpaces",
+    "StrikethroughSpaces",
+    "Renderer",
+    "StyleRanges",
+    "Inherit",
+    "StyleRunes",
+    "SetColorProfile",
+    "HasDarkBackground",
+    "SetHasDarkBackground",
+    "ColorProfile",
+    "Foreground",
+    "Background",
+    "UnsetWidth",
+    "UnsetHeight",
+    "UnsetAlign",
+    "UnsetAlignHorizontal",
+    "UnsetAlignVertical",
+    "UnsetPadding",
+    "UnsetPaddingLeft",
+    "UnsetPaddingRight",
+    "UnsetPaddingTop",
+    "UnsetPaddingBottom",
+    "UnsetMargins",
+    "UnsetMarginLeft",
+    "UnsetMarginRight",
+    "UnsetMarginTop",
+    "UnsetMarginBottom",
+    "UnsetMarginBackground",
+    "UnsetMaxWidth",
+    "UnsetMaxHeight",
+    "UnsetTabWidth",
+    "GetWidth",
+    "GetHeight",
+    "GetPadding",
+    "GetPaddingTop",
+    "GetPaddingRight",
+    "GetPaddingBottom",
+    "GetPaddingLeft",
+    "GetHorizontalPadding",
+    "GetVerticalPadding",
+    "GetMargin",
+    "GetMarginTop",
+    "GetMarginRight",
+    "GetMarginBottom",
+    "GetMarginLeft",
+    "GetHorizontalMargins",
+    "GetVerticalMargins",
+    "GetBorderTopWidth",
+    "GetMaxWidth",
+    "GetMaxHeight",
+    "GetTabWidth",
+    "Width",
+    "AlignHorizontal",
+    "Height",
+    "AlignVertical",
+    "Padding",
+    "PaddingLeft",
+    "PaddingRight",
+    "PaddingTop",
+    "PaddingBottom",
+    "Margin",
+    "MarginLeft",
+    "MarginRight",
+    "MarginTop",
+    "MarginBottom",
+    "MarginBackground",
+    "MaxWidth",
+    "MaxHeight",
+    "GetAlign",
+    "GetAlignHorizontal",
+    "GetAlignVertical",
+    "Align",
+    "TabWidth",
+    "UnsetBorderStyle",
+    "UnsetBorderTop",
+    "UnsetBorderRight",
+    "UnsetBorderBottom",
+    "UnsetBorderLeft",
+    "UnsetBorderForeground",
+    "UnsetBorderTopForeground",
+    "UnsetBorderRightForeground",
+    "UnsetBorderBottomForeground",
+    "UnsetBorderLeftForeground",
+    "UnsetBorderBackground",
+    "UnsetBorderTopBackgroundColor",
+    "UnsetBorderTopBackground",
+    "UnsetBorderRightBackground",
+    "UnsetBorderBottomBackground",
+    "UnsetBorderLeftBackground",
+    "NormalBorder",
+    "RoundedBorder",
+    "BlockBorder",
+    "OuterHalfBlockBorder",
+    "InnerHalfBlockBorder",
+    "ThickBorder",
+    "DoubleBorder",
+    "HiddenBorder",
+    "MarkdownBorder",
+    "ASCIIBorder",
+    "GetBorder",
+    "GetBorderStyle",
+    "GetBorderTop",
+    "GetBorderRight",
+    "GetBorderBottom",
+    "GetBorderLeft",
+    "GetBorderTopForeground",
+    "GetBorderRightForeground",
+    "GetBorderBottomForeground",
+    "GetBorderLeftForeground",
+    "GetBorderTopBackground",
+    "GetBorderRightBackground",
+    "GetBorderBottomBackground",
+    "GetBorderLeftBackground",
+    "GetBorderTopSize",
+    "GetHorizontalBorderSize",
+    "GetVerticalBorderSize",
+    "BorderStyle",
+    "BorderTop",
+    "BorderRight",
+    "BorderBottom",
+    "BorderLeft",
+    "BorderTopForeground",
+    "BorderRightForeground",
+    "BorderBottomForeground",
+    "BorderLeftForeground",
+    "BorderTopBackground",
+    "BorderRightBackground",
+    "BorderBottomBackground",
+    "BorderLeftBackground",
+    "GetBorderLeftSize",
+    "GetBorderBottomSize",
+    "GetBorderRightSize",
+    "Border",
+    "BorderForeground",
+    "BorderBackground",
+    "Bold",
+    "Italic",
+    "Underline",
+    "Strikethrough",
+    "Reverse",
+    "Blink",
+    "Faint",
+    "Inline",
+    "Transform",
+    "NewFilter",
+    "NewLeaf",
+    "New",
+    "Place",
+    "DefaultStyles",
+    "Arabic",
+    "Asterisk",
+    "DefaultEnumerator",
+    "RoundedEnumerator",
+    "DefaultIndenter",
+    "PlaceHorizontal",
+    "PlaceVertical",
+    "Alphabet",
+    "Roman",
+    "Bullet",
+    "Dash",
+    "NewStringData",
+    "Root",
+    "JoinVertical",
+    "JoinHorizontal"
+  ],
+  "testCaseMapping": {
+    "basic": {
+      "001": [
+        "NewStyle",
+        "Render"
+      ],
+      "002": [
+        "NewStyle",
+        "Foreground",
+        "Render"
+      ],
+      "003": [
+        "NewStyle",
+        "Background",
+        "Render"
+      ],
+      "004": [
+        "NewStyle",
+        "Copy"
+      ],
+      "005": [
+        "NewStyle",
+        "Inherit"
+      ]
+    },
+    "color": {
+      "101": [
+        "SetColorProfile",
+        "GetColorProfile"
+      ],
+      "102": [
+        "HasDarkBackground",
+        "SetHasDarkBackground"
+      ],
+      "103": [
+        "Foreground"
+      ],
+      "104": [
+        "Background"
+      ],
+      "105": [
+        "Foreground",
+        "Background"
+      ]
+    },
+    "layout": {
+      "201": [
+        "Width"
+      ],
+      "202": [
+        "Height"
+      ],
+      "203": [
+        "Width",
+        "Height"
+      ],
+      "204": [
+        "Padding"
+      ],
+      "205": [
+        "Margin"
+      ],
+      "206": [
+        "Width",
+        "Padding"
+      ],
+      "207": [
+        "Height",
+        "Margin"
+      ],
+      "208": [
+        "Align"
+      ],
+      "209": [
+        "AlignHorizontal"
+      ],
+      "210": [
+        "AlignVertical"
+      ]
+    },
+    "border": {
+      "301": [
+        "Border"
+      ],
+      "302": [
+        "BorderStyle"
+      ],
+      "303": [
+        "BorderTop",
+        "BorderRight",
+        "BorderBottom",
+        "BorderLeft"
+      ],
+      "304": [
+        "Border",
+        "BorderForeground"
+      ],
+      "305": [
+        "Border",
+        "BorderBackground"
+      ]
+    },
+    "styling": {
+      "401": [
+        "Bold"
+      ],
+      "402": [
+        "Italic"
+      ],
+      "403": [
+        "Underline"
+      ],
+      "404": [
+        "Strikethrough"
+      ],
+      "405": [
+        "Bold",
+        "Italic"
+      ],
+      "406": [
+        "Underline",
+        "Strikethrough"
+      ],
+      "407": [
+        "Reverse"
+      ],
+      "408": [
+        "Transform"
+      ]
+    },
+    "component": {
+      "501": [
+        "JoinHorizontal"
+      ],
+      "502": [
+        "JoinVertical"
+      ],
+      "503": [
+        "PlaceHorizontal"
+      ],
+      "504": [
+        "PlaceVertical"
+      ],
+      "505": [
+        "Place"
+      ]
+    },
+    "advanced": {
+      "601": [
+        "NewStyle",
+        "Foreground",
+        "Background",
+        "Border",
+        "Padding",
+        "Margin",
+        "Width",
+        "Align",
+        "Render"
+      ],
+      "602": [
+        "Bold",
+        "Italic",
+        "Underline",
+        "Foreground",
+        "Background"
+      ],
+      "603": [
+        "JoinHorizontal",
+        "JoinVertical",
+        "Place"
+      ]
+    }
+  }
+}

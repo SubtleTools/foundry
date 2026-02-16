@@ -5,10 +5,10 @@
 import type { ToleranceConfig } from './types';
 
 export const DEFAULT_TOLERANCE: ToleranceConfig = {
-  hexColorTolerance: 1,           // ±1 per channel (0.4% error)
-  ansiRgbTolerance: 1,            // ±1 per channel
-  floatRelativeTolerance: 0.05,   // 5% relative error
-  floatAbsoluteTolerance: 1e-10,  // Absolute error for tiny values
+  hexColorTolerance: 1, // ±1 per channel (0.4% error)
+  ansiRgbTolerance: 1, // ±1 per channel
+  floatRelativeTolerance: 0.05, // 5% relative error
+  floatAbsoluteTolerance: 1e-10, // Absolute error for tiny values
 };
 
 let currentConfig: ToleranceConfig = { ...DEFAULT_TOLERANCE };

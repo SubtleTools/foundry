@@ -1,0 +1,14 @@
+234 |     for (let x = 0; x < xSteps; x++) {
+235 |       const xRatio = xSteps > 1 ? x / (xSteps - 1) : 0;
+236 | 
+237 |       // Interpolate left edge (x0y0 to x0y1)
+238 |       const leftColor = {
+239 |         r: Math.round(x0y0.r + (x0y1.r - x0y0.r) * yRatio),
+                            ^
+TypeError: null is not an object (evaluating 'x0y0.r')
+      at colorGrid (/work/rcs/charm-ts/subtletools/lipgloss-ts/examples/layout/main.ts:239:23)
+      at main (/work/rcs/charm-ts/subtletools/lipgloss-ts/examples/layout/main.ts:316:20)
+      at /work/rcs/charm-ts/subtletools/lipgloss-ts/examples/layout/main.ts:473:1
+      at loadAndEvaluateModule (2:1)
+
+Bun v1.2.18 (macOS arm64)

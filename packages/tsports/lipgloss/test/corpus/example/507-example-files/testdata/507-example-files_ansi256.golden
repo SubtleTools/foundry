@@ -1,0 +1,10 @@
+\x1b[1;38;5;99m/work/tsports/packages/tsports/lipgloss/test/corpus/example/507-example-files\x1b[0m 
+\x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99mcase.go\x1b[0m 
+\x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99mcase.ts\x1b[0m 
+\x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99mexpected.out\x1b[0m 
+\x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99mmetadata.json\x1b[0m 
+\x1b[38;5;240m└──\x1b[0m \x1b[1;38;5;99mtestdata\x1b[0m 
+\x1b[38;5;240m   \x1b[0m \x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99m507-example-files_ansi.golden\x1b[0m 
+\x1b[38;5;240m   \x1b[0m \x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99m507-example-files_ansi256.golden\x1b[0m 
+\x1b[38;5;240m   \x1b[0m \x1b[38;5;240m├──\x1b[0m \x1b[1;38;5;99m507-example-files_ascii.golden\x1b[0m 
+\x1b[38;5;240m   \x1b[0m \x1b[38;5;240m└──\x1b[0m \x1b[1;38;5;99m507-example-files_truecolor.golden\x1b[0m

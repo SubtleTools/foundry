@@ -3,27 +3,27 @@
  * Port of examples/palettes/main.go
  */
 
-import { MakeColor, Hex } from '@tsports/go-colorful';
+import { writeFileSync } from 'node:fs';
 import type { Color } from '@tsports/go-colorful';
+import { Hex, MakeColor } from '@tsports/go-colorful';
 import {
-  generate,
-  SimilarHueGenerator,
-  PastelGenerator,
-  HappyGenerator,
-  WarmGenerator,
-  triadic,
-  quadratic,
-  tetradic,
   analogous,
-  splitComplementary,
+  blends,
+  generate,
+  HappyGenerator,
+  hueOffset,
   monochromatic,
+  PastelGenerator,
+  quadratic,
+  SimilarHueGenerator,
   shades,
+  splitComplementary,
+  tetradic,
   tints,
   tones,
-  blends,
-  hueOffset,
+  triadic,
+  WarmGenerator,
 } from '../src/index.js';
-import { writeFileSync } from 'node:fs';
 
 const c = Hex('#2F1B82');
 const cells = 8;

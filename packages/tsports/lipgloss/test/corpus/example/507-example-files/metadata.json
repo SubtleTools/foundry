@@ -1,0 +1,30 @@
+{
+  "id": "507",
+  "name": "example-files",
+  "category": "example",
+  "description": "Example: files",
+  "complexity": 7,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "NewStyle",
+    "Color",
+    "ReadDir",
+    "IsDir",
+    "HasPrefix",
+    "Name",
+    "Root",
+    "Child",
+    "Join",
+    "Foreground",
+    "PaddingRight",
+    "Bold",
+    "Getwd",
+    "Fprintf",
+    "Exit",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:18.687Z",
+  "version": "1.0.0"
+}

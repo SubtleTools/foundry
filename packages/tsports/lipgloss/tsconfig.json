@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "ES2021"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "checkJs": false,
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/index": ["src/index"],
+      "@tsports/lipgloss": ["src/index"],
+      "@tsports/lipgloss/*": ["src/*"],
+      "@dev/test-utils": ["../../../libs/dev/test-utils/index.ts"],
+      "@dev/test-utils/*": ["../../../libs/dev/test-utils/*"],
+      "@dev/versioning": ["../../../libs/dev/versioning/index.ts"],
+      "@dev/versioning/*": ["../../../libs/dev/versioning/*"]
+    }
+  },
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules", "dist", "test/corpus/**/*.go"],
+  "ts-node": {
+    "esm": true
+  }
+}

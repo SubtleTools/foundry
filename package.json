@@ -7,7 +7,7 @@
   "license": "MIT",
   "workspaces": [
     "apps/*",
-    "libs/*",
+    "libs/**/*",
     "packages/*/*",
     "packages/*"
   ],

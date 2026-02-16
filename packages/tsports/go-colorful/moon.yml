@@ -1,0 +1,108 @@
+language: "typescript"
+type: "library"
+
+tasks:
+  build:
+    command: "bun"
+    args: ["run", "build"]
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
+    outputs:
+      - "dist/**/*"
+
+  build-docs:
+    command: "bun"
+    args: ["run", "docs"]
+    deps: ["build"]
+    inputs:
+      - "src/**/*"
+      - "typedoc.json"
+      - "README.md"
+    outputs:
+      - "docs/api/**/*"
+
+  clean:
+    command: "bun"
+    args: ["run", "clean"]
+
+  dev:
+    command: "bun"
+    args: ["run", "dev"]
+    local: true
+
+  dev-docs:
+    command: "bunx"
+    args: ["vitepress", "dev", "docs"]
+    deps:
+      - build-docs
+    local: true
+
+  docs:
+    command: "bunx"
+    args: ["vitepress", "dev", "docs"]
+    deps:
+      - build-docs
+    local: true
+
+  docs-build:
+    command: "bunx"
+    args: ["vitepress", "build", "docs"]
+    deps:
+      - build-docs
+    inputs:
+      - "docs/api/**/*"
+      - "docs/.vitepress/**/*"
+      - "docs/index.md"
+      - "docs/guide/**/*"
+    outputs:
+      - "docs/.vitepress/dist/**/*"
+
+  format:
+    command: "bun"
+    args: ["run", "format"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "*.{json,md,yml,yaml}"
+      - "biome.json"
+      - "dprint.json"
+
+  lint:
+    command: "bun"
+    args: ["run", "lint"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "biome.json"
+
+  prepack:
+    deps:
+      - clean
+      - lint
+      - format
+      - build
+      - test
+      - build-docs
+
+  setup:
+    command: "bun"
+    args: ["run", "scripts/setup-reference.ts"]
+    local: true
+    env:
+      GO_REPO: "https://github.com/lucasb-eyer/go-colorful"
+
+
+
+  version-bump-go:
+    command: "bun"
+    args: ["run", "../../../libs/dev/versioning/cli-bump-go.ts"]
+    local: true
+
+  version-bump-tsport:
+    command: "bun"
+    args: ["run", "../../../libs/dev/versioning/cli-bump-tsport.ts"]
+    local: true
+
+tags: ["tests"]

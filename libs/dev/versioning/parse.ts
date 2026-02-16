@@ -1,4 +1,4 @@
-import type { PortInfo, VersionInfo } from "./types";
+import type { PortInfo, VersionInfo } from './types';
 
 /**
  * Decode an npm version string into Go + TS patch components.
@@ -10,9 +10,7 @@ import type { PortInfo, VersionInfo } from "./types";
 export function parseNpmVersion(version: string): VersionInfo {
   const match = version.match(/^(\d+)\.(\d+)\.(\d+)$/);
   if (!match) {
-    throw new Error(
-      `Invalid npm version "${version}". Expected format: X.Y.Z`,
-    );
+    throw new Error(`Invalid npm version "${version}". Expected format: X.Y.Z`);
   }
 
   const major = Number(match[1]);
@@ -30,9 +28,6 @@ export function parseNpmVersion(version: string): VersionInfo {
 /**
  * Extract a VersionInfo from a package.json object (reads `version` + `portInfo`).
  */
-export function parsePortInfo(pkg: {
-  version: string;
-  portInfo?: PortInfo;
-}): VersionInfo {
+export function parsePortInfo(pkg: { version: string; portInfo?: PortInfo }): VersionInfo {
   return parseNpmVersion(pkg.version);
 }

@@ -1,0 +1,19 @@
+{
+  "id": "211",
+  "name": "color-hex-FF0000",
+  "category": "color",
+  "description": "#FF0000 hex color",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:13.615Z",
+  "version": "1.0.0"
+}

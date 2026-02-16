@@ -33,11 +33,12 @@ tasks:
   # Format and lint code with Biome
   format:
     command: "biome"
-    args: ["check", "src", "test", "--no-errors-on-unmatched"]
+    args: ["check", ".", "--write", "--no-errors-on-unmatched"]
     inputs:
       - "src/**/*"
       - "test/**/*"
-      - "biome.json"
+      - "**/*.ts"
+      - "?biome.json"
       - "/biome.json"
     options:
       mergeArgs: "append"

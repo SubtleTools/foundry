@@ -1,0 +1,128 @@
+# Build outputs
+dist/
+.tsbuildinfo
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Development and debug files
+debug*
+test-*
+test_*
+*.debug.*
+*.debug
+*-debug.*
+*-debug
+*debug.js
+*debug.ts
+*debug.mjs
+
+# Backup files
+*.backup
+*.bak
+*-backup.*
+*-tmp.*
+*tmp.*
+
+# Development artifacts
+color_profile_insert.txt
+run-validation.*
+benchmark-results.json
+
+# Documentation build artifacts (keep source, ignore builds)
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/api/
+
+logs
+*.log
+dev-debug.log
+# Dependency directories
+# Environment variables
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# OS specific
+
+.vitepress/cache/deps
+
+examples/**/*.js
+examples/**/*.js.map
+examples/**/*.d.ts
+examples/**/*.d.ts.map
+
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
+src/**/*.d.ts.map
+
+test/**/*.js
+test/**/*.js.map
+test/**/*.d.ts
+test/**/*.d.ts.map
+
+# Task files
+# tasks.json
+# tasks/ 

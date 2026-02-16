@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="bun test" tests="388" assertions="4342" failures="0" skipped="0" time="15.349237">
+  <testsuite name="test/profile.test.ts" file="test/profile.test.ts" tests="26" assertions="81" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="ProfileUtils" file="test/profile.test.ts" line="5" tests="22" assertions="65" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="getName" file="test/profile.test.ts" line="18" tests="2" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns correct profile names" classname="getName &amp;gt; ProfileUtils" time="0.000092" file="test/profile.test.ts" line="19" assertions="4" />
+        <testcase name="handles invalid profile numbers" classname="getName &amp;gt; ProfileUtils" time="0" file="test/profile.test.ts" line="26" assertions="2" />
+      </testsuite>
+      <testsuite name="color" file="test/profile.test.ts" line="32" tests="7" assertions="16" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns null for empty strings" classname="color &amp;gt; ProfileUtils" time="0.000072" file="test/profile.test.ts" line="33" assertions="2" />
+        <testcase name="creates RGB colors from hex strings" classname="color &amp;gt; ProfileUtils" time="0" file="test/profile.test.ts" line="38" assertions="2" />
+        <testcase name="creates ANSI colors from numbers 0-15" classname="color &amp;gt; ProfileUtils" time="0.000019" file="test/profile.test.ts" line="44" assertions="2" />
+        <testcase name="creates ANSI256 colors from numbers 16-255" classname="color &amp;gt; ProfileUtils" time="0.000016" file="test/profile.test.ts" line="50" assertions="2" />
+        <testcase name="returns null for invalid color strings" classname="color &amp;gt; ProfileUtils" time="0" file="test/profile.test.ts" line="56" assertions="3" />
+        <testcase name="handles different hex formats" classname="color &amp;gt; ProfileUtils" time="0.000021" file="test/profile.test.ts" line="64" assertions="2" />
+        <testcase name="converts colors based on profile" classname="color &amp;gt; ProfileUtils" time="0.000781" file="test/profile.test.ts" line="72" assertions="3" />
+      </testsuite>
+      <testsuite name="convert" file="test/profile.test.ts" line="87" tests="8" assertions="16" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="preserves NoColor for all profiles" classname="convert &amp;gt; ProfileUtils" time="0.000038" file="test/profile.test.ts" line="88" assertions="4" />
+        <testcase name="converts all colors to NoColor for Ascii profile" classname="convert &amp;gt; ProfileUtils" time="0.000029" file="test/profile.test.ts" line="96" assertions="3" />
+        <testcase name="preserves ANSI colors for all profiles" classname="convert &amp;gt; ProfileUtils" time="0.000017" file="test/profile.test.ts" line="106" assertions="3" />
+        <testcase name="converts ANSI256 to ANSI for ANSI profile" classname="convert &amp;gt; ProfileUtils" time="0.000243" file="test/profile.test.ts" line="113" assertions="1" />
+        <testcase name="preserves ANSI256 colors for TrueColor and ANSI256 profiles" classname="convert &amp;gt; ProfileUtils" time="0.000014" file="test/profile.test.ts" line="119" assertions="2" />
+        <testcase name="preserves RGB colors for TrueColor profile" classname="convert &amp;gt; ProfileUtils" time="0.000012" file="test/profile.test.ts" line="125" assertions="1" />
+        <testcase name="converts RGB colors to ANSI256 for ANSI256 profile" classname="convert &amp;gt; ProfileUtils" time="0.000038" file="test/profile.test.ts" line="130" assertions="1" />
+        <testcase name="converts RGB colors to ANSI for ANSI profile" classname="convert &amp;gt; ProfileUtils" time="0.000112" file="test/profile.test.ts" line="136" assertions="1" />
+      </testsuite>
+      <testsuite name="ANSI256 to ANSI conversion (internal function)" file="test/profile.test.ts" line="143" tests="2" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="converts ANSI256 colors to closest ANSI via profile conversion" classname="ANSI256 to ANSI conversion (internal function) &amp;gt; ProfileUtils" time="0.000285" file="test/profile.test.ts" line="144" assertions="6" />
+        <testcase name="handles edge cases" classname="ANSI256 to ANSI conversion (internal function) &amp;gt; ProfileUtils" time="0.000188" file="test/profile.test.ts" line="159" assertions="4" />
+      </testsuite>
+      <testsuite name="RGB to ANSI256 conversion (internal function)" file="test/profile.test.ts" line="172" tests="3" assertions="17" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="converts RGB colors to ANSI256 equivalents via profile conversion" classname="RGB to ANSI256 conversion (internal function) &amp;gt; ProfileUtils" time="0.000093" file="test/profile.test.ts" line="173" assertions="9" />
+        <testcase name="handles grayscale colors" classname="RGB to ANSI256 conversion (internal function) &amp;gt; ProfileUtils" time="0.000068" file="test/profile.test.ts" line="190" assertions="6" />
+        <testcase name="handles invalid hex values through color creation" classname="RGB to ANSI256 conversion (internal function) &amp;gt; ProfileUtils" time="0.000084" file="test/profile.test.ts" line="203" assertions="2" />
+      </testsuite>
+    </testsuite>
+    <testsuite name="ProfileUtils edge cases and error handling" file="test/profile.test.ts" line="213" tests="4" assertions="16" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="handles undefined/null inputs gracefully" classname="ProfileUtils edge cases and error handling" time="0.000067" file="test/profile.test.ts" line="214" assertions="2" />
+      <testcase name="handles malformed hex colors" classname="ProfileUtils edge cases and error handling" time="0.000129" file="test/profile.test.ts" line="219" assertions="4" />
+      <testcase name="handles numeric edge cases" classname="ProfileUtils edge cases and error handling" time="0.000029" file="test/profile.test.ts" line="228" assertions="4" />
+      <testcase name="color conversion maintains color information" classname="ProfileUtils edge cases and error handling" time="0.000087" file="test/profile.test.ts" line="241" assertions="6" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/style-comprehensive.test.ts" file="test/style-comprehensive.test.ts" tests="44" assertions="88" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Style" file="test/style-comprehensive.test.ts" line="5" tests="44" assertions="88" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="constructor and basic functionality" file="test/style-comprehensive.test.ts" line="6" tests="3" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates style with text" classname="constructor and basic functionality &amp;gt; Style" time="0.000008" file="test/style-comprehensive.test.ts" line="7" assertions="1" />
+        <testcase name="creates style with empty text" classname="constructor and basic functionality &amp;gt; Style" time="0" file="test/style-comprehensive.test.ts" line="12" assertions="1" />
+        <testcase name="handles different profiles" classname="constructor and basic functionality &amp;gt; Style" time="0.000035" file="test/style-comprehensive.test.ts" line="17" assertions="4" />
+      </testsuite>
+      <testsuite name="foreground colors" file="test/style-comprehensive.test.ts" line="27" tests="5" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="applies RGB foreground color in TrueColor profile" classname="foreground colors &amp;gt; Style" time="0.000124" file="test/style-comprehensive.test.ts" line="28" assertions="3" />
+        <testcase name="applies ANSI foreground color" classname="foreground colors &amp;gt; Style" time="0.000041" file="test/style-comprehensive.test.ts" line="37" assertions="2" />
+        <testcase name="applies ANSI256 foreground color" classname="foreground colors &amp;gt; Style" time="0.000025" file="test/style-comprehensive.test.ts" line="45" assertions="2" />
+        <testcase name="ignores NoColor foreground" classname="foreground colors &amp;gt; Style" time="0.000026" file="test/style-comprehensive.test.ts" line="53" assertions="1" />
+        <testcase name="converts colors based on profile" classname="foreground colors &amp;gt; Style" time="0.000019" file="test/style-comprehensive.test.ts" line="60" assertions="2" />
+      </testsuite>
+      <testsuite name="background colors" file="test/style-comprehensive.test.ts" line="70" tests="4" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="applies RGB background color in TrueColor profile" classname="background colors &amp;gt; Style" time="0.000029" file="test/style-comprehensive.test.ts" line="71" assertions="2" />
+        <testcase name="applies ANSI background color" classname="background colors &amp;gt; Style" time="0.000016" file="test/style-comprehensive.test.ts" line="79" assertions="2" />
+        <testcase name="applies ANSI256 background color" classname="background colors &amp;gt; Style" time="0.000026" file="test/style-comprehensive.test.ts" line="87" assertions="2" />
+        <testcase name="ignores NoColor background" classname="background colors &amp;gt; Style" time="0.000011" file="test/style-comprehensive.test.ts" line="95" assertions="1" />
+      </testsuite>
+      <testsuite name="text styling methods" file="test/style-comprehensive.test.ts" line="103" tests="8" assertions="17" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="applies bold styling" classname="text styling methods &amp;gt; Style" time="0.000014" file="test/style-comprehensive.test.ts" line="104" assertions="3" />
+        <testcase name="applies italic styling" classname="text styling methods &amp;gt; Style" time="0.000031" file="test/style-comprehensive.test.ts" line="113" assertions="2" />
+        <testcase name="applies underline styling" classname="text styling methods &amp;gt; Style" time="0.000016" file="test/style-comprehensive.test.ts" line="121" assertions="2" />
+        <testcase name="applies crossout styling" classname="text styling methods &amp;gt; Style" time="0.000004" file="test/style-comprehensive.test.ts" line="129" assertions="2" />
+        <testcase name="applies overline styling" classname="text styling methods &amp;gt; Style" time="0.000024" file="test/style-comprehensive.test.ts" line="137" assertions="2" />
+        <testcase name="applies reverse styling" classname="text styling methods &amp;gt; Style" time="0.000014" file="test/style-comprehensive.test.ts" line="145" assertions="2" />
+        <testcase name="applies blink styling" classname="text styling methods &amp;gt; Style" time="0.000015" file="test/style-comprehensive.test.ts" line="153" assertions="2" />
+        <testcase name="applies faint styling" classname="text styling methods &amp;gt; Style" time="0.000018" file="test/style-comprehensive.test.ts" line="161" assertions="2" />
+      </testsuite>
+      <testsuite name="method chaining" file="test/style-comprehensive.test.ts" line="170" tests="3" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="chains multiple styling methods" classname="method chaining &amp;gt; Style" time="0.000022" file="test/style-comprehensive.test.ts" line="171" assertions="3" />
+        <testcase name="returns same instance for chaining" classname="method chaining &amp;gt; Style" time="0.000022" file="test/style-comprehensive.test.ts" line="187" assertions="5" />
+        <testcase name="order of chaining does not affect final output" classname="method chaining &amp;gt; Style" time="0.000018" file="test/style-comprehensive.test.ts" line="198" assertions="2" />
+      </testsuite>
+      <testsuite name="width method" file="test/style-comprehensive.test.ts" line="217" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns width of text" classname="width method &amp;gt; Style" time="0.00013" file="test/style-comprehensive.test.ts" line="218" assertions="1" />
+        <testcase name="handles empty text" classname="width method &amp;gt; Style" time="0.000025" file="test/style-comprehensive.test.ts" line="225" assertions="1" />
+        <testcase name="handles unicode characters correctly" classname="width method &amp;gt; Style" time="0.000005" file="test/style-comprehensive.test.ts" line="232" assertions="1" />
+        <testcase name="handles wide characters" classname="width method &amp;gt; Style" time="0.000013" file="test/style-comprehensive.test.ts" line="240" assertions="1" />
+        <testcase name="works with styled text" classname="width method &amp;gt; Style" time="0.000016" file="test/style-comprehensive.test.ts" line="248" assertions="1" />
+      </testsuite>
+      <testsuite name="different profiles behavior" file="test/style-comprehensive.test.ts" line="256" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="TrueColor profile uses RGB sequences" classname="different profiles behavior &amp;gt; Style" time="0.000031" file="test/style-comprehensive.test.ts" line="257" assertions="1" />
+        <testcase name="ANSI256 profile uses 256-color sequences" classname="different profiles behavior &amp;gt; Style" time="0.000021" file="test/style-comprehensive.test.ts" line="264" assertions="1" />
+        <testcase name="ANSI profile uses basic ANSI sequences" classname="different profiles behavior &amp;gt; Style" time="0" file="test/style-comprehensive.test.ts" line="271" assertions="1" />
+        <testcase name="Ascii profile strips all color sequences" classname="different profiles behavior &amp;gt; Style" time="0.000021" file="test/style-comprehensive.test.ts" line="278" assertions="1" />
+        <testcase name="Ascii profile strips all styling" classname="different profiles behavior &amp;gt; Style" time="0.000005" file="test/style-comprehensive.test.ts" line="289" assertions="1" />
+      </testsuite>
+      <testsuite name="Go-compatible API" file="test/style-comprehensive.test.ts" line="297" tests="4" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="provides PascalCase methods" classname="Go-compatible API &amp;gt; Style" time="0.000039" file="test/style-comprehensive.test.ts" line="298" assertions="11" />
+        <testcase name="Go-compatible methods work identically" classname="Go-compatible API &amp;gt; Style" time="0.000047" file="test/style-comprehensive.test.ts" line="314" assertions="1" />
+        <testcase name="String() method returns toString() result" classname="Go-compatible API &amp;gt; Style" time="0.000029" file="test/style-comprehensive.test.ts" line="327" assertions="1" />
+        <testcase name="Width() method works like width()" classname="Go-compatible API &amp;gt; Style" time="0.000023" file="test/style-comprehensive.test.ts" line="333" assertions="1" />
+      </testsuite>
+      <testsuite name="edge cases and error handling" file="test/style-comprehensive.test.ts" line="343" tests="7" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles null colors gracefully" classname="edge cases and error handling &amp;gt; Style" time="0.000081" file="test/style-comprehensive.test.ts" line="344" assertions="2" />
+        <testcase name="handles undefined colors gracefully" classname="edge cases and error handling &amp;gt; Style" time="0.000021" file="test/style-comprehensive.test.ts" line="351" assertions="2" />
+        <testcase name="handles very long text" classname="edge cases and error handling &amp;gt; Style" time="0.000057" file="test/style-comprehensive.test.ts" line="358" assertions="1" />
+        <testcase name="handles text with existing ANSI codes" classname="edge cases and error handling &amp;gt; Style" time="0.000027" file="test/style-comprehensive.test.ts" line="366" assertions="2" />
+        <testcase name="handles newlines and special characters" classname="edge cases and error handling &amp;gt; Style" time="0.00001" file="test/style-comprehensive.test.ts" line="375" assertions="2" />
+        <testcase name="toString() can be called multiple times" classname="edge cases and error handling &amp;gt; Style" time="0.000008" file="test/style-comprehensive.test.ts" line="384" assertions="2" />
+        <testcase name="style objects are immutable - modifications create new instances" classname="edge cases and error handling &amp;gt; Style" time="0.000024" file="test/style-comprehensive.test.ts" line="395" assertions="3" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/output-extended.test.ts" file="test/output-extended.test.ts" tests="10" assertions="31" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="OutputImpl Extended Methods" file="test/output-extended.test.ts" line="20" tests="10" assertions="31" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="screen control methods work via Output" classname="OutputImpl Extended Methods" time="0.000515" file="test/output-extended.test.ts" line="21" assertions="3" />
+      <testcase name="mouse control methods work via Output" classname="OutputImpl Extended Methods" time="0.00006" file="test/output-extended.test.ts" line="37" assertions="3" />
+      <testcase name="hyperlink method works via Output" classname="OutputImpl Extended Methods" time="0.000029" file="test/output-extended.test.ts" line="53" assertions="1" />
+      <testcase name="notification method works via Output" classname="OutputImpl Extended Methods" time="0.000029" file="test/output-extended.test.ts" line="61" assertions="1" />
+      <testcase name="color setting methods work via Output" classname="OutputImpl Extended Methods" time="0.000187" file="test/output-extended.test.ts" line="69" assertions="3" />
+      <testcase name="window title method works via Output" classname="OutputImpl Extended Methods" time="0.000066" file="test/output-extended.test.ts" line="88" assertions="1" />
+      <testcase name="scrolling methods work via Output" classname="OutputImpl Extended Methods" time="0.000096" file="test/output-extended.test.ts" line="96" assertions="3" />
+      <testcase name="bracketed paste methods work via Output" classname="OutputImpl Extended Methods" time="0.00004" file="test/output-extended.test.ts" line="112" assertions="2" />
+      <testcase name="complex method chaining works" classname="OutputImpl Extended Methods" time="0.000084" file="test/output-extended.test.ts" line="124" assertions="9" />
+      <testcase name="all extended methods return void as expected" classname="OutputImpl Extended Methods" time="0.000042" file="test/output-extended.test.ts" line="149" assertions="5" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/global-functions.test.ts" file="test/global-functions.test.ts" tests="22" assertions="28" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Global Screen Control Functions" file="test/global-functions.test.ts" line="49" tests="14" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="moveCursor works with default output" classname="Global Screen Control Functions" time="0" file="test/global-functions.test.ts" line="50" assertions="1" />
+      <testcase name="cursorUp with default parameter" classname="Global Screen Control Functions" time="0.000043" file="test/global-functions.test.ts" line="55" assertions="1" />
+      <testcase name="cursorUp with custom parameter" classname="Global Screen Control Functions" time="0.000017" file="test/global-functions.test.ts" line="60" assertions="1" />
+      <testcase name="cursorDown with default parameter" classname="Global Screen Control Functions" time="0.00004" file="test/global-functions.test.ts" line="65" assertions="1" />
+      <testcase name="cursorDown with custom parameter" classname="Global Screen Control Functions" time="0.000021" file="test/global-functions.test.ts" line="70" assertions="1" />
+      <testcase name="clearScreen works" classname="Global Screen Control Functions" time="0.000004" file="test/global-functions.test.ts" line="75" assertions="1" />
+      <testcase name="clearLine works" classname="Global Screen Control Functions" time="0.00002" file="test/global-functions.test.ts" line="80" assertions="1" />
+      <testcase name="hideCursor works" classname="Global Screen Control Functions" time="0.000025" file="test/global-functions.test.ts" line="85" assertions="1" />
+      <testcase name="showCursor works" classname="Global Screen Control Functions" time="0.000005" file="test/global-functions.test.ts" line="90" assertions="1" />
+      <testcase name="altScreen works" classname="Global Screen Control Functions" time="0.000013" file="test/global-functions.test.ts" line="95" assertions="1" />
+      <testcase name="exitAltScreen works" classname="Global Screen Control Functions" time="0.000017" file="test/global-functions.test.ts" line="100" assertions="1" />
+      <testcase name="setWindowTitle works" classname="Global Screen Control Functions" time="0.000022" file="test/global-functions.test.ts" line="105" assertions="1" />
+      <testcase name="enableMouse works" classname="Global Screen Control Functions" time="0.000011" file="test/global-functions.test.ts" line="110" assertions="1" />
+      <testcase name="disableMouse works" classname="Global Screen Control Functions" time="0.000022" file="test/global-functions.test.ts" line="115" assertions="1" />
+    </testsuite>
+    <testsuite name="Global Hyperlink Functions" file="test/global-functions.test.ts" line="121" tests="3" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="createHyperlink returns correct format" classname="Global Hyperlink Functions" time="0.000025" file="test/global-functions.test.ts" line="122" assertions="1" />
+      <testcase name="writeHyperlink writes to default output" classname="Global Hyperlink Functions" time="0" file="test/global-functions.test.ts" line="127" assertions="1" />
+      <testcase name="createHyperlink handles empty link" classname="Global Hyperlink Functions" time="0" file="test/global-functions.test.ts" line="132" assertions="1" />
+    </testsuite>
+    <testsuite name="Global Notification Functions" file="test/global-functions.test.ts" line="138" tests="3" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="createNotification returns correct format" classname="Global Notification Functions" time="0" file="test/global-functions.test.ts" line="139" assertions="1" />
+      <testcase name="sendNotification writes to default output" classname="Global Notification Functions" time="0.000075" file="test/global-functions.test.ts" line="144" assertions="1" />
+      <testcase name="createNotification handles empty strings" classname="Global Notification Functions" time="0.00001" file="test/global-functions.test.ts" line="149" assertions="1" />
+    </testsuite>
+    <testsuite name="Global Functions Integration" file="test/global-functions.test.ts" line="155" tests="2" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="multiple global functions work together" classname="Global Functions Integration" time="0.000035" file="test/global-functions.test.ts" line="156" assertions="5" />
+      <testcase name="functions work with custom default output" classname="Global Functions Integration" time="0.000027" file="test/global-functions.test.ts" line="169" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/go-comparison.test.ts" file="test/go-comparison.test.ts" tests="18" assertions="23" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Go Comparison Tests" file="test/go-comparison.test.ts" line="147" tests="16" assertions="16" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="basic color output" file="test/go-comparison.test.ts" line="148" tests="3" assertions="3" failures="0" skipped="0" time="2.245" hostname="mac.local">
+        <testcase name="RGB color foreground matches Go exactly" classname="basic color output &amp;gt; Go Comparison Tests" time="0.876217" file="test/go-comparison.test.ts" line="149" assertions="1" />
+        <testcase name="ANSI color matches Go exactly" classname="basic color output &amp;gt; Go Comparison Tests" time="0.697875" file="test/go-comparison.test.ts" line="186" assertions="1" />
+        <testcase name="ANSI256 color matches Go exactly" classname="basic color output &amp;gt; Go Comparison Tests" time="0.672978" file="test/go-comparison.test.ts" line="212" assertions="1" />
+      </testsuite>
+      <testsuite name="text styling" file="test/go-comparison.test.ts" line="239" tests="2" assertions="2" failures="0" skipped="0" time="1.629" hostname="mac.local">
+        <testcase name="bold and italic combination matches Go" classname="text styling &amp;gt; Go Comparison Tests" time="0.795336" file="test/go-comparison.test.ts" line="240" assertions="1" />
+        <testcase name="complex styling chain matches Go" classname="text styling &amp;gt; Go Comparison Tests" time="0.834842" file="test/go-comparison.test.ts" line="266" assertions="1" />
+      </testsuite>
+      <testsuite name="color profile behavior" file="test/go-comparison.test.ts" line="309" tests="2" assertions="2" failures="0" skipped="0" time="1.422" hostname="mac.local">
+        <testcase name="color conversion in ANSI profile matches Go" classname="color profile behavior &amp;gt; Go Comparison Tests" time="0.603871" file="test/go-comparison.test.ts" line="310" assertions="1" />
+        <testcase name="no color output in ASCII profile matches Go" classname="color profile behavior &amp;gt; Go Comparison Tests" time="0.819603" file="test/go-comparison.test.ts" line="337" assertions="1" />
+      </testsuite>
+      <testsuite name="Go-compatible API" file="test/go-comparison.test.ts" line="370" tests="1" assertions="1" failures="0" skipped="0" time="1.409" hostname="mac.local">
+        <testcase name="Go-style API produces identical output" classname="Go-compatible API &amp;gt; Go Comparison Tests" time="1.409193" file="test/go-comparison.test.ts" line="371" assertions="1" />
+      </testsuite>
+      <testsuite name="hyperlinks" file="test/go-comparison.test.ts" line="406" tests="1" assertions="1" failures="0" skipped="0" time="0.646" hostname="mac.local">
+        <testcase name="hyperlink format matches Go exactly" classname="hyperlinks &amp;gt; Go Comparison Tests" time="0.646988" file="test/go-comparison.test.ts" line="407" assertions="1" />
+      </testsuite>
+      <testsuite name="environment variable handling" file="test/go-comparison.test.ts" line="434" tests="1" assertions="1" failures="0" skipped="0" time="0.673" hostname="mac.local">
+        <testcase name="NO_COLOR environment variable handling matches Go" classname="environment variable handling &amp;gt; Go Comparison Tests" time="0.673817" file="test/go-comparison.test.ts" line="435" assertions="1" />
+      </testsuite>
+      <testsuite name="output format validation (fallback tests)" file="test/go-comparison.test.ts" line="469" tests="6" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="RGB color generates correct ANSI sequence" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.000206" file="test/go-comparison.test.ts" line="470" assertions="1" />
+        <testcase name="ANSI color generates correct sequence" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.000051" file="test/go-comparison.test.ts" line="482" assertions="1" />
+        <testcase name="ANSI256 color generates correct sequence" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.000022" file="test/go-comparison.test.ts" line="493" assertions="1" />
+        <testcase name="bold styling generates correct sequence" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.000016" file="test/go-comparison.test.ts" line="504" assertions="1" />
+        <testcase name="hyperlink generates correct OSC 8 format" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.000004" file="test/go-comparison.test.ts" line="516" assertions="1" />
+        <testcase name="complex styling generates all sequences" classname="output format validation (fallback tests) &amp;gt; Go Comparison Tests" time="0.00002" file="test/go-comparison.test.ts" line="523" assertions="1" />
+      </testsuite>
+    </testsuite>
+    <testsuite name="Test Infrastructure" file="test/go-comparison.test.ts" line="545" tests="2" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="comparison utilities work correctly" classname="Test Infrastructure" time="0.000037" file="test/go-comparison.test.ts" line="546" assertions="5" />
+      <testcase name="test case creation works" classname="Test Infrastructure" time="0.000149" file="test/go-comparison.test.ts" line="557" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/screen-methods.test.ts" file="test/screen-methods.test.ts" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Screen Control Methods" file="test/screen-methods.test.ts" line="25" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="screen control methods execute without error" classname="Screen Control Methods" time="0.000772" file="test/screen-methods.test.ts" line="26" assertions="2" />
+      <testcase name="notification method executes" classname="Screen Control Methods" time="0.000062" file="test/screen-methods.test.ts" line="56" assertions="2" />
+      <testcase name="hyperlink method executes" classname="Screen Control Methods" time="0.00004" file="test/screen-methods.test.ts" line="67" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/error-cases.test.ts" file="test/error-cases.test.ts" tests="18" assertions="3472" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Error Handling and Edge Cases" file="test/error-cases.test.ts" line="13" tests="18" assertions="3472" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="custom error classes" file="test/error-cases.test.ts" line="14" tests="7" assertions="20" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="TermEnvError base class" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000055" file="test/error-cases.test.ts" line="15" assertions="3" />
+        <testcase name="TermEnvError with default message" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000028" file="test/error-cases.test.ts" line="22" assertions="2" />
+        <testcase name="InvalidColorError extends TermEnvError" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.00005" file="test/error-cases.test.ts" line="28" assertions="4" />
+        <testcase name="InvalidColorError with default message" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000006" file="test/error-cases.test.ts" line="36" assertions="2" />
+        <testcase name="StatusReportError extends TermEnvError" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000034" file="test/error-cases.test.ts" line="42" assertions="4" />
+        <testcase name="StatusReportError with default message" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000021" file="test/error-cases.test.ts" line="50" assertions="2" />
+        <testcase name="error stack traces work correctly" classname="custom error classes &amp;gt; Error Handling and Edge Cases" time="0.000104" file="test/error-cases.test.ts" line="56" assertions="3" />
+      </testsuite>
+      <testsuite name="color parsing edge cases" file="test/error-cases.test.ts" line="64" tests="3" assertions="38" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles extremely malformed hex colors" classname="color parsing edge cases &amp;gt; Error Handling and Edge Cases" time="0.000196" file="test/error-cases.test.ts" line="65" assertions="14" />
+        <testcase name="handles boundary ANSI color values" classname="color parsing edge cases &amp;gt; Error Handling and Edge Cases" time="0.00008" file="test/error-cases.test.ts" line="111" assertions="23" />
+        <testcase name="handles color conversion failures" classname="color parsing edge cases &amp;gt; Error Handling and Edge Cases" time="0.000026" file="test/error-cases.test.ts" line="148" assertions="1" />
+      </testsuite>
+      <testsuite name="color sequence generation edge cases" file="test/error-cases.test.ts" line="163" tests="3" assertions="102" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="RGBColor with extreme values" classname="color sequence generation edge cases &amp;gt; Error Handling and Edge Cases" time="0.000112" file="test/error-cases.test.ts" line="164" assertions="30" />
+        <testcase name="ANSIColor with edge values" classname="color sequence generation edge cases &amp;gt; Error Handling and Edge Cases" time="0.000047" file="test/error-cases.test.ts" line="196" assertions="45" />
+        <testcase name="ANSI256Color with edge values" classname="color sequence generation edge cases &amp;gt; Error Handling and Edge Cases" time="0.000044" file="test/error-cases.test.ts" line="214" assertions="27" />
+      </testsuite>
+      <testsuite name="profile conversion stress tests" file="test/error-cases.test.ts" line="231" tests="2" assertions="3201" failures="0" skipped="0" time="0.024" hostname="mac.local">
+        <testcase name="converts many colors without memory leaks" classname="profile conversion stress tests &amp;gt; Error Handling and Edge Cases" time="0.024802" file="test/error-cases.test.ts" line="232" assertions="3001" />
+        <testcase name="handles rapid profile switching" classname="profile conversion stress tests &amp;gt; Error Handling and Edge Cases" time="0.000679" file="test/error-cases.test.ts" line="263" assertions="200" />
+      </testsuite>
+      <testsuite name="string and unicode handling" file="test/error-cases.test.ts" line="276" tests="2" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles unicode in color strings" classname="string and unicode handling &amp;gt; Error Handling and Edge Cases" time="0.000059" file="test/error-cases.test.ts" line="277" assertions="7" />
+        <testcase name="ProfileUtils.string handles unicode correctly" classname="string and unicode handling &amp;gt; Error Handling and Edge Cases" time="0.000114" file="test/error-cases.test.ts" line="295" assertions="3" />
+      </testsuite>
+      <testsuite name="concurrent access and thread safety" file="test/error-cases.test.ts" line="309" tests="1" assertions="101" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="multiple simultaneous color conversions" classname="concurrent access and thread safety &amp;gt; Error Handling and Edge Cases" time="0.00045" file="test/error-cases.test.ts" line="310" assertions="101" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/hyperlink.test.ts" file="test/hyperlink.test.ts" tests="9" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="hyperlink function" file="test/hyperlink.test.ts" line="20" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="creates correct OSC 8 hyperlink format" classname="hyperlink function" time="0.000041" file="test/hyperlink.test.ts" line="21" assertions="1" />
+      <testcase name="returns display text when link is empty" classname="hyperlink function" time="0.000006" file="test/hyperlink.test.ts" line="26" assertions="1" />
+      <testcase name="handles empty link parameter" classname="hyperlink function" time="0.000014" file="test/hyperlink.test.ts" line="31" assertions="1" />
+      <testcase name="works with complex URLs" classname="hyperlink function" time="0.000018" file="test/hyperlink.test.ts" line="36" assertions="1" />
+      <testcase name="works with unicode text" classname="hyperlink function" time="0.00001" file="test/hyperlink.test.ts" line="42" assertions="1" />
+    </testsuite>
+    <testsuite name="HyperlinkControl" file="test/hyperlink.test.ts" line="48" tests="4" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="writes hyperlink to output" classname="HyperlinkControl" time="0.000097" file="test/hyperlink.test.ts" line="49" assertions="2" />
+      <testcase name="method chaining works correctly" classname="HyperlinkControl" time="0" file="test/hyperlink.test.ts" line="60" assertions="1" />
+      <testcase name="handles multiple hyperlinks" classname="HyperlinkControl" time="0" file="test/hyperlink.test.ts" line="69" assertions="3" />
+      <testcase name="handles empty link gracefully" classname="HyperlinkControl" time="0.000107" file="test/hyperlink.test.ts" line="83" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/profile-utilities.test.ts" file="test/profile-utilities.test.ts" tests="15" assertions="88" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="ProfileUtils Utility Methods" file="test/profile-utilities.test.ts" line="5" tests="15" assertions="88" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="string method" file="test/profile-utilities.test.ts" line="6" tests="5" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates Style with single string" classname="string method &amp;gt; ProfileUtils Utility Methods" time="0.000045" file="test/profile-utilities.test.ts" line="7" assertions="2" />
+        <testcase name="creates Style with multiple strings" classname="string method &amp;gt; ProfileUtils Utility Methods" time="0" file="test/profile-utilities.test.ts" line="13" assertions="2" />
+        <testcase name="handles empty strings" classname="string method &amp;gt; ProfileUtils Utility Methods" time="0.00007" file="test/profile-utilities.test.ts" line="20" assertions="1" />
+        <testcase name="handles mixed empty and non-empty strings" classname="string method &amp;gt; ProfileUtils Utility Methods" time="0.000015" file="test/profile-utilities.test.ts" line="25" assertions="1" />
+        <testcase name="works with different profiles" classname="string method &amp;gt; ProfileUtils Utility Methods" time="0.000014" file="test/profile-utilities.test.ts" line="30" assertions="3" />
+      </testsuite>
+      <testsuite name="fromColor method" file="test/profile-utilities.test.ts" line="41" tests="5" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates color from RGB object" classname="fromColor method &amp;gt; ProfileUtils Utility Methods" time="0.000078" file="test/profile-utilities.test.ts" line="42" assertions="2" />
+        <testcase name="converts RGB to different profiles" classname="fromColor method &amp;gt; ProfileUtils Utility Methods" time="0.000127" file="test/profile-utilities.test.ts" line="48" assertions="4" />
+        <testcase name="handles edge RGB values" classname="fromColor method &amp;gt; ProfileUtils Utility Methods" time="0.00004" file="test/profile-utilities.test.ts" line="64" assertions="3" />
+        <testcase name="handles fractional RGB values correctly" classname="fromColor method &amp;gt; ProfileUtils Utility Methods" time="0.000024" file="test/profile-utilities.test.ts" line="75" assertions="3" />
+        <testcase name="maintains color accuracy through conversion" classname="fromColor method &amp;gt; ProfileUtils Utility Methods" time="0.000043" file="test/profile-utilities.test.ts" line="85" assertions="2" />
+      </testsuite>
+      <testsuite name="error handling in convert method" file="test/profile-utilities.test.ts" line="95" tests="3" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles invalid hex colors gracefully" classname="error handling in convert method &amp;gt; ProfileUtils Utility Methods" time="0.000075" file="test/profile-utilities.test.ts" line="96" assertions="1" />
+        <testcase name="handles NoColor input correctly" classname="error handling in convert method &amp;gt; ProfileUtils Utility Methods" time="0.000081" file="test/profile-utilities.test.ts" line="109" assertions="4" />
+        <testcase name="convert handles unknown color types" classname="error handling in convert method &amp;gt; ProfileUtils Utility Methods" time="0.000019" file="test/profile-utilities.test.ts" line="119" assertions="1" />
+      </testsuite>
+      <testsuite name="Go compatibility verification" file="test/profile-utilities.test.ts" line="132" tests="2" assertions="59" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="string method behavior matches Go expectations" classname="Go compatibility verification &amp;gt; ProfileUtils Utility Methods" time="0" file="test/profile-utilities.test.ts" line="133" assertions="5" />
+        <testcase name="fromColor produces consistent outputs" classname="Go compatibility verification &amp;gt; ProfileUtils Utility Methods" time="0.000335" file="test/profile-utilities.test.ts" line="156" assertions="54" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/screen-control-complete.test.ts" file="test/screen-control-complete.test.ts" tests="28" assertions="74" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Complete Screen Control Coverage" file="test/screen-control-complete.test.ts" line="23" tests="28" assertions="74" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="cursor line navigation methods" file="test/screen-control-complete.test.ts" line="32" tests="5" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="cursorNextLine moves to next line beginning" classname="cursor line navigation methods &amp;gt; Complete Screen Control Coverage" time="0.000149" file="test/screen-control-complete.test.ts" line="33" assertions="1" />
+        <testcase name="cursorNextLine defaults to 1" classname="cursor line navigation methods &amp;gt; Complete Screen Control Coverage" time="0.000035" file="test/screen-control-complete.test.ts" line="39" assertions="1" />
+        <testcase name="cursorPreviousLine moves to previous line beginning" classname="cursor line navigation methods &amp;gt; Complete Screen Control Coverage" time="0.00004" file="test/screen-control-complete.test.ts" line="45" assertions="1" />
+        <testcase name="cursorPreviousLine defaults to 1" classname="cursor line navigation methods &amp;gt; Complete Screen Control Coverage" time="0.000031" file="test/screen-control-complete.test.ts" line="51" assertions="1" />
+        <testcase name="line navigation with edge values" classname="cursor line navigation methods &amp;gt; Complete Screen Control Coverage" time="0.000034" file="test/screen-control-complete.test.ts" line="57" assertions="3" />
+      </testsuite>
+      <testsuite name="advanced cursor control" file="test/screen-control-complete.test.ts" line="69" tests="3" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="saveCursorPosition and restoreCursorPosition" classname="advanced cursor control &amp;gt; Complete Screen Control Coverage" time="0.000028" file="test/screen-control-complete.test.ts" line="70" assertions="2" />
+        <testcase name="cursor visibility control" classname="advanced cursor control &amp;gt; Complete Screen Control Coverage" time="0.000046" file="test/screen-control-complete.test.ts" line="79" assertions="2" />
+        <testcase name="cursor movement combination" classname="advanced cursor control &amp;gt; Complete Screen Control Coverage" time="0.000059" file="test/screen-control-complete.test.ts" line="88" assertions="4" />
+      </testsuite>
+      <testsuite name="screen and buffer control" file="test/screen-control-complete.test.ts" line="102" tests="4" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="altScreen and exitAltScreen" classname="screen and buffer control &amp;gt; Complete Screen Control Coverage" time="0.000034" file="test/screen-control-complete.test.ts" line="103" assertions="2" />
+        <testcase name="saveScreen and restoreScreen" classname="screen and buffer control &amp;gt; Complete Screen Control Coverage" time="0.000111" file="test/screen-control-complete.test.ts" line="112" assertions="2" />
+        <testcase name="screen clearing methods" classname="screen and buffer control &amp;gt; Complete Screen Control Coverage" time="0.00008" file="test/screen-control-complete.test.ts" line="121" assertions="2" />
+        <testcase name="clearLines method" classname="screen and buffer control &amp;gt; Complete Screen Control Coverage" time="0.000079" file="test/screen-control-complete.test.ts" line="130" assertions="1" />
+      </testsuite>
+      <testsuite name="color control methods" file="test/screen-control-complete.test.ts" line="139" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="setForegroundColor with RGB" classname="color control methods &amp;gt; Complete Screen Control Coverage" time="0.00006" file="test/screen-control-complete.test.ts" line="140" assertions="1" />
+        <testcase name="setForegroundColor with ANSI" classname="color control methods &amp;gt; Complete Screen Control Coverage" time="0.000038" file="test/screen-control-complete.test.ts" line="148" assertions="1" />
+        <testcase name="setBackgroundColor with RGB" classname="color control methods &amp;gt; Complete Screen Control Coverage" time="0.000022" file="test/screen-control-complete.test.ts" line="156" assertions="1" />
+        <testcase name="setBackgroundColor with ANSI" classname="color control methods &amp;gt; Complete Screen Control Coverage" time="0.000046" file="test/screen-control-complete.test.ts" line="164" assertions="1" />
+      </testsuite>
+      <testsuite name="mouse and interaction control" file="test/screen-control-complete.test.ts" line="173" tests="2" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="mouse control methods" classname="mouse and interaction control &amp;gt; Complete Screen Control Coverage" time="0.000027" file="test/screen-control-complete.test.ts" line="174" assertions="2" />
+        <testcase name="bracketed paste methods" classname="mouse and interaction control &amp;gt; Complete Screen Control Coverage" time="0.000042" file="test/screen-control-complete.test.ts" line="183" assertions="2" />
+      </testsuite>
+      <testsuite name="window and terminal control" file="test/screen-control-complete.test.ts" line="193" tests="3" assertions="20" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="setWindowTitle" classname="window and terminal control &amp;gt; Complete Screen Control Coverage" time="0.000037" file="test/screen-control-complete.test.ts" line="194" assertions="1" />
+        <testcase name="setWindowTitle with special characters" classname="window and terminal control &amp;gt; Complete Screen Control Coverage" time="0.000111" file="test/screen-control-complete.test.ts" line="201" assertions="18" />
+        <testcase name="reset method" classname="window and terminal control &amp;gt; Complete Screen Control Coverage" time="0.000026" file="test/screen-control-complete.test.ts" line="222" assertions="1" />
+      </testsuite>
+      <testsuite name="bell and notification methods" file="test/screen-control-complete.test.ts" line="230" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="bell method (not implemented)" classname="bell and notification methods &amp;gt; Complete Screen Control Coverage" time="0.000015" file="test/screen-control-complete.test.ts" line="231" assertions="1" />
+      </testsuite>
+      <testsuite name="complex sequence combinations" file="test/screen-control-complete.test.ts" line="237" tests="3" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="full screen setup sequence" classname="complex sequence combinations &amp;gt; Complete Screen Control Coverage" time="0.000043" file="test/screen-control-complete.test.ts" line="238" assertions="6" />
+        <testcase name="full screen teardown sequence" classname="complex sequence combinations &amp;gt; Complete Screen Control Coverage" time="0.000064" file="test/screen-control-complete.test.ts" line="256" assertions="5" />
+        <testcase name="cursor dance sequence" classname="complex sequence combinations &amp;gt; Complete Screen Control Coverage" time="0.00017" file="test/screen-control-complete.test.ts" line="272" assertions="3" />
+      </testsuite>
+      <testsuite name="edge cases and error handling" file="test/screen-control-complete.test.ts" line="295" tests="3" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles null and undefined inputs gracefully" classname="edge cases and error handling &amp;gt; Complete Screen Control Coverage" time="0.000074" file="test/screen-control-complete.test.ts" line="296" assertions="4" />
+        <testcase name="handles extreme cursor positions" classname="edge cases and error handling &amp;gt; Complete Screen Control Coverage" time="0.000031" file="test/screen-control-complete.test.ts" line="305" assertions="1" />
+        <testcase name="sequence order and integrity" classname="edge cases and error handling &amp;gt; Complete Screen Control Coverage" time="0.00004" file="test/screen-control-complete.test.ts" line="314" assertions="4" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/screen.test.ts" file="test/screen.test.ts" tests="14" assertions="49" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="ScreenControl" file="test/screen.test.ts" line="20" tests="12" assertions="35" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="cursor movement methods generate correct sequences" classname="ScreenControl" time="0.000125" file="test/screen.test.ts" line="21" assertions="5" />
+      <testcase name="cursor position save/restore methods" classname="ScreenControl" time="0.000074" file="test/screen.test.ts" line="46" assertions="2" />
+      <testcase name="cursor visibility methods" classname="ScreenControl" time="0.000026" file="test/screen.test.ts" line="59" assertions="2" />
+      <testcase name="screen clearing methods" classname="ScreenControl" time="0.000015" file="test/screen.test.ts" line="72" assertions="3" />
+      <testcase name="screen mode methods" classname="ScreenControl" time="0.000018" file="test/screen.test.ts" line="90" assertions="4" />
+      <testcase name="reset method" classname="ScreenControl" time="0.000021" file="test/screen.test.ts" line="111" assertions="1" />
+      <testcase name="color setting methods" classname="ScreenControl" time="0.000037" file="test/screen.test.ts" line="120" assertions="3" />
+      <testcase name="window title method" classname="ScreenControl" time="0.000033" file="test/screen.test.ts" line="139" assertions="1" />
+      <testcase name="mouse support methods" classname="ScreenControl" time="0.000055" file="test/screen.test.ts" line="148" assertions="4" />
+      <testcase name="bracketed paste methods" classname="ScreenControl" time="0.000031" file="test/screen.test.ts" line="169" assertions="2" />
+      <testcase name="scrolling methods" classname="ScreenControl" time="0.000011" file="test/screen.test.ts" line="182" assertions="3" />
+      <testcase name="method chaining works correctly" classname="ScreenControl" time="0.000047" file="test/screen.test.ts" line="199" assertions="5" />
+    </testsuite>
+    <testsuite name="SEQUENCES" file="test/screen.test.ts" line="214" tests="1" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="contains all required escape sequences" classname="SEQUENCES" time="0" file="test/screen.test.ts" line="215" assertions="7" />
+    </testsuite>
+    <testsuite name="EraseMode and EraseLineMode" file="test/screen.test.ts" line="226" tests="1" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="enums have correct values" classname="EraseMode and EraseLineMode" time="0.000043" file="test/screen.test.ts" line="227" assertions="7" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/examples-comparison.test.ts" file="test/examples-comparison.test.ts" tests="2" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Examples Comparison Tests" file="test/examples-comparison.test.ts" line="7" tests="2" assertions="2" failures="0" skipped="0" time="1.754" hostname="mac.local">
+      <testcase name="Example: 01-rainbow-text-demo" classname="Examples Comparison Tests" time="0.334936" file="test/examples-comparison.test.ts" line="36" assertions="1" />
+      <testcase name="Examples produce consistent output" classname="Examples Comparison Tests" time="1.420705" file="test/examples-comparison.test.ts" line="66" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/go-style-comprehensive.test.ts" file="test/go-style-comprehensive.test.ts" tests="52" assertions="135" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Go-style API" file="test/go-style-comprehensive.test.ts" line="80" tests="52" assertions="135" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="Profile constants" file="test/go-style-comprehensive.test.ts" line="93" tests="1" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="profile constants match enum values" classname="Profile constants &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="94" assertions="4" />
+      </testsuite>
+      <testsuite name="String function and Style methods" file="test/go-style-comprehensive.test.ts" line="102" tests="4" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="String creates styled text" classname="String function and Style methods &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="103" assertions="1" />
+        <testcase name="String supports Go-style chaining" classname="String function and Style methods &amp;gt; Go-style API" time="0.00007" file="test/go-style-comprehensive.test.ts" line="108" assertions="1" />
+        <testcase name="Style methods use PascalCase" classname="String function and Style methods &amp;gt; Go-style API" time="0.000031" file="test/go-style-comprehensive.test.ts" line="116" assertions="11" />
+        <testcase name="Width method returns string width" classname="String function and Style methods &amp;gt; Go-style API" time="0.000033" file="test/go-style-comprehensive.test.ts" line="133" assertions="1" />
+      </testsuite>
+      <testsuite name="Color functions" file="test/go-style-comprehensive.test.ts" line="142" tests="5" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="NoColor creates NoColor instance" classname="Color functions &amp;gt; Go-style API" time="0.000017" file="test/go-style-comprehensive.test.ts" line="143" assertions="2" />
+        <testcase name="ANSIColor creates ANSI color" classname="Color functions &amp;gt; Go-style API" time="0.00004" file="test/go-style-comprehensive.test.ts" line="149" assertions="2" />
+        <testcase name="ANSI256Color creates 256-color" classname="Color functions &amp;gt; Go-style API" time="0.000008" file="test/go-style-comprehensive.test.ts" line="155" assertions="2" />
+        <testcase name="RGBColor creates RGB color" classname="Color functions &amp;gt; Go-style API" time="0.000014" file="test/go-style-comprehensive.test.ts" line="161" assertions="2" />
+        <testcase name="Color creates color from string" classname="Color functions &amp;gt; Go-style API" time="0.00007" file="test/go-style-comprehensive.test.ts" line="167" assertions="6" />
+      </testsuite>
+      <testsuite name="Profile functions" file="test/go-style-comprehensive.test.ts" line="200" tests="4" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="ColorProfile returns current profile" classname="Profile functions &amp;gt; Go-style API" time="0.000018" file="test/go-style-comprehensive.test.ts" line="201" assertions="3" />
+        <testcase name="EnvColorProfile considers environment" classname="Profile functions &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="208" assertions="1" />
+        <testcase name="EnvNoColor checks environment variables" classname="Profile functions &amp;gt; Go-style API" time="0.00002" file="test/go-style-comprehensive.test.ts" line="214" assertions="1" />
+        <testcase name="ProfileName returns profile name" classname="Profile functions &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="221" assertions="4" />
+      </testsuite>
+      <testsuite name="Color detection functions" file="test/go-style-comprehensive.test.ts" line="229" tests="3" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="HasDarkBackground returns boolean" classname="Color detection functions &amp;gt; Go-style API" time="0.000082" file="test/go-style-comprehensive.test.ts" line="230" assertions="1" />
+        <testcase name="ForegroundColor returns color" classname="Color detection functions &amp;gt; Go-style API" time="0.000056" file="test/go-style-comprehensive.test.ts" line="235" assertions="2" />
+        <testcase name="BackgroundColor returns color" classname="Color detection functions &amp;gt; Go-style API" time="0.000008" file="test/go-style-comprehensive.test.ts" line="241" assertions="2" />
+      </testsuite>
+      <testsuite name="Screen control functions" file="test/go-style-comprehensive.test.ts" line="248" tests="12" assertions="26" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="MoveCursor generates correct sequence" classname="Screen control functions &amp;gt; Go-style API" time="0.000093" file="test/go-style-comprehensive.test.ts" line="249" assertions="2" />
+        <testcase name="CursorUp generates correct sequence" classname="Screen control functions &amp;gt; Go-style API" time="0.00004" file="test/go-style-comprehensive.test.ts" line="256" assertions="3" />
+        <testcase name="CursorDown generates correct sequence" classname="Screen control functions &amp;gt; Go-style API" time="0.000031" file="test/go-style-comprehensive.test.ts" line="262" assertions="3" />
+        <testcase name="ClearScreen function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000023" file="test/go-style-comprehensive.test.ts" line="268" assertions="2" />
+        <testcase name="ClearLine function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="273" assertions="2" />
+        <testcase name="HideCursor function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000022" file="test/go-style-comprehensive.test.ts" line="278" assertions="2" />
+        <testcase name="ShowCursor function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000018" file="test/go-style-comprehensive.test.ts" line="283" assertions="2" />
+        <testcase name="AltScreen function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000018" file="test/go-style-comprehensive.test.ts" line="288" assertions="2" />
+        <testcase name="ExitAltScreen function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="293" assertions="2" />
+        <testcase name="SetWindowTitle function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000015" file="test/go-style-comprehensive.test.ts" line="298" assertions="2" />
+        <testcase name="EnableMouse function exists" classname="Screen control functions &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="303" assertions="2" />
+        <testcase name="DisableMouse function exists" classname="Screen control functions &amp;gt; Go-style API" time="0.000072" file="test/go-style-comprehensive.test.ts" line="308" assertions="2" />
+      </testsuite>
+      <testsuite name="Hyperlink function" file="test/go-style-comprehensive.test.ts" line="314" tests="3" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="Hyperlink creates OSC 8 hyperlink" classname="Hyperlink function &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="315" assertions="3" />
+        <testcase name="Hyperlink handles empty URL" classname="Hyperlink function &amp;gt; Go-style API" time="0.000013" file="test/go-style-comprehensive.test.ts" line="322" assertions="1" />
+        <testcase name="Hyperlink handles complex URLs" classname="Hyperlink function &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="327" assertions="2" />
+      </testsuite>
+      <testsuite name="Notify function" file="test/go-style-comprehensive.test.ts" line="335" tests="3" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="Notify creates OSC 777 notification" classname="Notify function &amp;gt; Go-style API" time="0.000043" file="test/go-style-comprehensive.test.ts" line="336" assertions="2" />
+        <testcase name="Notify handles empty strings" classname="Notify function &amp;gt; Go-style API" time="0.000014" file="test/go-style-comprehensive.test.ts" line="342" assertions="1" />
+        <testcase name="Notify handles unicode" classname="Notify function &amp;gt; Go-style API" time="0.000019" file="test/go-style-comprehensive.test.ts" line="346" assertions="1" />
+      </testsuite>
+      <testsuite name="Output functions" file="test/go-style-comprehensive.test.ts" line="351" tests="7" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="NewOutput creates output instance" classname="Output functions &amp;gt; Go-style API" time="0.000055" file="test/go-style-comprehensive.test.ts" line="352" assertions="3" />
+        <testcase name="WithProfile option works" classname="Output functions &amp;gt; Go-style API" time="0.000017" file="test/go-style-comprehensive.test.ts" line="359" assertions="1" />
+        <testcase name="WithTTY option works" classname="Output functions &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="364" assertions="1" />
+        <testcase name="WithUnsafe option works" classname="Output functions &amp;gt; Go-style API" time="0.000026" file="test/go-style-comprehensive.test.ts" line="369" assertions="1" />
+        <testcase name="WithColorCache option works" classname="Output functions &amp;gt; Go-style API" time="0.000073" file="test/go-style-comprehensive.test.ts" line="374" assertions="1" />
+        <testcase name="WithEnvironment option works" classname="Output functions &amp;gt; Go-style API" time="0.00006" file="test/go-style-comprehensive.test.ts" line="379" assertions="1" />
+        <testcase name="multiple options work together" classname="Output functions &amp;gt; Go-style API" time="0.000049" file="test/go-style-comprehensive.test.ts" line="385" assertions="5" />
+      </testsuite>
+      <testsuite name="Convert function" file="test/go-style-comprehensive.test.ts" line="404" tests="3" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="Convert transforms colors based on profile" classname="Convert function &amp;gt; Go-style API" time="0.000052" file="test/go-style-comprehensive.test.ts" line="405" assertions="4" />
+        <testcase name="Convert handles ANSI colors" classname="Convert function &amp;gt; Go-style API" time="0.000035" file="test/go-style-comprehensive.test.ts" line="420" assertions="4" />
+        <testcase name="Convert handles ANSI256 colors" classname="Convert function &amp;gt; Go-style API" time="0.000078" file="test/go-style-comprehensive.test.ts" line="430" assertions="5" />
+      </testsuite>
+      <testsuite name="API consistency with camelCase versions" file="test/go-style-comprehensive.test.ts" line="443" tests="2" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="Go-style functions exist and work" classname="API consistency with camelCase versions &amp;gt; Go-style API" time="0.000049" file="test/go-style-comprehensive.test.ts" line="444" assertions="10" />
+        <testcase name="Go-style API maintains same behavior as camelCase" classname="API consistency with camelCase versions &amp;gt; Go-style API" time="0.000025" file="test/go-style-comprehensive.test.ts" line="472" assertions="4" />
+      </testsuite>
+      <testsuite name="edge cases and error handling" file="test/go-style-comprehensive.test.ts" line="486" tests="5" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="handles invalid profile numbers" classname="edge cases and error handling &amp;gt; Go-style API" time="0.000014" file="test/go-style-comprehensive.test.ts" line="487" assertions="2" />
+        <testcase name="handles invalid color strings" classname="edge cases and error handling &amp;gt; Go-style API" time="0.000007" file="test/go-style-comprehensive.test.ts" line="492" assertions="2" />
+        <testcase name="screen control functions handle edge cases" classname="edge cases and error handling &amp;gt; Go-style API" time="0.000051" file="test/go-style-comprehensive.test.ts" line="497" assertions="4" />
+        <testcase name="hyperlink handles edge cases" classname="edge cases and error handling &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="504" assertions="3" />
+        <testcase name="style methods handle null colors" classname="edge cases and error handling &amp;gt; Go-style API" time="0" file="test/go-style-comprehensive.test.ts" line="510" assertions="2" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/style-go-methods.test.ts" file="test/style-go-methods.test.ts" tests="5" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Style Go-compatible Methods" file="test/style-go-methods.test.ts" line="5" tests="5" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="all Go-compatible PascalCase methods exist and work" classname="Style Go-compatible Methods" time="0.000147" file="test/style-go-methods.test.ts" line="6" assertions="10" />
+      <testcase name="Go methods produce identical results to camelCase methods" classname="Style Go-compatible Methods" time="0.000021" file="test/style-go-methods.test.ts" line="41" assertions="1" />
+      <testcase name="String method returns same as toString" classname="Style Go-compatible Methods" time="0.000005" file="test/style-go-methods.test.ts" line="54" assertions="1" />
+      <testcase name="Width method returns numeric width" classname="Style Go-compatible Methods" time="0.000032" file="test/style-go-methods.test.ts" line="60" assertions="3" />
+      <testcase name="chaining with Go methods works correctly" classname="Style Go-compatible Methods" time="0.000022" file="test/style-go-methods.test.ts" line="71" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/output-comprehensive.test.ts" file="test/output-comprehensive.test.ts" tests="57" assertions="105" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="OutputImpl" file="test/output-comprehensive.test.ts" line="56" tests="52" assertions="90" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="constructor and options" file="test/output-comprehensive.test.ts" line="69" tests="7" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates output with default options" classname="constructor and options &amp;gt; OutputImpl" time="0.000078" file="test/output-comprehensive.test.ts" line="70" assertions="4" />
+        <testcase name="applies profile option" classname="constructor and options &amp;gt; OutputImpl" time="0.000049" file="test/output-comprehensive.test.ts" line="78" assertions="1" />
+        <testcase name="applies TTY option" classname="constructor and options &amp;gt; OutputImpl" time="0.000023" file="test/output-comprehensive.test.ts" line="83" assertions="1" />
+        <testcase name="applies unsafe option" classname="constructor and options &amp;gt; OutputImpl" time="0.000025" file="test/output-comprehensive.test.ts" line="88" assertions="1" />
+        <testcase name="applies color cache option" classname="constructor and options &amp;gt; OutputImpl" time="0.00003" file="test/output-comprehensive.test.ts" line="93" assertions="1" />
+        <testcase name="applies environment option" classname="constructor and options &amp;gt; OutputImpl" time="0.00006" file="test/output-comprehensive.test.ts" line="98" assertions="1" />
+        <testcase name="applies multiple options" classname="constructor and options &amp;gt; OutputImpl" time="0.000031" file="test/output-comprehensive.test.ts" line="104" assertions="4" />
+      </testsuite>
+      <testsuite name="writer methods" file="test/output-comprehensive.test.ts" line="120" tests="3" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="writer() returns the writer" classname="writer methods &amp;gt; OutputImpl" time="0.00003" file="test/output-comprehensive.test.ts" line="121" assertions="1" />
+        <testcase name="write() writes data" classname="writer methods &amp;gt; OutputImpl" time="0.000123" file="test/output-comprehensive.test.ts" line="126" assertions="2" />
+        <testcase name="writeString() writes string" classname="writer methods &amp;gt; OutputImpl" time="0.000037" file="test/output-comprehensive.test.ts" line="137" assertions="2" />
+      </testsuite>
+      <testsuite name="TTY detection" file="test/output-comprehensive.test.ts" line="148" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="detects TTY from writer" classname="TTY detection &amp;gt; OutputImpl" time="0.000017" file="test/output-comprehensive.test.ts" line="149" assertions="1" />
+        <testcase name="detects non-TTY from writer" classname="TTY detection &amp;gt; OutputImpl" time="0.000016" file="test/output-comprehensive.test.ts" line="155" assertions="1" />
+        <testcase name="assumeTTY overrides detection" classname="TTY detection &amp;gt; OutputImpl" time="0" file="test/output-comprehensive.test.ts" line="161" assertions="1" />
+        <testcase name="unsafe mode overrides detection" classname="TTY detection &amp;gt; OutputImpl" time="0.000012" file="test/output-comprehensive.test.ts" line="167" assertions="1" />
+        <testcase name="CI environment disables TTY" classname="TTY detection &amp;gt; OutputImpl" time="0.000011" file="test/output-comprehensive.test.ts" line="173" assertions="1" />
+      </testsuite>
+      <testsuite name="color profile detection" file="test/output-comprehensive.test.ts" line="181" tests="13" assertions="21" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="detects Google Cloud Shell" classname="color profile detection &amp;gt; OutputImpl" time="0.000027" file="test/output-comprehensive.test.ts" line="188" assertions="1" />
+        <testcase name="detects TrueColor from COLORTERM" classname="color profile detection &amp;gt; OutputImpl" time="0.000015" file="test/output-comprehensive.test.ts" line="194" assertions="1" />
+        <testcase name="detects 24bit from COLORTERM" classname="color profile detection &amp;gt; OutputImpl" time="0.00003" file="test/output-comprehensive.test.ts" line="201" assertions="1" />
+        <testcase name="detects ANSI256 from COLORTERM yes" classname="color profile detection &amp;gt; OutputImpl" time="0.000012" file="test/output-comprehensive.test.ts" line="207" assertions="1" />
+        <testcase name="detects TrueColor terminals" classname="color profile detection &amp;gt; OutputImpl" time="0.000067" file="test/output-comprehensive.test.ts" line="213" assertions="6" />
+        <testcase name="detects ANSI from specific terminals" classname="color profile detection &amp;gt; OutputImpl" time="0.000033" file="test/output-comprehensive.test.ts" line="231" assertions="2" />
+        <testcase name="detects ANSI256 from 256color terms" classname="color profile detection &amp;gt; OutputImpl" time="0.00001" file="test/output-comprehensive.test.ts" line="242" assertions="1" />
+        <testcase name="detects ANSI from color terms" classname="color profile detection &amp;gt; OutputImpl" time="0.000013" file="test/output-comprehensive.test.ts" line="248" assertions="1" />
+        <testcase name="detects ANSI from ansi terms" classname="color profile detection &amp;gt; OutputImpl" time="0.000014" file="test/output-comprehensive.test.ts" line="254" assertions="1" />
+        <testcase name="defaults to Ascii for unknown terms" classname="color profile detection &amp;gt; OutputImpl" time="0.000013" file="test/output-comprehensive.test.ts" line="260" assertions="1" />
+        <testcase name="profile detection considers TTY status" classname="color profile detection &amp;gt; OutputImpl" time="0.000015" file="test/output-comprehensive.test.ts" line="266" assertions="3" />
+        <testcase name="handles screen terminals with tmux" classname="color profile detection &amp;gt; OutputImpl" time="0.00002" file="test/output-comprehensive.test.ts" line="279" assertions="1" />
+        <testcase name="handles screen terminals without tmux" classname="color profile detection &amp;gt; OutputImpl" time="0.000019" file="test/output-comprehensive.test.ts" line="287" assertions="1" />
+      </testsuite>
+      <testsuite name="environment color profile" file="test/output-comprehensive.test.ts" line="295" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="respects NO_COLOR" classname="environment color profile &amp;gt; OutputImpl" time="0.00002" file="test/output-comprehensive.test.ts" line="302" assertions="1" />
+        <testcase name="respects CLICOLOR=0" classname="environment color profile &amp;gt; OutputImpl" time="0.000018" file="test/output-comprehensive.test.ts" line="309" assertions="1" />
+        <testcase name="CLICOLOR_FORCE overrides NO_COLOR" classname="environment color profile &amp;gt; OutputImpl" time="0" file="test/output-comprehensive.test.ts" line="316" assertions="1" />
+        <testcase name="CLICOLOR_FORCE enables ANSI for Ascii profile" classname="environment color profile &amp;gt; OutputImpl" time="0.000019" file="test/output-comprehensive.test.ts" line="326" assertions="1" />
+      </testsuite>
+      <testsuite name="envNoColor" file="test/output-comprehensive.test.ts" line="334" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns true for NO_COLOR" classname="envNoColor &amp;gt; OutputImpl" time="0.000016" file="test/output-comprehensive.test.ts" line="341" assertions="1" />
+        <testcase name="returns true for CLICOLOR=0" classname="envNoColor &amp;gt; OutputImpl" time="0.000018" file="test/output-comprehensive.test.ts" line="347" assertions="1" />
+        <testcase name="returns false for CLICOLOR_FORCE" classname="envNoColor &amp;gt; OutputImpl" time="0.000303" file="test/output-comprehensive.test.ts" line="353" assertions="1" />
+        <testcase name="returns false by default" classname="envNoColor &amp;gt; OutputImpl" time="0.000073" file="test/output-comprehensive.test.ts" line="360" assertions="1" />
+      </testsuite>
+      <testsuite name="foreground and background colors" file="test/output-comprehensive.test.ts" line="366" tests="4" assertions="12" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns NoColor for non-TTY" classname="foreground and background colors &amp;gt; OutputImpl" time="0.000081" file="test/output-comprehensive.test.ts" line="373" assertions="2" />
+        <testcase name="parses COLORFGBG environment variable" classname="foreground and background colors &amp;gt; OutputImpl" time="0.000114" file="test/output-comprehensive.test.ts" line="380" assertions="4" />
+        <testcase name="handles malformed COLORFGBG" classname="foreground and background colors &amp;gt; OutputImpl" time="0.00007" file="test/output-comprehensive.test.ts" line="393" assertions="4" />
+        <testcase name="caches colors when enabled" classname="foreground and background colors &amp;gt; OutputImpl" time="0.000102" file="test/output-comprehensive.test.ts" line="407" assertions="2" />
+      </testsuite>
+      <testsuite name="hasDarkBackground" file="test/output-comprehensive.test.ts" line="427" tests="3" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="returns true by default when color cannot be determined" classname="hasDarkBackground &amp;gt; OutputImpl" time="0.000112" file="test/output-comprehensive.test.ts" line="434" assertions="1" />
+        <testcase name="detects dark background from COLORFGBG" classname="hasDarkBackground &amp;gt; OutputImpl" time="0.000026" file="test/output-comprehensive.test.ts" line="439" assertions="1" />
+        <testcase name="detects light background from COLORFGBG" classname="hasDarkBackground &amp;gt; OutputImpl" time="0.000027" file="test/output-comprehensive.test.ts" line="445" assertions="1" />
+      </testsuite>
+      <testsuite name="color creation and conversion" file="test/output-comprehensive.test.ts" line="452" tests="5" assertions="11" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates colors from hex strings" classname="color creation and conversion &amp;gt; OutputImpl" time="0.000086" file="test/output-comprehensive.test.ts" line="453" assertions="2" />
+        <testcase name="creates colors from ANSI numbers" classname="color creation and conversion &amp;gt; OutputImpl" time="0.00002" file="test/output-comprehensive.test.ts" line="461" assertions="2" />
+        <testcase name="creates colors from ANSI256 numbers" classname="color creation and conversion &amp;gt; OutputImpl" time="0.000015" file="test/output-comprehensive.test.ts" line="469" assertions="2" />
+        <testcase name="converts colors based on profile" classname="color creation and conversion &amp;gt; OutputImpl" time="0.00018" file="test/output-comprehensive.test.ts" line="477" assertions="2" />
+        <testcase name="returns null for invalid color strings" classname="color creation and conversion &amp;gt; OutputImpl" time="0.00003" file="test/output-comprehensive.test.ts" line="487" assertions="3" />
+      </testsuite>
+      <testsuite name="string creation" file="test/output-comprehensive.test.ts" line="497" tests="2" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="creates styled strings" classname="string creation &amp;gt; OutputImpl" time="0.000021" file="test/output-comprehensive.test.ts" line="498" assertions="1" />
+        <testcase name="joins multiple strings" classname="string creation &amp;gt; OutputImpl" time="0.000007" file="test/output-comprehensive.test.ts" line="505" assertions="1" />
+      </testsuite>
+      <testsuite name="Go-compatible API" file="test/output-comprehensive.test.ts" line="513" tests="2" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="provides PascalCase methods" classname="Go-compatible API &amp;gt; OutputImpl" time="0.000027" file="test/output-comprehensive.test.ts" line="514" assertions="8" />
+        <testcase name="Go-compatible methods work identically" classname="Go-compatible API &amp;gt; OutputImpl" time="0.000038" file="test/output-comprehensive.test.ts" line="527" assertions="2" />
+      </testsuite>
+    </testsuite>
+    <testsuite name="parseXTermColor" file="test/output-comprehensive.test.ts" line="541" tests="5" assertions="15" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="parses valid xTerm color responses" classname="parseXTermColor" time="0.00007" file="test/output-comprehensive.test.ts" line="542" assertions="2" />
+      <testcase name="handles different terminators" classname="parseXTermColor" time="0.000028" file="test/output-comprehensive.test.ts" line="551" assertions="3" />
+      <testcase name="handles different RGB formats" classname="parseXTermColor" time="0.00001" file="test/output-comprehensive.test.ts" line="565" assertions="2" />
+      <testcase name="returns null for invalid formats" classname="parseXTermColor" time="0.000016" file="test/output-comprehensive.test.ts" line="574" assertions="5" />
+      <testcase name="handles malformed responses gracefully" classname="parseXTermColor" time="0.000027" file="test/output-comprehensive.test.ts" line="582" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/notification.test.ts" file="test/notification.test.ts" tests="9" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="notify function" file="test/notification.test.ts" line="20" tests="5" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="creates correct OSC 777 notification format" classname="notify function" time="0.000026" file="test/notification.test.ts" line="21" assertions="1" />
+      <testcase name="handles empty title and body" classname="notify function" time="0" file="test/notification.test.ts" line="26" assertions="1" />
+      <testcase name="handles unicode in title and body" classname="notify function" time="0.000025" file="test/notification.test.ts" line="31" assertions="1" />
+      <testcase name="handles special characters" classname="notify function" time="0.000011" file="test/notification.test.ts" line="36" assertions="1" />
+      <testcase name="handles long strings" classname="notify function" time="0.000062" file="test/notification.test.ts" line="41" assertions="1" />
+    </testsuite>
+    <testsuite name="NotificationControl" file="test/notification.test.ts" line="49" tests="4" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="writes notification to output" classname="NotificationControl" time="0.000109" file="test/notification.test.ts" line="50" assertions="2" />
+      <testcase name="method chaining works correctly" classname="NotificationControl" time="0.000027" file="test/notification.test.ts" line="61" assertions="1" />
+      <testcase name="handles multiple notifications" classname="NotificationControl" time="0.000028" file="test/notification.test.ts" line="70" assertions="3" />
+      <testcase name="handles empty notification gracefully" classname="NotificationControl" time="0.000019" file="test/notification.test.ts" line="82" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/basic.test.ts" file="test/basic.test.ts" tests="9" assertions="31" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Package Imports" file="test/basic.test.ts" line="16" tests="3" assertions="17" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="TypeScript-native API imports correctly" classname="Package Imports" time="0.000048" file="test/basic.test.ts" line="17" assertions="10" />
+      <testcase name="Go-style API imports correctly" classname="Package Imports" time="0" file="test/basic.test.ts" line="36" assertions="2" />
+      <testcase name="Type imports work correctly" classname="Package Imports" time="0.000037" file="test/basic.test.ts" line="42" assertions="5" />
+    </testsuite>
+    <testsuite name="Basic Functionality" file="test/basic.test.ts" line="56" tests="4" assertions="10" failures="0" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="color profile detection works" classname="Basic Functionality" time="0" file="test/basic.test.ts" line="57" assertions="2" />
+      <testcase name="string styling works" classname="Basic Functionality" time="0" file="test/basic.test.ts" line="63" assertions="4" />
+      <testcase name="color creation works" classname="Basic Functionality" time="0.000069" file="test/basic.test.ts" line="71" assertions="2" />
+      <testcase name="styling chain works" classname="Basic Functionality" time="0.001035" file="test/basic.test.ts" line="81" assertions="2" />
+    </testsuite>
+    <testsuite name="Go Compatibility" file="test/basic.test.ts" line="106" tests="2" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="Go-style API works identically" classname="Go Compatibility" time="0.000015" file="test/basic.test.ts" line="107" assertions="3" />
+      <testcase name="Both APIs produce equivalent output" classname="Go Compatibility" time="0.000025" file="test/basic.test.ts" line="120" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/output-go-methods.test.ts" file="test/output-go-methods.test.ts" tests="3" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Output Go-compatible Methods" file="test/output-go-methods.test.ts" line="43" tests="3" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="all Go-compatible methods exist and work" classname="Output Go-compatible Methods" time="0.000629" file="test/output-go-methods.test.ts" line="44" assertions="10" />
+      <testcase name="Go methods return same results as camelCase methods" classname="Output Go-compatible Methods" time="0.00005" file="test/output-go-methods.test.ts" line="86" assertions="5" />
+      <testcase name="Color method handles various inputs" classname="Output Go-compatible Methods" time="0.000019" file="test/output-go-methods.test.ts" line="100" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/terminal-control.test.ts" file="test/terminal-control.test.ts" tests="25" assertions="47" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Terminal Control Features" file="test/terminal-control.test.ts" line="30" tests="25" assertions="47" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="cursor movement methods" file="test/terminal-control.test.ts" line="45" tests="6" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="cursorForward moves cursor right" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000119" file="test/terminal-control.test.ts" line="46" assertions="1" />
+        <testcase name="cursorForward defaults to 1" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000033" file="test/terminal-control.test.ts" line="52" assertions="1" />
+        <testcase name="cursorBack moves cursor left" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000032" file="test/terminal-control.test.ts" line="58" assertions="1" />
+        <testcase name="cursorBack defaults to 1" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000024" file="test/terminal-control.test.ts" line="64" assertions="1" />
+        <testcase name="cursor movement with zero values" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000032" file="test/terminal-control.test.ts" line="70" assertions="2" />
+        <testcase name="cursor movement with large values" classname="cursor movement methods &amp;gt; Terminal Control Features" time="0.000031" file="test/terminal-control.test.ts" line="78" assertions="2" />
+      </testsuite>
+      <testsuite name="cursor position methods" file="test/terminal-control.test.ts" line="87" tests="3" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="saveCursorPosition saves current position" classname="cursor position methods &amp;gt; Terminal Control Features" time="0.000035" file="test/terminal-control.test.ts" line="88" assertions="1" />
+        <testcase name="restoreCursorPosition restores saved position" classname="cursor position methods &amp;gt; Terminal Control Features" time="0.000027" file="test/terminal-control.test.ts" line="94" assertions="1" />
+        <testcase name="save and restore cursor position sequence" classname="cursor position methods &amp;gt; Terminal Control Features" time="0.000052" file="test/terminal-control.test.ts" line="100" assertions="3" />
+      </testsuite>
+      <testsuite name="line clearing methods" file="test/terminal-control.test.ts" line="112" tests="3" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="clearLines clears multiple lines" classname="line clearing methods &amp;gt; Terminal Control Features" time="0.000068" file="test/terminal-control.test.ts" line="113" assertions="2" />
+        <testcase name="clearLines with 1 line" classname="line clearing methods &amp;gt; Terminal Control Features" time="0.000029" file="test/terminal-control.test.ts" line="121" assertions="1" />
+        <testcase name="clearLines with 0" classname="line clearing methods &amp;gt; Terminal Control Features" time="0.000018" file="test/terminal-control.test.ts" line="127" assertions="1" />
+      </testsuite>
+      <testsuite name="reset method" file="test/terminal-control.test.ts" line="134" tests="2" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="reset clears all formatting" classname="reset method &amp;gt; Terminal Control Features" time="0.000048" file="test/terminal-control.test.ts" line="135" assertions="1" />
+        <testcase name="reset after styling restores clean state" classname="reset method &amp;gt; Terminal Control Features" time="0.00005" file="test/terminal-control.test.ts" line="141" assertions="2" />
+      </testsuite>
+      <testsuite name="advanced cursor control" file="test/terminal-control.test.ts" line="153" tests="2" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="cursorNextLine moves to next line start" classname="advanced cursor control &amp;gt; Terminal Control Features" time="0.000027" file="test/terminal-control.test.ts" line="154" assertions="2" />
+        <testcase name="cursorPreviousLine moves to previous line start" classname="advanced cursor control &amp;gt; Terminal Control Features" time="0.00004" file="test/terminal-control.test.ts" line="165" assertions="2" />
+      </testsuite>
+      <testsuite name="screen control methods" file="test/terminal-control.test.ts" line="175" tests="2" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="saveScreen and restoreScreen work together" classname="screen control methods &amp;gt; Terminal Control Features" time="0.00004" file="test/terminal-control.test.ts" line="176" assertions="3" />
+        <testcase name="altScreen and exitAltScreen work together" classname="screen control methods &amp;gt; Terminal Control Features" time="0.000038" file="test/terminal-control.test.ts" line="187" assertions="3" />
+      </testsuite>
+      <testsuite name="color setting methods" file="test/terminal-control.test.ts" line="199" tests="2" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="setForegroundColor sets terminal foreground" classname="color setting methods &amp;gt; Terminal Control Features" time="0.000043" file="test/terminal-control.test.ts" line="200" assertions="1" />
+        <testcase name="setBackgroundColor sets terminal background" classname="color setting methods &amp;gt; Terminal Control Features" time="0.000037" file="test/terminal-control.test.ts" line="211" assertions="1" />
+      </testsuite>
+      <testsuite name="combined sequences" file="test/terminal-control.test.ts" line="221" tests="2" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="complex terminal control sequence" classname="combined sequences &amp;gt; Terminal Control Features" time="0.000073" file="test/terminal-control.test.ts" line="222" assertions="6" />
+        <testcase name="screen switching with content" classname="combined sequences &amp;gt; Terminal Control Features" time="0.000178" file="test/terminal-control.test.ts" line="244" assertions="4" />
+      </testsuite>
+      <testsuite name="edge cases and error conditions" file="test/terminal-control.test.ts" line="261" tests="3" assertions="5" failures="0" skipped="0" time="0.002" hostname="mac.local">
+        <testcase name="handles negative cursor movements gracefully" classname="edge cases and error conditions &amp;gt; Terminal Control Features" time="0.000045" file="test/terminal-control.test.ts" line="262" assertions="1" />
+        <testcase name="handles very large numbers" classname="edge cases and error conditions &amp;gt; Terminal Control Features" time="0.002619" file="test/terminal-control.test.ts" line="271" assertions="2" />
+        <testcase name="sequence integrity with rapid calls" classname="edge cases and error conditions &amp;gt; Terminal Control Features" time="0.000272" file="test/terminal-control.test.ts" line="281" assertions="2" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/automated-cases.test.ts" file="test/automated-cases.test.ts" tests="19" assertions="19" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="test/automated-cases.test.ts" line="69" tests="19" assertions="19" failures="0" skipped="0" time="5.426" hostname="mac.local">
+      <testcase name="component/01-ansi-colors-all should match Go output exactly" classname="Automated Compatibility Tests" time="0.320367" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="edge-case/01-invalid-colors should match Go output exactly" classname="Automated Compatibility Tests" time="0.312096" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="advanced/01-method-chaining-complex should match Go output exactly" classname="Automated Compatibility Tests" time="0.296897" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="example/01-rainbow-text-demo should match Go output exactly" classname="Automated Compatibility Tests" time="0.293369" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/01-simple-color should match Go output exactly" classname="Automated Compatibility Tests" time="0.263125" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/02-ansi256-colors-sample should match Go output exactly" classname="Automated Compatibility Tests" time="0.26588" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="advanced/02-go-api-full-compatibility should match Go output exactly" classname="Automated Compatibility Tests" time="0.272169" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="edge-case/02-non-tty-environment should match Go output exactly" classname="Automated Compatibility Tests" time="0.316418" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/02-text-styling should match Go output exactly" classname="Automated Compatibility Tests" time="0.276327" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="advanced/03-color-conversion-edge-cases should match Go output exactly" classname="Automated Compatibility Tests" time="0.26718" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="basic/03-go-api-compatibility should match Go output exactly" classname="Automated Compatibility Tests" time="0.260593" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/03-rgb-colors-comprehensive should match Go output exactly" classname="Automated Compatibility Tests" time="0.290504" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/04-no-color-ascii should match Go output exactly" classname="Automated Compatibility Tests" time="0.269265" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="advanced/04-output-methods-comprehensive should match Go output exactly" classname="Automated Compatibility Tests" time="0.278781" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/05-all-style-methods should match Go output exactly" classname="Automated Compatibility Tests" time="0.293923" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/06-profile-types-all should match Go output exactly" classname="Automated Compatibility Tests" time="0.287567" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/07-environment-no-color should match Go output exactly" classname="Automated Compatibility Tests" time="0.294342" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/08-environment-force-color should match Go output exactly" classname="Automated Compatibility Tests" time="0.2762" file="test/automated-cases.test.ts" line="77" assertions="1" />
+      <testcase name="component/09-environment-clicolor should match Go output exactly" classname="Automated Compatibility Tests" time="0.299934" file="test/automated-cases.test.ts" line="77" assertions="1" />
+    </testsuite>
+  </testsuite>
+</testsuites>

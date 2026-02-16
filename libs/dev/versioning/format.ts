@@ -1,4 +1,4 @@
-import type { PortInfo, VersionInfo } from "./types";
+import type { PortInfo } from './types';
 
 /**
  * Encode a Go version + TS patch into an npm-compatible version string.
@@ -12,11 +12,9 @@ import type { PortInfo, VersionInfo } from "./types";
  *   formatNpmVersion("2.0.14", 0) // "2.0.1400"
  */
 export function formatNpmVersion(goVersion: string, tsPatch: number): string {
-  const match = goVersion.replace(/^v/, "").match(/^(\d+)\.(\d+)\.(\d+)$/);
+  const match = goVersion.replace(/^v/, '').match(/^(\d+)\.(\d+)\.(\d+)$/);
   if (!match) {
-    throw new Error(
-      `Invalid Go version "${goVersion}". Expected format: X.Y.Z`,
-    );
+    throw new Error(`Invalid Go version "${goVersion}". Expected format: X.Y.Z`);
   }
 
   if (tsPatch < 0 || tsPatch > 99) {
@@ -34,12 +32,8 @@ export function formatNpmVersion(goVersion: string, tsPatch: number): string {
 /**
  * Build a complete PortInfo object.
  */
-export function formatPortInfo(
-  sourceRepo: string,
-  goVersion: string,
-  tsPatch: number,
-): PortInfo {
-  const stripped = goVersion.replace(/^v/, "");
+export function formatPortInfo(sourceRepo: string, goVersion: string, tsPatch: number): PortInfo {
+  const stripped = goVersion.replace(/^v/, '');
   return {
     sourceRepo,
     sourceVersion: `v${stripped}`,

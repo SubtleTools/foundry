@@ -1,0 +1,700 @@
+{
+  "timestamp": "2025-08-21T05:53:55.597Z",
+  "version": "1.0.0",
+  "totalCases": 48,
+  "passed": 33,
+  "failed": 15,
+  "skipped": 0,
+  "executionTime": 106313,
+  "results": [
+    {
+      "id": "001",
+      "name": "basic-render",
+      "category": "basic",
+      "passed": true,
+      "executionTime": 423,
+      "goOutput": "Hello, World!",
+      "tsOutput": "Hello, World!",
+      "expectedOutput": "Hello, World!",
+      "differences": []
+    },
+    {
+      "id": "002",
+      "name": "color-basic",
+      "category": "basic",
+      "passed": true,
+      "executionTime": 353,
+      "goOutput": "Red Text",
+      "tsOutput": "Red Text",
+      "expectedOutput": "Red Text",
+      "differences": []
+    },
+    {
+      "id": "003",
+      "name": "background-basic",
+      "category": "basic",
+      "passed": true,
+      "executionTime": 327,
+      "goOutput": "Blue Background",
+      "tsOutput": "Blue Background",
+      "expectedOutput": "Blue Background",
+      "differences": []
+    },
+    {
+      "id": "101",
+      "name": "width-basic",
+      "category": "layout",
+      "passed": true,
+      "executionTime": 332,
+      "goOutput": "Content             ",
+      "tsOutput": "Content             ",
+      "expectedOutput": "Content             ",
+      "differences": []
+    },
+    {
+      "id": "102",
+      "name": "height-basic",
+      "category": "layout",
+      "passed": true,
+      "executionTime": 356,
+      "goOutput": "Content\n       \n       \n       \n       ",
+      "tsOutput": "Content\n       \n       \n       \n       ",
+      "expectedOutput": "Content\n       \n       \n       \n       ",
+      "differences": []
+    },
+    {
+      "id": "2001",
+      "name": "color-red",
+      "category": "color",
+      "passed": true,
+      "executionTime": 328,
+      "goOutput": "Red Text",
+      "tsOutput": "Red Text",
+      "expectedOutput": "Red Text",
+      "differences": []
+    },
+    {
+      "id": "2002",
+      "name": "color-green",
+      "category": "color",
+      "passed": true,
+      "executionTime": 329,
+      "goOutput": "Green Text",
+      "tsOutput": "Green Text",
+      "expectedOutput": "Green Text",
+      "differences": []
+    },
+    {
+      "id": "2003",
+      "name": "color-blue",
+      "category": "color",
+      "passed": true,
+      "executionTime": 366,
+      "goOutput": "Blue Text",
+      "tsOutput": "Blue Text",
+      "expectedOutput": "Blue Text",
+      "differences": []
+    },
+    {
+      "id": "2004",
+      "name": "color-yellow",
+      "category": "color",
+      "passed": true,
+      "executionTime": 356,
+      "goOutput": "Yellow Text",
+      "tsOutput": "Yellow Text",
+      "expectedOutput": "Yellow Text",
+      "differences": []
+    },
+    {
+      "id": "2005",
+      "name": "color-cyan",
+      "category": "color",
+      "passed": true,
+      "executionTime": 339,
+      "goOutput": "Cyan Text",
+      "tsOutput": "Cyan Text",
+      "expectedOutput": "Cyan Text",
+      "differences": []
+    },
+    {
+      "id": "2006",
+      "name": "color-magenta",
+      "category": "color",
+      "passed": true,
+      "executionTime": 325,
+      "goOutput": "Magenta Text",
+      "tsOutput": "Magenta Text",
+      "expectedOutput": "Magenta Text",
+      "differences": []
+    },
+    {
+      "id": "2007",
+      "name": "color-white",
+      "category": "color",
+      "passed": true,
+      "executionTime": 340,
+      "goOutput": "White Text",
+      "tsOutput": "White Text",
+      "expectedOutput": "White Text",
+      "differences": []
+    },
+    {
+      "id": "2008",
+      "name": "color-black",
+      "category": "color",
+      "passed": true,
+      "executionTime": 335,
+      "goOutput": "Black Text",
+      "tsOutput": "Black Text",
+      "expectedOutput": "Black Text",
+      "differences": []
+    },
+    {
+      "id": "211",
+      "name": "color-hex-FF0000",
+      "category": "color",
+      "passed": true,
+      "executionTime": 322,
+      "goOutput": "\u001b[38;2;255;0;0mHex Color\u001b[0m",
+      "tsOutput": "\u001b[38;2;255;0;0mHex Color\u001b[0m",
+      "expectedOutput": "\u001b[38;2;255;0;0mHex Color\u001b[0m",
+      "differences": []
+    },
+    {
+      "id": "212",
+      "name": "color-hex-00FF00",
+      "category": "color",
+      "passed": true,
+      "executionTime": 382,
+      "goOutput": "\u001b[38;2;0;255;0mHex Color\u001b[0m",
+      "tsOutput": "\u001b[38;2;0;255;0mHex Color\u001b[0m",
+      "expectedOutput": "\u001b[38;2;0;255;0mHex Color\u001b[0m",
+      "differences": []
+    },
+    {
+      "id": "213",
+      "name": "color-hex-0000FF",
+      "category": "color",
+      "passed": true,
+      "executionTime": 332,
+      "goOutput": "\u001b[38;2;0;0;255mHex Color\u001b[0m",
+      "tsOutput": "\u001b[38;2;0;0;255mHex Color\u001b[0m",
+      "expectedOutput": "\u001b[38;2;0;0;255mHex Color\u001b[0m",
+      "differences": []
+    },
+    {
+      "id": "214",
+      "name": "color-hex-FFFF00",
+      "category": "color",
+      "passed": true,
+      "executionTime": 329,
+      "goOutput": "\u001b[38;2;255;255;0mHex Color\u001b[0m",
+      "tsOutput": "\u001b[38;2;255;255;0mHex Color\u001b[0m",
+      "expectedOutput": "\u001b[38;2;255;255;0mHex Color\u001b[0m",
+      "differences": []
+    },
+    {
+      "id": "103",
+      "name": "padding-all",
+      "category": "layout",
+      "passed": true,
+      "executionTime": 331,
+      "goOutput": "                  \n                  \n  Padded Content  \n                  \n                  ",
+      "tsOutput": "                  \n                  \n  Padded Content  \n                  \n                  ",
+      "expectedOutput": "                  \n                  \n  Padded Content  \n                  \n                  ",
+      "differences": []
+    },
+    {
+      "id": "104",
+      "name": "margin-all",
+      "category": "layout",
+      "passed": true,
+      "executionTime": 347,
+      "goOutput": "                \n Margin Content \n                ",
+      "tsOutput": "                \n Margin Content \n                ",
+      "expectedOutput": "                \n Margin Content \n                ",
+      "differences": []
+    },
+    {
+      "id": "105",
+      "name": "align-center",
+      "category": "layout",
+      "passed": true,
+      "executionTime": 320,
+      "goOutput": "      Centered      ",
+      "tsOutput": "      Centered      ",
+      "expectedOutput": "      Centered      ",
+      "differences": []
+    },
+    {
+      "id": "301",
+      "name": "border-normal",
+      "category": "border",
+      "passed": false,
+      "executionTime": 329,
+      "goOutput": "┌────────────────────┐\n│Bordered Content    │\n└────────────────────┘",
+      "tsOutput": "Bordered Content    ",
+      "expectedOutput": "┌────────────────────┐\n│Bordered Content    │\n└────────────────────┘",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(68) vs TypeScript(20)",
+        "Position 0: Go('[┌]──────────') vs TypeScript('[B]ordered Co')",
+        "Position 1: Go('┌[─]──────────') vs TypeScript('B[o]rdered Con')",
+        "Position 2: Go('┌─[─]──────────') vs TypeScript('Bo[r]dered Cont')",
+        "Position 3: Go('┌──[─]──────────') vs TypeScript('Bor[d]ered Conte')",
+        "Position 4: Go('┌───[─]──────────') vs TypeScript('Bord[e]red Conten')",
+        "Line 1: Go(\"┌────────────────────┐\") vs TypeScript(\"Bordered Content    \")",
+        "Line 2: Go(\"│Bordered Content    │\") vs TypeScript(\"EOF\")",
+        "Line 3: Go(\"└────────────────────┘\") vs TypeScript(\"EOF\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "302",
+      "name": "border-rounded",
+      "category": "border",
+      "passed": true,
+      "executionTime": 351,
+      "goOutput": "╭────────────────────╮\n│Bordered Content    │\n╰────────────────────╯",
+      "tsOutput": "╭────────────────────╮\n│Bordered Content    │\n╰────────────────────╯",
+      "expectedOutput": "╭────────────────────╮\n│Bordered Content    │\n╰────────────────────╯",
+      "differences": []
+    },
+    {
+      "id": "303",
+      "name": "border-block",
+      "category": "border",
+      "passed": true,
+      "executionTime": 324,
+      "goOutput": "██████████████████████\n█Bordered Content    █\n██████████████████████",
+      "tsOutput": "██████████████████████\n█Bordered Content    █\n██████████████████████",
+      "expectedOutput": "██████████████████████\n█Bordered Content    █\n██████████████████████",
+      "differences": []
+    },
+    {
+      "id": "304",
+      "name": "border-thick",
+      "category": "border",
+      "passed": true,
+      "executionTime": 331,
+      "goOutput": "┏━━━━━━━━━━━━━━━━━━━━┓\n┃Bordered Content    ┃\n┗━━━━━━━━━━━━━━━━━━━━┛",
+      "tsOutput": "┏━━━━━━━━━━━━━━━━━━━━┓\n┃Bordered Content    ┃\n┗━━━━━━━━━━━━━━━━━━━━┛",
+      "expectedOutput": "┏━━━━━━━━━━━━━━━━━━━━┓\n┃Bordered Content    ┃\n┗━━━━━━━━━━━━━━━━━━━━┛",
+      "differences": []
+    },
+    {
+      "id": "305",
+      "name": "border-double",
+      "category": "border",
+      "passed": true,
+      "executionTime": 330,
+      "goOutput": "╔════════════════════╗\n║Bordered Content    ║\n╚════════════════════╝",
+      "tsOutput": "╔════════════════════╗\n║Bordered Content    ║\n╚════════════════════╝",
+      "expectedOutput": "╔════════════════════╗\n║Bordered Content    ║\n╚════════════════════╝",
+      "differences": []
+    },
+    {
+      "id": "402",
+      "name": "list-basic",
+      "category": "component",
+      "passed": true,
+      "executionTime": 329,
+      "goOutput": "• First item\n• Second item\n• Third item",
+      "tsOutput": "• First item\n• Second item\n• Third item",
+      "differences": []
+    },
+    {
+      "id": "401",
+      "name": "table-basic",
+      "category": "component",
+      "passed": true,
+      "executionTime": 342,
+      "goOutput": "┌─────┬───┐\n│Name │Age│\n├─────┼───┤\n│Alice│30 │\n│Bob  │25 │\n└─────┴───┘",
+      "tsOutput": "┌─────┬───┐\n│Name │Age│\n├─────┼───┤\n│Alice│30 │\n│Bob  │25 │\n└─────┴───┘",
+      "differences": []
+    },
+    {
+      "id": "501",
+      "name": "example-background",
+      "category": "example",
+      "passed": false,
+      "executionTime": 357,
+      "goOutput": " # Table of Contents \n ├──  ## Chapter 1 \n │    ├──  Chapter 1.1 \n │    └──  Chapter 1.2 \n └──  ## Chapter 2 \n      ├──  Chapter 2.1 \n      └──  Chapter 2.2 \n",
+      "tsOutput": "Tree {\n  _value: \"# Table of Contents\",\n  _hidden: false,\n  _children: NodeChildren {\n    nodes: [\n      [Object ...], [Object ...]\n    ],\n    at: [Function: at],\n    length: [Function: length],\n    append: [Function: append],\n    remove: [Function: remove],\n    getNodes: [Function: getNodes],\n  },\n  _offset: [ 0, 0 ],\n  _renderer: TreeRenderer {\n    style: {\n      enumeratorFunc: [Function],\n      itemFunc: [Function],\n      root: [Object ...],\n    },\n    enumerator: [Function: DefaultEnumerator],\n    indenter: [Function: DefaultIndenter],\n    isTreeInstance: [Function: isTreeInstance],\n    render: [Function: render],\n  },\n  value: [Function: value],\n  setValue: [Function: setValue],\n  hidden: [Function: hidden],\n  setHidden: [Function: setHidden],\n  hide: [Function: hide],\n  offset: [Function: offset],\n  children: [Function: children],\n  toString: [Function: toString],\n  child: [Function: child],\n  root: [Function: root],\n  enumeratorStyle: [Function: enumeratorStyle],\n  enumeratorStyleFunc: [Function: enumeratorStyleFunc],\n  rootStyle: [Function: rootStyle],\n  itemStyle: [Function: itemStyle],\n  itemStyleFunc: [Function: itemStyleFunc],\n  enumerator: [Function: enumerator],\n  indenter: [Function: indenter],\n  getRenderer: [Function: getRenderer],\n  ensureRenderer: [Function: ensureRenderer],\n  ensureParent: [Function: ensureParent],\n  isNode: [Function: isNode],\n  isChildren: [Function: isChildren],\n}\n",
+      "expectedOutput": " # Table of Contents \n ├──  ## Chapter 1 \n │    ├──  Chapter 1.1 \n │    └──  Chapter 1.2 \n └──  ## Chapter 2 \n      ├──  Chapter 2.1 \n      └──  Chapter 2.2 \n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(158) vs TypeScript(1428)",
+        "Position 0: Go('[ ]# Table of') vs TypeScript('[T]ree {\n  _v')",
+        "Position 1: Go(' [#] Table of ') vs TypeScript('T[r]ee {\n  _va')",
+        "Position 2: Go(' #[ ]Table of C') vs TypeScript('Tr[e]e {\n  _val')",
+        "Position 3: Go(' # [T]able of Co') vs TypeScript('Tre[e] {\n  _valu')",
+        "Position 4: Go(' # T[a]ble of Con') vs TypeScript('Tree[ ]{\n  _value')",
+        "Line 1: Go(\" # Table of Contents \") vs TypeScript(\"Tree {\")",
+        "Line 2: Go(\" ├──  ## Chapter 1 \") vs TypeScript(\"  _value: \"# Table of Contents\",\")",
+        "Line 3: Go(\" │    ├──  Chapter 1.1 \") vs TypeScript(\"  _hidden: false,\")",
+        "Line 4: Go(\" │    └──  Chapter 1.2 \") vs TypeScript(\"  _children: NodeChildren {\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "5010",
+      "name": "example-pokemon",
+      "category": "example",
+      "passed": false,
+      "executionTime": 333,
+      "goOutput": "┌────────────┬────────────┬───────────┬───────────┬────────────┬───────────────┐\n│ #          │ NAME       │ TYPE 1    │ TYPE 2    │ JAPANESE   │ OFFICIAL ROM. │\n├────────────┼────────────┼───────────┼───────────┼────────────┼───────────────┤\n│ 1          │ Bulbasaur  │ Grass     │ Poison    │ フシギダネ │ Fushigidane   │\n│ 2          │ Ivysaur    │ Grass     │ Poison    │ フシギソウ │ Fushigisou    │\n│ 3          │ Venusaur   │ Grass     │ Poison    │ フシギバナ │ Fushigibana   │\n│ 4          │ Charmander │ Fire      │           │ ヒトカゲ   │ Hitokage      │\n│ 5          │ Charmeleon │ Fire      │           │ リザード   │ Lizardo       │\n│ 6          │ Charizard  │ Fire      │ Flying    │ リザードン │ Lizardon      │\n│ 7          │ Squirtle   │ Water     │           │ ゼニガメ   │ Zenigame      │\n│ 8          │ Wartortle  │ Water     │           │ カメール   │ Kameil        │\n│ 9          │ Blastoise  │ Water     │           │ カメックス │ Kamex         │\n│ 10         │ Caterpie   │ Bug       │           │ キャタピー │ Caterpie      │\n│ 11         │ Metapod    │ Bug       │           │ トランセル │ Trancell      │\n│ 12         │ Butterfree │ Bug       │ Flying    │ バタフリー │ Butterfree    │\n│ 13         │ Weedle     │ Bug       │ Poison    │ ビードル   │ Beedle        │\n│ 14         │ Kakuna     │ Bug       │ Poison    │ コクーン   │ Cocoon        │\n│ 15         │ Beedrill   │ Bug       │ Poison    │ スピアー   │ Spear         │\n│ 16         │ Pidgey     │ Normal    │ Flying    │ ポッポ     │ Poppo         │\n│ 17         │ Pidgeotto  │ Normal    │ Flying    │ ピジョン   │ Pigeon        │\n│ 18         │ Pidgeot    │ Normal    │ Flying    │ ピジョット │ Pigeot        │\n│ 19         │ Rattata    │ Normal    │           │ コラッタ   │ Koratta       │\n│ 20         │ Raticate   │ Normal    │           │ ラッタ     │ Ratta         │\n│ 21         │ Spearow    │ Normal    │ Flying    │ オニスズメ │ Onisuzume     │\n│ 22         │ Fearow     │ Normal    │ Flying    │ オニドリル │ Onidrill      │\n│ 23         │ Ekans      │ Poison    │           │ アーボ     │ Arbo          │\n│ 24         │ Arbok      │ Poison    │           │ アーボック │ Arbok         │\n│ 25         │ Pikachu    │ Electric  │           │ ピカチュウ │ Pikachu       │\n│ 26         │ Raichu     │ Electric  │           │ ライチュウ │ Raichu        │\n│ 27         │ Sandshrew  │ Ground    │           │ サンド     │ Sand          │\n│ 28         │ Sandslash  │ Ground    │           │ サンドパン │ Sandpan       │\n└────────────┴────────────┴───────────┴───────────┴────────────┴───────────────┘\n",
+      "tsOutput": "┌────────────┬────────────┬────────────┬───────────┬───────────┬───────────────┐\n│ #          │ NAME       │ TYPE 1     │ TYPE 2    │ JAPANESE  │ OFFICIAL ROM. │\n├────────────┼────────────┼────────────┼───────────┼───────────┼───────────────┤\n│ 1          │ Bulbasaur  │ \u001b[38;2;89;185;128mGrass     \u001b[0m │ \u001b[38;2;99;75;208mPoison   \u001b[0m │ フシギダネ     │ Fushigidane   │\n│ 2          │ Ivysaur    │ \u001b[38;2;117;251;171mGrass     \u001b[0m │ \u001b[38;2;125;90;252mPoison   \u001b[0m │ フシギソウ     │ Fushigisou    │\n│ 3          │ Venusaur   │ \u001b[38;2;89;185;128mGrass     \u001b[0m │ \u001b[38;2;99;75;208mPoison   \u001b[0m │ フシギバナ     │ Fushigibana   │\n│ 4          │ Charmander │ \u001b[38;2;255;118;152mFire      \u001b[0m │           │ ヒトカゲ      │ Hitokage      │\n│ 5          │ Charmeleon │ \u001b[38;2;186;95;117mFire      \u001b[0m │           │ リザード      │ Lizardo       │\n│ 6          │ Charizard  │ \u001b[38;2;255;118;152mFire      \u001b[0m │ \u001b[38;2;255;135;215mFlying   \u001b[0m │ リザードン     │ Lizardon      │\n│ 7          │ Squirtle   │ \u001b[38;2;67;159;142mWater     \u001b[0m │           │ ゼニガメ      │ Zenigame      │\n│ 8          │ Wartortle  │ \u001b[38;2;0;226;199mWater     \u001b[0m │           │ カメール      │ Kameil        │\n│ 9          │ Blastoise  │ \u001b[38;2;67;159;142mWater     \u001b[0m │           │ カメックス     │ Kamex         │\n│ 10         │ Caterpie   │ \u001b[38;2;215;255;135mBug       \u001b[0m │           │ キャタピー     │ Caterpie      │\n│ 11         │ Metapod    │ \u001b[38;2;151;173;100mBug       \u001b[0m │           │ トランセル     │ Trancell      │\n│ 12         │ Butterfree │ \u001b[38;2;215;255;135mBug       \u001b[0m │ \u001b[38;2;255;135;215mFlying   \u001b[0m │ バタフリー     │ Butterfree    │\n│ 13         │ Weedle     │ \u001b[38;2;151;173;100mBug       \u001b[0m │ \u001b[38;2;99;75;208mPoison   \u001b[0m │ ビードル      │ Beedle        │\n│ 14         │ Kakuna     │ \u001b[38;2;215;255;135mBug       \u001b[0m │ \u001b[38;2;125;90;252mPoison   \u001b[0m │ コクーン      │ Cocoon        │\n│ 15         │ Beedrill   │ \u001b[38;2;151;173;100mBug       \u001b[0m │ \u001b[38;2;99;75;208mPoison   \u001b[0m │ スピアー      │ Spear         │\n│ 16         │ Pidgey     │ \u001b[38;2;146;146;146mNormal    \u001b[0m │ \u001b[38;2;255;135;215mFlying   \u001b[0m │ ポッポ       │ Poppo         │\n│ 17         │ Pidgeotto  │ \u001b[38;2;114;114;114mNormal    \u001b[0m │ \u001b[38;2;201;122;178mFlying   \u001b[0m │ ピジョン      │ Pigeon        │\n│ 18         │ Pidgeot    │ \u001b[38;2;146;146;146mNormal    \u001b[0m │ \u001b[38;2;255;135;215mFlying   \u001b[0m │ ピジョット     │ Pigeot        │\n│ 19         │ Rattata    │ \u001b[38;2;114;114;114mNormal    \u001b[0m │           │ コラッタ      │ Koratta       │\n│ 20         │ Raticate   │ \u001b[38;2;146;146;146mNormal    \u001b[0m │           │ ラッタ       │ Ratta         │\n│ 21         │ Spearow    │ \u001b[38;2;114;114;114mNormal    \u001b[0m │ \u001b[38;2;201;122;178mFlying   \u001b[0m │ オニスズメ     │ Onisuzume     │\n│ 22         │ Fearow     │ \u001b[38;2;146;146;146mNormal    \u001b[0m │ \u001b[38;2;255;135;215mFlying   \u001b[0m │ オニドリル     │ Onidrill      │\n│ 23         │ Ekans      │ \u001b[38;2;99;75;208mPoison    \u001b[0m │           │ アーボ       │ Arbo          │\n│ 24         │ Arbok      │ \u001b[38;2;125;90;252mPoison    \u001b[0m │           │ アーボック     │ Arbok         │\n│ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133m25        \u001b[0m\u001b[0m │ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133mPikachu   \u001b[0m\u001b[0m │ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133mElectric  \u001b[0m\u001b[0m │ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133m         \u001b[0m\u001b[0m │ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133mピカチュウ    \u001b[0m\u001b[0m │ \u001b[48;2;0;67;47m\u001b[38;2;1;190;133mPikachu      \u001b[0m\u001b[0m │\n│ 26         │ Raichu     │ \u001b[38;2;253;255;144mElectric  \u001b[0m │           │ ライチュウ     │ Raichu        │\n│ 27         │ Sandshrew  │ \u001b[38;2;199;114;82mGround    \u001b[0m │           │ サンド       │ Sand          │\n│ 28         │ Sandslash  │ \u001b[38;2;255;135;95mGround    \u001b[0m │           │ サンドパン     │ Sandpan       │\n└────────────┴────────────┴────────────┴───────────┴───────────┴───────────────┘\n",
+      "expectedOutput": "┌────────────┬────────────┬───────────┬───────────┬────────────┬───────────────┐\n│ #          │ NAME       │ TYPE 1    │ TYPE 2    │ JAPANESE   │ OFFICIAL ROM. │\n├────────────┼────────────┼───────────┼───────────┼────────────┼───────────────┤\n│ 1          │ Bulbasaur  │ Grass     │ Poison    │ フシギダネ │ Fushigidane   │\n│ 2          │ Ivysaur    │ Grass     │ Poison    │ フシギソウ │ Fushigisou    │\n│ 3          │ Venusaur   │ Grass     │ Poison    │ フシギバナ │ Fushigibana   │\n│ 4          │ Charmander │ Fire      │           │ ヒトカゲ   │ Hitokage      │\n│ 5          │ Charmeleon │ Fire      │           │ リザード   │ Lizardo       │\n│ 6          │ Charizard  │ Fire      │ Flying    │ リザードン │ Lizardon      │\n│ 7          │ Squirtle   │ Water     │           │ ゼニガメ   │ Zenigame      │\n│ 8          │ Wartortle  │ Water     │           │ カメール   │ Kameil        │\n│ 9          │ Blastoise  │ Water     │           │ カメックス │ Kamex         │\n│ 10         │ Caterpie   │ Bug       │           │ キャタピー │ Caterpie      │\n│ 11         │ Metapod    │ Bug       │           │ トランセル │ Trancell      │\n│ 12         │ Butterfree │ Bug       │ Flying    │ バタフリー │ Butterfree    │\n│ 13         │ Weedle     │ Bug       │ Poison    │ ビードル   │ Beedle        │\n│ 14         │ Kakuna     │ Bug       │ Poison    │ コクーン   │ Cocoon        │\n│ 15         │ Beedrill   │ Bug       │ Poison    │ スピアー   │ Spear         │\n│ 16         │ Pidgey     │ Normal    │ Flying    │ ポッポ     │ Poppo         │\n│ 17         │ Pidgeotto  │ Normal    │ Flying    │ ピジョン   │ Pigeon        │\n│ 18         │ Pidgeot    │ Normal    │ Flying    │ ピジョット │ Pigeot        │\n│ 19         │ Rattata    │ Normal    │           │ コラッタ   │ Koratta       │\n│ 20         │ Raticate   │ Normal    │           │ ラッタ     │ Ratta         │\n│ 21         │ Spearow    │ Normal    │ Flying    │ オニスズメ │ Onisuzume     │\n│ 22         │ Fearow     │ Normal    │ Flying    │ オニドリル │ Onidrill      │\n│ 23         │ Ekans      │ Poison    │           │ アーボ     │ Arbo          │\n│ 24         │ Arbok      │ Poison    │           │ アーボック │ Arbok         │\n│ 25         │ Pikachu    │ Electric  │           │ ピカチュウ │ Pikachu       │\n│ 26         │ Raichu     │ Electric  │           │ ライチュウ │ Raichu        │\n│ 27         │ Sandshrew  │ Ground    │           │ サンド     │ Sand          │\n│ 28         │ Sandslash  │ Ground    │           │ サンドパン │ Sandpan       │\n└────────────┴────────────┴───────────┴───────────┴────────────┴───────────────┘\n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(2469) vs TypeScript(3730)",
+        "Position 38: Go('──────────[┬]──────────') vs TypeScript('──────────[─]┬─────────')",
+        "Position 39: Go('─────────┬[─]──────────') vs TypeScript('──────────[┬]──────────')",
+        "Position 50: Go('──────────[┬]──────────') vs TypeScript('──────────[─]┬─────────')",
+        "Position 51: Go('─────────┬[─]──────────') vs TypeScript('──────────[┬]──────────')",
+        "Position 119: Go('TYPE 1    [│] TYPE 2   ') vs TypeScript('TYPE 1    [ ]│ TYPE 2  ')",
+        "Line 1: Go(\"┌────────────┬────────────┬───────────┬───────────┬────────────┬───────────────┐\") vs TypeScript(\"┌────────────┬────────────┬────────────┬───────────┬───────────┬───────────────┐\")",
+        "Line 2: Go(\"│ #          │ NAME       │ TYPE 1    │ TYPE 2    │ JAPANESE   │ OFFICIAL ROM. │\") vs TypeScript(\"│ #          │ NAME       │ TYPE 1     │ TYPE 2    │ JAPANESE  │ OFFICIAL ROM. │\")",
+        "Line 3: Go(\"├────────────┼────────────┼───────────┼───────────┼────────────┼───────────────┤\") vs TypeScript(\"├────────────┼────────────┼────────────┼───────────┼───────────┼───────────────┤\")",
+        "Line 4: Go(\"│ 1          │ Bulbasaur  │ Grass     │ Poison    │ フシギダネ │ Fushigidane   │\") vs TypeScript(\"│ 1          │ Bulbasaur  │ \u001b[38;2;89;185;128mGrass     \u001b[0m │ \u001b[38;2;99;75;208mPoison   \u001b[0m │ フシギダネ     │ Fushigidane   │\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "5011",
+      "name": "example-ansi",
+      "category": "example",
+      "passed": true,
+      "executionTime": 337,
+      "goOutput": "╭───────────┬─────────────╮\n│Bubble Tea │Milky        │\n│Milk Tea   │Also milky   │\n│Actual milk│Milky as well│\n╰───────────┴─────────────╯\n",
+      "tsOutput": "╭───────────┬─────────────╮\n│Bubble Tea │Milky        │\n│Milk Tea   │Also milky   │\n│Actual milk│Milky as well│\n╰───────────┴─────────────╯\n",
+      "expectedOutput": "╭───────────┬─────────────╮\n│Bubble Tea │Milky        │\n│Milk Tea   │Also milky   │\n│Actual milk│Milky as well│\n╰───────────┴─────────────╯\n",
+      "differences": []
+    },
+    {
+      "id": "5012",
+      "name": "example-languages",
+      "category": "example",
+      "passed": false,
+      "executionTime": 349,
+      "goOutput": "┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓\n┃   LANGUAGE   ┃        FORMAL        ┃   INFORMAL   ┃\n┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━┫\n┃ Chinese      ┃ 您好                 ┃ 你好         ┃\n┃ Japanese     ┃ こんにちは           ┃ やあ         ┃\n┃ Arabic       ┃                أهلين ┃         أهلا ┃\n┃ Russian      ┃ Здравствуйте         ┃ Привет       ┃\n┃ Spanish      ┃ Hola                 ┃ ¿Qué tal?    ┃\n┃ English      ┃ You look absolutely  ┃ How's it     ┃\n┃              ┃ fabulous.            ┃ going?       ┃\n┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛\n",
+      "tsOutput": "Table {\n  _styleFunc: [Function],\n  _border: {\n    style: \"rounded\",\n  },\n  borderTop: true,\n  borderBottom: true,\n  borderLeft: true,\n  borderRight: true,\n  _borderHeader: true,\n  _borderColumn: true,\n  _borderRow: false,\n  _borderStyle: Style {\n    properties: {\n      color: 99,\n    },\n    renderer: Renderer {\n      colorProfile: 3,\n      explicitColorProfile: true,\n      hasDarkBackground: null,\n      explicitBackgroundColor: false,\n      options: [Object ...],\n      backgroundDetector: [Object ...],\n      colorProfileDetected: false,\n      backgroundDetected: false,\n      getColorProfile: [Function: getColorProfile],\n      setColorProfile: [Function: setColorProfile],\n      getHasDarkBackground: [Function: getHasDarkBackground],\n      setHasDarkBackground: [Function: setHasDarkBackground],\n      supportsColor: [Function: supportsColor],\n      getTerminalWidth: [Function: getTerminalWidth],\n      getOptions: [Function: getOptions],\n      updateOptions: [Function: updateOptions],\n      convertColor: [Function: convertColor],\n      render: [Function: render],\n      detectForceColor: [Function: detectForceColor],\n      isTTY: [Function: isTTY],\n      detectColorProfile: [Function: detectColorProfile],\n      detectDarkBackground: [Function: detectDarkBackground],\n      detectTerminalWidth: [Function: detectTerminalWidth],\n      detectUnicodeSupport: [Function: detectUnicodeSupport],\n      detectLineEnding: [Function: detectLineEnding],\n      rgbToANSI256: [Function: rgbToANSI256],\n      rgbToANSI: [Function: rgbToANSI],\n      normalizeWhitespace: [Function: normalizeWhitespace],\n      hasAnyStyles: [Function: hasAnyStyles],\n      hasVisualStyles: [Function: hasVisualStyles],\n      padMultilineContent: [Function: padMultilineContent],\n      applyWidthConstraints: [Function: applyWidthConstraints],\n      applyColors: [Function: applyColors],\n      applyHeightConstraints: [Function: applyHeightConstraints],\n      applyMaxWidthTruncation: [Function: applyMaxWidthTruncation],\n      applyMaxHeightTruncation: [Function: applyMaxHeightTruncation],\n      applyAlignment: [Function: applyAlignment],\n      calculateTargetWidth: [Function: calculateTargetWidth],\n      applyTextStyling: [Function: applyTextStyling],\n      applyForegroundColor: [Function: applyForegroundColor],\n      applyBackgroundColor: [Function: applyBackgroundColor],\n      applyMargin: [Function: applyMargin],\n      applyBorder: [Function: applyBorder],\n      measureText: [Function: measureText],\n      getBorderStyle: [Function: getBorderStyle],\n      getBorderStyleByType: [Function: getBorderStyleByType],\n      hasBorderStyle: [Function: hasBorderStyle],\n      implicitBorders: [Function: implicitBorders],\n      getAsBool: [Function: getAsBool],\n      maxRuneWidth: [Function: maxRuneWidth],\n      getFirstRuneAsString: [Function: getFirstRuneAsString],\n      renderHorizontalEdge: [Function: renderHorizontalEdge],\n      styleBorder: [Function: styleBorder],\n      getLines: [Function: getLines],\n      joinLines: [Function: joinLines],\n      calculateWidth: [Function: calculateWidth],\n      calculateHeight: [Function: calculateHeight],\n      wrapText: [Function: wrapText],\n      truncateText: [Function: truncateText],\n      alignTextHorizontal: [Function: alignTextHorizontal],\n      alignTextVertical: [Function: alignTextVertical],\n    },\n    deepCloneProperties: [Function: deepCloneProperties],\n    unsetProperties: [Function: unsetProperties],\n    clone: [Function: clone],\n    render: [Function: render],\n    getRenderer: [Function: getRenderer],\n    withRenderer: [Function: withRenderer],\n    renderWith: [Function: renderWith],\n    applyDimensionConstraints: [Function: applyDimensionConstraints],\n    applyAlignment: [Function: applyAlignment],\n    calculateTargetWidth: [Function: calculateTargetWidth],\n    getChalkInstance: [Function: getChalkInstance],\n    applyTextStyling: [Function: applyTextStyling],\n    hasTextStyling: [Function: hasTextStyling],\n    applyMargins: [Function: applyMargins],\n    copy: [Function: copy],\n    getProperties: [Function: getProperties],\n    getColor: [Function: getColor],\n    getBackgroundColor: [Function: getBackgroundColor],\n    getFontWeight: [Function: getFontWeight],\n    getFontStyle: [Function: getFontStyle],\n    getTextDecoration: [Function: getTextDecoration],\n    getWidth: [Function: getWidth],\n    getHeight: [Function: getHeight],\n    getPadding: [Function: getPadding],\n    getMargin: [Function: getMargin],\n    getMarginBackground: [Function: getMarginBackground],\n    getHorizontalAlignment: [Function: getHorizontalAlignment],\n    getVerticalAlignment: [Function: getVerticalAlignment],\n    getBorder: [Function: getBorder],\n    getTransform: [Function: getTransform],\n    getWordWrap: [Function: getWordWrap],\n    getMaxWidth: [Function: getMaxWidth],\n    getPreserveWhitespace: [Function: getPreserveWhitespace],\n    getMaxHeight: [Function: getMaxHeight],\n    getColorWhitespace: [Function: getColorWhitespace],\n    getInline: [Function: getInline],\n    getTabWidth: [Function: getTabWidth],\n    getString: [Function: getString],\n    getUnderlineSpaces: [Function: getUnderlineSpaces],\n    getStrikethroughSpaces: [Function: getStrikethroughSpaces],\n    color: [Function: color],\n    backgroundColor: [Function: backgroundColor],\n    colors: [Function: colors],\n    adaptiveColors: [Function: adaptiveColors],\n    fontWeight: [Function: fontWeight],\n    bold: [Function: bold],\n    fontStyle: [Function: fontStyle],\n    italic: [Function: italic],\n    textDecoration: [Function: textDecoration],\n    underline: [Function: underline],\n    strikethrough: [Function: strikethrough],\n    reverse: [Function: reverse],\n    blink: [Function: blink],\n    faint: [Function: faint],\n    underlineSpaces: [Function: underlineSpaces],\n    strikethroughSpaces: [Function: strikethroughSpaces],\n    unsetBold: [Function: unsetBold],\n    unsetItalic: [Function: unsetItalic],\n    unsetUnderline: [Function: unsetUnderline],\n    unsetStrikethrough: [Function: unsetStrikethrough],\n    unsetTextDecorations: [Function: unsetTextDecorations],\n    unsetTypography: [Function: unsetTypography],\n    unsetReverse: [Function: unsetReverse],\n    unsetBlink: [Function: unsetBlink],\n    unsetFaint: [Function: unsetFaint],\n    unsetForeground: [Function: unsetForeground],\n    unsetBackground: [Function: unsetBackground],\n    unsetAlignHorizontal: [Function: unsetAlignHorizontal],\n    unsetAlignVertical: [Function: unsetAlignVertical],\n    unsetAlign: [Function: unsetAlign],\n    unsetWidth: [Function: unsetWidth],\n    unsetHeight: [Function: unsetHeight],\n    unsetMaxWidth: [Function: unsetMaxWidth],\n    unsetMaxHeight: [Function: unsetMaxHeight],\n    unsetTabWidth: [Function: unsetTabWidth],\n    unsetInline: [Function: unsetInline],\n    unsetColorWhitespace: [Function: unsetColorWhitespace],\n    unsetWhitespaceChars: [Function: unsetWhitespaceChars],\n    unsetTransform: [Function: unsetTransform],\n    unsetString: [Function: unsetString],\n    unsetUnderlineSpaces: [Function: unsetUnderlineSpaces],\n    unsetStrikethroughSpaces: [Function: unsetStrikethroughSpaces],\n    unsetRenderer: [Function: unsetRenderer],\n    unsetPadding: [Function: unsetPadding],\n    unsetPaddingTop: [Function: unsetPaddingTop],\n    unsetPaddingRight: [Function: unsetPaddingRight],\n    unsetPaddingBottom: [Function: unsetPaddingBottom],\n    unsetPaddingLeft: [Function: unsetPaddingLeft],\n    unsetMargin: [Function: unsetMargin],\n    unsetMargins: [Function: unsetMargins],\n    unsetMarginTop: [Function: unsetMarginTop],\n    unsetMarginRight: [Function: unsetMarginRight],\n    unsetMarginBottom: [Function: unsetMarginBottom],\n    unsetMarginLeft: [Function: unsetMarginLeft],\n    unsetMarginBackground: [Function: unsetMarginBackground],\n    unsetBorderStyle: [Function: unsetBorderStyle],\n    unsetBorderForeground: [Function: unsetBorderForeground],\n    unsetBorderBackground: [Function: unsetBorderBackground],\n    unsetBorderTop: [Function: unsetBorderTop],\n    unsetBorderRight: [Function: unsetBorderRight],\n    unsetBorderBottom: [Function: unsetBorderBottom],\n    unsetBorderLeft: [Function: unsetBorderLeft],\n    unsetBorderTopColor: [Function: unsetBorderTopColor],\n    unsetBorderRightColor: [Function: unsetBorderRightColor],\n    unsetBorderBottomColor: [Function: unsetBorderBottomColor],\n    unsetBorderLeftColor: [Function: unsetBorderLeftColor],\n    unsetBorderTopBackground: [Function: unsetBorderTopBackground],\n    unsetBorderRightBackground: [Function: unsetBorderRightBackground],\n    unsetBorderBottomBackground: [Function: unsetBorderBottomBackground],\n    unsetBorderLeftBackground: [Function: unsetBorderLeftBackground],\n    unsetBorderTopForeground: [Function: unsetBorderTopForeground],\n    unsetBorderRightForeground: [Function: unsetBorderRightForeground],\n    unsetBorderBottomForeground: [Function: unsetBorderBottomForeground],\n    unsetBorderLeftForeground: [Function: unsetBorderLeftForeground],\n    width: [Function: width],\n    height: [Function: height],\n    padding: [Function: padding],\n    paddingConfig: [Function: paddingConfig],\n    paddingTop: [Function: paddingTop],\n    paddingRight: [Function: paddingRight],\n    paddingBottom: [Function: paddingBottom],\n    paddingLeft: [Function: paddingLeft],\n    paddingHorizontal: [Function: paddingHorizontal],\n    paddingVertical: [Function: paddingVertical],\n    margin: [Function: margin],\n    marginConfig: [Function: marginConfig],\n    marginTop: [Function: marginTop],\n    marginRight: [Function: marginRight],\n    marginBottom: [Function: marginBottom],\n    marginLeft: [Function: marginLeft],\n    marginHorizontal: [Function: marginHorizontal],\n    marginVertical: [Function: marginVertical],\n    marginBackground: [Function: marginBackground],\n    horizontalAlignment: [Function: horizontalAlignment],\n    verticalAlignment: [Function: verticalAlignment],\n    align: [Function: align],\n    alignLeft: [Function: alignLeft],\n    alignCenter: [Function: alignCenter],\n    alignRight: [Function: alignRight],\n    alignTop: [Function: alignTop],\n    alignMiddle: [Function: alignMiddle],\n    alignBottom: [Function: alignBottom],\n    center: [Function: center],\n    valign: [Function: valign],\n    border: [Function: border],\n    borderStyle: [Function: borderStyle],\n    borderColor: [Function: borderColor],\n    borderTop: [Function: borderTop],\n    borderRight: [Function: borderRight],\n    borderBottom: [Function: borderBottom],\n    borderLeft: [Function: borderLeft],\n    borderTopColor: [Function: borderTopColor],\n    borderRightColor: [Function: borderRightColor],\n    borderBottomColor: [Function: borderBottomColor],\n    borderLeftColor: [Function: borderLeftColor],\n    borderTopBackgroundColor: [Function: borderTopBackgroundColor],\n    borderRightBackgroundColor: [Function: borderRightBackgroundColor],\n    borderBottomBackgroundColor: [Function: borderBottomBackgroundColor],\n    borderLeftBackgroundColor: [Function: borderLeftBackgroundColor],\n    unsetBorder: [Function: unsetBorder],\n    unsetBorderSides: [Function: unsetBorderSides],\n    transform: [Function: transform],\n    wordWrap: [Function: wordWrap],\n    maxWidth: [Function: maxWidth],\n    preserveWhitespace: [Function: preserveWhitespace],\n    maxHeight: [Function: maxHeight],\n    colorWhitespace: [Function: colorWhitespace],\n    inline: [Function: inline],\n    tabWidth: [Function: tabWidth],\n    merge: [Function: merge],\n    apply: [Function: apply],\n    applyColorWithWhitespaceSupport: [Function: applyColorWithWhitespaceSupport],\n    normalizeWhitespace: [Function: normalizeWhitespace],\n    getMargins: [Function: getMargins],\n    getHorizontalMargins: [Function: getHorizontalMargins],\n    getVerticalMargins: [Function: getVerticalMargins],\n    getHorizontalPadding: [Function: getHorizontalPadding],\n    getVerticalPadding: [Function: getVerticalPadding],\n    alignHorizontal: [Function: alignHorizontal],\n    alignVertical: [Function: alignVertical],\n    AlignHorizontal: [Function: AlignHorizontal],\n    AlignVertical: [Function: AlignVertical],\n    Foreground: [Function: Foreground],\n    Background: [Function: Background],\n    SetString: [Function: SetString],\n    Value: [Function: Value],\n    String: [Function: String],\n    Inherit: [Function: Inherit],\n    Bold: [Function: Bold],\n    Italic: [Function: Italic],\n    Underline: [Function: Underline],\n    Strikethrough: [Function: Strikethrough],\n    Blink: [Function: Blink],\n    Faint: [Function: Faint],\n    Width: [Function: Width],\n    Height: [Function: Height],\n    Padding: [Function: Padding],\n    Margin: [Function: Margin],\n    BorderStyle: [Function: BorderStyle],\n    BorderForeground: [Function: BorderForeground],\n    Copy: [Function: Copy],\n  },\n  _headers: [ \"LANGUAGE\", \"FORMAL\", \"INFORMAL\" ],\n  data: StringData {\n    _rows: [\n      [ \"Chinese\", \"您好\", \"你好\" ], [ \"Japanese\", \"こんにちは\", \"やあ\" ], [ \"Arabic\",\n        \"أهلين\", \"أهلا\"\n      ], [ \"Russian\", \"Здравствуйте\", \"Привет\" ], [ \"Spanish\", \"Hola\",\n        \"¿Qué tal?\"\n      ], [ \"English\", \"You look absolutely fabulous.\", \"How's it going?\" ]\n    ],\n    _columns: 3,\n    append: [Function: append],\n    item: [Function: item],\n    at: [Function: at],\n    rows: [Function: rows],\n    columns: [Function: columns],\n    clear: [Function: clear],\n    toMatrix: [Function: toMatrix],\n  },\n  _width: 0,\n  height: 0,\n  useManualHeight: false,\n  _offset: 0,\n  _wrap: true,\n  _widths: [],\n  heights: [],\n  options: [Getter],\n  clearRows: [Function: clearRows],\n  setStyleFunc: [Function: setStyleFunc],\n  getStyle: [Function: getStyle],\n  setData: [Function: setData],\n  getData: [Function: getData],\n  rows: [Function: rows],\n  row: [Function: row],\n  setHeaders: [Function: setHeaders],\n  setBorder: [Function: setBorder],\n  setBorderTop: [Function: setBorderTop],\n  setBorderBottom: [Function: setBorderBottom],\n  setBorderLeft: [Function: setBorderLeft],\n  setBorderRight: [Function: setBorderRight],\n  setBorderHeader: [Function: setBorderHeader],\n  setBorderColumn: [Function: setBorderColumn],\n  setBorderRow: [Function: setBorderRow],\n  setBorderStyle: [Function: setBorderStyle],\n  setWidth: [Function: setWidth],\n  setHeight: [Function: setHeight],\n  setOffset: [Function: setOffset],\n  setWrap: [Function: setWrap],\n  computeHeight: [Function: computeHeight],\n  resize: [Function: resize],\n  getBorderStyle: [Function: getBorderStyle],\n  constructTopBorder: [Function: constructTopBorder],\n  constructBottomBorder: [Function: constructBottomBorder],\n  constructHeaders: [Function: constructHeaders],\n  constructRow: [Function: constructRow],\n  truncateCell: [Function: truncateCell],\n  render: [Function: render],\n  borderHeader: [Function: borderHeader],\n  borderColumn: [Function: borderColumn],\n  borderRow: [Function: borderRow],\n  offset: [Function: offset],\n  wrap: [Function: wrap],\n  border: [Function: border],\n  borderStyle: [Function: borderStyle],\n  headers: [Function: headers],\n  width: [Function: width],\n  styleFunc: [Function: styleFunc],\n  toString: [Function: toString],\n}\n",
+      "expectedOutput": "┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓\n┃   LANGUAGE   ┃        FORMAL        ┃   INFORMAL   ┃\n┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━┫\n┃ Chinese      ┃ 您好                 ┃ 你好         ┃\n┃ Japanese     ┃ こんにちは           ┃ やあ         ┃\n┃ Arabic       ┃                أهلين ┃         أهلا ┃\n┃ Russian      ┃ Здравствуйте         ┃ Привет       ┃\n┃ Spanish      ┃ Hola                 ┃ ¿Qué tal?    ┃\n┃ English      ┃ You look absolutely  ┃ How's it     ┃\n┃              ┃ fabulous.            ┃ going?       ┃\n┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛\n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(594) vs TypeScript(15064)",
+        "Position 0: Go('[┏]━━━━━━━━━━') vs TypeScript('[T]able {\n  _')",
+        "Position 1: Go('┏[━]━━━━━━━━━━') vs TypeScript('T[a]ble {\n  _s')",
+        "Position 2: Go('┏━[━]━━━━━━━━━━') vs TypeScript('Ta[b]le {\n  _st')",
+        "Position 3: Go('┏━━[━]━━━━━━━━━━') vs TypeScript('Tab[l]e {\n  _sty')",
+        "Position 4: Go('┏━━━[━]━━━━━━━━━━') vs TypeScript('Tabl[e] {\n  _styl')",
+        "Line 1: Go(\"┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓\") vs TypeScript(\"Table {\")",
+        "Line 2: Go(\"┃   LANGUAGE   ┃        FORMAL        ┃   INFORMAL   ┃\") vs TypeScript(\"  _styleFunc: [Function],\")",
+        "Line 3: Go(\"┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━┫\") vs TypeScript(\"  _border: {\")",
+        "Line 4: Go(\"┃ Chinese      ┃ 您好                 ┃ 你好         ┃\") vs TypeScript(\"    style: \"rounded\",\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "5013",
+      "name": "example-mindy",
+      "category": "example",
+      "passed": false,
+      "executionTime": 336,
+      "goOutput": "                                                                   \n   0          1          2          3          4          5        \n   8          9         10         11         12         13        \n                                                                   \n   6          7                                                    \n  14         15                                                    \n                                                                   \n  16         17         18         19         20         21        \n  22         23         24         25         26         27        \n  28         29         30         31         32         33        \n  34         35         36         37         38         39        \n  40         41         42         43         44         45        \n  46         47         48         49         50         51        \n  52         53         54         55         56         57        \n  58         59         60         61         62         63        \n  64         65         66         67         68         69        \n  70         71         72         73         74         75        \n  76         77         78         79         80         81        \n  82         83         84         85         86         87        \n  88         89         90         91         92         93        \n  94         95         96         97         98         99        \n 100        101        102        103        104        105        \n 106        107        108        109        110        111        \n 112        113        114        115        116        117        \n 118        119        120        121        122        123        \n 124        125        126        127        128        129        \n 130        131        132        133        134        135        \n 136        137        138        139        140        141        \n 142        143        144        145        146        147        \n 148        149        150        151        152        153        \n 154        155        156        157        158        159        \n 160        161        162        163        164        165        \n 166        167        168        169        170        171        \n 172        173        174        175        176        177        \n 178        179        180        181        182        183        \n 184        185        186        187        188        189        \n 190        191        192        193        194        195        \n 196        197        198        199        200        201        \n 202        203        204        205        206        207        \n 208        209        210        211        212        213        \n 214        215        216        217        218        219        \n 220        221        222        223        224        225        \n 226        227        228        229        230        231        \n                                                                   \n 232        233        234        235        236        237        \n 238        239        240        241        242        243        \n 244        245        246        247        248        249        \n 250        251        252        253        254        255        \n                                                                   \n",
+      "error": "Error: Command failed: cd \"/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/5013-example-mindy\" && bun run case.ts\n1293 |    * @see {@link Foreground} For Go Lipgloss API compatibility\n1294 |    * @see {@link adaptiveColors} For automatic color selection\n1295 |    */\n1296 |   color(color: ColorValue): Style {\n1297 |     if (!isValidColor(color)) {\n1298 |       throw new Error(`Invalid color value: ${JSON.stringify(color)}`);\n                   ^\nerror: Invalid color value: \"\"\n      at color (/work/rcs/charm-ts/tsports/lipgloss/src/style.ts:1298:13)\n      at <anonymous> (/work/rcs/charm-ts/tsports/lipgloss/src/go-compat.ts:347:39)\n      at calculatePaddings (/work/rcs/charm-ts/tsports/lipgloss/src/table/resizing.ts:385:28)\n      at new Resizer (/work/rcs/charm-ts/tsports/lipgloss/src/table/resizing.ts:319:10)\n      at resize (/work/rcs/charm-ts/tsports/lipgloss/src/table/table.ts:545:21)\n      at render (/work/rcs/charm-ts/tsports/lipgloss/src/table/table.ts:831:10)\n      at /work/rcs/charm-ts/tsports/lipgloss/test/cases/example/5013-example-mindy/case.ts:49:16\n      at loadAndEvaluateModule (2:1)\n\nBun v1.2.18 (macOS arm64)\n"
+    },
+    {
+      "id": "5014",
+      "name": "example-chess",
+      "category": "example",
+      "passed": false,
+      "executionTime": 348,
+      "goOutput": "   ┌───┬───┬───┬───┬───┬───┬───┬───┐\n 1 │ ♜ │ ♞ │ ♝ │ ♛ │ ♚ │ ♝ │ ♞ │ ♜ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 2 │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 3 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 4 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 5 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 6 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 7 │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 8 │ ♖ │ ♘ │ ♗ │ ♕ │ ♔ │ ♗ │ ♘ │ ♖ │\n   └───┴───┴───┴───┴───┴───┴───┴───┘\n     A   B   C   D   E   F   G   H  \n\n",
+      "tsOutput": " 1 ╭───┬───┬───┬───┬───┬───┬───┬───╮\n   │ ♜ │ ♞ │ ♝ │ ♛ │ ♚ │ ♝ │ ♞ │ ♜ │\n 2 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │\n 3 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │   │   │   │   │   │   │   │   │\n 4 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │   │   │   │   │   │   │   │   │\n 5 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │   │   │   │   │   │   │   │   │\n 6 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │   │   │   │   │   │   │   │   │\n 7 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │\n 8 ├───┼───┼───┼───┼───┼───┼───┼───┤\n   │ ♖ │ ♘ │ ♗ │ ♕ │ ♔ │ ♗ │ ♘ │ ♖ │\n   ╰───┴───┴───┴───┴───┴───┴───┴───╯\n A   B   C   D   E   F   G   H      \n\n",
+      "expectedOutput": "   ┌───┬───┬───┬───┬───┬───┬───┬───┐\n 1 │ ♜ │ ♞ │ ♝ │ ♛ │ ♚ │ ♝ │ ♞ │ ♜ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 2 │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 3 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 4 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 5 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 6 │   │   │   │   │   │   │   │   │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 7 │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │ ♙ │\n   ├───┼───┼───┼───┼───┼───┼───┼───┤\n 8 │ ♖ │ ♘ │ ♗ │ ♕ │ ♔ │ ♗ │ ♘ │ ♖ │\n   └───┴───┴───┴───┴───┴───┴───┴───┘\n     A   B   C   D   E   F   G   H  \n\n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Position 1: Go(' [ ] ┌───┬───┬') vs TypeScript(' [1] ╭───┬───┬')",
+        "Position 3: Go('   [┌]───┬───┬──') vs TypeScript(' 1 [╭]───┬───┬──')",
+        "Position 35: Go('──┬───┬───[┐]\n 1 │ ♜ │ ') vs TypeScript('──┬───┬───[╮]\n   │ ♜ │ ')",
+        "Position 38: Go('───┬───┐\n [1] │ ♜ │ ♞ │') vs TypeScript('───┬───╮\n [ ] │ ♜ │ ♞ │')",
+        "Position 75: Go(' ♞ │ ♜ │\n [ ] ├───┼───┼') vs TypeScript(' ♞ │ ♜ │\n [2] ├───┼───┼')",
+        "Line 1: Go(\"   ┌───┬───┬───┬───┬───┬───┬───┬───┐\") vs TypeScript(\" 1 ╭───┬───┬───┬───┬───┬───┬───┬───╮\")",
+        "Line 2: Go(\" 1 │ ♜ │ ♞ │ ♝ │ ♛ │ ♚ │ ♝ │ ♞ │ ♜ │\") vs TypeScript(\"   │ ♜ │ ♞ │ ♝ │ ♛ │ ♚ │ ♝ │ ♞ │ ♜ │\")",
+        "Line 3: Go(\"   ├───┼───┼───┼───┼───┼───┼───┼───┤\") vs TypeScript(\" 2 ├───┼───┼───┼───┼───┼───┼───┼───┤\")",
+        "Line 4: Go(\" 2 │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │\") vs TypeScript(\"   │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │ ♟ │\")",
+        "Line 5: Go(\"   ├───┼───┼───┼───┼───┼───┼───┼───┤\") vs TypeScript(\" 3 ├───┼───┼───┼───┼───┼───┼───┼───┤\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "5015",
+      "name": "example-grocery",
+      "category": "example",
+      "passed": true,
+      "executionTime": 334,
+      "goOutput": "• Artichoke\n• Baking Flour\n✓ Bananas\n✓ Barley\n• Bean Sprouts\n• Cashew Apple\n✓ Cashews\n✓ Coconut Milk\n• Curry Paste\n• Currywurst\n✓ Dill\n• Dragonfruit\n• Dried Shrimp\n✓ Eggs\n✓ Fish Cake\n• Furikake\n• Jicama\n• Kohlrabi\n✓ Leeks\n• Lentils\n• Licorice Root\n",
+      "tsOutput": "• Artichoke\n• Baking Flour\n✓ Bananas\n✓ Barley\n• Bean Sprouts\n• Cashew Apple\n✓ Cashews\n✓ Coconut Milk\n• Curry Paste\n• Currywurst\n✓ Dill\n• Dragonfruit\n• Dried Shrimp\n✓ Eggs\n✓ Fish Cake\n• Furikake\n• Jicama\n• Kohlrabi\n✓ Leeks\n• Lentils\n• Licorice Root\n",
+      "expectedOutput": "• Artichoke\n• Baking Flour\n✓ Bananas\n✓ Barley\n• Bean Sprouts\n• Cashew Apple\n✓ Cashews\n✓ Coconut Milk\n• Curry Paste\n• Currywurst\n✓ Dill\n• Dragonfruit\n• Dried Shrimp\n✓ Eggs\n✓ Fish Cake\n• Furikake\n• Jicama\n• Kohlrabi\n✓ Leeks\n• Lentils\n• Licorice Root\n",
+      "differences": []
+    },
+    {
+      "id": "5016",
+      "name": "example-simple",
+      "category": "example",
+      "passed": true,
+      "executionTime": 328,
+      "goOutput": "• A\n• B\n• C\n    I. D\n   II. E\n  III. F\n• G\n",
+      "tsOutput": "• A\n• B\n• C\n    I. D\n   II. E\n  III. F\n• G\n",
+      "expectedOutput": "• A\n• B\n• C\n    I. D\n   II. E\n  III. F\n• G\n",
+      "differences": []
+    },
+    {
+      "id": "5017",
+      "name": "example-duckduckgoose",
+      "category": "example",
+      "passed": false,
+      "executionTime": 331,
+      "goOutput": "       Duck\n       Duck\n       Duck\nHonk → Goose\n       Duck\n",
+      "tsOutput": "     \u001b[38;2;0;215;135m \u001b[0m Duck\n     \u001b[38;2;0;215;135m \u001b[0m Duck\n     \u001b[38;2;0;215;135m \u001b[0m Duck\n\u001b[38;2;0;215;135mHonk →\u001b[0m Goose\n     \u001b[38;2;0;215;135m \u001b[0m Duck\n",
+      "expectedOutput": "       Duck\n       Duck\n       Duck\nHonk → Goose\n       Duck\n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(61) vs TypeScript(166)",
+        "Position 5: Go('     [ ] Duck\n    ') vs TypeScript('     [\u001b][38;2;0;21')",
+        "Position 6: Go('      [ ]Duck\n     ') vs TypeScript('     \u001b[[]38;2;0;215')",
+        "Position 7: Go('       [D]uck\n      ') vs TypeScript('     \u001b[[3]8;2;0;215;')",
+        "Position 8: Go('       D[u]ck\n       ') vs TypeScript('     \u001b[3[8];2;0;215;1')",
+        "Position 9: Go('       Du[c]k\n       D') vs TypeScript('     \u001b[38[;]2;0;215;13')",
+        "Line 1: Go(\"       Duck\") vs TypeScript(\"     \u001b[38;2;0;215;135m \u001b[0m Duck\")",
+        "Line 2: Go(\"       Duck\") vs TypeScript(\"     \u001b[38;2;0;215;135m \u001b[0m Duck\")",
+        "Line 3: Go(\"       Duck\") vs TypeScript(\"     \u001b[38;2;0;215;135m \u001b[0m Duck\")",
+        "Line 4: Go(\"Honk → Goose\") vs TypeScript(\"\u001b[38;2;0;215;135mHonk →\u001b[0m Goose\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "5018",
+      "name": "example-roman",
+      "category": "example",
+      "passed": true,
+      "executionTime": 333,
+      "goOutput": "  I. Glossier \n II. Claire’s Boutique \nIII. Nyx \n IV. Mac \n  V. Milk \n",
+      "tsOutput": "  I. Glossier \n II. Claire’s Boutique \nIII. Nyx \n IV. Mac \n  V. Milk \n",
+      "expectedOutput": "  I. Glossier \n II. Claire’s Boutique \nIII. Nyx \n IV. Mac \n  V. Milk \n",
+      "differences": []
+    },
+    {
+      "id": "5019",
+      "name": "example-glow",
+      "category": "example",
+      "passed": false,
+      "executionTime": 30138,
+      "goOutput": "\n  README.md    \n  2 minutes ago\n               \n│ Example.md\n│ 1 hour ago\n            \n  secrets.md\n  1 week ago\n            \n",
+      "error": "Error: TypeScript test timed out after 30000ms"
+    },
+    {
+      "id": "502",
+      "name": "example-rounded",
+      "category": "example",
+      "passed": true,
+      "executionTime": 517,
+      "goOutput": "Groceries\n├── Fruits \n│   ├── Blood Orange \n│   ├── Papaya \n│   ├── Dragonfruit \n│   ╰── Yuzu \n├── Items \n│   ├── Cat Food \n│   ├── Nutella \n│   ╰── Powdered Sugar \n╰── Veggies \n    ├── Leek \n    ╰── Artichoke \n",
+      "tsOutput": "Groceries\n├── Fruits \n│   ├── Blood Orange \n│   ├── Papaya \n│   ├── Dragonfruit \n│   ╰── Yuzu \n├── Items \n│   ├── Cat Food \n│   ├── Nutella \n│   ╰── Powdered Sugar \n╰── Veggies \n    ├── Leek \n    ╰── Artichoke \n",
+      "expectedOutput": "Groceries\n├── Fruits \n│   ├── Blood Orange \n│   ├── Papaya \n│   ├── Dragonfruit \n│   ╰── Yuzu \n├── Items \n│   ├── Cat Food \n│   ├── Nutella \n│   ╰── Powdered Sugar \n╰── Veggies \n    ├── Leek \n    ╰── Artichoke \n",
+      "differences": []
+    },
+    {
+      "id": "5020",
+      "name": "example-sublist",
+      "category": "example",
+      "passed": false,
+      "executionTime": 346,
+      "goOutput": "• Lip Gloss\n• Blush\n• Eye Shadow\n• Mascara\n• Foundation\n  • Citrus Fruits to Try\n    • Grapefruit\n    ✓ Yuzu\n    ✓ Citron\n    • Kumquat\n    ✓ Pomelo\n  • Actual Lip Gloss Vendors\n    • Glossier\n    ✓ Claire‘s Boutique\n    ✓ Nyx\n    • Mac\n    ✓ Milk\n      -   Lip Gloss     \n      -    Lip Gloss    \n      -     Lip Gloss   \n      -      Lip Gloss  \n        •                                            \n          Style Definitions for Nice Terminal Layouts\n          ─────                                      \n        • From Charm\n        • https://github.com/charmbracelet/lipgloss\n          • Emperors: Julio-Claudian dynasty\n          •                \n               I. Augustus \n              II. Tiberius \n             III. Caligula \n              IV. Claudius \n               V. Nero     \n                           \n          •                                           \n                 Medieval quince preserves, which     \n                went by the French name cotignac,     \n                produced in a clear version and a     \n                fruit pulp version, began to lose     \n                their medieval seasoning of spices    \n                 in the 16th century. In the 17th     \n                   century, La Varenne provided       \n                 recipes for both thick and clear     \n                            cotignac.                 \n                                                      \n                                                      \n          • ╭──────────────┬─────────────╮\n            │     ITEM     │   QUANTITY  │\n            ├──────────────┼─────────────┤\n            │    Apple     │      6      │\n            │    Banana    │         10  │\n            │    Orange    │          2  │\n            │  Strawberry  │         12  │\n            ╰──────────────┴─────────────╯\n          • Documents\n              Foo Document\n              1 day ago   \n                          \n            │ Bar Document\n            │ 2 days ago  \n                          \n              Baz Document  \n              10 minutes ago\n                            \n              Qux Document\n              1 month ago \n                          \n          • EOF\n        • go get github.com/charmbracelet/lipgloss/list\n                                                       \n      -                 \n          See ya later  \n                        \n                        \n  • List\n• xoxo, Charm_™\n",
+      "tsOutput": "• Task 1\n\u001b[38;2;67;191;109m✓\u001b[0m Task 2\n\u001b[38;2;67;191;109m✓\u001b[0m Task 3\n• Task 4\n\u001b[38;2;67;191;109m✓\u001b[0m Task 5\n",
+      "expectedOutput": "• Lip Gloss\n• Blush\n• Eye Shadow\n• Mascara\n• Foundation\n  • Citrus Fruits to Try\n    • Grapefruit\n    ✓ Yuzu\n    ✓ Citron\n    • Kumquat\n    ✓ Pomelo\n  • Actual Lip Gloss Vendors\n    • Glossier\n    ✓ Claire‘s Boutique\n    ✓ Nyx\n    • Mac\n    ✓ Milk\n      -   Lip Gloss     \n      -    Lip Gloss    \n      -     Lip Gloss   \n      -      Lip Gloss  \n        •                                            \n          Style Definitions for Nice Terminal Layouts\n          ─────                                      \n        • From Charm\n        • https://github.com/charmbracelet/lipgloss\n          • Emperors: Julio-Claudian dynasty\n          •                \n               I. Augustus \n              II. Tiberius \n             III. Caligula \n              IV. Claudius \n               V. Nero     \n                           \n          •                                           \n                 Medieval quince preserves, which     \n                went by the French name cotignac,     \n                produced in a clear version and a     \n                fruit pulp version, began to lose     \n                their medieval seasoning of spices    \n                 in the 16th century. In the 17th     \n                   century, La Varenne provided       \n                 recipes for both thick and clear     \n                            cotignac.                 \n                                                      \n                                                      \n          • ╭──────────────┬─────────────╮\n            │     ITEM     │   QUANTITY  │\n            ├──────────────┼─────────────┤\n            │    Apple     │      6      │\n            │    Banana    │         10  │\n            │    Orange    │          2  │\n            │  Strawberry  │         12  │\n            ╰──────────────┴─────────────╯\n          • Documents\n              Foo Document\n              1 day ago   \n                          \n            │ Bar Document\n            │ 2 days ago  \n                          \n              Baz Document  \n              10 minutes ago\n                            \n              Qux Document\n              1 month ago \n                          \n          • EOF\n        • go get github.com/charmbracelet/lipgloss/list\n                                                       \n      -                 \n          See ya later  \n                        \n                        \n  • List\n• xoxo, Charm_™\n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(2433) vs TypeScript(111)",
+        "Position 2: Go('• [L]ip Gloss\n•') vs TypeScript('• [T]ask 1\n\u001b[38')",
+        "Position 3: Go('• L[i]p Gloss\n• ') vs TypeScript('• T[a]sk 1\n\u001b[38;')",
+        "Position 4: Go('• Li[p] Gloss\n• B') vs TypeScript('• Ta[s]k 1\n\u001b[38;2')",
+        "Position 5: Go('• Lip[ ]Gloss\n• Bl') vs TypeScript('• Tas[k] 1\n\u001b[38;2;')",
+        "Position 6: Go('• Lip [G]loss\n• Blu') vs TypeScript('• Task[ ]1\n\u001b[38;2;6')",
+        "Line 1: Go(\"• Lip Gloss\") vs TypeScript(\"• Task 1\")",
+        "Line 2: Go(\"• Blush\") vs TypeScript(\"\u001b[38;2;67;191;109m✓\u001b[0m Task 2\")",
+        "Line 3: Go(\"• Eye Shadow\") vs TypeScript(\"\u001b[38;2;67;191;109m✓\u001b[0m Task 3\")",
+        "Line 4: Go(\"• Mascara\") vs TypeScript(\"• Task 4\")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "503",
+      "name": "example-simple",
+      "category": "example",
+      "passed": true,
+      "executionTime": 351,
+      "goOutput": ".\n├── macOS\n├── Linux\n│   ├── NixOS\n│   ├── Arch Linux (btw)\n│   └── Void Linux\n└── BSD\n    ├── FreeBSD\n    └── OpenBSD\n",
+      "tsOutput": ".\n├── macOS\n├── Linux\n│   ├── NixOS\n│   ├── Arch Linux (btw)\n│   └── Void Linux\n└── BSD\n    ├── FreeBSD\n    └── OpenBSD\n",
+      "expectedOutput": ".\n├── macOS\n├── Linux\n│   ├── NixOS\n│   ├── Arch Linux (btw)\n│   └── Void Linux\n└── BSD\n    ├── FreeBSD\n    └── OpenBSD\n",
+      "differences": []
+    },
+    {
+      "id": "504",
+      "name": "example-toggle",
+      "category": "example",
+      "passed": true,
+      "executionTime": 338,
+      "goOutput": "                                              \n                                              \n      ▼ ~/charm                               \n      ├── ▶ ayman                             \n      ├── ▼ bash                              \n      │   ╰── ▼ tools                         \n      │       ├── zsh                         \n      │       ╰── doom-emacs                  \n      ├── ▼ carlos                            \n      │   ╰── ▼ emotes                        \n      │       ├── chefkiss.png                \n      │       ╰── kekw.png                    \n      ╰── ▶ maas                              \n                                              \n                                              \n",
+      "tsOutput": "                                              \n                                              \n      ▼ ~/charm                               \n      ├── ▶ ayman                             \n      ├── ▼ bash                              \n      │   ╰── ▼ tools                         \n      │       ├── zsh                         \n      │       ╰── doom-emacs                  \n      ├── ▼ carlos                            \n      │   ╰── ▼ emotes                        \n      │       ├── chefkiss.png                \n      │       ╰── kekw.png                    \n      ╰── ▶ maas                              \n                                              \n                                              \n",
+      "expectedOutput": "                                              \n                                              \n      ▼ ~/charm                               \n      ├── ▶ ayman                             \n      ├── ▼ bash                              \n      │   ╰── ▼ tools                         \n      │       ├── zsh                         \n      │       ╰── doom-emacs                  \n      ├── ▼ carlos                            \n      │   ╰── ▼ emotes                        \n      │       ├── chefkiss.png                \n      │       ╰── kekw.png                    \n      ╰── ▶ maas                              \n                                              \n                                              \n",
+      "differences": []
+    },
+    {
+      "id": "505",
+      "name": "example-styles",
+      "category": "example",
+      "passed": false,
+      "executionTime": 30158,
+      "goOutput": "├── Glossier\n├── Claire’s Boutique\n├── Nyx\n│   ├── Lip Gloss\n│   └── Foundation\n├── Mac\n└── Milk\n",
+      "error": "Error: TypeScript test timed out after 30000ms"
+    },
+    {
+      "id": "506",
+      "name": "example-makeup",
+      "category": "example",
+      "passed": false,
+      "executionTime": 30259,
+      "goOutput": "⁜ Makeup\n├── Glossier\n├── Fenty Beauty\n│   ├── Gloss Bomb Universal Lip Luminizer\n│   ╰── Hot Cheeks Velour Blushlighter\n├── Nyx\n├── Mac\n╰── Milk\n",
+      "error": "Error: TypeScript test timed out after 30000ms"
+    },
+    {
+      "id": "507",
+      "name": "example-files",
+      "category": "example",
+      "passed": false,
+      "executionTime": 570,
+      "goOutput": "/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/507-example-files \n├── case.go \n├── case.ts \n├── expected.out \n├── go.mod \n├── go.out \n├── go.sum \n├── metadata.json \n└── ts.out \n",
+      "tsOutput": "/home/user/project \n├── src/ \n├── docs/ \n├── package.json \n├── README.md \n└── tsconfig.json \n",
+      "expectedOutput": "/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/507-example-files \n├── case.go \n├── case.ts \n├── go.mod \n└── go.sum \n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(192) vs TypeScript(93)",
+        "Position 1: Go('/[w]ork/rcs/ch') vs TypeScript('/[h]ome/user/p')",
+        "Position 3: Go('/wo[r]k/rcs/char') vs TypeScript('/ho[m]e/user/pro')",
+        "Position 4: Go('/wor[k]/rcs/charm') vs TypeScript('/hom[e]/user/proj')",
+        "Position 6: Go('/work/[r]cs/charm-t') vs TypeScript('/home/[u]ser/projec')",
+        "Position 7: Go('/work/r[c]s/charm-ts') vs TypeScript('/home/u[s]er/project')",
+        "Line 1: Go(\"/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/507-example-files \") vs TypeScript(\"/home/user/project \")",
+        "Line 2: Go(\"├── case.go \") vs TypeScript(\"├── src/ \")",
+        "Line 3: Go(\"├── case.ts \") vs TypeScript(\"├── docs/ \")",
+        "Line 4: Go(\"├── expected.out \") vs TypeScript(\"├── package.json \")",
+        "Go output differs from expected",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "508",
+      "name": "example-layout",
+      "category": "example",
+      "passed": false,
+      "executionTime": 401,
+      "goOutput": "                                                                                                                                                                                                   \n  ╭───────────╮╭───────╮╭────────────╮╭─────────╮╭────────────╮                                                                                                                                    \n  │ Lip Gloss ││ Blush ││ Eye Shadow ││ Mascara ││ Foundation │                                                                                                                                    \n  ┘           └┴───────┴┴────────────┴┴─────────┴┴────────────┴───────────────────────────────────                                                                                                 \n                                                                                                                                                                                                   \n   Lip Gloss                                                                                                                                                                                       \n     Lip Gloss            Style Definitions for Nice Terminal Layouts                                                                                                                              \n       Lip Gloss          ──────────────────────────────────────────────────────                                                                                                                   \n         Lip Gloss        From Charm • https://github.com/charmbracelet/lipgloss                                                                                                                   \n           Lip Gloss                                                                                                                                                                               \n                                                                                                                                                                                                   \n  猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫╭──────────────────────────────────────────────────╮猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│     Are you sure you want to eat marmalade?      │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                 Yes        Maybe                 │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫╰──────────────────────────────────────────────────╯猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪                                                                                                 \n                                                                                                                                                                                                   \n  Citrus Fruits to Try           │  Actual Lip Gloss Vendors      │                                                                                                                                \n  ────────────────────           │  ────────────────────────      │                                                                                                                                \n  ✓ Grapefruit                   │    Glossier                    │                                                                                                                                \n  ✓ Yuzu                         │    Claire‘s Boutique           │                                                                                                                                \n    Citron                       │  ✓ Nyx                         │                                                                                                                                \n    Kumquat                      │    Mac                         │                                                                                                                                \n    Pomelo                       │  ✓ Milk                        │                                                                                                                                \n                                 │                                │                                                                                                                                \n                                                                                                                                                                                                   \n                                                                                                                                                                                                   \n       The Romans learned from       Medieval quince preserves,       In 1524, Henry VIII, King                                                                                                    \n       the Greeks that quinces        which went by the French        of England, received a                                                                                                       \n      slowly cooked with honey       name cotignac, produced in       “box of marmalade” from                                                                                                      \n    would “set” when cool. The         a clear version and a          Mr. Hull of Exeter. This                                                                                                     \n    Apicius gives a recipe for       fruit pulp version, began        was probably marmelada, a                                                                                                    \n     preserving whole quinces,         to lose their medieval         solid quince paste from                                                                                                      \n    stems and leaves attached,       seasoning of spices in the       Portugal, still made and                                                                                                     \n    in a bath of honey diluted       16th century. In the 17th        sold in southern Europe                                                                                                      \n          with defrutum: Roman          century, La Varenne           today. It became a                                                                                                           \n       marmalade. Preserves of       provided recipes for both        favourite treat of Anne                                                                                                      \n       quince and lemon appear       thick and clear cotignac.        Boleyn and her ladies in                                                                                                     \n      (along with rose, apple,                                        waiting.                                                                                                                     \n    plum and pear) in the Book                                                                                                                                                                     \n          of ceremonies of the                                                                                                                                                                     \n             Byzantine Emperor                                                                                                                                                                     \n               Constantine VII                                                                                                                                                                     \n             Porphyrogennetos.                                                                                                                                                                     \n                                                                                                                                                                                                   \n                                                                                                                                                                                                   \n   STATUS  Ravishing                                                          UTF-8  🍥 Fish Cake                                                                                                  \n                                                                                                                                                                                                   \n",
+      "tsOutput": "  \u001b[38;2;255;247;219mLip Gloss Layout Demo\u001b[0m      \n                                           \n\u001b[38;2;238;238;238mStyle Definitions for Nice Terminal Layouts\u001b[0m\n        \n   \u001b[48;2;136;139;126m\u001b[38;2;255;247;219mOK\u001b[0m\u001b[0m                \n   \u001b[48;2;136;139;126m\u001b[38;2;255;247;219mCancel\u001b[0m\u001b[0m   \n                                                           \n  \u001b[48;2;217;220;207m\u001b[38;2;135;75;253mThis demonstrates basic Lip Gloss styling capabilities.\u001b[0m\u001b[0m  \n                                                           \n",
+      "expectedOutput": "                                                                                                                                                                                                   \n  ╭───────────╮╭───────╮╭────────────╮╭─────────╮╭────────────╮                                                                                                                                    \n  │ Lip Gloss ││ Blush ││ Eye Shadow ││ Mascara ││ Foundation │                                                                                                                                    \n  ┘           └┴───────┴┴────────────┴┴─────────┴┴────────────┴───────────────────────────────────                                                                                                 \n                                                                                                                                                                                                   \n   Lip Gloss                                                                                                                                                                                       \n     Lip Gloss            Style Definitions for Nice Terminal Layouts                                                                                                                              \n       Lip Gloss          ──────────────────────────────────────────────────────                                                                                                                   \n         Lip Gloss        From Charm • https://github.com/charmbracelet/lipgloss                                                                                                                   \n           Lip Gloss                                                                                                                                                                               \n                                                                                                                                                                                                   \n  猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫╭──────────────────────────────────────────────────╮猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│     Are you sure you want to eat marmalade?      │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                 Yes        Maybe                 │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫│                                                  │猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫╰──────────────────────────────────────────────────╯猫咪猫咪猫咪猫咪猫咪猫                                                                                                 \n  猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪猫咪                                                                                                 \n                                                                                                                                                                                                   \n  Citrus Fruits to Try           │  Actual Lip Gloss Vendors      │                                                                                                                                \n  ────────────────────           │  ────────────────────────      │                                                                                                                                \n  ✓ Grapefruit                   │    Glossier                    │                                                                                                                                \n  ✓ Yuzu                         │    Claire‘s Boutique           │                                                                                                                                \n    Citron                       │  ✓ Nyx                         │                                                                                                                                \n    Kumquat                      │    Mac                         │                                                                                                                                \n    Pomelo                       │  ✓ Milk                        │                                                                                                                                \n                                 │                                │                                                                                                                                \n                                                                                                                                                                                                   \n                                                                                                                                                                                                   \n       The Romans learned from       Medieval quince preserves,       In 1524, Henry VIII, King                                                                                                    \n       the Greeks that quinces        which went by the French        of England, received a                                                                                                       \n      slowly cooked with honey       name cotignac, produced in       “box of marmalade” from                                                                                                      \n    would “set” when cool. The         a clear version and a          Mr. Hull of Exeter. This                                                                                                     \n    Apicius gives a recipe for       fruit pulp version, began        was probably marmelada, a                                                                                                    \n     preserving whole quinces,         to lose their medieval         solid quince paste from                                                                                                      \n    stems and leaves attached,       seasoning of spices in the       Portugal, still made and                                                                                                     \n    in a bath of honey diluted       16th century. In the 17th        sold in southern Europe                                                                                                      \n          with defrutum: Roman          century, La Varenne           today. It became a                                                                                                           \n       marmalade. Preserves of       provided recipes for both        favourite treat of Anne                                                                                                      \n       quince and lemon appear       thick and clear cotignac.        Boleyn and her ladies in                                                                                                     \n      (along with rose, apple,                                        waiting.                                                                                                                     \n    plum and pear) in the Book                                                                                                                                                                     \n          of ceremonies of the                                                                                                                                                                     \n             Byzantine Emperor                                                                                                                                                                     \n               Constantine VII                                                                                                                                                                     \n             Porphyrogennetos.                                                                                                                                                                     \n                                                                                                                                                                                                   \n                                                                                                                                                                                                   \n   STATUS  Ravishing                                                          UTF-8  🍥 Fish Cake                                                                                                  \n                                                                                                                                                                                                   \n",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(9942) vs TypeScript(525)",
+        "Position 2: Go('  [ ]          ') vs TypeScript('  [\u001b][38;2;255;')",
+        "Position 3: Go('   [ ]          ') vs TypeScript('  \u001b[[]38;2;255;2')",
+        "Position 4: Go('    [ ]          ') vs TypeScript('  \u001b[[3]8;2;255;24')",
+        "Position 5: Go('     [ ]          ') vs TypeScript('  \u001b[3[8];2;255;247')",
+        "Position 6: Go('      [ ]          ') vs TypeScript('  \u001b[38[;]2;255;247;')",
+        "Line 1: Go(\"                                                                                                                                                                                                   \") vs TypeScript(\"  \u001b[38;2;255;247;219mLip Gloss Layout Demo\u001b[0m      \")",
+        "Line 2: Go(\"  ╭───────────╮╭───────╮╭────────────╮╭─────────╮╭────────────╮                                                                                                                                    \") vs TypeScript(\"                                           \")",
+        "Line 3: Go(\"  │ Lip Gloss ││ Blush ││ Eye Shadow ││ Mascara ││ Foundation │                                                                                                                                    \") vs TypeScript(\"\u001b[38;2;238;238;238mStyle Definitions for Nice Terminal Layouts\u001b[0m\")",
+        "Line 4: Go(\"  ┘           └┴───────┴┴────────────┴┴─────────┴┴────────────┴───────────────────────────────────                                                                                                 \") vs TypeScript(\"        \")",
+        "TypeScript output differs from expected"
+      ]
+    },
+    {
+      "id": "509",
+      "name": "example-ssh",
+      "category": "example",
+      "passed": false,
+      "executionTime": 242,
+      "error": "Error: Command failed: cd \"/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/509-example-ssh\" && go mod init test-case 2>/dev/null || true && go mod tidy 2>/dev/null && go run case.go\n2025/08/21 02:53:55 SSH server listening on port 3456\n2025/08/21 02:53:55 To connect from your local machine run: ssh localhost -p 3456\n2025/08/21 02:53:55 listen tcp :3456: bind: address already in use\nexit status 1\n"
+    },
+    {
+      "id": "601",
+      "name": "complex-combination",
+      "category": "advanced",
+      "passed": false,
+      "executionTime": 388,
+      "goOutput": "                                  \n ╭──────────────────────────────╮ \n │                              │ \n │                              │ \n │    Complex Styled Content    │ \n │                              │ \n │                              │ \n ╰──────────────────────────────╯ \n                                  ",
+      "tsOutput": "                                \n                                \n                                \n   Complex Styled Content       \n                                \n                                \n                                ",
+      "expectedOutput": "                                  \n ╭──────────────────────────────╮ \n │                              │ \n │                              │ \n │    Complex Styled Content    │ \n │                              │ \n │                              │ \n ╰──────────────────────────────╯ \n                                  ",
+      "differences": [
+        "Go and TypeScript outputs differ",
+        "Length: Go(314) vs TypeScript(230)",
+        "Position 32: Go('          [ ] \n ╭──────') vs TypeScript('          [\n]          ')",
+        "Position 34: Go('          [\n] ╭────────') vs TypeScript('        \n [ ]          ')",
+        "Position 36: Go('        \n [╭]──────────') vs TypeScript('      \n   [ ]          ')",
+        "Position 37: Go('       \n ╭[─]──────────') vs TypeScript('     \n    [ ]          ')",
+        "Position 38: Go('      \n ╭─[─]──────────') vs TypeScript('    \n     [ ]          ')",
+        "Line 1: Go(\"                                  \") vs TypeScript(\"                                \")",
+        "Line 2: Go(\" ╭──────────────────────────────╮ \") vs TypeScript(\"                                \")",
+        "Line 3: Go(\" │                              │ \") vs TypeScript(\"                                \")",
+        "Line 4: Go(\" │                              │ \") vs TypeScript(\"   Complex Styled Content       \")",
+        "TypeScript output differs from expected"
+      ]
+    }
+  ],
+  "summary": {
+    "byCategory": {
+      "basic": {
+        "passed": 3,
+        "failed": 0,
+        "total": 3
+      },
+      "layout": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5
+      },
+      "color": {
+        "passed": 12,
+        "failed": 0,
+        "total": 12
+      },
+      "border": {
+        "passed": 4,
+        "failed": 1,
+        "total": 5
+      },
+      "component": {
+        "passed": 2,
+        "failed": 0,
+        "total": 2
+      },
+      "example": {
+        "passed": 7,
+        "failed": 13,
+        "total": 20
+      },
+      "advanced": {
+        "passed": 0,
+        "failed": 1,
+        "total": 1
+      }
+    },
+    "failureReasons": {
+      "Error: Command failed: cd \"/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/5013-example-mindy\" && bun run case.ts": 1,
+      "Error: TypeScript test timed out after 30000ms": 3,
+      "Error: Command failed: cd \"/work/rcs/charm-ts/tsports/lipgloss/test/cases/example/509-example-ssh\" && go mod init test-case 2>/dev/null || true && go mod tidy 2>/dev/null && go run case.go": 1
+    }
+  }
+}

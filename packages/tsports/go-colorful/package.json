@@ -1,0 +1,104 @@
+{
+  "name": "@tsports/go-colorful",
+  "version": "1.2.0-tsport",
+  "goSourceVersion": "v1.2.0",
+  "portInfo": {
+    "sourceRepo": "https://github.com/lucasb-eyer/go-colorful",
+    "sourceVersion": "v1.2.0",
+    "tsportVersion": 0,
+    "lastUpdated": "2024-08-26T15:30:00.000Z"
+  },
+  "description": "A TypeScript port of the go-colorful package for working with colors",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "type": "module",
+  "keywords": [
+    "go-colorful",
+    "color",
+    "colors",
+    "colorspace",
+    "rgb",
+    "hsl",
+    "hsv",
+    "lab",
+    "luv",
+    "hcl",
+    "oklab",
+    "oklch",
+    "hsluv",
+    "color-conversion",
+    "palette",
+    "color-generation",
+    "color-distance",
+    "color-blending",
+    "typescript"
+  ],
+  "author": {
+    "name": "tsports",
+    "url": "https://github.com/SubtleTools"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SubtleTools/go-colorful.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SubtleTools/go-colorful/issues"
+  },
+  "homepage": "https://subtletools.github.io/go-colorful",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "imports": {
+    "#src/*": "./src/*",
+    "#test/*": "./test/*"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./go-style": {
+      "import": "./dist/go-style.js",
+      "types": "./dist/go-style.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./README.md": "./README.md"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "bun run build:typecheck && bun run build:bundle && bun run build:dts",
+    "build:typecheck": "tsc --noEmit --project tsconfig.build.json",
+    "build:bundle": "bun build src/index.ts --outdir dist --format esm --target node --minify && bun build src/go-style.ts --outdir dist --format esm --target node --minify",
+    "build:dts": "tsc --project tsconfig.build.json --declaration --emitDeclarationOnly --outDir dist",
+    "clean": "rm -rf dist coverage .nyc_output",
+    "dev": "bun run build --watch",
+    "test": "bun scripts/test.js",
+    "lint": "biome lint src",
+    "format": "dprint fmt",
+    "format:check": "dprint check",
+    "docs": "typedoc",
+    "docs:build": "bun run docs && bunx vitepress build docs",
+    "prepack": "bun run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@moonrepo/cli": "^1.39.4",
+    "@types/bun": "^1.2.20",
+    "bun-types": "^1.2.20",
+    "dprint": "^0.50.1",
+    "tsconfig-moon": "^1.4.1",
+    "typedoc": "^0.28.10",
+    "typedoc-plugin-markdown": "^4.8.1",
+    "typedoc-vitepress-theme": "^1.1.2",
+    "typescript": "^5.9.2",
+    "vitepress": "^1.6.4"
+  }
+}

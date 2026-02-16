@@ -9,8 +9,8 @@
  * 3. New test cases are added
  */
 
-import { readdirSync, statSync, existsSync } from 'node:fs';
-import { join, basename } from 'node:path';
+import { existsSync, readdirSync, statSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import { generateGoldenFromGoWithProfile } from './golden';
 
 export interface SetupConfig {
@@ -95,10 +95,7 @@ export function findTestCases(dir: string): TestCase[] {
 /**
  * Default skip checker for known issues
  */
-export function defaultShouldSkip(
-  testCase: TestCase,
-  error?: Error
-): boolean {
+export function defaultShouldSkip(testCase: TestCase, error?: Error): boolean {
   if (!error) return false;
 
   const errorMessage = error.message;
@@ -162,42 +159,35 @@ export async function setupGoldenFiles(config: SetupConfig = {}): Promise<{
 
       if (shouldSkip(testCase, err)) {
         console.log(
-          `Skipping ${testCase.name} - requires server setup (${
-            err.message.split('\n')[0]
-          })`
+          `Skipping ${testCase.name} - requires server setup (${err.message.split('\n')[0]})`
         );
         skipped++;
       } else {
-        console.error(
-          `Failed to generate golden file for ${testCase.name}:`,
-          err.message
-        );
+        console.error(`Failed to generate golden file for ${testCase.name}:`, err.message);
         failed++;
       }
     }
   }
 
   console.log('\nGolden file setup complete!');
-  console.log(
-    `Generated: ${generated}, Skipped: ${skipped}, Failed: ${failed}`
-  );
+  console.log(`Generated: ${generated}, Skipped: ${skipped}, Failed: ${failed}`);
 
   return { generated, skipped, failed };
 }
 
 // Run the setup if this script is executed directly
 if (import.meta.main) {
-  setupGoldenFiles().then(({ failed }) => {
-    if (failed > 0) {
-      console.log(
-        '\nSome golden files failed to generate. Check the errors above.'
-      );
+  setupGoldenFiles()
+    .then(({ failed }) => {
+      if (failed > 0) {
+        console.log('\nSome golden files failed to generate. Check the errors above.');
+        process.exit(1);
+      }
+    })
+    .catch((error) => {
+      console.error('Setup failed:', error);
       process.exit(1);
-    }
-  }).catch(error => {
-    console.error('Setup failed:', error);
-    process.exit(1);
-  });
+    });
 }
 
 export { generateGoldenFromGoWithProfile };

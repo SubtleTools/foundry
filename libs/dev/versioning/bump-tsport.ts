@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from "fs";
-import { formatNpmVersion } from "./format";
-import { parseNpmVersion } from "./parse";
+import { readFileSync, writeFileSync } from 'node:fs';
+import { formatNpmVersion } from './format';
+import { parseNpmVersion } from './parse';
 
 /**
  * Increment the TS-specific patch number for a package.
@@ -9,7 +9,7 @@ import { parseNpmVersion } from "./parse";
  * @param packageJsonPath  Absolute path to package.json
  */
 export function bumpTsportVersion(packageJsonPath: string): void {
-  const pkg = JSON.parse(readFileSync(packageJsonPath, "utf8"));
+  const pkg = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
   const oldVersion = pkg.version;
 
   const info = parseNpmVersion(oldVersion);
@@ -18,7 +18,7 @@ export function bumpTsportVersion(packageJsonPath: string): void {
   if (newTsPatch > 99) {
     throw new Error(
       `tsPatch would exceed 99 (current: ${info.tsPatch}). ` +
-        `Consider bumping the Go version instead.`,
+        `Consider bumping the Go version instead.`
     );
   }
 
@@ -32,11 +32,9 @@ export function bumpTsportVersion(packageJsonPath: string): void {
     lastUpdated: new Date().toISOString(),
   };
 
-  writeFileSync(packageJsonPath, JSON.stringify(pkg, null, 2) + "\n");
+  writeFileSync(packageJsonPath, `${JSON.stringify(pkg, null, 2)}\n`);
 
   console.log(`TSPort version bumped: ${oldVersion} → ${newVersion}`);
-  console.log(
-    `Go source version: ${pkg.goSourceVersion ?? `v${goVersion}`} (unchanged)`,
-  );
+  console.log(`Go source version: ${pkg.goSourceVersion ?? `v${goVersion}`} (unchanged)`);
   console.log(`TSPort patch: ${newTsPatch}`);
 }

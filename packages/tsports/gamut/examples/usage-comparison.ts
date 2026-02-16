@@ -3,44 +3,43 @@
  * Demonstrates both TypeScript-style and Go-style APIs
  */
 
-// TypeScript-style API (recommended)
-import {
-  graphemeClusterCount,
-  stringWidth,
-  reverseString,
-  newGraphemes,
-  stepString,
-  INITIAL_STATE
-} from '../src/index.js';
-
 // Go-style API (for compatibility)
 import {
   GraphemeClusterCount,
-  StringWidth,
-  ReverseString,
   NewGraphemes,
-  StepString
+  ReverseString,
+  StepString,
+  StringWidth,
 } from '../src/go-style.js';
+// TypeScript-style API (recommended)
+import {
+  graphemeClusterCount,
+  INITIAL_STATE,
+  newGraphemes,
+  reverseString,
+  stepString,
+  stringWidth,
+} from '../src/index.js';
 
 console.log('=== TypeScript-style API ===\n');
 
 // Basic grapheme cluster counting
 console.log('Grapheme cluster counting:');
-const complexEmoji = "🇩🇪🏳️‍🌈";
+const complexEmoji = '🇩🇪🏳️‍🌈';
 console.log(`"${complexEmoji}" has ${graphemeClusterCount(complexEmoji)} grapheme clusters`);
 
-const devanagari = "नमस्ते";
+const devanagari = 'नमस्ते';
 console.log(`"${devanagari}" has ${graphemeClusterCount(devanagari)} grapheme clusters`);
 
-const simple = "Hello";
+const simple = 'Hello';
 console.log(`"${simple}" has ${graphemeClusterCount(simple)} grapheme clusters\n`);
 
 // String width calculation
 console.log('String width calculation:');
-const mixed = "Hello 世界";
+const mixed = 'Hello 世界';
 console.log(`"${mixed}" has display width: ${stringWidth(mixed)}`);
 
-const wideChars = "こんにちは";
+const wideChars = 'こんにちは';
 console.log(`"${wideChars}" has display width: ${stringWidth(wideChars)}\n`);
 
 // String reversal preserving grapheme clusters
@@ -50,18 +49,19 @@ console.log(`Reversed: "${reverseString(complexEmoji)}"\n`);
 
 // Grapheme cluster iteration
 console.log('Grapheme cluster iteration:');
-const testStr = "a̧🧑‍💻";
+const testStr = 'a̧🧑‍💻';
 const iterator = newGraphemes(testStr);
-let cluster;
+let cluster = iterator.next();
 let index = 0;
-while ((cluster = iterator.next()) !== null) {
+while (cluster !== null) {
   console.log(`  Cluster ${index++}: "${cluster.cluster}" (${cluster.runes.length} runes)`);
+  cluster = iterator.next();
 }
 console.log();
 
 // Step-by-step processing
 console.log('Step-by-step processing:');
-let remaining = "🇺🇸a";
+let remaining = '🇺🇸a';
 let state = INITIAL_STATE;
 index = 0;
 while (remaining.length > 0) {
@@ -86,12 +86,12 @@ console.log('Go-style string reversal:');
 console.log(`Reversed: "${ReverseString(complexEmoji)}"\n`);
 
 console.log('Go-style step processing:');
-const [segment, remainder, length, newState] = StepString("🇺🇸a", -1);
+const [segment, remainder, length, _newState] = StepString('🇺🇸a', -1);
 console.log(`First segment: "${segment}" (${length} bytes)`);
 console.log(`Remaining: "${remainder}"`);
 
 console.log('\nGo-style grapheme iteration:');
-const goGraphemes = NewGraphemes("a̧🧑‍💻");
+const goGraphemes = NewGraphemes('a̧🧑‍💻');
 index = 0;
 while (goGraphemes.Next()) {
   const runes = goGraphemes.Runes();

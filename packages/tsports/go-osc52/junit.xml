@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="bun test" tests="28" assertions="32" failures="0" skipped="0" time="0.081699">
+  <testsuite name="test/basic.test.ts" file="test/basic.test.ts" tests="27" assertions="31" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Copy operations (matching Go TestCopy)" file="test/basic.test.ts" line="15" tests="8" assertions="8" failures="0" skipped="0" time="0.002" hostname="mac.local">
+      <testcase name="hello world" classname="Copy operations (matching Go TestCopy)" time="0.002418" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="empty string" classname="Copy operations (matching Go TestCopy)" time="0.000032" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world primary" classname="Copy operations (matching Go TestCopy)" time="0" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world tmux mode" classname="Copy operations (matching Go TestCopy)" time="0" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world screen mode" classname="Copy operations (matching Go TestCopy)" time="0.0002" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world screen mode longer than 76 bytes string" classname="Copy operations (matching Go TestCopy)" time="0.000007" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world with limit 11" classname="Copy operations (matching Go TestCopy)" time="0.000003" file="test/basic.test.ts" line="85" assertions="1" />
+      <testcase name="hello world with limit 10" classname="Copy operations (matching Go TestCopy)" time="0" file="test/basic.test.ts" line="85" assertions="1" />
+    </testsuite>
+    <testsuite name="Query operations (matching Go TestQuery)" file="test/basic.test.ts" line="95" tests="6" assertions="6" failures="0" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="query system clipboard" classname="Query operations (matching Go TestQuery)" time="0.000064" file="test/basic.test.ts" line="136" assertions="1" />
+      <testcase name="query primary clipboard" classname="Query operations (matching Go TestQuery)" time="0.000003" file="test/basic.test.ts" line="136" assertions="1" />
+      <testcase name="query system clipboard tmux mode" classname="Query operations (matching Go TestQuery)" time="0" file="test/basic.test.ts" line="136" assertions="1" />
+      <testcase name="query system clipboard screen mode" classname="Query operations (matching Go TestQuery)" time="0" file="test/basic.test.ts" line="136" assertions="1" />
+      <testcase name="query primary clipboard tmux mode" classname="Query operations (matching Go TestQuery)" time="0.001499" file="test/basic.test.ts" line="136" assertions="1" />
+      <testcase name="query primary clipboard screen mode" classname="Query operations (matching Go TestQuery)" time="0" file="test/basic.test.ts" line="136" assertions="1" />
+    </testsuite>
+    <testsuite name="Clear operations (matching Go TestClear)" file="test/basic.test.ts" line="143" tests="3" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="clear system clipboard" classname="Clear operations (matching Go TestClear)" time="0.000015" file="test/basic.test.ts" line="166" assertions="1" />
+      <testcase name="clear system clipboard tmux mode" classname="Clear operations (matching Go TestClear)" time="0.000004" file="test/basic.test.ts" line="166" assertions="1" />
+      <testcase name="clear system clipboard screen mode" classname="Clear operations (matching Go TestClear)" time="0" file="test/basic.test.ts" line="166" assertions="1" />
+    </testsuite>
+    <testsuite name="WriteTo operations (matching Go TestWriteTo)" file="test/basic.test.ts" line="173" tests="2" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="hello world" classname="WriteTo operations (matching Go TestWriteTo)" time="0.000789" file="test/basic.test.ts" line="194" assertions="3" />
+      <testcase name="empty string" classname="WriteTo operations (matching Go TestWriteTo)" time="0.000062" file="test/basic.test.ts" line="194" assertions="3" />
+    </testsuite>
+    <testsuite name="TypeScript-native API functionality" file="test/basic.test.ts" line="217" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="basic sequence creation and string conversion" classname="TypeScript-native API functionality" time="0.000041" file="test/basic.test.ts" line="218" assertions="1" />
+      <testcase name="fluent API chaining" classname="TypeScript-native API functionality" time="0.000063" file="test/basic.test.ts" line="223" assertions="1" />
+      <testcase name="query operation" classname="TypeScript-native API functionality" time="0.000018" file="test/basic.test.ts" line="229" assertions="1" />
+      <testcase name="clear operation" classname="TypeScript-native API functionality" time="0.000013" file="test/basic.test.ts" line="234" assertions="1" />
+    </testsuite>
+    <testsuite name="Edge cases and error conditions" file="test/basic.test.ts" line="240" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="negative limit gets normalized to 0" classname="Edge cases and error conditions" time="0.000029" file="test/basic.test.ts" line="241" assertions="1" />
+      <testcase name="string exceeding limit returns empty" classname="Edge cases and error conditions" time="0.00001" file="test/basic.test.ts" line="246" assertions="1" />
+      <testcase name="multiple string arguments get joined with spaces" classname="Edge cases and error conditions" time="0.000018" file="test/basic.test.ts" line="251" assertions="1" />
+      <testcase name="SetString method works correctly" classname="Edge cases and error conditions" time="0.000039" file="test/basic.test.ts" line="256" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/automated-cases.test.ts" file="test/automated-cases.test.ts" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="test/automated-cases.test.ts" line="69" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="No test cases found - run example test" classname="Automated Compatibility Tests" time="0" file="test/automated-cases.test.ts" line="71" assertions="1" />
+    </testsuite>
+  </testsuite>
+</testsuites>

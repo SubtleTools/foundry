@@ -1,0 +1,19 @@
+{
+  "id": "002",
+  "name": "color-basic",
+  "category": "basic",
+  "description": "Basic foreground color application",
+  "complexity": 2,
+  "dependencies": [
+    "001"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:09.685Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "2003",
+  "name": "color-blue",
+  "category": "color",
+  "description": "blue foreground color",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:12.022Z",
+  "version": "1.0.0"
+}

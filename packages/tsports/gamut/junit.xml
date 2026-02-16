@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="bun test" tests="30" assertions="79" failures="1" skipped="0" time="1.037836">
+  <testsuite name="test/themes.test.ts" file="test/themes.test.ts" tests="2" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Themes" file="test/themes.test.ts" line="6" tests="2" assertions="2" failures="0" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="should list all colors in theme" classname="Themes" time="0.001535" file="test/themes.test.ts" line="7" assertions="1" />
+      <testcase name="should retrieve color by role" classname="Themes" time="0.000059" file="test/themes.test.ts" line="22" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/palette-data.test.ts" file="test/palette-data.test.ts" tests="6" assertions="19" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Palette Data" file="test/palette-data.test.ts" line="5" tests="6" assertions="19" failures="0" skipped="0" time="0.01" hostname="mac.local">
+      <testcase name="should find closest Wikipedia color name" classname="Palette Data" time="0.008711" file="test/palette-data.test.ts" line="6" assertions="10" />
+      <testcase name="should clamp to Wikipedia colors" classname="Palette Data" time="0.002229" file="test/palette-data.test.ts" line="27" assertions="3" />
+      <testcase name="should have correct number of Crayola colors" classname="Palette Data" time="0.000067" file="test/palette-data.test.ts" line="41" assertions="1" />
+      <testcase name="should have correct number of Monokai colors" classname="Palette Data" time="0.000025" file="test/palette-data.test.ts" line="45" assertions="1" />
+      <testcase name="should find Monokai color by name" classname="Palette Data" time="0.000038" file="test/palette-data.test.ts" line="49" assertions="2" />
+      <testcase name="should filter Monokai colors by partial name" classname="Palette Data" time="0.0002" file="test/palette-data.test.ts" line="57" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/palette.test.ts" file="test/palette.test.ts" tests="7" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Palette" file="test/palette.test.ts" line="5" tests="7" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle hex conversions" classname="Palette" time="0.000034" file="test/palette.test.ts" line="41" assertions="1" />
+      <testcase name="should find closest matching color name" classname="Palette" time="0.000077" file="test/palette.test.ts" line="47" assertions="4" />
+      <testcase name="should clamp colors to palette" classname="Palette" time="0.000057" file="test/palette.test.ts" line="62" assertions="3" />
+      <testcase name="should list all colors" classname="Palette" time="0.000002" file="test/palette.test.ts" line="77" assertions="1" />
+      <testcase name="should mix palettes" classname="Palette" time="0.000107" file="test/palette.test.ts" line="81" assertions="3" />
+      <testcase name="should filter colors by name" classname="Palette" time="0.000049" file="test/palette.test.ts" line="92" assertions="1" />
+      <testcase name="should retrieve color by name" classname="Palette" time="0.000036" file="test/palette.test.ts" line="97" assertions="5" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/basic.test.ts" file="test/basic.test.ts" tests="6" assertions="7" failures="1" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Gamut Basic Tests" file="test/basic.test.ts" line="6" tests="6" assertions="7" failures="1" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="hex parsing" classname="Gamut Basic Tests" time="0.000036" file="test/basic.test.ts" line="7" assertions="1" />
+      <testcase name="invalid hex returns black" classname="Gamut Basic Tests" time="0.000018" file="test/basic.test.ts" line="12" assertions="1" />
+      <testcase name="blends" classname="Gamut Basic Tests" time="0.000161" file="test/basic.test.ts" line="17" assertions="1" />
+      <testcase name="Monokai palette" classname="Gamut Basic Tests" time="0.000021" file="test/basic.test.ts" line="24" assertions="2" />
+      <testcase name="Monokai palette filter" classname="Gamut Basic Tests" time="0.000023" file="test/basic.test.ts" line="31" assertions="2" />
+      <testcase name="Go-Style Hex alias" classname="Gamut Basic Tests" time="0.001168" file="test/basic.test.ts" line="37" assertions="0">
+        <failure type="AssertionError" />
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/automated-cases.test.ts" file="test/automated-cases.test.ts" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="test/automated-cases.test.ts" line="74" tests="1" assertions="1" failures="0" skipped="0" time="0.252" hostname="mac.local">
+      <testcase name="examples/001-analysis should match Go output exactly" classname="Automated Compatibility Tests" time="0.252992" file="test/automated-cases.test.ts" line="82" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/generator.test.ts" file="test/generator.test.ts" tests="1" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Generator" file="test/generator.test.ts" line="20" tests="1" assertions="10" failures="0" skipped="0" time="0.658" hostname="mac.local">
+      <testcase name="should generate colors using various generators" classname="Generator" time="0.658438" file="test/generator.test.ts" line="21" assertions="10" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/colors.test.ts" file="test/colors.test.ts" tests="7" assertions="22" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Color manipulation" file="test/colors.test.ts" line="23" tests="7" assertions="22" failures="0" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="should detect warm/cool colors" classname="Color manipulation" time="0.000126" file="test/colors.test.ts" line="24" assertions="4" />
+      <testcase name="should adjust lightness" classname="Color manipulation" time="0.00016" file="test/colors.test.ts" line="37" assertions="4" />
+      <testcase name="should find complementary color" classname="Color manipulation" time="0.000106" file="test/colors.test.ts" line="52" assertions="2" />
+      <testcase name="should find contrast color" classname="Color manipulation" time="0.000048" file="test/colors.test.ts" line="65" assertions="2" />
+      <testcase name="should calculate hue offsets" classname="Color manipulation" time="0.001136" file="test/colors.test.ts" line="78" assertions="4" />
+      <testcase name="should calculate lightness offsets" classname="Color manipulation" time="0.000325" file="test/colors.test.ts" line="93" assertions="4" />
+      <testcase name="should calculate tetradic colors" classname="Color manipulation" time="0.000037" file="test/colors.test.ts" line="164" assertions="2" />
+    </testsuite>
+  </testsuite>
+</testsuites>

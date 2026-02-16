@@ -1,0 +1,91 @@
+language: "typescript"
+type: "library"
+
+tasks:
+  build:
+    command: "bun"
+    args: ["tsc", "--project", "tsconfig.build.json"]
+    deps: ["clean"]
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
+    outputs:
+      - "dist/**/*"
+
+  build-docs:
+    command: "bun"
+    args: ["typedoc"]
+    deps: ["build"]
+    inputs:
+      - "src/**/*"
+      - "typedoc.json"
+      - "README.md"
+    outputs:
+      - "docs/**/*"
+
+  clean:
+    command: "bun"
+    args: [
+      "-e",
+      'const fs = require("fs"); if (fs.existsSync("dist")) fs.rmSync("dist", {recursive: true, force: true})',
+    ]
+
+  dev:
+    command: "bun"
+    args: ["run", "--watch", "src/index.ts"]
+    local: true
+
+  docs:
+    command: "bun"
+    args: ["serve", "docs", "--port", "3000"]
+    deps:
+      - build-docs
+    local: true
+
+  format:
+    command: "dprint"
+    args: ["fmt"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "*.{json,md,yml,yaml}"
+      - "biome.json"
+      - "dprint.json"
+
+  lint:
+    command: "biome"
+    args: ["check", "src", "test", "--no-errors-on-unmatched"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "biome.json"
+
+  prepack:
+    deps:
+      - clean
+      - lint
+      - format
+      - build
+      - test
+      - build-docs
+
+  setup:
+    command: "bun"
+    args: ["run", "scripts/setup-reference.ts"]
+    local: true
+    env:
+      GO_REPO: "https://github.com/charmbracelet/lipgloss"
+
+
+  version-bump-go:
+    command: "bun"
+    args: ["run", "../../../libs/dev/versioning/cli-bump-go.ts"]
+    local: true
+
+  version-bump-tsport:
+    command: "bun"
+    args: ["run", "../../../libs/dev/versioning/cli-bump-tsport.ts"]
+    local: true
+
+tags: ["tests"]

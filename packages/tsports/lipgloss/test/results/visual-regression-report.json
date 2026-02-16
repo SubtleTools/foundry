@@ -1,0 +1,437 @@
+{
+  "summary": {
+    "total": 308,
+    "passed": 237,
+    "failed": 71,
+    "passRate": 76.95
+  },
+  "timestamp": "2025-08-20T01:13:02.949Z",
+  "failedTests": [
+    {
+      "name": "fg_hex__ff0000",
+      "reason": "Length mismatch: Go=31, TS=12",
+      "goOutputLength": 31,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__00ff00",
+      "reason": "Length mismatch: Go=31, TS=12",
+      "goOutputLength": 31,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__0000ff",
+      "reason": "Length mismatch: Go=31, TS=12",
+      "goOutputLength": 31,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__ffff00",
+      "reason": "Length mismatch: Go=33, TS=12",
+      "goOutputLength": 33,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__ff00ff",
+      "reason": "Length mismatch: Go=33, TS=12",
+      "goOutputLength": 33,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__00ffff",
+      "reason": "Length mismatch: Go=33, TS=12",
+      "goOutputLength": 33,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__ffffff",
+      "reason": "Length mismatch: Go=35, TS=12",
+      "goOutputLength": 35,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_hex__000000",
+      "reason": "Length mismatch: Go=29, TS=12",
+      "goOutputLength": 29,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_9",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_10",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_11",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_12",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_13",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_14",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "fg_ansi_15",
+      "reason": "Length mismatch: Go=21, TS=12",
+      "goOutputLength": 21,
+      "tsOutputLength": 12
+    },
+    {
+      "name": "bg_hex__ff0000",
+      "reason": "Length mismatch: Go=29, TS=10",
+      "goOutputLength": 29,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__00ff00",
+      "reason": "Length mismatch: Go=29, TS=10",
+      "goOutputLength": 29,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__0000ff",
+      "reason": "Length mismatch: Go=29, TS=10",
+      "goOutputLength": 29,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__ffff00",
+      "reason": "Length mismatch: Go=31, TS=10",
+      "goOutputLength": 31,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__ff00ff",
+      "reason": "Length mismatch: Go=31, TS=10",
+      "goOutputLength": 31,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__00ffff",
+      "reason": "Length mismatch: Go=31, TS=10",
+      "goOutputLength": 31,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__ffffff",
+      "reason": "Length mismatch: Go=33, TS=10",
+      "goOutputLength": 33,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_hex__000000",
+      "reason": "Length mismatch: Go=27, TS=10",
+      "goOutputLength": 27,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_9",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_10",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_11",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_12",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_13",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_14",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bg_ansi_15",
+      "reason": "Length mismatch: Go=20, TS=10",
+      "goOutputLength": 20,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "bold_true",
+      "reason": "Length mismatch: Go=17, TS=9",
+      "goOutputLength": 17,
+      "tsOutputLength": 9
+    },
+    {
+      "name": "italic_true",
+      "reason": "Length mismatch: Go=19, TS=11",
+      "goOutputLength": 19,
+      "tsOutputLength": 11
+    },
+    {
+      "name": "underline_true",
+      "reason": "Length mismatch: Go=152, TS=14",
+      "goOutputLength": 152,
+      "tsOutputLength": 14
+    },
+    {
+      "name": "strikethrough_true",
+      "reason": "Length mismatch: Go=162, TS=18",
+      "goOutputLength": 162,
+      "tsOutputLength": 18
+    },
+    {
+      "name": "bold_italic",
+      "reason": "Length mismatch: Go=21, TS=11",
+      "goOutputLength": 21,
+      "tsOutputLength": 11
+    },
+    {
+      "name": "bold_underline",
+      "reason": "Length mismatch: Go=178, TS=14",
+      "goOutputLength": 178,
+      "tsOutputLength": 14
+    },
+    {
+      "name": "bold_strikethrough",
+      "reason": "Length mismatch: Go=196, TS=18",
+      "goOutputLength": 196,
+      "tsOutputLength": 18
+    },
+    {
+      "name": "italic_underline",
+      "reason": "Length mismatch: Go=204, TS=16",
+      "goOutputLength": 204,
+      "tsOutputLength": 16
+    },
+    {
+      "name": "italic_strikethrough",
+      "reason": "Length mismatch: Go=218, TS=20",
+      "goOutputLength": 218,
+      "tsOutputLength": 20
+    },
+    {
+      "name": "underline_strikethrough",
+      "reason": "Length mismatch: Go=297, TS=23",
+      "goOutputLength": 297,
+      "tsOutputLength": 23
+    },
+    {
+      "name": "all_styles",
+      "reason": "Length mismatch: Go=164, TS=10",
+      "goOutputLength": 164,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "padding_all_1",
+      "reason": "Length mismatch: Go=26, TS=10",
+      "goOutputLength": 26,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "padding_all_2",
+      "reason": "Length mismatch: Go=54, TS=14",
+      "goOutputLength": 54,
+      "tsOutputLength": 14
+    },
+    {
+      "name": "padding_all_3",
+      "reason": "Length mismatch: Go=90, TS=18",
+      "goOutputLength": 90,
+      "tsOutputLength": 18
+    },
+    {
+      "name": "padding_all_5",
+      "reason": "Length mismatch: Go=186, TS=26",
+      "goOutputLength": 186,
+      "tsOutputLength": 26
+    },
+    {
+      "name": "padding_hv_1_2",
+      "reason": "Length mismatch: Go=35, TS=13",
+      "goOutputLength": 35,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "padding_hv_2_4",
+      "reason": "Length mismatch: Go=79, TS=19",
+      "goOutputLength": 79,
+      "tsOutputLength": 19
+    },
+    {
+      "name": "padding_trbl_1_2_3_4",
+      "reason": "Length mismatch: Go=79, TS=19",
+      "goOutputLength": 79,
+      "tsOutputLength": 19
+    },
+    {
+      "name": "padding_trbl_2_0_2_0",
+      "reason": "Length mismatch: Go=49, TS=13",
+      "goOutputLength": 49,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "valign_top",
+      "reason": "Length mismatch: Go=49, TS=13",
+      "goOutputLength": 49,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "valign_middle",
+      "reason": "Length mismatch: Go=49, TS=13",
+      "goOutputLength": 49,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "valign_bottom",
+      "reason": "Length mismatch: Go=49, TS=13",
+      "goOutputLength": 49,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "complex_1",
+      "reason": "Length mismatch: Go=434, TS=129",
+      "goOutputLength": 434,
+      "tsOutputLength": 129
+    },
+    {
+      "name": "complex_2",
+      "reason": "Length mismatch: Go=263, TS=123",
+      "goOutputLength": 263,
+      "tsOutputLength": 123
+    },
+    {
+      "name": "multiline_styled",
+      "reason": "Length mismatch: Go=186, TS=146",
+      "goOutputLength": 186,
+      "tsOutputLength": 146
+    },
+    {
+      "name": "unicode_styled",
+      "reason": "Length mismatch: Go=194, TS=178",
+      "goOutputLength": 194,
+      "tsOutputLength": 178
+    },
+    {
+      "name": "unicode_styled_0",
+      "reason": "Length mismatch: Go=16, TS=8",
+      "goOutputLength": 16,
+      "tsOutputLength": 8
+    },
+    {
+      "name": "unicode_styled_1",
+      "reason": "Length mismatch: Go=22, TS=14",
+      "goOutputLength": 22,
+      "tsOutputLength": 14
+    },
+    {
+      "name": "unicode_styled_2",
+      "reason": "Length mismatch: Go=18, TS=10",
+      "goOutputLength": 18,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "unicode_styled_3",
+      "reason": "Length mismatch: Go=21, TS=13",
+      "goOutputLength": 21,
+      "tsOutputLength": 13
+    },
+    {
+      "name": "unicode_styled_4",
+      "reason": "Length mismatch: Go=14, TS=6",
+      "goOutputLength": 14,
+      "tsOutputLength": 6
+    },
+    {
+      "name": "empty_with_bg",
+      "reason": "Length mismatch: Go=32, TS=0",
+      "goOutputLength": 32,
+      "tsOutputLength": 0
+    },
+    {
+      "name": "mixed_content",
+      "reason": "Difference at position 65: Go=' ' (32), TS='A' (65)",
+      "goOutputLength": 111,
+      "tsOutputLength": 111
+    },
+    {
+      "name": "advanced_styling_combo",
+      "reason": "Length mismatch: Go=43, TS=20",
+      "goOutputLength": 43,
+      "tsOutputLength": 20
+    },
+    {
+      "name": "gradient_effect_0",
+      "reason": "Length mismatch: Go=29, TS=10",
+      "goOutputLength": 29,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "gradient_effect_1",
+      "reason": "Length mismatch: Go=31, TS=10",
+      "goOutputLength": 31,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "gradient_effect_2",
+      "reason": "Length mismatch: Go=33, TS=10",
+      "goOutputLength": 33,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "gradient_effect_3",
+      "reason": "Length mismatch: Go=33, TS=10",
+      "goOutputLength": 33,
+      "tsOutputLength": 10
+    },
+    {
+      "name": "advanced_layout_2",
+      "reason": "Length mismatch: Go=631, TS=85",
+      "goOutputLength": 631,
+      "tsOutputLength": 85
+    },
+    {
+      "name": "cross_profile_test",
+      "reason": "Length mismatch: Go=51, TS=32",
+      "goOutputLength": 51,
+      "tsOutputLength": 32
+    },
+    {
+      "name": "profile_fallback",
+      "reason": "Execution error: Error: TypeScript execution failed for profile_fallback: Error: Invalid color value: \"invalidcolor\"",
+      "goOutputLength": 0,
+      "tsOutputLength": 0
+    }
+  ]
+}

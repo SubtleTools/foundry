@@ -1,0 +1,10 @@
+\x1b[1;94m/work/tsports/packages/tsports/lipgloss/test/corpus/example/507-example-files\x1b[0m 
+\x1b[90m├──\x1b[0m \x1b[1;94mcase.go\x1b[0m 
+\x1b[90m├──\x1b[0m \x1b[1;94mcase.ts\x1b[0m 
+\x1b[90m├──\x1b[0m \x1b[1;94mexpected.out\x1b[0m 
+\x1b[90m├──\x1b[0m \x1b[1;94mmetadata.json\x1b[0m 
+\x1b[90m└──\x1b[0m \x1b[1;94mtestdata\x1b[0m 
+\x1b[90m   \x1b[0m \x1b[90m├──\x1b[0m \x1b[1;94m507-example-files_ansi.golden\x1b[0m 
+\x1b[90m   \x1b[0m \x1b[90m├──\x1b[0m \x1b[1;94m507-example-files_ansi256.golden\x1b[0m 
+\x1b[90m   \x1b[0m \x1b[90m├──\x1b[0m \x1b[1;94m507-example-files_ascii.golden\x1b[0m 
+\x1b[90m   \x1b[0m \x1b[90m└──\x1b[0m \x1b[1;94m507-example-files_truecolor.golden\x1b[0m

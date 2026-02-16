@@ -1,0 +1,22 @@
+[**@tsports/go-osc52 v2.0.14-tsport**](../README.md)
+
+***
+
+[@tsports/go-osc52](../globals.md) / clearSequence
+
+# Function: clearSequence()
+
+> **clearSequence**(): [`Sequence`](../classes/Sequence.md)
+
+Defined in: [core.ts:288](https://github.com/SubtleTools/go-osc52-tsport/blob/242e56775bc9901b1a189054a569847ca34a826c/src/core.ts#L288)
+
+clearSequence creates a new OSC52 sequence with the ClearOperation.
+This returns a new OSC52 sequence to clear the clipboard.
+
+This is syntactic sugar for newSequence().clear().
+
+## Returns
+
+[`Sequence`](../classes/Sequence.md)
+
+A new Sequence instance with clear operation

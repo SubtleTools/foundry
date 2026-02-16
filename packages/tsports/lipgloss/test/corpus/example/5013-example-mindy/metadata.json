@@ -1,0 +1,30 @@
+{
+  "id": "5013",
+  "name": "example-mindy",
+  "category": "example",
+  "description": "Example: mindy",
+  "complexity": 7,
+  "dependencies": [
+    "101",
+    "002",
+    "003",
+    "301"
+  ],
+  "apiMethods": [
+    "NewRenderer",
+    "Right",
+    "HiddenBorder",
+    "Style",
+    "Color",
+    "NewStyle",
+    "Width",
+    "Align",
+    "New",
+    "Sprint",
+    "Foreground",
+    "Background",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:23.965Z",
+  "version": "1.0.0"
+}

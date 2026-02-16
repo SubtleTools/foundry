@@ -1,0 +1,13 @@
+Groceries
+├── Fruits 
+│   ├── Blood Orange 
+│   ├── Papaya 
+│   ├── Dragonfruit 
+│   ╰── Yuzu 
+├── Items 
+│   ├── Cat Food 
+│   ├── Nutella 
+│   ╰── Powdered Sugar 
+╰── Veggies 
+    ├── Leek 
+    ╰── Artichoke 

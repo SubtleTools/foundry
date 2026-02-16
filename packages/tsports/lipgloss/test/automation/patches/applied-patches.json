@@ -1,0 +1,19 @@
+[
+  {
+    "name": "force-color-output",
+    "description": "Force color output in non-TTY environments",
+    "files": [
+      "color.go",
+      "renderer.go"
+    ],
+    "applied": true
+  },
+  {
+    "name": "disable-terminal-detection",
+    "description": "Disable dynamic terminal detection for consistent testing",
+    "files": [
+      "lipgloss.go"
+    ],
+    "applied": true
+  }
+]

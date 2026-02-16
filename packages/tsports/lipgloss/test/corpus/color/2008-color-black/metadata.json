@@ -1,0 +1,19 @@
+{
+  "id": "2008",
+  "name": "color-black",
+  "category": "color",
+  "description": "black foreground color",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:13.372Z",
+  "version": "1.0.0"
+}

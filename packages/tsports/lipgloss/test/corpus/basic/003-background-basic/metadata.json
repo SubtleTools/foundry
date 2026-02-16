@@ -1,0 +1,19 @@
+{
+  "id": "003",
+  "name": "background-basic",
+  "category": "basic",
+  "description": "Basic background color application",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Background",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:09.958Z",
+  "version": "1.0.0"
+}

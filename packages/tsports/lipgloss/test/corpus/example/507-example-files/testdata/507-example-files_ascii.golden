@@ -1,0 +1,10 @@
+/work/tsports/packages/tsports/lipgloss/test/corpus/example/507-example-files 
+├── case.go 
+├── case.ts 
+├── expected.out 
+├── metadata.json 
+└── testdata 
+    ├── 507-example-files_ansi.golden 
+    ├── 507-example-files_ansi256.golden 
+    ├── 507-example-files_ascii.golden 
+    └── 507-example-files_truecolor.golden

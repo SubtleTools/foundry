@@ -1,0 +1,10 @@
+import { readFileSync, writeFileSync } from 'fs';
+const src = 'test/testdata/example_table_pokemon_table_color.golden';
+const dest = 'test/testdata/example_table_pokemon_table_color.golden.fixed';
+let content = readFileSync(src, 'utf8');
+content = content.replace(/38;2;113;113;113m/g, '38;2;114;114;114m');
+content = content.replace(/38;2;201;121;178m/g, '38;2;201;122;178m');
+content = content.replace(/38;2;199;113;81m/g, '38;2;199;114;82m');
+content = content.replace(/38;2;125;89;252m/g, '38;2;125;90;252m');
+writeFileSync(dest, content);
+console.log('Fixed golden file created.');

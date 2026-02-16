@@ -1,0 +1,19 @@
+{
+  "id": "2001",
+  "name": "color-red",
+  "category": "color",
+  "description": "red foreground color",
+  "complexity": 2,
+  "dependencies": [
+    "002"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "Foreground",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:11.498Z",
+  "version": "1.0.0"
+}

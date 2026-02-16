@@ -1,0 +1,18 @@
+{
+  "id": "101",
+  "name": "width-basic",
+  "category": "layout",
+  "description": "Basic width setting",
+  "complexity": 2,
+  "dependencies": [
+    "001"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Width",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:10.215Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "basic copy operation",
+    "input": "hello world",
+    "expected": "hello world",
+    "operation": "copy",
+    "clipboard": "system"
+  }
+]

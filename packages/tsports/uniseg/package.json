@@ -1,0 +1,105 @@
+{
+  "name": "@tsports/uniseg",
+  "version": "0.4.701",
+  "goSourceVersion": "v0.4.7",
+  "portInfo": {
+    "sourceRepo": "https://github.com/rivo/uniseg",
+    "sourceVersion": "v0.4.7",
+    "tsportVersion": 1,
+    "lastUpdated": "2024-08-24T12:00:00.000Z"
+  },
+  "description": "Complete TypeScript port of rivo/uniseg with 100% API compatibility. Unicode text segmentation for grapheme clusters, word boundaries, and text width calculation.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "moon run build",
+    "clean": "moon run clean",
+    "dev": "moon run dev",
+    "test": "moon run test",
+    "lint": "moon run lint",
+    "format": "moon run format",
+    "format:check": "dprint check",
+    "docs": "moon run docs",
+    "docs:build": "moon run docs-build",
+    "dev-docs": "moon run dev-docs",
+    "prepack": "moon run prepack",
+    "setup": "moon run setup",
+    "version:bump-go": "moon run version-bump-go",
+    "version:bump-tsport": "moon run version-bump-tsport"
+  },
+  "keywords": [
+    "uniseg",
+    "unicode",
+    "text",
+    "segmentation",
+    "grapheme",
+    "clusters",
+    "emoji",
+    "width",
+    "rivo",
+    "uax29",
+    "text-processing",
+    "typescript"
+  ],
+  "author": {
+    "name": "tsports",
+    "url": "https://github.com/tsports"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsports/uniseg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tsports/uniseg/issues"
+  },
+  "homepage": "https://github.com/tsports/uniseg#readme",
+  "engines": {
+    "node": "20.19.4"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "imports": {
+    "#src/*": "./src/*",
+    "#test/*": "./test/*"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./go-style": {
+      "import": "./dist/go-style.js",
+      "require": "./dist/go-style.cjs",
+      "types": "./dist/go-style.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs",
+      "types": "./dist/types.d.ts"
+    },
+    "./package.json": "./package.json",
+    "./README.md": "./README.md"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "2.2.2",
+    "@moonrepo/cli": "^1.39.4",
+    "@types/bun": "^1.2.20",
+    "bun-types": "^1.2.20",
+    "dprint": "^0.50.1",
+    "tsconfig-moon": "^1.4.1",
+    "typedoc": "^0.28.10",
+    "typedoc-plugin-markdown": "^4.8.1",
+    "typedoc-vitepress-theme": "^1.1.2",
+    "typescript": "^5.9.2",
+    "vitepress": "^1.6.4"
+  }
+}

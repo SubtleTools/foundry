@@ -1,0 +1,11 @@
+$schema: "https://moonrepo.dev/schemas/project.json"
+
+language: "typescript"
+type: "library"
+
+# Inherits tasks from:
+# - .moon/tasks/node.yml (implicit for all Node projects)
+# - .moon/tasks/node-library.yml (implicit for type: library)
+# - .moon/tasks/tag-tests.yml (via "tests" tag)
+
+tags: ["library", "tests"]

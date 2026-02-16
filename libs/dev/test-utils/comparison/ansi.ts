@@ -23,9 +23,17 @@ export function compareAnsiRgb(str1: string, str2: string): boolean {
   const matches1: RegExpExecArray[] = [];
   const matches2: RegExpExecArray[] = [];
 
-  while ((match1 = rgbRegex.exec(str1)) !== null) matches1.push(match1);
+  match1 = rgbRegex.exec(str1);
+  while (match1 !== null) {
+    matches1.push(match1);
+    match1 = rgbRegex.exec(str1);
+  }
   rgbRegex.lastIndex = 0;
-  while ((match2 = rgbRegex.exec(str2)) !== null) matches2.push(match2);
+  match2 = rgbRegex.exec(str2);
+  while (match2 !== null) {
+    matches2.push(match2);
+    match2 = rgbRegex.exec(str2);
+  }
 
   if (matches1.length !== matches2.length) return false;
 
@@ -74,9 +82,17 @@ export function normalizeAnsiRgbSequences(str1: string, str2: string): [string, 
   const matches2: RegExpExecArray[] = [];
 
   let match: RegExpExecArray | null;
-  while ((match = rgbRegex.exec(str1)) !== null) matches1.push(match);
+  match = rgbRegex.exec(str1);
+  while (match !== null) {
+    matches1.push(match);
+    match = rgbRegex.exec(str1);
+  }
   rgbRegex.lastIndex = 0;
-  while ((match = rgbRegex.exec(str2)) !== null) matches2.push(match);
+  match = rgbRegex.exec(str2);
+  while (match !== null) {
+    matches2.push(match);
+    match = rgbRegex.exec(str2);
+  }
 
   for (let i = 0; i < Math.min(matches1.length, matches2.length); i++) {
     const m1 = matches1[i];

@@ -16,7 +16,7 @@ export class KMeans {
     this.centroids = [];
   }
 
-  run(iterations: number = 100): Point[] {
+  run(iterations = 100): Point[] {
     if (this.points.length === 0) return [];
     if (this.points.length <= this.k) return this.points;
 
@@ -45,7 +45,7 @@ export class KMeans {
 
   private assignPoints(): number[] {
     return this.points.map((p) => {
-      let minDist = Infinity;
+      let minDist = Number.POSITIVE_INFINITY;
       let clusterIndex = 0;
       for (let i = 0; i < this.centroids.length; i++) {
         const centroid = this.centroids[i];

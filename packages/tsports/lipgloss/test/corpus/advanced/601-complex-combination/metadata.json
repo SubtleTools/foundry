@@ -1,0 +1,23 @@
+{
+  "id": "601",
+  "name": "complex-combination",
+  "category": "advanced",
+  "description": "Complex style with multiple properties",
+  "complexity": 8,
+  "dependencies": [
+    "103",
+    "104",
+    "201",
+    "301"
+  ],
+  "apiMethods": [
+    "SetColorProfile",
+    "NewStyle",
+    "Color",
+    "RoundedBorder",
+    "Center",
+    "Render"
+  ],
+  "generated": "2025-08-20T23:44:26.809Z",
+  "version": "1.0.0"
+}

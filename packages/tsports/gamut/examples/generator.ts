@@ -3,9 +3,9 @@
  * Port of examples/generator/main.go
  */
 
+import { writeFileSync } from 'node:fs';
 import { MakeColor } from '@tsports/go-colorful';
 import { generate, PastelGenerator } from '../src/index.js';
-import { writeFileSync } from 'node:fs';
 
 const HTML_HEADER = `
 <html>

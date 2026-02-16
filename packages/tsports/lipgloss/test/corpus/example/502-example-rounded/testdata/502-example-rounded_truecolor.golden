@@ -1,0 +1,13 @@
+Groceries
+\x1b[90m├──\x1b[0m Fruits 
+\x1b[90m│  \x1b[0m \x1b[90m├──\x1b[0m Blood Orange 
+\x1b[90m│  \x1b[0m \x1b[90m├──\x1b[0m Papaya 
+\x1b[90m│  \x1b[0m \x1b[90m├──\x1b[0m Dragonfruit 
+\x1b[90m│  \x1b[0m \x1b[90m╰──\x1b[0m Yuzu 
+\x1b[90m├──\x1b[0m Items 
+\x1b[90m│  \x1b[0m \x1b[90m├──\x1b[0m Cat Food 
+\x1b[90m│  \x1b[0m \x1b[90m├──\x1b[0m Nutella 
+\x1b[90m│  \x1b[0m \x1b[90m╰──\x1b[0m Powdered Sugar 
+\x1b[90m╰──\x1b[0m Veggies 
+\x1b[90m   \x1b[0m \x1b[90m├──\x1b[0m Leek 
+\x1b[90m   \x1b[0m \x1b[90m╰──\x1b[0m Artichoke

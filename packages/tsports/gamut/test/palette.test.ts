@@ -3,7 +3,9 @@ import { hex, toHex } from '../src/colors.js';
 import { Palette } from '../src/palette.js';
 
 describe('Palette', () => {
-  let p1: Palette, p2: Palette, p3: Palette;
+  let p1: Palette;
+  let p2: Palette;
+  let p3: Palette;
 
   beforeAll(() => {
     p1 = new Palette();

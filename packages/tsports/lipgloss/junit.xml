@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="bun test" tests="296" assertions="460" failures="0" skipped="2" time="28.216893">
+  <testsuite name="test/visual-diff.test.ts" file="test/visual-diff.test.ts" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Visual Diff Analysis" file="test/visual-diff.test.ts" line="12" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="ANSI Formatting Compatibility" file="test/visual-diff.test.ts" line="13" tests="2" assertions="1" failures="0" skipped="0" time="1.122" hostname="mac.local">
+        <testcase name="Pokemon Table - Color Formatting should provide detailed visual diff analysis" classname="ANSI Formatting Compatibility &amp;gt; Visual Diff Analysis" time="0.70652" file="test/visual-diff.test.ts" line="34" assertions="0" />
+        <testcase name="Layout Example - Text Styling should provide detailed visual diff analysis" classname="ANSI Formatting Compatibility &amp;gt; Visual Diff Analysis" time="0.416556" file="test/visual-diff.test.ts" line="34" assertions="1" />
+      </testsuite>
+      <testsuite name="ANSI Sequence Analysis" file="test/visual-diff.test.ts" line="112" tests="1" assertions="4" failures="0" skipped="0" time="0.924" hostname="mac.local">
+        <testcase name="should detect and parse different ANSI sequence formats" classname="ANSI Sequence Analysis &amp;gt; Visual Diff Analysis" time="0.924758" file="test/visual-diff.test.ts" line="113" assertions="4" />
+      </testsuite>
+      <testsuite name="Character-by-Character Visual Analysis" file="test/visual-diff.test.ts" line="152" tests="1" assertions="1" failures="0" skipped="0" time="0.391" hostname="mac.local">
+        <testcase name="should provide character-level formatting analysis for critical differences" classname="Character-by-Character Visual Analysis &amp;gt; Visual Diff Analysis" time="0.391939" file="test/visual-diff.test.ts" line="153" assertions="1" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/automated-cases.test.ts" file="test/automated-cases.test.ts" tests="98" assertions="0" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Automated Compatibility Tests" file="test/automated-cases.test.ts" line="73" tests="98" assertions="0" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="basic/001-basic-render" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.473" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="basic/001-basic-render &amp;gt; Automated Compatibility Tests" time="0.206437" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="basic/001-basic-render &amp;gt; Automated Compatibility Tests" time="0.267739" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="basic/002-color-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.663" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="basic/002-color-basic &amp;gt; Automated Compatibility Tests" time="0.271287" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="basic/002-color-basic &amp;gt; Automated Compatibility Tests" time="0.392531" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="basic/003-background-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.617" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="basic/003-background-basic &amp;gt; Automated Compatibility Tests" time="0.409901" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="basic/003-background-basic &amp;gt; Automated Compatibility Tests" time="0.208147" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="layout/101-width-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.963" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="layout/101-width-basic &amp;gt; Automated Compatibility Tests" time="0.729478" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="layout/101-width-basic &amp;gt; Automated Compatibility Tests" time="0.234818" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="layout/102-height-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="1.333" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="layout/102-height-basic &amp;gt; Automated Compatibility Tests" time="1.046306" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="layout/102-height-basic &amp;gt; Automated Compatibility Tests" time="0.287614" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="layout/103-padding-all" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.567" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="layout/103-padding-all &amp;gt; Automated Compatibility Tests" time="0.230806" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="layout/103-padding-all &amp;gt; Automated Compatibility Tests" time="0.337019" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="layout/104-margin-all" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.682" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="layout/104-margin-all &amp;gt; Automated Compatibility Tests" time="0.354996" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="layout/104-margin-all &amp;gt; Automated Compatibility Tests" time="0.328382" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="layout/105-align-center" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.898" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="layout/105-align-center &amp;gt; Automated Compatibility Tests" time="0.401855" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="layout/105-align-center &amp;gt; Automated Compatibility Tests" time="0.497176" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2001-color-red" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="1.208" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2001-color-red &amp;gt; Automated Compatibility Tests" time="0.485534" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2001-color-red &amp;gt; Automated Compatibility Tests" time="0.723505" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2002-color-green" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.491" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2002-color-green &amp;gt; Automated Compatibility Tests" time="0.251316" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2002-color-green &amp;gt; Automated Compatibility Tests" time="0.240939" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2003-color-blue" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.445" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2003-color-blue &amp;gt; Automated Compatibility Tests" time="0.216399" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2003-color-blue &amp;gt; Automated Compatibility Tests" time="0.229556" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2004-color-yellow" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.453" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2004-color-yellow &amp;gt; Automated Compatibility Tests" time="0.233868" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2004-color-yellow &amp;gt; Automated Compatibility Tests" time="0.220097" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2005-color-cyan" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.427" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2005-color-cyan &amp;gt; Automated Compatibility Tests" time="0.218645" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2005-color-cyan &amp;gt; Automated Compatibility Tests" time="0.209398" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2006-color-magenta" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.442" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2006-color-magenta &amp;gt; Automated Compatibility Tests" time="0.212857" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2006-color-magenta &amp;gt; Automated Compatibility Tests" time="0.23015" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2007-color-white" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.474" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2007-color-white &amp;gt; Automated Compatibility Tests" time="0.252022" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2007-color-white &amp;gt; Automated Compatibility Tests" time="0.222665" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/2008-color-black" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.415" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/2008-color-black &amp;gt; Automated Compatibility Tests" time="0.212326" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/2008-color-black &amp;gt; Automated Compatibility Tests" time="0.203553" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/211-color-hex-FF0000" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.439" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/211-color-hex-FF0000 &amp;gt; Automated Compatibility Tests" time="0.225741" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/211-color-hex-FF0000 &amp;gt; Automated Compatibility Tests" time="0.214982" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/212-color-hex-00FF00" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.429" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/212-color-hex-00FF00 &amp;gt; Automated Compatibility Tests" time="0.215394" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/212-color-hex-00FF00 &amp;gt; Automated Compatibility Tests" time="0.214131" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/213-color-hex-0000FF" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.45" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/213-color-hex-0000FF &amp;gt; Automated Compatibility Tests" time="0.233998" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/213-color-hex-0000FF &amp;gt; Automated Compatibility Tests" time="0.217713" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/214-color-hex-FFFF00" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.46" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/214-color-hex-FFFF00 &amp;gt; Automated Compatibility Tests" time="0.233337" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/214-color-hex-FFFF00 &amp;gt; Automated Compatibility Tests" time="0.227308" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="color/215-color-rgb-conversion-differences" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.448" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="color/215-color-rgb-conversion-differences &amp;gt; Automated Compatibility Tests" time="0.211808" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="color/215-color-rgb-conversion-differences &amp;gt; Automated Compatibility Tests" time="0.237069" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="border/301-border-normal" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.424" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="border/301-border-normal &amp;gt; Automated Compatibility Tests" time="0.217066" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="border/301-border-normal &amp;gt; Automated Compatibility Tests" time="0.207691" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="border/302-border-rounded" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.415" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="border/302-border-rounded &amp;gt; Automated Compatibility Tests" time="0.212755" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="border/302-border-rounded &amp;gt; Automated Compatibility Tests" time="0.203852" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="border/303-border-block" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.406" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="border/303-border-block &amp;gt; Automated Compatibility Tests" time="0.20289" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="border/303-border-block &amp;gt; Automated Compatibility Tests" time="0.204473" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="border/304-border-thick" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.421" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="border/304-border-thick &amp;gt; Automated Compatibility Tests" time="0.207951" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="border/304-border-thick &amp;gt; Automated Compatibility Tests" time="0.214838" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="border/305-border-double" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.49" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="border/305-border-double &amp;gt; Automated Compatibility Tests" time="0.28835" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="border/305-border-double &amp;gt; Automated Compatibility Tests" time="0.202721" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="component/401-table-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.401" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="component/401-table-basic &amp;gt; Automated Compatibility Tests" time="0.200976" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="component/401-table-basic &amp;gt; Automated Compatibility Tests" time="0.20155" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="component/402-list-basic" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.41" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="component/402-list-basic &amp;gt; Automated Compatibility Tests" time="0.206998" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="component/402-list-basic &amp;gt; Automated Compatibility Tests" time="0.204551" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/501-example-background" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.418" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/501-example-background &amp;gt; Automated Compatibility Tests" time="0.212261" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/501-example-background &amp;gt; Automated Compatibility Tests" time="0.206448" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5010-example-pokemon" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.47" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5010-example-pokemon &amp;gt; Automated Compatibility Tests" time="0.228157" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5010-example-pokemon &amp;gt; Automated Compatibility Tests" time="0.242045" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5011-example-ansi" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.424" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5011-example-ansi &amp;gt; Automated Compatibility Tests" time="0.210686" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5011-example-ansi &amp;gt; Automated Compatibility Tests" time="0.214571" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5012-example-languages" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.428" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5012-example-languages &amp;gt; Automated Compatibility Tests" time="0.2141" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5012-example-languages &amp;gt; Automated Compatibility Tests" time="0.214603" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5013-example-mindy" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.458" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5013-example-mindy &amp;gt; Automated Compatibility Tests" time="0.227686" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5013-example-mindy &amp;gt; Automated Compatibility Tests" time="0.231361" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5014-example-chess" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.429" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5014-example-chess &amp;gt; Automated Compatibility Tests" time="0.21246" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5014-example-chess &amp;gt; Automated Compatibility Tests" time="0.217587" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5015-example-grocery" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.396" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5015-example-grocery &amp;gt; Automated Compatibility Tests" time="0.19789" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5015-example-grocery &amp;gt; Automated Compatibility Tests" time="0.199508" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5016-example-simple" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.41" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5016-example-simple &amp;gt; Automated Compatibility Tests" time="0.203621" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5016-example-simple &amp;gt; Automated Compatibility Tests" time="0.207503" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5017-example-duckduckgoose" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.417" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5017-example-duckduckgoose &amp;gt; Automated Compatibility Tests" time="0.212728" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5017-example-duckduckgoose &amp;gt; Automated Compatibility Tests" time="0.205491" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5018-example-roman" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.41" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5018-example-roman &amp;gt; Automated Compatibility Tests" time="0.203126" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5018-example-roman &amp;gt; Automated Compatibility Tests" time="0.207212" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5019-example-glow" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.417" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5019-example-glow &amp;gt; Automated Compatibility Tests" time="0.205676" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5019-example-glow &amp;gt; Automated Compatibility Tests" time="0.212334" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/502-example-rounded" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.416" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/502-example-rounded &amp;gt; Automated Compatibility Tests" time="0.209648" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/502-example-rounded &amp;gt; Automated Compatibility Tests" time="0.207063" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/5020-example-sublist" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.459" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/5020-example-sublist &amp;gt; Automated Compatibility Tests" time="0.22693" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/5020-example-sublist &amp;gt; Automated Compatibility Tests" time="0.233104" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/503-example-simple" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.446" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/503-example-simple &amp;gt; Automated Compatibility Tests" time="0.230854" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/503-example-simple &amp;gt; Automated Compatibility Tests" time="0.21639" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/504-example-toggle" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.416" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/504-example-toggle &amp;gt; Automated Compatibility Tests" time="0.210257" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/504-example-toggle &amp;gt; Automated Compatibility Tests" time="0.20621" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/505-example-styles" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.408" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/505-example-styles &amp;gt; Automated Compatibility Tests" time="0.200257" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/505-example-styles &amp;gt; Automated Compatibility Tests" time="0.208411" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/506-example-makeup" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.423" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/506-example-makeup &amp;gt; Automated Compatibility Tests" time="0.206031" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/506-example-makeup &amp;gt; Automated Compatibility Tests" time="0.217896" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/507-example-files" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.41" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/507-example-files &amp;gt; Automated Compatibility Tests" time="0.207513" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/507-example-files &amp;gt; Automated Compatibility Tests" time="0.203368" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/508-example-layout" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.493" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/508-example-layout &amp;gt; Automated Compatibility Tests" time="0.246729" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/508-example-layout &amp;gt; Automated Compatibility Tests" time="0.247618" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="example/509-example-ssh" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.434" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="example/509-example-ssh &amp;gt; Automated Compatibility Tests" time="0.206711" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="example/509-example-ssh &amp;gt; Automated Compatibility Tests" time="0.228661" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+      <testsuite name="advanced/601-complex-combination" file="test/automated-cases.test.ts" line="81" tests="2" assertions="0" failures="0" skipped="0" time="0.44" hostname="mac.local">
+        <testcase name="should match Go output exactly (Ascii - NO_COLOR)" classname="advanced/601-complex-combination &amp;gt; Automated Compatibility Tests" time="0.213958" file="test/automated-cases.test.ts" line="82" assertions="0" />
+        <testcase name="should match Go output exactly (TrueColor - FORCE_COLOR=3)" classname="advanced/601-complex-combination &amp;gt; Automated Compatibility Tests" time="0.227962" file="test/automated-cases.test.ts" line="148" assertions="0" />
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="dist_backup/table/table.test.js" file="dist_backup/table/table.test.js" tests="27" assertions="53" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Table" file="dist_backup/table/table.test.js" line="12" tests="22" assertions="39" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="Basic functionality" file="dist_backup/table/table.test.js" line="13" tests="4" assertions="9" failures="0" skipped="0" time="0.003" hostname="mac.local">
+        <testcase name="should create empty table" classname="Basic functionality &amp;gt; Table" time="0.000197" file="dist_backup/table/table.test.js" line="14" assertions="1" />
+        <testcase name="should create table with headers only" classname="Basic functionality &amp;gt; Table" time="0.002836" file="dist_backup/table/table.test.js" line="18" assertions="3" />
+        <testcase name="should create table with data only" classname="Basic functionality &amp;gt; Table" time="0.001421" file="dist_backup/table/table.test.js" line="25" assertions="2" />
+        <testcase name="should create table with headers and data" classname="Basic functionality &amp;gt; Table" time="0.000921" file="dist_backup/table/table.test.js" line="31" assertions="3" />
+      </testsuite>
+      <testsuite name="Data management" file="dist_backup/table/table.test.js" line="42" tests="4" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should handle StringData" classname="Data management &amp;gt; Table" time="0.000901" file="dist_backup/table/table.test.js" line="43" assertions="2" />
+        <testcase name="should provide access to table data via getData()" classname="Data management &amp;gt; Table" time="0.000046" file="dist_backup/table/table.test.js" line="53" assertions="4" />
+        <testcase name="should clear rows" classname="Data management &amp;gt; Table" time="0.00002" file="dist_backup/table/table.test.js" line="65" assertions="1" />
+        <testcase name="should append multiple rows at once" classname="Data management &amp;gt; Table" time="0.00048" file="dist_backup/table/table.test.js" line="73" assertions="2" />
+      </testsuite>
+      <testsuite name="Styling" file="dist_backup/table/table.test.js" line="80" tests="2" assertions="2" failures="0" skipped="0" time="0.001" hostname="mac.local">
+        <testcase name="should apply custom style function" classname="Styling &amp;gt; Table" time="0.001269" file="dist_backup/table/table.test.js" line="81" assertions="1" />
+        <testcase name="should handle alignment in style function" classname="Styling &amp;gt; Table" time="0.000344" file="dist_backup/table/table.test.js" line="97" assertions="1" />
+      </testsuite>
+      <testsuite name="Borders" file="dist_backup/table/table.test.js" line="112" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should render with default borders" classname="Borders &amp;gt; Table" time="0.000318" file="dist_backup/table/table.test.js" line="113" assertions="2" />
+        <testcase name="should render with different border styles" classname="Borders &amp;gt; Table" time="0.000331" file="dist_backup/table/table.test.js" line="120" assertions="1" />
+        <testcase name="should handle border configuration" classname="Borders &amp;gt; Table" time="0.000231" file="dist_backup/table/table.test.js" line="128" assertions="1" />
+        <testcase name="should handle no borders" classname="Borders &amp;gt; Table" time="0.000256" file="dist_backup/table/table.test.js" line="137" assertions="2" />
+      </testsuite>
+      <testsuite name="Sizing" file="dist_backup/table/table.test.js" line="152" tests="3" assertions="4" failures="0" skipped="0" time="0.001" hostname="mac.local">
+        <testcase name="should respect manual width" classname="Sizing &amp;gt; Table" time="0.000644" file="dist_backup/table/table.test.js" line="153" assertions="1" />
+        <testcase name="should handle height constraints" classname="Sizing &amp;gt; Table" time="0.001301" file="dist_backup/table/table.test.js" line="163" assertions="1" />
+        <testcase name="should handle offset for scrolling" classname="Sizing &amp;gt; Table" time="0.00051" file="dist_backup/table/table.test.js" line="174" assertions="2" />
+      </testsuite>
+      <testsuite name="Content wrapping" file="dist_backup/table/table.test.js" line="186" tests="2" assertions="2" failures="0" skipped="0" time="0.001" hostname="mac.local">
+        <testcase name="should wrap long content when enabled" classname="Content wrapping &amp;gt; Table" time="0.001374" file="dist_backup/table/table.test.js" line="187" assertions="1" />
+        <testcase name="should truncate content when wrapping disabled" classname="Content wrapping &amp;gt; Table" time="0.000333" file="dist_backup/table/table.test.js" line="196" assertions="1" />
+      </testsuite>
+      <testsuite name="Edge cases" file="dist_backup/table/table.test.js" line="206" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should handle empty cells" classname="Edge cases &amp;gt; Table" time="0.00079" file="dist_backup/table/table.test.js" line="207" assertions="2" />
+        <testcase name="should handle uneven row lengths" classname="Edge cases &amp;gt; Table" time="0.000613" file="dist_backup/table/table.test.js" line="216" assertions="2" />
+        <testcase name="should handle unicode content" classname="Edge cases &amp;gt; Table" time="0.000682" file="dist_backup/table/table.test.js" line="225" assertions="3" />
+      </testsuite>
+    </testsuite>
+    <testsuite name="StringData" file="dist_backup/table/table.test.js" line="238" tests="5" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create empty data" classname="StringData" time="0.000058" file="dist_backup/table/table.test.js" line="239" assertions="2" />
+      <testcase name="should create data with initial rows" classname="StringData" time="0.000047" file="dist_backup/table/table.test.js" line="244" assertions="4" />
+      <testcase name="should append rows" classname="StringData" time="0.000016" file="dist_backup/table/table.test.js" line="254" assertions="4" />
+      <testcase name="should handle out of bounds access" classname="StringData" time="0.000033" file="dist_backup/table/table.test.js" line="263" assertions="3" />
+      <testcase name="should convert to matrix" classname="StringData" time="0.00026" file="dist_backup/table/table.test.js" line="269" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/align.test.ts" file="test/unit/align.test.ts" tests="18" assertions="23" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="alignTextVertical" file="test/unit/align.test.ts" line="10" tests="18" assertions="23" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="&quot;single line, top alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;single line, center alignment&quot;" classname="alignTextVertical" time="0.00004" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;single line, bottom alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;two lines, bottom alignment&quot;" classname="alignTextVertical" time="0.000014" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;two lines, center alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;two lines, top alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;three lines, bottom alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;three lines, center alignment&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;exact height match, bottom&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;exact height match, center&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;exact height match, top&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;already full height, bottom&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;already full height, center&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;already full height, top&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;center alignment with height 9&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="&quot;center alignment with height 10&quot;" classname="alignTextVertical" time="0" file="test/unit/align.test.ts" line="47" assertions="1" />
+      <testcase name="should handle edge cases" classname="alignTextVertical" time="0.000037" file="test/unit/align.test.ts" line="52" assertions="4" />
+      <testcase name="should work with position values" classname="alignTextVertical" time="0.000006" file="test/unit/align.test.ts" line="66" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/join.test.ts" file="test/unit/join.test.ts" tests="22" assertions="27" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="JoinVertical" file="test/unit/join.test.ts" line="10" tests="7" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="&quot;pos0 (Left alignment)&quot;" classname="JoinVertical" time="0" file="test/unit/join.test.ts" line="44" assertions="1" />
+      <testcase name="&quot;pos1 (Right alignment)&quot;" classname="JoinVertical" time="0" file="test/unit/join.test.ts" line="44" assertions="1" />
+      <testcase name="&quot;pos0.25 (Quarter alignment)&quot;" classname="JoinVertical" time="0.000282" file="test/unit/join.test.ts" line="44" assertions="1" />
+      <testcase name="&quot;center alignment&quot;" classname="JoinVertical" time="0.000015" file="test/unit/join.test.ts" line="44" assertions="1" />
+      <testcase name="&quot;multiple strings&quot;" classname="JoinVertical" time="0.000003" file="test/unit/join.test.ts" line="44" assertions="1" />
+      <testcase name="should handle empty strings" classname="JoinVertical" time="0.000029" file="test/unit/join.test.ts" line="49" assertions="1" />
+      <testcase name="should work with alignment constants" classname="JoinVertical" time="0.000038" file="test/unit/join.test.ts" line="54" assertions="2" />
+    </testsuite>
+    <testsuite name="JoinHorizontal" file="test/unit/join.test.ts" line="64" tests="8" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="&quot;pos0 (Top alignment)&quot;" classname="JoinHorizontal" time="0.000111" file="test/unit/join.test.ts" line="98" assertions="1" />
+      <testcase name="&quot;pos1 (Bottom alignment)&quot;" classname="JoinHorizontal" time="0.000076" file="test/unit/join.test.ts" line="98" assertions="1" />
+      <testcase name="&quot;pos0.25 (Quarter alignment)&quot;" classname="JoinHorizontal" time="0.000023" file="test/unit/join.test.ts" line="98" assertions="1" />
+      <testcase name="&quot;center alignment&quot;" classname="JoinHorizontal" time="0.000037" file="test/unit/join.test.ts" line="98" assertions="1" />
+      <testcase name="&quot;multiple strings horizontal&quot;" classname="JoinHorizontal" time="0.000024" file="test/unit/join.test.ts" line="98" assertions="1" />
+      <testcase name="should handle single line content" classname="JoinHorizontal" time="0.000076" file="test/unit/join.test.ts" line="103" assertions="1" />
+      <testcase name="should handle empty strings horizontally" classname="JoinHorizontal" time="0.00002" file="test/unit/join.test.ts" line="108" assertions="1" />
+      <testcase name="should work with alignment constants" classname="JoinHorizontal" time="0.000043" file="test/unit/join.test.ts" line="113" assertions="2" />
+    </testsuite>
+    <testsuite name="Join Edge Cases" file="test/unit/join.test.ts" line="123" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle very long content" classname="Join Edge Cases" time="0.00008" file="test/unit/join.test.ts" line="124" assertions="2" />
+      <testcase name="should handle many newlines" classname="Join Edge Cases" time="0.000031" file="test/unit/join.test.ts" line="133" assertions="1" />
+      <testcase name="should handle unicode characters" classname="Join Edge Cases" time="0.000081" file="test/unit/join.test.ts" line="141" assertions="2" />
+      <testcase name="should handle tab characters" classname="Join Edge Cases" time="0.000037" file="test/unit/join.test.ts" line="150" assertions="1" />
+    </testsuite>
+    <testsuite name="Join Performance Edge Cases" file="test/unit/join.test.ts" line="159" tests="3" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle no strings" classname="Join Performance Edge Cases" time="0.000032" file="test/unit/join.test.ts" line="160" assertions="1" />
+      <testcase name="should handle single string" classname="Join Performance Edge Cases" time="0.000011" file="test/unit/join.test.ts" line="165" assertions="1" />
+      <testcase name="should handle position boundaries" classname="Join Performance Edge Cases" time="0.00004" file="test/unit/join.test.ts" line="170" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/color.test.ts" file="test/unit/color.test.ts" tests="9" assertions="17" failures="0" skipped="2" time="0" hostname="mac.local">
+    <testsuite name="Color Profile Tests" file="test/unit/color.test.ts" line="21" tests="1" assertions="0" failures="0" skipped="1" time="0" hostname="mac.local">
+      <testcase name="should render colors correctly based on color profile" classname="Color Profile Tests" time="0" file="test/unit/color.test.ts" line="22" assertions="0">
+        <skipped />
+      </testcase>
+    </testsuite>
+    <testsuite name="ColorUtils.hexToRGB" file="test/unit/color.test.ts" line="59" tests="3" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should convert hex colors to RGB values" classname="ColorUtils.hexToRGB" time="0.000071" file="test/unit/color.test.ts" line="60" assertions="6" />
+      <testcase name="should handle short hex format" classname="ColorUtils.hexToRGB" time="0.000016" file="test/unit/color.test.ts" line="100" assertions="1" />
+      <testcase name="should handle invalid input gracefully" classname="ColorUtils.hexToRGB" time="0.000024" file="test/unit/color.test.ts" line="105" assertions="6" />
+    </testsuite>
+    <testsuite name="Color object" file="test/unit/color.test.ts" line="115" tests="4" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create valid color from hex string" classname="Color object" time="0.000032" file="test/unit/color.test.ts" line="116" assertions="1" />
+      <testcase name="should create valid color from color name" classname="Color object" time="0.000018" file="test/unit/color.test.ts" line="121" assertions="1" />
+      <testcase name="should create valid color from ANSI code" classname="Color object" time="0.000012" file="test/unit/color.test.ts" line="126" assertions="1" />
+      <testcase name="should handle empty color" classname="Color object" time="0.000004" file="test/unit/color.test.ts" line="131" assertions="1" />
+    </testsuite>
+    <testsuite name="Color rendering with different profiles" file="test/unit/color.test.ts" line="137" tests="1" assertions="0" failures="0" skipped="1" time="0" hostname="mac.local">
+      <testcase name="should adapt color output to terminal capabilities" classname="Color rendering with different profiles" time="0" file="test/unit/color.test.ts" line="140" assertions="0">
+        <skipped />
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/borders.test.ts" file="test/unit/borders.test.ts" tests="9" assertions="61" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Border Size Calculations" file="test/unit/borders.test.ts" line="13" tests="1" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should calculate border sizes correctly" classname="Border Size Calculations" time="0.000308" file="test/unit/borders.test.ts" line="21" assertions="14" />
+    </testsuite>
+    <testsuite name="Border Styles" file="test/unit/borders.test.ts" line="75" tests="3" assertions="22" failures="0" skipped="0" time="0.001" hostname="mac.local">
+      <testcase name="should render different border styles correctly" classname="Border Styles" time="0.001234" file="test/unit/borders.test.ts" line="83" assertions="18" />
+      <testcase name="should handle partial borders correctly" classname="Border Styles" time="0.000115" file="test/unit/borders.test.ts" line="121" assertions="4" />
+      <testcase name="should handle border colors" classname="Border Styles" time="0.000679" file="test/unit/borders.test.ts" line="141" assertions="0" />
+    </testsuite>
+    <testsuite name="Border Edge Cases" file="test/unit/borders.test.ts" line="156" tests="3" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle empty content with borders" classname="Border Edge Cases" time="0.000104" file="test/unit/borders.test.ts" line="164" assertions="2" />
+      <testcase name="should handle very small dimensions" classname="Border Edge Cases" time="0.000101" file="test/unit/borders.test.ts" line="171" assertions="1" />
+      <testcase name="should handle multiline content with borders" classname="Border Edge Cases" time="0" file="test/unit/borders.test.ts" line="180" assertions="6" />
+    </testsuite>
+    <testsuite name="Border Constants and Utilities" file="test/unit/borders.test.ts" line="197" tests="2" assertions="16" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should provide correct border style objects" classname="Border Constants and Utilities" time="0.000037" file="test/unit/borders.test.ts" line="198" assertions="11" />
+      <testcase name="should handle BorderStyles constant access" classname="Border Constants and Utilities" time="0.000032" file="test/unit/borders.test.ts" line="213" assertions="5" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/renderer.test.ts" file="test/unit/renderer.test.ts" tests="13" assertions="35" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Renderer Creation and Configuration" file="test/unit/renderer.test.ts" line="12" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create new renderer" classname="Renderer Creation and Configuration" time="0.000145" file="test/unit/renderer.test.ts" line="13" assertions="1" />
+      <testcase name="should set and get color profile" classname="Renderer Creation and Configuration" time="0.000018" file="test/unit/renderer.test.ts" line="18" assertions="4" />
+      <testcase name="should set and get dark background flag" classname="Renderer Creation and Configuration" time="0.00003" file="test/unit/renderer.test.ts" line="34" assertions="2" />
+    </testsuite>
+    <testsuite name="Renderer Style Creation" file="test/unit/renderer.test.ts" line="49" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create new style" classname="Renderer Style Creation" time="0" file="test/unit/renderer.test.ts" line="57" assertions="2" />
+      <testcase name="should create styles with correct renderer reference" classname="Renderer Style Creation" time="0" file="test/unit/renderer.test.ts" line="63" assertions="3" />
+      <testcase name="should inherit renderer settings" classname="Renderer Style Creation" time="0.000605" file="test/unit/renderer.test.ts" line="72" assertions="2" />
+    </testsuite>
+    <testsuite name="Renderer Output Handling" file="test/unit/renderer.test.ts" line="85" tests="1" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle different output streams" classname="Renderer Output Handling" time="0.000035" file="test/unit/renderer.test.ts" line="86" assertions="2" />
+    </testsuite>
+    <testsuite name="Renderer Color Profile Impact" file="test/unit/renderer.test.ts" line="101" tests="2" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should render differently based on color profile" classname="Renderer Color Profile Impact" time="0.000602" file="test/unit/renderer.test.ts" line="102" assertions="4" />
+      <testcase name="should handle profile-specific color rendering" classname="Renderer Color Profile Impact" time="0.000275" file="test/unit/renderer.test.ts" line="127" assertions="4" />
+    </testsuite>
+    <testsuite name="Renderer Dark Background Impact" file="test/unit/renderer.test.ts" line="157" tests="1" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should adapt colors for dark background" classname="Renderer Dark Background Impact" time="0.000062" file="test/unit/renderer.test.ts" line="158" assertions="2" />
+    </testsuite>
+    <testsuite name="Renderer Edge Cases" file="test/unit/renderer.test.ts" line="180" tests="3" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle null/undefined output gracefully" classname="Renderer Edge Cases" time="0.000075" file="test/unit/renderer.test.ts" line="181" assertions="1" />
+      <testcase name="should handle rapid profile changes" classname="Renderer Edge Cases" time="0.000191" file="test/unit/renderer.test.ts" line="189" assertions="5" />
+      <testcase name="should maintain renderer consistency across styles" classname="Renderer Edge Cases" time="0.000065" file="test/unit/renderer.test.ts" line="209" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/runes.test.ts" file="test/unit/runes.test.ts" tests="22" assertions="38" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="StyleRunes" file="test/unit/runes.test.ts" line="12" tests="15" assertions="25" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="&quot;hello 0&quot;" classname="StyleRunes" time="0.000263" file="test/unit/runes.test.ts" line="53" assertions="1" />
+      <testcase name="&quot;你好 1&quot;" classname="StyleRunes" time="0.000044" file="test/unit/runes.test.ts" line="53" assertions="1" />
+      <testcase name="&quot;hello 你好 6,7&quot;" classname="StyleRunes" time="0.000017" file="test/unit/runes.test.ts" line="53" assertions="1" />
+      <testcase name="&quot;hello 1,3&quot;" classname="StyleRunes" time="0.00004" file="test/unit/runes.test.ts" line="53" assertions="1" />
+      <testcase name="&quot;你好 0,1&quot;" classname="StyleRunes" time="0.000016" file="test/unit/runes.test.ts" line="53" assertions="1" />
+      <testcase name="should handle empty input" classname="StyleRunes" time="0.000015" file="test/unit/runes.test.ts" line="61" assertions="1" />
+      <testcase name="should handle empty indices" classname="StyleRunes" time="0.000021" file="test/unit/runes.test.ts" line="69" assertions="1" />
+      <testcase name="should handle out-of-bounds indices" classname="StyleRunes" time="0.000026" file="test/unit/runes.test.ts" line="77" assertions="1" />
+      <testcase name="should handle negative indices" classname="StyleRunes" time="0.000029" file="test/unit/runes.test.ts" line="85" assertions="1" />
+      <testcase name="should handle different styles" classname="StyleRunes" time="0.000213" file="test/unit/runes.test.ts" line="93" assertions="4" />
+      <testcase name="should handle adjacent indices" classname="StyleRunes" time="0.000009" file="test/unit/runes.test.ts" line="111" assertions="1" />
+      <testcase name="should handle non-adjacent indices" classname="StyleRunes" time="0.000029" file="test/unit/runes.test.ts" line="119" assertions="1" />
+      <testcase name="should handle all indices matched" classname="StyleRunes" time="0.000069" file="test/unit/runes.test.ts" line="127" assertions="1" />
+      <testcase name="should handle unicode characters with different styles" classname="StyleRunes" time="0.000111" file="test/unit/runes.test.ts" line="135" assertions="3" />
+      <testcase name="should handle mixed ASCII and unicode" classname="StyleRunes" time="0.000091" file="test/unit/runes.test.ts" line="146" assertions="6" />
+    </testsuite>
+    <testsuite name="StyleRunes Edge Cases" file="test/unit/runes.test.ts" line="162" tests="5" assertions="10" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle duplicate indices" classname="StyleRunes Edge Cases" time="0.000035" file="test/unit/runes.test.ts" line="170" assertions="1" />
+      <testcase name="should handle unsorted indices" classname="StyleRunes Edge Cases" time="0.00003" file="test/unit/runes.test.ts" line="178" assertions="1" />
+      <testcase name="should work with different color profiles" classname="StyleRunes Edge Cases" time="0.00008" file="test/unit/runes.test.ts" line="186" assertions="3" />
+      <testcase name="should handle complex styling combinations" classname="StyleRunes Edge Cases" time="0.000086" file="test/unit/runes.test.ts" line="207" assertions="3" />
+      <testcase name="should handle very long strings" classname="StyleRunes Edge Cases" time="0.000176" file="test/unit/runes.test.ts" line="222" assertions="2" />
+    </testsuite>
+    <testsuite name="StyleRunes Utility Functions" file="test/unit/runes.test.ts" line="233" tests="2" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="formatEscapes utility" classname="StyleRunes Utility Functions" time="0.000013" file="test/unit/runes.test.ts" line="234" assertions="1" />
+      <testcase name="should help debug ANSI sequences" classname="StyleRunes Utility Functions" time="0.000082" file="test/unit/runes.test.ts" line="245" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/ranges.test.ts" file="test/unit/ranges.test.ts" tests="12" assertions="33" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="StyleRanges" file="test/unit/ranges.test.ts" line="13" tests="6" assertions="18" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="StyleRanges functionality" classname="StyleRanges" time="0.000474" file="test/unit/ranges.test.ts" line="107" assertions="10" />
+      <testcase name="should handle empty input" classname="StyleRanges" time="0" file="test/unit/ranges.test.ts" line="119" assertions="1" />
+      <testcase name="should handle ranges that exceed input length" classname="StyleRanges" time="0.000049" file="test/unit/ranges.test.ts" line="124" assertions="2" />
+      <testcase name="should handle zero-length ranges" classname="StyleRanges" time="0.000016" file="test/unit/ranges.test.ts" line="135" assertions="1" />
+      <testcase name="should handle negative ranges gracefully" classname="StyleRanges" time="0.000015" file="test/unit/ranges.test.ts" line="145" assertions="1" />
+      <testcase name="should handle ranges with different color profiles" classname="StyleRanges" time="0.000138" file="test/unit/ranges.test.ts" line="155" assertions="3" />
+    </testsuite>
+    <testsuite name="Range Creation" file="test/unit/ranges.test.ts" line="176" tests="2" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create Range with NewRange" classname="Range Creation" time="0.000031" file="test/unit/ranges.test.ts" line="184" assertions="6" />
+      <testcase name="should handle Range with complex styles" classname="Range Creation" time="0.000073" file="test/unit/ranges.test.ts" line="196" assertions="1" />
+    </testsuite>
+    <testsuite name="Range Edge Cases" file="test/unit/ranges.test.ts" line="209" tests="4" assertions="8" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should reject overlapping ranges" classname="Range Edge Cases" time="0.000079" file="test/unit/ranges.test.ts" line="217" assertions="1" />
+      <testcase name="should handle many ranges" classname="Range Edge Cases" time="0.000166" file="test/unit/ranges.test.ts" line="228" assertions="2" />
+      <testcase name="should handle ranges with unicode characters" classname="Range Edge Cases" time="0.000046" file="test/unit/ranges.test.ts" line="242" assertions="2" />
+      <testcase name="should preserve existing ANSI sequences" classname="Range Edge Cases" time="0.000005" file="test/unit/ranges.test.ts" line="253" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/unit/style.test.ts" file="test/unit/style.test.ts" tests="18" assertions="38" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Style Underline Tests" file="test/unit/style.test.ts" line="22" tests="1" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should render underline correctly" classname="Style Underline Tests" time="0.000213" file="test/unit/style.test.ts" line="32" assertions="4" />
+    </testsuite>
+    <testsuite name="Style Strikethrough Tests" file="test/unit/style.test.ts" line="65" tests="1" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should render strikethrough correctly" classname="Style Strikethrough Tests" time="0.000091" file="test/unit/style.test.ts" line="75" assertions="2" />
+    </testsuite>
+    <testsuite name="Style Basic Rendering" file="test/unit/style.test.ts" line="96" tests="5" assertions="13" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should render basic text without styling" classname="Style Basic Rendering" time="0.000014" file="test/unit/style.test.ts" line="105" assertions="1" />
+      <testcase name="should render text with foreground color" classname="Style Basic Rendering" time="0.000049" file="test/unit/style.test.ts" line="111" assertions="3" />
+      <testcase name="should render text with background color" classname="Style Basic Rendering" time="0.000069" file="test/unit/style.test.ts" line="119" assertions="3" />
+      <testcase name="should render bold text" classname="Style Basic Rendering" time="0.000036" file="test/unit/style.test.ts" line="127" assertions="3" />
+      <testcase name="should render italic text" classname="Style Basic Rendering" time="0.000009" file="test/unit/style.test.ts" line="135" assertions="3" />
+    </testsuite>
+    <testsuite name="Style Copying and Inheritance" file="test/unit/style.test.ts" line="144" tests="2" assertions="5" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should copy style properties correctly" classname="Style Copying and Inheritance" time="0.000236" file="test/unit/style.test.ts" line="153" assertions="2" />
+      <testcase name="should inherit from parent style" classname="Style Copying and Inheritance" time="0.000103" file="test/unit/style.test.ts" line="165" assertions="3" />
+    </testsuite>
+    <testsuite name="Style Dimensions and Padding" file="test/unit/style.test.ts" line="182" tests="3" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle width correctly" classname="Style Dimensions and Padding" time="0.000033" file="test/unit/style.test.ts" line="191" assertions="1" />
+      <testcase name="should handle height correctly" classname="Style Dimensions and Padding" time="0.000025" file="test/unit/style.test.ts" line="199" assertions="1" />
+      <testcase name="should handle padding" classname="Style Dimensions and Padding" time="0.000052" file="test/unit/style.test.ts" line="207" assertions="2" />
+    </testsuite>
+    <testsuite name="Style Edge Cases" file="test/unit/style.test.ts" line="219" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should handle empty string" classname="Style Edge Cases" time="0" file="test/unit/style.test.ts" line="228" assertions="1" />
+      <testcase name="should handle newlines in content" classname="Style Edge Cases" time="0.000005" file="test/unit/style.test.ts" line="234" assertions="3" />
+      <testcase name="should handle tab characters" classname="Style Edge Cases" time="0.00001" file="test/unit/style.test.ts" line="242" assertions="1" />
+      <testcase name="should handle carriage returns" classname="Style Edge Cases" time="0.000007" file="test/unit/style.test.ts" line="249" assertions="1" />
+    </testsuite>
+    <testsuite name="Style Unset Operations" file="test/unit/style.test.ts" line="256" tests="1" assertions="1" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should unset style properties" classname="Style Unset Operations" time="0" file="test/unit/style.test.ts" line="265" assertions="1" />
+    </testsuite>
+    <testsuite name="Style with Different Color Profiles" file="test/unit/style.test.ts" line="277" tests="1" assertions="3" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should adapt to different color profiles" classname="Style with Different Color Profiles" time="0.000162" file="test/unit/style.test.ts" line="278" assertions="3" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/utils/table-structure-comparison.test.ts" file="test/utils/table-structure-comparison.test.ts" tests="7" assertions="26" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Table Structure Comparison" file="test/utils/table-structure-comparison.test.ts" line="4" tests="7" assertions="26" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should detect line prefix (left border) differences" classname="Table Structure Comparison" time="0.000796" file="test/utils/table-structure-comparison.test.ts" line="5" assertions="4" />
+      <testcase name="should detect line suffix (right border) differences" classname="Table Structure Comparison" time="0.000131" file="test/utils/table-structure-comparison.test.ts" line="33" assertions="4" />
+      <testcase name="should detect separator differences between columns" classname="Table Structure Comparison" time="0.000186" file="test/utils/table-structure-comparison.test.ts" line="61" assertions="4" />
+      <testcase name="should detect ANSI code differences in borders" classname="Table Structure Comparison" time="0.000539" file="test/utils/table-structure-comparison.test.ts" line="89" assertions="4" />
+      <testcase name="should allow disabling full line comparison" classname="Table Structure Comparison" time="0.000101" file="test/utils/table-structure-comparison.test.ts" line="120" assertions="2" />
+      <testcase name="should detect multiple structural issues in one line" classname="Table Structure Comparison" time="0.000163" file="test/utils/table-structure-comparison.test.ts" line="145" assertions="4" />
+      <testcase name="should detect differences in all data rows" classname="Table Structure Comparison" time="0.000174" file="test/utils/table-structure-comparison.test.ts" line="180" assertions="4" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/utils/table-comparison.test.ts" file="test/utils/table-comparison.test.ts" tests="8" assertions="43" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Table Comparison Utility" file="test/utils/table-comparison.test.ts" line="8" tests="8" assertions="43" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should detect cell differences with semantic reporting" classname="Table Comparison Utility" time="0.000265" file="test/utils/table-comparison.test.ts" line="9" assertions="8" />
+      <testcase name="should detect header differences" classname="Table Comparison Utility" time="0.00007" file="test/utils/table-comparison.test.ts" line="39" assertions="7" />
+      <testcase name="should detect dimension mismatches" classname="Table Comparison Utility" time="0.0001" file="test/utils/table-comparison.test.ts" line="66" assertions="4" />
+      <testcase name="should handle tables without header separator" classname="Table Comparison Utility" time="0.00005" file="test/utils/table-comparison.test.ts" line="91" assertions="2" />
+      <testcase name="should format differences in human-readable format" classname="Table Comparison Utility" time="0.000162" file="test/utils/table-comparison.test.ts" line="111" assertions="7" />
+      <testcase name="should parse table with widths correctly" classname="Table Comparison Utility" time="0.000085" file="test/utils/table-comparison.test.ts" line="142" assertions="9" />
+      <testcase name="should handle ANSI color codes in table cells" classname="Table Comparison Utility" time="0.000103" file="test/utils/table-comparison.test.ts" line="167" assertions="4" />
+      <testcase name="should respect maxDifferences option" classname="Table Comparison Utility" time="0.000148" file="test/utils/table-comparison.test.ts" line="194" assertions="2" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="src/table/table.test.ts" file="src/table/table.test.ts" tests="27" assertions="53" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Table" file="src/table/table.test.ts" line="18" tests="22" assertions="39" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testsuite name="Basic functionality" file="src/table/table.test.ts" line="19" tests="4" assertions="9" failures="0" skipped="0" time="0.002" hostname="mac.local">
+        <testcase name="should create empty table" classname="Basic functionality &amp;gt; Table" time="0.000311" file="src/table/table.test.ts" line="20" assertions="1" />
+        <testcase name="should create table with headers only" classname="Basic functionality &amp;gt; Table" time="0.001041" file="src/table/table.test.ts" line="25" assertions="3" />
+        <testcase name="should create table with data only" classname="Basic functionality &amp;gt; Table" time="0.001055" file="src/table/table.test.ts" line="34" assertions="2" />
+        <testcase name="should create table with headers and data" classname="Basic functionality &amp;gt; Table" time="0.00061" file="src/table/table.test.ts" line="42" assertions="3" />
+      </testsuite>
+      <testsuite name="Data management" file="src/table/table.test.ts" line="55" tests="4" assertions="9" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should handle StringData" classname="Data management &amp;gt; Table" time="0.000573" file="src/table/table.test.ts" line="56" assertions="2" />
+        <testcase name="should provide access to table data via getData()" classname="Data management &amp;gt; Table" time="0.000021" file="src/table/table.test.ts" line="69" assertions="4" />
+        <testcase name="should clear rows" classname="Data management &amp;gt; Table" time="0.000019" file="src/table/table.test.ts" line="84" assertions="1" />
+        <testcase name="should append multiple rows at once" classname="Data management &amp;gt; Table" time="0.000381" file="src/table/table.test.ts" line="94" assertions="2" />
+      </testsuite>
+      <testsuite name="Styling" file="src/table/table.test.ts" line="103" tests="2" assertions="2" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should apply custom style function" classname="Styling &amp;gt; Table" time="0.00056" file="src/table/table.test.ts" line="104" assertions="1" />
+        <testcase name="should handle alignment in style function" classname="Styling &amp;gt; Table" time="0.000264" file="src/table/table.test.ts" line="123" assertions="1" />
+      </testsuite>
+      <testsuite name="Borders" file="src/table/table.test.ts" line="140" tests="4" assertions="6" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should render with default borders" classname="Borders &amp;gt; Table" time="0.000239" file="src/table/table.test.ts" line="141" assertions="2" />
+        <testcase name="should render with different border styles" classname="Borders &amp;gt; Table" time="0.000221" file="src/table/table.test.ts" line="150" assertions="1" />
+        <testcase name="should handle border configuration" classname="Borders &amp;gt; Table" time="0.000233" file="src/table/table.test.ts" line="160" assertions="1" />
+        <testcase name="should handle no borders" classname="Borders &amp;gt; Table" time="0.00005" file="src/table/table.test.ts" line="171" assertions="2" />
+      </testsuite>
+      <testsuite name="Sizing" file="src/table/table.test.ts" line="188" tests="3" assertions="4" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should respect manual width" classname="Sizing &amp;gt; Table" time="0.000659" file="src/table/table.test.ts" line="189" assertions="1" />
+        <testcase name="should handle height constraints" classname="Sizing &amp;gt; Table" time="0.000573" file="src/table/table.test.ts" line="201" assertions="1" />
+        <testcase name="should handle offset for scrolling" classname="Sizing &amp;gt; Table" time="0.000354" file="src/table/table.test.ts" line="214" assertions="2" />
+      </testsuite>
+      <testsuite name="Content wrapping" file="src/table/table.test.ts" line="228" tests="2" assertions="2" failures="0" skipped="0" time="0.001" hostname="mac.local">
+        <testcase name="should wrap long content when enabled" classname="Content wrapping &amp;gt; Table" time="0.001695" file="src/table/table.test.ts" line="229" assertions="1" />
+        <testcase name="should truncate content when wrapping disabled" classname="Content wrapping &amp;gt; Table" time="0.000813" file="src/table/table.test.ts" line="240" assertions="1" />
+      </testsuite>
+      <testsuite name="Edge cases" file="src/table/table.test.ts" line="252" tests="3" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+        <testcase name="should handle empty cells" classname="Edge cases &amp;gt; Table" time="0.000534" file="src/table/table.test.ts" line="253" assertions="2" />
+        <testcase name="should handle uneven row lengths" classname="Edge cases &amp;gt; Table" time="0.000777" file="src/table/table.test.ts" line="264" assertions="2" />
+        <testcase name="should handle unicode content" classname="Edge cases &amp;gt; Table" time="0.000601" file="src/table/table.test.ts" line="275" assertions="3" />
+      </testsuite>
+    </testsuite>
+    <testsuite name="StringData" file="src/table/table.test.ts" line="290" tests="5" assertions="14" failures="0" skipped="0" time="0" hostname="mac.local">
+      <testcase name="should create empty data" classname="StringData" time="0.000011" file="src/table/table.test.ts" line="291" assertions="2" />
+      <testcase name="should create data with initial rows" classname="StringData" time="0.000002" file="src/table/table.test.ts" line="297" assertions="4" />
+      <testcase name="should append rows" classname="StringData" time="0.000012" file="src/table/table.test.ts" line="309" assertions="4" />
+      <testcase name="should handle out of bounds access" classname="StringData" time="0" file="src/table/table.test.ts" line="320" assertions="3" />
+      <testcase name="should convert to matrix" classname="StringData" time="0.000058" file="src/table/table.test.ts" line="328" assertions="1" />
+    </testsuite>
+  </testsuite>
+  <testsuite name="test/corpus/example/pokemon-comparison.test.ts" file="test/corpus/example/pokemon-comparison.test.ts" tests="2" assertions="7" failures="0" skipped="0" time="0" hostname="mac.local">
+    <testsuite name="Pokemon Table Example Comparison" file="test/corpus/example/pokemon-comparison.test.ts" line="16" tests="2" assertions="7" failures="0" skipped="0" time="0.829" hostname="mac.local">
+      <testcase name="TypeScript Pokemon example should match Go Pokemon example exactly" classname="Pokemon Table Example Comparison" time="0.503362" file="test/corpus/example/pokemon-comparison.test.ts" line="22" assertions="1" />
+      <testcase name="TypeScript Pokemon example should produce expected table structure" classname="Pokemon Table Example Comparison" time="0.326532" file="test/corpus/example/pokemon-comparison.test.ts" line="57" assertions="6" />
+    </testsuite>
+  </testsuite>
+</testsuites>

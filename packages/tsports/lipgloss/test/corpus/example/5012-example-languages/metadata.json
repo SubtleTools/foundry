@@ -1,0 +1,31 @@
+{
+  "id": "5012",
+  "name": "example-languages",
+  "category": "example",
+  "description": "Example: languages",
+  "complexity": 7,
+  "dependencies": [
+    "101",
+    "002",
+    "301"
+  ],
+  "apiMethods": [
+    "Color",
+    "NewRenderer",
+    "Center",
+    "NewStyle",
+    "ThickBorder",
+    "Style",
+    "Right",
+    "Foreground",
+    "Bold",
+    "Align",
+    "Padding",
+    "Width",
+    "New",
+    "Row",
+    "Println"
+  ],
+  "generated": "2025-08-20T23:44:23.704Z",
+  "version": "1.0.0"
+}
