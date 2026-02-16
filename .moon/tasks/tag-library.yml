@@ -1,0 +1,63 @@
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
+
+tasks:
+  # TypeScript compilation for node libraries
+  build:
+    command: "tsc"
+    args: ["--project", "tsconfig.build.json"]
+    inputs:
+      - "src/**/*"
+      - "package.json"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
+    outputs:
+      - "dist/**/*"
+
+  # Clean build artifacts
+  clean:
+    command: "bun"
+    args:
+      - "-e"
+      - "const fs = require('fs'); ['dist', 'coverage', '.nyc_output'].forEach(d => { try { if (fs.existsSync(d)) fs.rmSync(d, {recursive: true, force: true}); } catch(e) {} })"
+    options:
+      cache: false
+
+  # Development watch mode
+  dev:
+    command: "tsc"
+    args: ["--watch"]
+    local: true
+    options:
+      persistent: true
+
+  # Format and lint code with Biome
+  format:
+    command: "biome"
+    args: ["check", "src", "test", "--no-errors-on-unmatched"]
+    inputs:
+      - "src/**/*"
+      - "test/**/*"
+      - "biome.json"
+      - "/biome.json"
+    options:
+      mergeArgs: "append"
+
+  # Type checking without emit
+  check:
+    command: "tsc"
+    args: ["--noEmit"]
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+      - "package.json"
+
+  # Pre-publish task that runs all quality checks
+  prepack:
+    deps:
+      - clean
+      - format
+      - check
+      - build
+      - test
+    options:
+      cache: false

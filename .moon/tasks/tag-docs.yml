@@ -1,0 +1,46 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+# Documentation tasks for TSPort packages with API docs
+# Add "docs" tag to your project to use these tasks
+
+tasks:
+  # Build API documentation with typedoc
+  build-docs:
+    command: "typedoc"
+    deps: ["build"]
+    inputs:
+      - "src/**/*"
+      - "typedoc.json"
+      - "README.md"
+    outputs:
+      - "docs/api/**/*"
+
+  # Serve documentation locally
+  docs:
+    command: "bunx"
+    args: ["vitepress", "dev", "docs"]
+    deps: ["build-docs"]
+    local: true
+    options:
+      persistent: true
+
+  # Build documentation site for production
+  docs-build:
+    command: "bunx"
+    args: ["vitepress", "build", "docs"]
+    deps: ["build-docs"]
+    inputs:
+      - "docs/api/**/*"
+      - "docs/.vitepress/**/*"
+      - "docs/**/*.md"
+    outputs:
+      - "docs/.vitepress/dist/**/*"
+
+  # Extend prepack to include documentation
+  # Note: Uses options.mergeArgs to add to existing deps, not replace them
+  prepack:
+    deps:
+      - build-docs
+    options:
+      mergeArgs: "append"
+      mergeDeps: "append"

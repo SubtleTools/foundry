@@ -70,7 +70,7 @@ Arguments:
   console.log('✅ Template initialized successfully!');
   console.log('');
   console.log('Next steps:');
-  console.log('1. Analyze the Go codebase in test/reference/');
+  console.log('1. Analyze the Go codebase in upstream/{{ goPackageName }}/');
   console.log('2. Implement the TypeScript port in src/');
   console.log('3. Add tests that verify compatibility with Go implementation');
   console.log('4. Run `bun test` to verify everything works');
@@ -148,23 +148,19 @@ async function initializeTemplate(options: InitOptions) {
 }
 
 async function cloneGoReference(options: InitOptions) {
-  console.log('📦 Cloning Go reference implementation...');
+  console.log('📦 Initializing Go reference implementation...');
+
+  const repoRoot = join(__dirname, '../../../..');
+  const goPackageName = getGoPackageName(options.goRepo);
 
   try {
-    // Create test directory and clone Go repository as reference
-    await $`mkdir -p test`;
-
-    if (existsSync('test/reference')) {
-      console.log('   Reference already exists, updating...');
-      await $`cd test/reference && git pull`;
-    } else {
-      await $`cd test && git clone ${options.goRepo} reference`;
-      console.log('   ✓ Cloned Go reference to test/reference/');
-    }
+    // Upstream Go source is managed as a git submodule at the repo root
+    await $`git -C ${repoRoot} submodule update --init upstream/${goPackageName}`;
+    console.log(`   ✓ Initialized Go reference at upstream/${goPackageName}/`);
   } catch (error) {
-    console.error('   ⚠️  Failed to clone Go reference:', error);
-    console.log('   You can manually clone it later with:');
-    console.log(`   git clone ${options.goRepo} test/reference`);
+    console.error('   ⚠️  Failed to initialize Go reference:', error);
+    console.log('   You can manually initialize it from the repo root with:');
+    console.log(`   git submodule update --init upstream/${goPackageName}`);
   }
 }
 

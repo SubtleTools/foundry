@@ -62,9 +62,8 @@
     "test/**/*"
   ],
   "exclude": [
-    "node_modules", 
-    "dist", 
-    "test/reference",
+    "node_modules",
+    "dist",
     "test/corpus/**/*.go"
   ]
 }

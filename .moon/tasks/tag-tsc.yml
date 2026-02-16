@@ -1,45 +1,37 @@
 $schema: "https://moonrepo.dev/schemas/tasks.json"
 
+# This file provides TypeScript-specific build tasks for TSPort packages
+# Use this tag when a package needs tsc-based builds rather than bundlers
+
 tasks:
-  clean-build:
-    script: moon run clean && moon run build
+  build:
+    command: tsc
+    args: ["--project", "tsconfig.build.json"]
+    inputs:
+      - "src/**/*"
+      - "package.json"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
+    outputs:
+      - "dist/**/*"
+
+  clean:
+    command: bun
+    args: ["-e", "const fs = require('fs'); ['dist', 'coverage'].forEach(d => fs.existsSync(d) && fs.rmSync(d, {recursive: true, force: true}))"]
     options:
       cache: false
 
-  build:
-    script: tsc --build
-    inputs:
-      - src/**/*
-      - package.json
-      - tsconfig.json
-    outputs:
-      - dist
-      
-  clean:
-    script: |
-      tsc --build --clean
-      moon clean --lifetime 0ms
-      rm -rf dist coverage
-    options:
-      cache: false
-  
   dev:
-    command: tsc --watch
-  
+    command: tsc
+    args: ["--watch"]
+    local: true
+    options:
+      persistent: true
 
   typecheck:
-    command: tsc --noEmit
+    command: tsc
+    args: ["--noEmit"]
     inputs:
-      - src/**/*
-      - tsconfig.json
-      - package.json
-    options:
-      cache: false
-
-  test:
-    command: bun test
-    inputs:
-      - src/**/*
-      - test/**/*
-      - package.json
-      - tsconfig.json
+      - "src/**/*"
+      - "tsconfig.json"
+      - "package.json"

@@ -61,19 +61,18 @@ tasks:
       - "**/*.{md,mdx}"
     local: true
 
-  # Using Biome for linting
+  # Using Biome for linting (version controlled via proto)
   lint:
-    command:
-      - "biome"
+    command: "biome"
+    args:
       - "check"
-      - "--write"
+      - "src"
+      - "test"
       - "--no-errors-on-unmatched"
-    options:
-      mergeArgs: "append"
+      - "--write"
     inputs:
       - "biome.json"
       - "/biome.json"
-      - "@group(app)"
       - "@globs(sources)"
       - "@globs(tests)"
 
