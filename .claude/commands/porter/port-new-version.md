@@ -86,8 +86,10 @@ After launching all subagents, show:
    git merge {PROJECT}/v{OLDER_VERSION}
    git merge {PROJECT}/v{NEWER_VERSION}
    ```
-4. **Cleanup instructions**:
+4. **Worktree cleanup** — Remove only the worktree directory, **keep the branch**:
    ```bash
    git worktree remove .worktrees/{PROJECT}-v{VERSION}
-   git branch -d {PROJECT}/v{VERSION}
    ```
+   **Do NOT delete the branch.** Branches like `go-colorful/v1.3.0` are kept so that
+   future patch versions (e.g. v1.3.1) can be based on them, avoiding re-porting the
+   entire minor version from scratch. Only delete a branch if the user explicitly asks.
