@@ -12,27 +12,27 @@
 
 ## Changed Files
 
-| File | Status | +Lines | -Lines | Relevant? |
-|------|--------|--------|--------|-----------|
-| .github/FUNDING.yml | modified | +1 | -1 | no |
-| .github/workflows/test.yml | modified | +3 | -10 | no |
-| CHANGELOG.md | modified | +24 | -0 | no |
-| README.md | modified | +20 | -19 | no |
-| colorgens.go | modified | +24 | -12 | **YES** |
-| colorgens_test.go | modified | +25 | -5 | test |
-| colors.go | modified | +199 | -22 | **YES** |
-| colors_test.go | modified | +169 | -10 | test |
-| doc/colorgens/colorgens.go | modified | +18 | -13 | no |
-| doc/colorsort/colorsort.go | added | +83 | -0 | no |
-| doc/colorsort/colorsort.png | added | +0 | -0 | no |
-| happy_palettegen.go | modified | +11 | -7 | **YES** |
-| hexcolor.go | modified | +20 | -0 | **YES** |
-| hsluv.go | modified | +3 | -2 | **YES** |
-| rand.go | added | +22 | -0 | **YES** |
-| soft_palettegen.go | modified | +12 | -5 | **YES** |
-| sort.go | added | +191 | -0 | **YES** |
-| sort_test.go | added | +29 | -0 | test |
-| warm_palettegen.go | modified | +11 | -7 | **YES** |
+| File                        | Status   | +Lines | -Lines | Relevant? |
+| --------------------------- | -------- | ------ | ------ | --------- |
+| .github/FUNDING.yml         | modified | +1     | -1     | no        |
+| .github/workflows/test.yml  | modified | +3     | -10    | no        |
+| CHANGELOG.md                | modified | +24    | -0     | no        |
+| README.md                   | modified | +20    | -19    | no        |
+| colorgens.go                | modified | +24    | -12    | **YES**   |
+| colorgens_test.go           | modified | +25    | -5     | test      |
+| colors.go                   | modified | +199   | -22    | **YES**   |
+| colors_test.go              | modified | +169   | -10    | test      |
+| doc/colorgens/colorgens.go  | modified | +18    | -13    | no        |
+| doc/colorsort/colorsort.go  | added    | +83    | -0     | no        |
+| doc/colorsort/colorsort.png | added    | +0     | -0     | no        |
+| happy_palettegen.go         | modified | +11    | -7     | **YES**   |
+| hexcolor.go                 | modified | +20    | -0     | **YES**   |
+| hsluv.go                    | modified | +3     | -2     | **YES**   |
+| rand.go                     | added    | +22    | -0     | **YES**   |
+| soft_palettegen.go          | modified | +12    | -5     | **YES**   |
+| sort.go                     | added    | +191   | -0     | **YES**   |
+| sort_test.go                | added    | +29    | -0     | test      |
+| warm_palettegen.go          | modified | +11    | -7     | **YES**   |
 
 ## Files to Port
 

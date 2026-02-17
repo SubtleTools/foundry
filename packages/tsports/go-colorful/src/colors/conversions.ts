@@ -274,6 +274,14 @@ export const okLchToOkLab = (l: number, c: number, h: number): [number, number, 
   return [l, a, b];
 };
 
+export const xyzToOkLch = (x: number, y: number, z: number): [number, number, number] => {
+  return okLabToOkLch(...xyzToOkLab(x, y, z));
+};
+
+export const okLchToXyz = (l: number, c: number, h: number): [number, number, number] => {
+  return okLabToXyz(...okLchToOkLab(l, c, h));
+};
+
 // HSLuv and HPLuv conversions moved to ../hsluv.ts to avoid circular dependencies
 // Import them from there directly when needed
 
@@ -413,5 +421,27 @@ export const hslToRgb = (h: number, s: number, l: number): [number, number, numb
   return [getComponent(tr), getComponent(tg), getComponent(tb)];
 };
 
-// Capitalized alias for Go-style compatibility
+// Capitalized aliases for Go-style compatibility
 export const LabToHcl = labToHcl;
+export const HclToLab = hclToLab;
+export const XyzToLinearRgb = xyzToLinearRgb;
+export const LinearRgbToXyz = linearRgbToXyz;
+export const XyzToLab = xyzToLab;
+export const XyzToLabWhiteRef = xyzToLabWithRef;
+export const LabToXyz = labToXyz;
+export const LabToXyzWhiteRef = labToXyzWithRef;
+export const XyzToLuv = xyzToLuv;
+export const XyzToLuvWhiteRef = xyzToLuvWithRef;
+export const LuvToXyz = luvToXyz;
+export const LuvToXyzWhiteRef = luvToXyzWithRef;
+export const XyzToXyy = xyzToXyy;
+export const XyzToXyyWhiteRef = xyzToXyyWithRef;
+export const XyyToXyz = xyyToXyz;
+export const LuvToLuvLCh = luvToLuvLCh;
+export const LuvLChToLuv = luvLChToLuv;
+export const XyzToOkLab = xyzToOkLab;
+export const OkLabToXyz = okLabToXyz;
+export const OkLabToOkLch = okLabToOkLch;
+export const OkLchToOkLab = okLchToOkLab;
+export const XyzToOkLch = xyzToOkLch;
+export const OkLchToXyz = okLchToXyz;

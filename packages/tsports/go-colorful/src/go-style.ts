@@ -58,6 +58,41 @@ import {
 } from './soft_palettegen';
 import { Sorted as TSSorted } from './sort';
 
+// Re-export standalone conversion functions with Go-style PascalCase names
+export {
+  XyzToLinearRgb,
+  LinearRgbToXyz,
+  XyzToLab,
+  XyzToLabWhiteRef,
+  LabToXyz,
+  LabToXyzWhiteRef,
+  XyzToLuv,
+  XyzToLuvWhiteRef,
+  LuvToXyz,
+  LuvToXyzWhiteRef,
+  XyzToXyy,
+  XyzToXyyWhiteRef,
+  XyyToXyz,
+  LabToHcl,
+  HclToLab,
+  LuvToLuvLCh,
+  LuvLChToLuv,
+  XyzToOkLab,
+  OkLabToXyz,
+  OkLabToOkLch,
+  OkLchToOkLab,
+  XyzToOkLch,
+  OkLchToXyz,
+} from './colors';
+
+// Re-export HSLuv conversion functions with Go-style names
+export {
+  luvLChToHSLuv as LuvLChToHSLuv,
+  hsLuvToLuvLCh as HSLuvToLuvLCh,
+  luvLChToHPLuv as LuvLChToHPLuv,
+  hpLuvToLuvLCh as HPLuvToLuvLCh,
+} from './hsluv';
+
 // Type Color represents a color in sRGB space with RGB values in [0..1]
 export class Color {
   R: number;

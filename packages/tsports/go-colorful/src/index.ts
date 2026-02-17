@@ -44,8 +44,40 @@ export {
   MakeColor,
 } from './colors';
 
-// Utility functions
-export { LabToHcl } from './colors';
+// Standalone conversion functions (Go-style PascalCase)
+export {
+  LabToHcl,
+  HclToLab,
+  XyzToLinearRgb,
+  LinearRgbToXyz,
+  XyzToLab,
+  XyzToLabWhiteRef,
+  LabToXyz,
+  LabToXyzWhiteRef,
+  XyzToLuv,
+  XyzToLuvWhiteRef,
+  LuvToXyz,
+  LuvToXyzWhiteRef,
+  XyzToXyy,
+  XyzToXyyWhiteRef,
+  XyyToXyz,
+  LuvToLuvLCh,
+  LuvLChToLuv,
+  XyzToOkLab,
+  OkLabToXyz,
+  OkLabToOkLch,
+  OkLchToOkLab,
+  XyzToOkLch,
+  OkLchToXyz,
+} from './colors';
+
+// HSLuv conversion functions
+export {
+  luvLChToHSLuv,
+  hsLuvToLuvLCh,
+  luvLChToHPLuv,
+  hpLuvToLuvLCh,
+} from './hsluv';
 
 // Constants
 export { D50, D65, Delta } from './constants';

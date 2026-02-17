@@ -93,8 +93,6 @@ tasks:
     env:
       GO_REPO: "https://github.com/lucasb-eyer/go-colorful"
 
-
-
   version-bump-go:
     command: "bun"
     args: ["run", "../../../libs/dev/versioning/cli-bump-go.ts"]

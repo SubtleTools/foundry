@@ -14,6 +14,7 @@ This is a **TypeScript port of go-colorful**, a comprehensive color manipulation
 - Color sorting using minimum spanning trees
 
 **Key Architecture Decision**: The package provides **two identical APIs**:
+
 1. **TypeScript Style API** (default): camelCase methods (`color.distanceLab()`, `color.rgb255()`)
 2. **Go Style API** (`/go-style` export): PascalCase methods matching Go exactly (`color.DistanceLab()`, `color.RGB255()`)
 
@@ -22,6 +23,7 @@ Both APIs produce identical results and are backed by the same implementation.
 ## Commands
 
 ### Development
+
 ```bash
 bun install              # Install dependencies
 bun run build           # Full build (typecheck + bundle + declarations)
@@ -32,6 +34,7 @@ bun run clean           # Remove build artifacts
 ```
 
 ### Testing
+
 ```bash
 bun test                # Run all tests via custom test script
 bun test --coverage     # Run tests with coverage report
@@ -47,6 +50,7 @@ bun test test/basic.test.ts
 ```
 
 ### Code Quality
+
 ```bash
 bun run lint            # Lint with Biome
 bun run format          # Format with dprint
@@ -54,6 +58,7 @@ bun run format:check    # Check formatting without changes
 ```
 
 ### Documentation
+
 ```bash
 bun run docs            # Generate TypeDoc documentation
 bun run docs:build      # Build VitePress documentation site
@@ -64,6 +69,7 @@ bun run docs:build      # Build VitePress documentation site
 ### Core Color Class (`src/color.ts`)
 
 The `Color` class is the foundation of the library:
+
 - Stores colors internally as sRGB values (`r`, `g`, `b` in range 0-1)
 - Implements ~80+ methods for color space conversions, distance calculations, and blending
 - All color operations return new `Color` instances (immutable pattern)
@@ -71,6 +77,7 @@ The `Color` class is the foundation of the library:
 ### Dual API Implementation (`src/go-style.ts`)
 
 The Go-style API is a **wrapper layer** that:
+
 - Wraps the TypeScript `Color` class with a Go-compatible class
 - Uses uppercase property names (`R`, `G`, `B` instead of `r`, `g`, `b`)
 - Wraps all methods with PascalCase equivalents
@@ -81,6 +88,7 @@ The Go-style API is a **wrapper layer** that:
 ### Color Space Constructors (`src/constructors.ts`)
 
 Factory functions for creating colors from different color spaces:
+
 - Each constructor converts from its color space to sRGB
 - Naming: `Hex()`, `HSL()`, `Lab()`, etc. for TypeScript API
 - Go-style equivalents exported from `src/go-style.ts`
@@ -88,11 +96,13 @@ Factory functions for creating colors from different color spaces:
 ### Palette Generation Architecture
 
 The package includes three palette generation algorithms, each in its own file:
+
 - **`src/soft_palettegen.ts`**: Soft, pastel palettes using k-means clustering in LAB space
 - **`src/warm_palettegen.ts`**: Warm color palettes using HCL color space
 - **`src/happy_palettegen.ts`**: Bright, happy color palettes using HCL
 
 All palette generators:
+
 - Return `[Color[], Error | null]` tuples (Go-style error handling)
 - Support both slow/accurate and fast versions
 - Accept optional custom random number generators
@@ -100,6 +110,7 @@ All palette generators:
 ### Random Number Generation
 
 Custom random number interface (`src/rand.ts`) allows:
+
 - Deterministic testing with seed control
 - Compatibility with Go's random number semantics
 - Abstraction over JavaScript's `Math.random()`
@@ -119,16 +130,19 @@ Custom random number interface (`src/rand.ts`) allows:
 ### Running Specific Tests
 
 The custom test runner (`scripts/test.js`) is used because:
+
 - It filters out automated test generation files
 - It provides consistent test discovery across environments
 - It integrates with the monorepo's moon build system
 
 To run a single test file directly:
+
 ```bash
 bun test test/basic.test.ts
 ```
 
 To run tests matching a pattern:
+
 ```bash
 bun test --test-name-pattern "HSV"
 ```
@@ -138,6 +152,7 @@ bun test --test-name-pattern "HSV"
 ### Color Space Conversions
 
 Conversions follow this general pattern:
+
 1. sRGB → Linear RGB → XYZ → Target Space
 2. For perceptually uniform spaces (Lab, Luv, HCL), conversions go through XYZ
 3. Fast variants skip gamma correction for performance
@@ -153,12 +168,14 @@ Conversions follow this general pattern:
 
 Most color spaces use **D65** illuminant (standard for sRGB).
 Some operations support custom white points:
+
 - `LabWhiteRef()`, `LuvWhiteRef()`, etc.
 - D50 is also provided for compatibility
 
 ### Distance Calculations
 
 Color distance methods in order of perceptual accuracy:
+
 1. `distanceCIEDE2000()` - Most accurate, slowest
 2. `distanceCIE94()` - Good balance
 3. `distanceCIE76()` / `distanceLab()` - Simple Euclidean in Lab space
@@ -211,6 +228,7 @@ const c5 = GoStyle.Hex("#FF0080");
 **Zero runtime dependencies** - the package is completely self-contained.
 
 DevDependencies:
+
 - `@biomejs/biome` - Fast linting
 - `dprint` - Code formatting
 - `typedoc` - API documentation generation
@@ -220,6 +238,7 @@ DevDependencies:
 ## Performance Considerations
 
 The library includes fast variants of expensive operations:
+
 - `FastLinearRgb()` vs `LinearRgb()` - Gamma correction approximation
 - `FastWarmColor()` vs `WarmColor()` - Uses HSV instead of HCL
 - `FastHappyPalette()` vs `HappyPalette()` - Simpler color space
