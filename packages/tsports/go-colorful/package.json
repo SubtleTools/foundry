@@ -1,12 +1,12 @@
 {
   "name": "@tsports/go-colorful",
-  "version": "1.2.0-tsport",
-  "goSourceVersion": "v1.2.0",
+  "version": "1.3.0",
+  "goSourceVersion": "v1.3.0",
   "portInfo": {
     "sourceRepo": "https://github.com/lucasb-eyer/go-colorful",
-    "sourceVersion": "v1.2.0",
+    "sourceVersion": "v1.3.0",
     "tsportVersion": 0,
-    "lastUpdated": "2024-08-26T15:30:00.000Z"
+    "lastUpdated": "2026-02-17T03:13:28.823Z"
   },
   "description": "A TypeScript port of the go-colorful package for working with colors",
   "main": "./dist/index.js",
