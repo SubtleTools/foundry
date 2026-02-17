@@ -27,3 +27,4 @@ node_modules/
 templates/__sandbox__
 agent
 coverage
+.worktrees/

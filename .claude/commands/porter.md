@@ -20,6 +20,7 @@ For manual control or resuming work:
 
 | Command | Purpose |
 |---------|---------|
+| `/porter:port-new-version` | Detect & port newer upstream versions using worktrees |
 | `/porter:new-tsport` | Create new TSPort package from Moon template |
 | `/porter:implement-core` | Implement core TypeScript functionality |
 | `/porter:add-tests` | Add comprehensive compatibility tests |
