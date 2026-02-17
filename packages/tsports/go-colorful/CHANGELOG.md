@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0-tsport] - 2026-02-17
+
+### Added
+
+- **Standalone conversion function exports**: All Go public conversion functions are now
+  exported at the top level with PascalCase names matching Go exactly:
+  - `XyzToOkLab`, `OkLabToXyz`, `XyzToOkLch`, `OkLchToXyz`
+  - `OkLabToOkLch`, `OkLchToOkLab`
+  - `XyzToLinearRgb`, `LinearRgbToXyz`
+  - `XyzToLab`, `LabToXyz`, `XyzToLabWhiteRef`, `LabToXyzWhiteRef`
+  - `XyzToLuv`, `LuvToXyz`, `XyzToLuvWhiteRef`, `LuvToXyzWhiteRef`
+  - `XyzToXyy`, `XyyToXyz`, `XyzToXyyWhiteRef`
+  - `LabToHcl`, `HclToLab`, `LuvToLuvLCh`, `LuvLChToLuv`
+- **HSLuv conversion function exports**: `luvLChToHSLuv`, `hsLuvToLuvLCh`,
+  `luvLChToHPLuv`, `hpLuvToLuvLCh` now exported from main index
+- **go-style.ts conversion exports**: All standalone conversion functions now
+  available from the Go-style API module with PascalCase names
+- **New conversion functions**: `xyzToOkLch` and `okLchToXyz` (composite
+  conversions through OkLab, matching Go v1.3.0)
+- Ported Go's `TestSortSimple` test case for deterministic sort verification
+- Comprehensive v1.3.0 feature test suite covering all new exports
+
+### Notes
+
+- All features from Go go-colorful v1.3.0 are now fully ported:
+  - OkLab and OkLch color space support (added in v1.3.0)
+  - BlendOkLab and BlendOkLch blending (added in v1.3.0)
+  - DistanceLinearRgb and DistanceRiemersma distance metrics
+  - BlendLinearRgb linear RGB blending
+  - Color sorting via minimum spanning tree (Sorted function)
+  - Custom random source support (WithRand variants)
+  - YAML marshal/unmarshal on HexColor
+  - HSV/HCL blend fix for achromatic colors
+- 176 tests passing, 0 failures
+
 ## [1.0.7-tsport] - 2024-08-26
 
 ### Added
