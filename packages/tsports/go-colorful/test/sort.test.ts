@@ -1,5 +1,6 @@
 /**
  * Tests for color sorting
+ * Includes tests ported from Go's sort_test.go
  */
 
 import { expect, test } from 'bun:test';
@@ -64,4 +65,30 @@ test('Sorted produces smooth transitions', () => {
   }
 
   expect(sorted[0]).toBe(colors[darkestIndex]);
+});
+
+// Ported from Go's TestSortSimple in sort_test.go
+test('TestSortSimple - sorts reds and blues correctly', () => {
+  // Sort a list of reds and blues
+  const input: Color[] = [];
+  for (let i = 0; i < 3; i++) {
+    input.push(new Color(1.0 - (i + 1) * 0.25, 0.0, 0.0)); // Reds
+    input.push(new Color(0.0, 0.0, 1.0 - (i + 1) * 0.25)); // Blues
+  }
+  const out = Sorted(input);
+
+  // Ensure the output matches what we expected
+  const expected = [
+    new Color(0.25, 0.0, 0.0),
+    new Color(0.5, 0.0, 0.0),
+    new Color(0.75, 0.0, 0.0),
+    new Color(0.0, 0.0, 0.25),
+    new Color(0.0, 0.0, 0.5),
+    new Color(0.0, 0.0, 0.75),
+  ];
+  for (let i = 0; i < expected.length; i++) {
+    expect(out[i].r).toBeCloseTo(expected[i].r, 10);
+    expect(out[i].g).toBeCloseTo(expected[i].g, 10);
+    expect(out[i].b).toBeCloseTo(expected[i].b, 10);
+  }
 });
