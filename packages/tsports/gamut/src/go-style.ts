@@ -19,8 +19,9 @@ function wrap(c: unknown): unknown {
 /**
  * Helper to wrap a function to return Go-style colors
  */
-function wrapFn(fn: (...args: unknown[]) => unknown): (...args: unknown[]) => unknown {
-  return (...args: unknown[]) => wrap(fn(...args));
+// biome-ignore lint: wrapper needs loose types to bridge TS and Go-style APIs
+function wrapFn<F extends (...args: any[]) => any>(fn: F): (...args: Parameters<F>) => ReturnType<F> {
+  return ((...args: Parameters<F>) => wrap(fn(...args))) as any;
 }
 
 // Re-export colors functions in PascalCase

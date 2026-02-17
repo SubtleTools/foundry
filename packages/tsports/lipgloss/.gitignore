@@ -64,8 +64,8 @@ Thumbs.db
 
 # Development and debug files
 debug*
-test-*
-test_*
+/test-*
+/test_*
 *.debug.*
 *.debug
 *-debug.*
