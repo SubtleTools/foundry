@@ -75,7 +75,7 @@
     "./README.md": "./README.md"
   },
   "dependencies": {
-    "@tsports/go-colorful": "^1.1.0"
+    "@tsports/go-colorful": "workspace:^1.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",

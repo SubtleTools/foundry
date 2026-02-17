@@ -1,12 +1,12 @@
 {
   "name": "@tsports/go-osc52",
-  "version": "2.0.1400",
-  "goSourceVersion": "v2.0.14",
+  "version": "2.0.100",
+  "goSourceVersion": "v2.0.1",
   "portInfo": {
     "sourceRepo": "https://github.com/aymanbagabas/go-osc52",
-    "sourceVersion": "v2.0.14",
+    "sourceVersion": "v2.0.1",
     "tsportVersion": 0,
-    "lastUpdated": "2024-08-24T12:00:00.000Z"
+    "lastUpdated": "2026-02-17T04:19:26.819Z"
   },
   "description": "OSC52 terminal clipboard escape sequences - TypeScript port of go-osc52",
   "main": "./dist/index.js",

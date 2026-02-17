@@ -15,7 +15,8 @@
     "test": "bun test packages",
     "test:coverage": "bun ./scripts/test-coverage.ts",
     "check:upstream": "bun ./scripts/check-upstream-versions.ts",
-    "check:project": "bun ./scripts/check-version-for-project.ts"
+    "check:project": "bun ./scripts/check-version-for-project.ts",
+    "check:deps": "bun ./scripts/check-dep-versions.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",

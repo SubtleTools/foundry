@@ -101,6 +101,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Validate dependency versions match upstream go.mod
+        run: bun run scripts/check-dep-versions.ts ${{ steps.parse.outputs.package }}
+
       - name: Build package
         working-directory: ${{ steps.parse.outputs.pkg_dir }}
         run: bun run build

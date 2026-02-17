@@ -88,16 +88,16 @@
     "url": "https://github.com/tsports/lipgloss/issues"
   },
   "dependencies": {
-    "@tsports/go-colorful": "workspace:*",
-    "@tsports/termenv": "workspace:*",
-    "@tsports/uniseg": "workspace:*",
+    "@tsports/go-colorful": "workspace:^1.2.0",
+    "@tsports/termenv": "workspace:^0.16.0",
+    "@tsports/uniseg": "workspace:^0.4.700",
     "color-convert": "^3.1.0",
     "colord": "^2.9.3",
     "supports-color": "^9.4.0",
     "type-fest": "^4.41.0"
   },
   "devDependencies": {
-    "@tsports/gamut": "workspace:*",
+    "@tsports/gamut": "workspace:^0.3.100",
     "@types/chroma-js": "^3.1.1",
     "@types/diff": "^8.0.0",
     "@types/node": "^20.11.0",
